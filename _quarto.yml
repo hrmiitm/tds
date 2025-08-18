@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "TDS"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+
+format:
+  html:
+    theme:
+      light: 
+        - sketchy
+      dark:
+        - cosmo
+    css: styles.css
+    toc: true
+
+
+

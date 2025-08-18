@@ -1,0 +1,156 @@
+[
+  {
+    "objectID": "Tds_Syllabus.html",
+    "href": "Tds_Syllabus.html",
+    "title": "📑 Course Roadmap",
+    "section": "",
+    "text": "📌 Quick Navigation\n\n\nWeek 1 → Development Tools\nWeek 2 → Deployment Tools\nWeek 3 → LLM APIs\n🚀 Project 1 → ?\nWeek 4 → LangChain\nWeek 5 → LangGraph\nWeek 6 → Quarto Websites & AWK\n🚀 Project 2 → ?\nWeek 7 → ?\n\n\n📌 Small Projects\nW1-&gt; Simple ChatBot (No Memory)\nW2-&gt; Memory-Based ChatBot\nW3-&gt; PDF ChatBot\nW4-&gt; YouTube Playlist QA Assistant\nW5-&gt; SQL Query Agent\nW6-&gt; Portfolio Website\nVoice-enabled AI Chat Assistant\n\n\n\n\n\n\nIntro to Linux (Dual Boot, WSL)\n\nLanguage Setup & Config (bashrc, venv, nvm, etc.)\n\nJS → nvm, node, npm, pnpm, yarn\n\nC/C++ → gcc vs g++\n\nJava → jdk, jre, jvm\n\nPython → venv, pipx, conda, uv\n\n\nGit Basics\n\ninit, add, commit, push\n\nUndo/redo commits\n\n\nFastAPI Basics\n\nOllama Setup\n\n\nSmall Project → Simple ChatBot (No Memory)\n- Build a FastAPI endpoint /ask with Ollama (Gemma).\n- Answers queries without history.\n\n\n\n\n\n\nAdvanced Git/GitHub\n\nBranching, Merging, Actions\n\nDocker/Podman\n\nDockerfile, Volumes, Networks\n\nAdvanced FastAPI\n\nDeployment Platforms\n\nVercel, Render, GitHub Pages\n\nEC2 Deployment with GitHub Actions + Docker\n\n\nSmall Project → Memory-Based ChatBot\n- FastAPI endpoint /chat with Gemini LLM.\n- Maintains multi-turn memory in RAM.\n\n\n\n\n\n\nPrompt Engineering\n\nZero-shot, Few-shot\n\n\nFunction Calling\n\nBase64 Encoding\n\nVector Databases & RAG\n\nOpenAI API Docs\nPromptFoo\n\n\nSmall Project → PDF ChatBot\n- Upload PDF → Extract text → Store in Vector DB.\n- Build RAG pipeline with Streamlit UI + FastAPI backend.\n- Multi-turn Q&A → returns answer + page number.\n\n\n\n\n\n\n\n\n\n\nPydantic Models\n\nStructured Prompts & Output Parsers\n\nChains & Runnables\n\nText Splitters\n\nVectorStores in LangChain\n\nRAG + Tool Calling\n\n\nSmall Project → YouTube Playlist QA Assistant\n- Scrape subtitles from each video of playlist.\n- Store in a vector DB.\n- Build chatbot → answers video-specific queries.\n\n\n\n\n\n\n⚠️ I Don’t have much knowledge on this topic.\n\n\nSmall Project → *SQL Query Agent\n- Convert natural language → SQL query.\n- Run on DB → Return tabular results**.\n\n\n\n\n\n\nQuarto + GitHub Pages\n\nRevealJS Presentations\n\nMarkdown → Website conversion\n\nExcel Toolpack (Correlation, Regression, Data Analysis)\n\nAWK Basics (text processing)\n\n\nSmall Project → Portfolio Website\n- Publish your portfolio with Quarto + GitHub Pages.\n\n\n\n\n\n\n\n\n\n\n\n\n\nVoice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time."
+  },
+  {
+    "objectID": "Tds_Syllabus.html#index",
+    "href": "Tds_Syllabus.html#index",
+    "title": "📑 Course Roadmap",
+    "section": "",
+    "text": "📌 Quick Navigation\n\n\nWeek 1 → Development Tools\nWeek 2 → Deployment Tools\nWeek 3 → LLM APIs\n🚀 Project 1 → ?\nWeek 4 → LangChain\nWeek 5 → LangGraph\nWeek 6 → Quarto Websites & AWK\n🚀 Project 2 → ?\nWeek 7 → ?\n\n\n📌 Small Projects\nW1-&gt; Simple ChatBot (No Memory)\nW2-&gt; Memory-Based ChatBot\nW3-&gt; PDF ChatBot\nW4-&gt; YouTube Playlist QA Assistant\nW5-&gt; SQL Query Agent\nW6-&gt; Portfolio Website\nVoice-enabled AI Chat Assistant"
+  },
+  {
+    "objectID": "Tds_Syllabus.html#week-1-development-tools",
+    "href": "Tds_Syllabus.html#week-1-development-tools",
+    "title": "📑 Course Roadmap",
+    "section": "",
+    "text": "Intro to Linux (Dual Boot, WSL)\n\nLanguage Setup & Config (bashrc, venv, nvm, etc.)\n\nJS → nvm, node, npm, pnpm, yarn\n\nC/C++ → gcc vs g++\n\nJava → jdk, jre, jvm\n\nPython → venv, pipx, conda, uv\n\n\nGit Basics\n\ninit, add, commit, push\n\nUndo/redo commits\n\n\nFastAPI Basics\n\nOllama Setup\n\n\nSmall Project → Simple ChatBot (No Memory)\n- Build a FastAPI endpoint /ask with Ollama (Gemma).\n- Answers queries without history."
+  },
+  {
+    "objectID": "Tds_Syllabus.html#week-2-deployment-tools",
+    "href": "Tds_Syllabus.html#week-2-deployment-tools",
+    "title": "📑 Course Roadmap",
+    "section": "",
+    "text": "Advanced Git/GitHub\n\nBranching, Merging, Actions\n\nDocker/Podman\n\nDockerfile, Volumes, Networks\n\nAdvanced FastAPI\n\nDeployment Platforms\n\nVercel, Render, GitHub Pages\n\nEC2 Deployment with GitHub Actions + Docker\n\n\nSmall Project → Memory-Based ChatBot\n- FastAPI endpoint /chat with Gemini LLM.\n- Maintains multi-turn memory in RAM."
+  },
+  {
+    "objectID": "Tds_Syllabus.html#week-3-llm-apis",
+    "href": "Tds_Syllabus.html#week-3-llm-apis",
+    "title": "📑 Course Roadmap",
+    "section": "",
+    "text": "Prompt Engineering\n\nZero-shot, Few-shot\n\n\nFunction Calling\n\nBase64 Encoding\n\nVector Databases & RAG\n\nOpenAI API Docs\nPromptFoo\n\n\nSmall Project → PDF ChatBot\n- Upload PDF → Extract text → Store in Vector DB.\n- Build RAG pipeline with Streamlit UI + FastAPI backend.\n- Multi-turn Q&A → returns answer + page number."
+  },
+  {
+    "objectID": "Tds_Syllabus.html#week-4-langchain",
+    "href": "Tds_Syllabus.html#week-4-langchain",
+    "title": "📑 Course Roadmap",
+    "section": "",
+    "text": "Pydantic Models\n\nStructured Prompts & Output Parsers\n\nChains & Runnables\n\nText Splitters\n\nVectorStores in LangChain\n\nRAG + Tool Calling\n\n\nSmall Project → YouTube Playlist QA Assistant\n- Scrape subtitles from each video of playlist.\n- Store in a vector DB.\n- Build chatbot → answers video-specific queries."
+  },
+  {
+    "objectID": "Tds_Syllabus.html#week-5-langgraph",
+    "href": "Tds_Syllabus.html#week-5-langgraph",
+    "title": "📑 Course Roadmap",
+    "section": "",
+    "text": "⚠️ I Don’t have much knowledge on this topic.\n\n\nSmall Project → *SQL Query Agent\n- Convert natural language → SQL query.\n- Run on DB → Return tabular results**."
+  },
+  {
+    "objectID": "Tds_Syllabus.html#week-6-quarto-websites-awk",
+    "href": "Tds_Syllabus.html#week-6-quarto-websites-awk",
+    "title": "📑 Course Roadmap",
+    "section": "",
+    "text": "Quarto + GitHub Pages\n\nRevealJS Presentations\n\nMarkdown → Website conversion\n\nExcel Toolpack (Correlation, Regression, Data Analysis)\n\nAWK Basics (text processing)\n\n\nSmall Project → Portfolio Website\n- Publish your portfolio with Quarto + GitHub Pages."
+  },
+  {
+    "objectID": "Tds_Syllabus.html#bonus-project-optional",
+    "href": "Tds_Syllabus.html#bonus-project-optional",
+    "title": "📑 Course Roadmap",
+    "section": "",
+    "text": "Voice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "TDS - Tools for Data Science",
+    "section": "",
+    "text": "📌 Quick Navigation\n\n\nWeek 1 → Development Tools\nWeek 2 → Deployment Tools\nWeek 3 → LLM APIs\n🚀 Project 1 → ?\nWeek 4 → LangChain\nWeek 5 → LangGraph\nWeek 6 → Quarto Websites & AWK\n🚀 Project 2 → ?\nWeek 7 → ?\n\n\n📌 Small Projects\nW1-&gt; Simple ChatBot (No Memory)\nW2-&gt; Memory-Based ChatBot\nW3-&gt; PDF ChatBot\nW4-&gt; YouTube Playlist QA Assistant\nW5-&gt; SQL Query Agent\nW6-&gt; Portfolio Website\nVoice-enabled AI Chat Assistant\n\n\n\n\n\n\nIntro to Linux (Dual Boot, WSL)\n\nLanguage Setup & Config (bashrc, venv, nvm, etc.)\n\nJS → nvm, node, npm, pnpm, yarn\n\nC/C++ → gcc vs g++\n\nJava → jdk, jre, jvm\n\nPython → venv, pipx, conda, uv\n\n\nGit Basics\n\ninit, add, commit, push\n\nUndo/redo commits\n\n\nFastAPI Basics\n\nOllama Setup\n\n\nSmall Project → Simple ChatBot (No Memory)\n- Build a FastAPI endpoint /ask with Ollama (Gemma).\n- Answers queries without history.\n\n\n\n\n\n\nAdvanced Git/GitHub\n\nBranching, Merging, Actions\n\nDocker/Podman\n\nDockerfile, Volumes, Networks\n\nAdvanced FastAPI\n\nDeployment Platforms\n\nVercel, Render, GitHub Pages\n\nEC2 Deployment with GitHub Actions + Docker\n\n\nSmall Project → Memory-Based ChatBot\n- FastAPI endpoint /chat with Gemini LLM.\n- Maintains multi-turn memory in RAM.\n\n\n\n\n\n\nPrompt Engineering\n\nZero-shot, Few-shot\n\n\nFunction Calling\n\nBase64 Encoding\n\nVector Databases & RAG\n\nOpenAI API Docs\nPromptFoo\n\n\nSmall Project → PDF ChatBot\n- Upload PDF → Extract text → Store in Vector DB.\n- Build RAG pipeline with Streamlit UI + FastAPI backend.\n- Multi-turn Q&A → returns answer + page number.\n\n\n\n\n\n\n\n\n\n\nPydantic Models\n\nStructured Prompts & Output Parsers\n\nChains & Runnables\n\nText Splitters\n\nVectorStores in LangChain\n\nRAG + Tool Calling\n\n\nSmall Project → YouTube Playlist QA Assistant\n- Scrape subtitles from each video of playlist.\n- Store in a vector DB.\n- Build chatbot → answers video-specific queries.\n\n\n\n\n\n\n⚠️ I Don’t have much knowledge on this topic.\n\n\nSmall Project → *SQL Query Agent\n- Convert natural language → SQL query.\n- Run on DB → Return tabular results**.\n\n\n\n\n\n\nQuarto + GitHub Pages\n\nRevealJS Presentations\n\nMarkdown → Website conversion\n\nExcel Toolpack (Correlation, Regression, Data Analysis)\n\nAWK Basics (text processing)\n\n\nSmall Project → Portfolio Website\n- Publish your portfolio with Quarto + GitHub Pages.\n\n\n\n\n\n\n\n\n\n\n\n\n\nVoice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time."
+  },
+  {
+    "objectID": "index.html#index",
+    "href": "index.html#index",
+    "title": "TDS - Tools for Data Science",
+    "section": "",
+    "text": "📌 Quick Navigation\n\n\nWeek 1 → Development Tools\nWeek 2 → Deployment Tools\nWeek 3 → LLM APIs\n🚀 Project 1 → ?\nWeek 4 → LangChain\nWeek 5 → LangGraph\nWeek 6 → Quarto Websites & AWK\n🚀 Project 2 → ?\nWeek 7 → ?\n\n\n📌 Small Projects\nW1-&gt; Simple ChatBot (No Memory)\nW2-&gt; Memory-Based ChatBot\nW3-&gt; PDF ChatBot\nW4-&gt; YouTube Playlist QA Assistant\nW5-&gt; SQL Query Agent\nW6-&gt; Portfolio Website\nVoice-enabled AI Chat Assistant"
+  },
+  {
+    "objectID": "index.html#week-1-development-tools",
+    "href": "index.html#week-1-development-tools",
+    "title": "TDS - Tools for Data Science",
+    "section": "",
+    "text": "Intro to Linux (Dual Boot, WSL)\n\nLanguage Setup & Config (bashrc, venv, nvm, etc.)\n\nJS → nvm, node, npm, pnpm, yarn\n\nC/C++ → gcc vs g++\n\nJava → jdk, jre, jvm\n\nPython → venv, pipx, conda, uv\n\n\nGit Basics\n\ninit, add, commit, push\n\nUndo/redo commits\n\n\nFastAPI Basics\n\nOllama Setup\n\n\nSmall Project → Simple ChatBot (No Memory)\n- Build a FastAPI endpoint /ask with Ollama (Gemma).\n- Answers queries without history."
+  },
+  {
+    "objectID": "index.html#week-2-deployment-tools",
+    "href": "index.html#week-2-deployment-tools",
+    "title": "TDS - Tools for Data Science",
+    "section": "",
+    "text": "Advanced Git/GitHub\n\nBranching, Merging, Actions\n\nDocker/Podman\n\nDockerfile, Volumes, Networks\n\nAdvanced FastAPI\n\nDeployment Platforms\n\nVercel, Render, GitHub Pages\n\nEC2 Deployment with GitHub Actions + Docker\n\n\nSmall Project → Memory-Based ChatBot\n- FastAPI endpoint /chat with Gemini LLM.\n- Maintains multi-turn memory in RAM."
+  },
+  {
+    "objectID": "index.html#week-3-llm-apis",
+    "href": "index.html#week-3-llm-apis",
+    "title": "TDS - Tools for Data Science",
+    "section": "",
+    "text": "Prompt Engineering\n\nZero-shot, Few-shot\n\n\nFunction Calling\n\nBase64 Encoding\n\nVector Databases & RAG\n\nOpenAI API Docs\nPromptFoo\n\n\nSmall Project → PDF ChatBot\n- Upload PDF → Extract text → Store in Vector DB.\n- Build RAG pipeline with Streamlit UI + FastAPI backend.\n- Multi-turn Q&A → returns answer + page number."
+  },
+  {
+    "objectID": "index.html#project-1",
+    "href": "index.html#project-1",
+    "title": "TDS - Tools for Data Science",
+    "section": "🚀 Project 1 → ?",
+    "text": "🚀 Project 1 → ?"
+  },
+  {
+    "objectID": "index.html#week-4-langchain",
+    "href": "index.html#week-4-langchain",
+    "title": "TDS - Tools for Data Science",
+    "section": "",
+    "text": "Pydantic Models\n\nStructured Prompts & Output Parsers\n\nChains & Runnables\n\nText Splitters\n\nVectorStores in LangChain\n\nRAG + Tool Calling\n\n\nSmall Project → YouTube Playlist QA Assistant\n- Scrape subtitles from each video of playlist.\n- Store in a vector DB.\n- Build chatbot → answers video-specific queries."
+  },
+  {
+    "objectID": "index.html#week-5-langgraph",
+    "href": "index.html#week-5-langgraph",
+    "title": "TDS - Tools for Data Science",
+    "section": "",
+    "text": "⚠️ I Don’t have much knowledge on this topic.\n\n\nSmall Project → *SQL Query Agent\n- Convert natural language → SQL query.\n- Run on DB → Return tabular results**."
+  },
+  {
+    "objectID": "index.html#week-6-quarto-websites-awk",
+    "href": "index.html#week-6-quarto-websites-awk",
+    "title": "TDS - Tools for Data Science",
+    "section": "",
+    "text": "Quarto + GitHub Pages\n\nRevealJS Presentations\n\nMarkdown → Website conversion\n\nExcel Toolpack (Correlation, Regression, Data Analysis)\n\nAWK Basics (text processing)\n\n\nSmall Project → Portfolio Website\n- Publish your portfolio with Quarto + GitHub Pages."
+  },
+  {
+    "objectID": "index.html#project-2",
+    "href": "index.html#project-2",
+    "title": "TDS - Tools for Data Science",
+    "section": "🚀 Project 2 → ?",
+    "text": "🚀 Project 2 → ?"
+  },
+  {
+    "objectID": "index.html#week-7",
+    "href": "index.html#week-7",
+    "title": "TDS - Tools for Data Science",
+    "section": "Week 7 → ?",
+    "text": "Week 7 → ?"
+  },
+  {
+    "objectID": "index.html#bonus-project-optional",
+    "href": "index.html#bonus-project-optional",
+    "title": "TDS - Tools for Data Science",
+    "section": "",
+    "text": "Voice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time."
+  }
+]

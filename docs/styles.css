@@ -1,0 +1,49 @@
+/* css styles */
+.hero-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Style the week sections */
+h2[id^="week"] {
+  background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+/* Style project sections */
+h2:contains("Project") {
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Style blockquotes (project descriptions) */
+blockquote {
+  border-left: 4px solid #007bff;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Style code blocks */
+code {
+  background-color: #f1f3f4;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Add hover effects to sections */
+.level2:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
