@@ -13,9 +13,9 @@ format:
   html:
     theme:
       light: 
-        - sketchy
+        - flatly
       dark:
-        - cosmo
+        - sketchy
     css: styles.css
     toc: true
 

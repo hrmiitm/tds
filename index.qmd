@@ -1,6 +1,6 @@
 ---
 title: "TDS - Tools for Data Science"
-subtitle: "🚀 Complete Course Roadmap & Syllabus"
+subtitle: "🚀 Proposed Syllabus"
 author: "HRM"
 date: 18 August 2025
 format:
