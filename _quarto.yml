@@ -8,6 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: "./OsBoot/osboot.qmd"
+        text: "OS Boot"
 
 format:
   html:

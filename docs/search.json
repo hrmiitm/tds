@@ -152,5 +152,187 @@
     "title": "TDS - Tools for Data Science",
     "section": "",
     "text": "Voice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time."
+  },
+  {
+    "objectID": "OsBoot/osboot.html",
+    "href": "OsBoot/osboot.html",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\nflowchart TD\n    A[Power Button] --&gt; B[Firmware Starts]\n    B --&gt; C[POST Check]\n    C --&gt; D[Find Boot Device]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#table-of-contents",
+    "href": "OsBoot/osboot.html#table-of-contents",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#overview-overview",
+    "href": "OsBoot/osboot.html#overview-overview",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start."
+  },
+  {
+    "objectID": "OsBoot/osboot.html#boot-process-steps-boot-process-steps",
+    "href": "OsBoot/osboot.html#boot-process-steps-boot-process-steps",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#partition-styles-vs-file-systems-partition-styles-vs-file-systems",
+    "href": "OsBoot/osboot.html#partition-styles-vs-file-systems-partition-styles-vs-file-systems",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#boot-process-summary-boot-process-summary",
+    "href": "OsBoot/osboot.html#boot-process-summary-boot-process-summary",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\nflowchart TD\n    A[Power Button] --&gt; B[Firmware Starts]\n    B --&gt; C[POST Check]\n    C --&gt; D[Find Boot Device]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#frequently-asked-questions-frequently-asked-questions",
+    "href": "OsBoot/osboot.html#frequently-asked-questions-frequently-asked-questions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#resources-resources",
+    "href": "OsBoot/osboot.html#resources-resources",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+  },
+  {
+    "objectID": "OsBoot/note.html",
+    "href": "OsBoot/note.html",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\nflowchart TD\n    A[Power Button] --&gt; B[Firmware Starts]\n    B --&gt; C[POST Check]\n    C --&gt; D[Find Boot Device]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+  },
+  {
+    "objectID": "OsBoot/note.html#table-of-contents",
+    "href": "OsBoot/note.html#table-of-contents",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources"
+  },
+  {
+    "objectID": "OsBoot/note.html#overview",
+    "href": "OsBoot/note.html#overview",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start."
+  },
+  {
+    "objectID": "OsBoot/note.html#boot-process-steps",
+    "href": "OsBoot/note.html#boot-process-steps",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface"
+  },
+  {
+    "objectID": "OsBoot/note.html#partition-styles-vs-file-systems-partition-styles-vs-file-systems",
+    "href": "OsBoot/note.html#partition-styles-vs-file-systems-partition-styles-vs-file-systems",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives"
+  },
+  {
+    "objectID": "OsBoot/note.html#boot-process-summary-boot-process-summary",
+    "href": "OsBoot/note.html#boot-process-summary-boot-process-summary",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\nflowchart TD\n    A[Power Button] --&gt; B[Firmware Starts]\n    B --&gt; C[POST Check]\n    C --&gt; D[Find Boot Device]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
+  },
+  {
+    "objectID": "OsBoot/note.html#frequently-asked-questions-frequently-asked-questions",
+    "href": "OsBoot/note.html#frequently-asked-questions-frequently-asked-questions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup"
+  },
+  {
+    "objectID": "OsBoot/note.html#resources-resources",
+    "href": "OsBoot/note.html#resources-resources",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#overview",
+    "href": "OsBoot/osboot.html#overview",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start."
+  },
+  {
+    "objectID": "OsBoot/osboot.html#boot-process-steps",
+    "href": "OsBoot/osboot.html#boot-process-steps",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface"
+  },
+  {
+    "objectID": "OsBoot/note.html#partition-styles-vs-file-systems",
+    "href": "OsBoot/note.html#partition-styles-vs-file-systems",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives"
+  },
+  {
+    "objectID": "OsBoot/note.html#boot-process-summary",
+    "href": "OsBoot/note.html#boot-process-summary",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\nflowchart TD\n    A[Power Button] --&gt; B[Firmware Starts]\n    B --&gt; C[POST Check]\n    C --&gt; D[Find Boot Device]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
+  },
+  {
+    "objectID": "OsBoot/note.html#frequently-asked-questions",
+    "href": "OsBoot/note.html#frequently-asked-questions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#partition-styles-vs-file-systems",
+    "href": "OsBoot/osboot.html#partition-styles-vs-file-systems",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#boot-process-summary",
+    "href": "OsBoot/osboot.html#boot-process-summary",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\nflowchart TD\n    A[Power Button] --&gt; B[Firmware Starts]\n    B --&gt; C[POST Check]\n    C --&gt; D[Find Boot Device]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#frequently-asked-questions",
+    "href": "OsBoot/osboot.html#frequently-asked-questions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup"
+  },
+  {
+    "objectID": "OsBoot/note.html#resources",
+    "href": "OsBoot/note.html#resources",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#resources",
+    "href": "OsBoot/osboot.html#resources",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
   }
 ]
