@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="HRM">
+<meta name="dcterms.date" content="2025-08-21">
 
-<title>note – TDS</title>
+<title>Computer Boot Process: Essential Guide – TDS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -36,14 +73,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-59898bd1c6b9d2bb783127feaa000c76.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d329e753491efaeac79c98c4b193a686.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-59898bd1c6b9d2bb783127feaa000c76.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1dc3000b8b2862970729446b73cd7afa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-64a89669c3516b6e2b2f1e17ceabfc6e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-1dc3000b8b2862970729446b73cd7afa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f1557a2841506a0fb2a49f2cbc7c7b09.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d91a074644d004b7f36fed34b76002c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f1557a2841506a0fb2a49f2cbc7c7b09.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,9 +108,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -262,10 +297,25 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../OsBoot/osboot.html"> 
-<span class="menu-text">OS Boot</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-os" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">OS</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-os">    
+        <li>
+    <a class="dropdown-item" href="../osboot.qmd">
+ <span class="dropdown-text">Boot Process Overview</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../OsBoot/osboot1.html">
+ <span class="dropdown-text">Boot Process Details</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../OsBoot/osboot2.html">
+ <span class="dropdown-text">Advanced Boot Topics</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -280,313 +330,182 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Navigation</h2>
    
   <ul>
-  <li><a href="#computer-boot-process-essential-guide" id="toc-computer-boot-process-essential-guide" class="nav-link active" data-scroll-target="#computer-boot-process-essential-guide">Computer Boot Process: Essential Guide</a>
-  <ul class="collapse">
-  <li><a href="#table-of-contents" id="toc-table-of-contents" class="nav-link" data-scroll-target="#table-of-contents">Table of Contents</a></li>
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#boot-process-steps" id="toc-boot-process-steps" class="nav-link" data-scroll-target="#boot-process-steps">Boot Process Steps</a>
-  <ul class="collapse">
-  <li><a href="#step-1-firmware-initialization" id="toc-step-1-firmware-initialization" class="nav-link" data-scroll-target="#step-1-firmware-initialization">Step 1: Firmware Initialization</a></li>
-  <li><a href="#step-2-post-and-boot-device-detection" id="toc-step-2-post-and-boot-device-detection" class="nav-link" data-scroll-target="#step-2-post-and-boot-device-detection">Step 2: POST and Boot Device Detection</a></li>
-  <li><a href="#step-3-bootloader-execution" id="toc-step-3-bootloader-execution" class="nav-link" data-scroll-target="#step-3-bootloader-execution">Step 3: Bootloader Execution</a></li>
-  <li><a href="#step-4-operating-system-loading" id="toc-step-4-operating-system-loading" class="nav-link" data-scroll-target="#step-4-operating-system-loading">Step 4: Operating System Loading</a></li>
-  </ul></li>
-  <li><a href="#partition-styles-vs-file-systems" id="toc-partition-styles-vs-file-systems" class="nav-link" data-scroll-target="#partition-styles-vs-file-systems">Partition Styles vs File Systems</a>
-  <ul class="collapse">
-  <li><a href="#partition-styles" id="toc-partition-styles" class="nav-link" data-scroll-target="#partition-styles">Partition Styles</a></li>
-  <li><a href="#file-systems" id="toc-file-systems" class="nav-link" data-scroll-target="#file-systems">File Systems</a></li>
-  </ul></li>
-  <li><a href="#boot-process-summary" id="toc-boot-process-summary" class="nav-link" data-scroll-target="#boot-process-summary">Boot Process Summary</a></li>
-  <li><a href="#frequently-asked-questions" id="toc-frequently-asked-questions" class="nav-link" data-scroll-target="#frequently-asked-questions">Frequently Asked Questions</a>
-  <ul class="collapse">
-  <li><a href="#q1-whats-the-difference-between-bios-and-uefi" id="toc-q1-whats-the-difference-between-bios-and-uefi" class="nav-link" data-scroll-target="#q1-whats-the-difference-between-bios-and-uefi">Q1: What’s the difference between BIOS and UEFI?</a></li>
-  <li><a href="#q2-whats-the-difference-between-partition-style-and-file-system" id="toc-q2-whats-the-difference-between-partition-style-and-file-system" class="nav-link" data-scroll-target="#q2-whats-the-difference-between-partition-style-and-file-system">Q2: What’s the difference between partition style and file system?</a></li>
-  <li><a href="#q3-can-i-dual-boot-multiple-operating-systems" id="toc-q3-can-i-dual-boot-multiple-operating-systems" class="nav-link" data-scroll-target="#q3-can-i-dual-boot-multiple-operating-systems">Q3: Can I dual boot multiple operating systems?</a></li>
-  </ul></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
-  <ul class="collapse">
-  <li><a href="#video-tutorials" id="toc-video-tutorials" class="nav-link" data-scroll-target="#video-tutorials">Video Tutorials</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#remove-previouse-installed-distributions" id="toc-remove-previouse-installed-distributions" class="nav-link active" data-scroll-target="#remove-previouse-installed-distributions">Remove Previouse Installed Distributions</a></li>
+  <li><a href="#update-wsl-ubuntu-installation" id="toc-update-wsl-ubuntu-installation" class="nav-link" data-scroll-target="#update-wsl-ubuntu-installation">Update WSL –&gt; Ubuntu Installation</a></li>
+  <li><a href="#install-javascript-tools" id="toc-install-javascript-tools" class="nav-link" data-scroll-target="#install-javascript-tools">Install JavaScript Tools</a></li>
+  <li><a href="#install-python-tools" id="toc-install-python-tools" class="nav-link" data-scroll-target="#install-python-tools">Install Python Tools</a></li>
+  <li><a href="#install-cc-tools" id="toc-install-cc-tools" class="nav-link" data-scroll-target="#install-cc-tools">Install C/C++ Tools</a></li>
+  <li><a href="#install-java-tools" id="toc-install-java-tools" class="nav-link" data-scroll-target="#install-java-tools">Install Java Tools</a></li>
+  <li><a href="#use-npx" id="toc-use-npx" class="nav-link" data-scroll-target="#use-npx">Use NPX</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="osboot2.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Computer Boot Process: Essential Guide</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Understanding How Your Computer Starts Up</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>HRM </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 21, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
-<section id="computer-boot-process-essential-guide" class="level1">
-<h1>Computer Boot Process: Essential Guide</h1>
-<section id="table-of-contents" class="level2">
-<h2 class="anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
+</header>
+
+
+<section id="remove-previouse-installed-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="remove-previouse-installed-distributions">Remove Previouse Installed Distributions</h2>
+<p><code>wsl --list --verbose</code></p>
+<p>For Each Listed distribution - <code>wsl --unregister &lt;DistributionName&gt;</code> - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall</p>
+</section>
+<section id="update-wsl-ubuntu-installation" class="level2">
+<h2 class="anchored" data-anchor-id="update-wsl-ubuntu-installation">Update WSL –&gt; Ubuntu Installation</h2>
+<p><code>wsl --update</code><br>
+<code>wsl --list --online</code><br>
+<code>wsl --install Ubuntu-24.04</code> –&gt; Install Ubuntu<br>
+<code>sudo apt update &amp;&amp; sudo apt upgrade -y</code> –&gt; Update Ubuntu</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PS</span> C<span class="op">:</span>\Users\hrith<span class="op">&gt;</span> wsl <span class="op">--</span>install Ubuntu-24<span class="op">.</span><span class="dv">04</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">Downloading</span><span class="op">:</span> Ubuntu <span class="dv">24.04</span> LTS</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Installing<span class="op">:</span> Ubuntu <span class="dv">24.04</span> LTS</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Distribution successfully installed<span class="op">.</span> It can be launched via <span class="st">'wsl.exe -d Ubuntu-24.04'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Launching Ubuntu-24<span class="op">.</span><span class="dv">04</span><span class="op">...</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Provisioning the new WSL instance Ubuntu-24<span class="op">.</span><span class="dv">04</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">This</span> might take a <span class="cf">while</span><span class="op">...</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Create a default Unix user account<span class="op">:</span> hrm</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>New password<span class="op">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Retype new password<span class="op">:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>passwd<span class="op">:</span> password updated successfully</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>To run a command as administrator <span class="op">(</span>user <span class="st">"root"</span><span class="op">),</span> use <span class="st">"sudo &lt;command&gt;"</span><span class="op">.</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>See <span class="st">"man sudo_root"</span> <span class="cf">for</span> details<span class="op">.</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>hrm@bitnd<span class="op">:/</span>mnt<span class="op">/</span>c<span class="op">/</span>Users<span class="op">/</span>hrith$ sudo apt update <span class="op">&amp;&amp;</span> sudo apt upgrade <span class="op">-</span>y</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>sudo<span class="op">]</span> password <span class="cf">for</span> hrm<span class="op">:</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Hit<span class="op">:</span><span class="dv">1</span> http<span class="op">://</span>archive<span class="op">.</span><span class="fu">ubuntu</span><span class="op">.</span><span class="fu">com</span><span class="op">/</span>ubuntu noble InRelease</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Get<span class="op">:</span><span class="dv">2</span> http<span class="op">://</span>security<span class="op">.</span><span class="fu">ubuntu</span><span class="op">.</span><span class="fu">com</span><span class="op">/</span>ubuntu noble-security InRelease <span class="op">[</span><span class="dv">126</span> kB<span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="install-javascript-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-javascript-tools">Install JavaScript Tools</h2>
+<ul>
+<li>nvm install visit and run bash script <code>https://github.com/nvm-sh/nvm</code></li>
+<li>node install <code>https://nodejs.org/en/download</code>
+<ul>
+<li><code>nvm install 22</code></li>
+<li><code>nvm list</code> <code>nvm use 22</code> <code>nvm current</code></li>
+<li><code>corepack enable yarn</code></li>
+<li><code>corepack enable pnpm</code> &gt; Check</li>
+</ul></li>
+<li><code>nvm -v</code></li>
+<li><code>node -v</code></li>
+<li><code>npm -v</code> <code>npx -v</code></li>
+<li><code>pnpm -v</code></li>
+<li><code>yarn -v</code></li>
+</ul>
+</section>
+<section id="install-python-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-python-tools">Install Python Tools</h2>
 <ol type="1">
-<li><a href="#overview">Overview</a></li>
-<li><a href="#boot-process-steps">Boot Process Steps</a></li>
-<li><a href="#partition-styles-vs-file-systems">Partition Styles vs File Systems</a></li>
-<li><a href="#boot-process-summary">Boot Process Summary</a></li>
-<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
-<li><a href="#resources">Resources</a></li>
+<li>Python VENV
+<ul>
+<li><code>python3 -m venv .venv</code> –&gt; Copy error code and run <code>sudo apt install python3.12-venv</code></li>
+</ul></li>
+<li>PIPX
+<ul>
+<li><code>sudo apt install pipx</code></li>
+</ul></li>
+<li>UV - Rust-based Python package installer
+<ul>
+<li><code>pipx install uv</code> It will maintain isolation</li>
+</ul></li>
+<li>LLM
+<ul>
+<li><code>pipx install llm</code> –&gt; <code>pipx ensurepath</code></li>
+<li>Configure it
+<ul>
+<li><code>llm install llm-gemini</code> or <code>llm install llm-ollama</code></li>
+<li><code>llm keys set gemini</code></li>
+<li><code>llm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'</code></li>
+</ul></li>
+</ul></li>
+<li>MiniConda
+<ul>
+<li>Download .sh <code>https://www.anaconda.com/download/success</code></li>
+<li><code>bash &lt;pathto .sh file&gt;</code></li>
+<li><code>conda config --set auto_activate_base false</code></li>
+</ul></li>
 </ol>
 </section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.</p>
+<section id="install-cc-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-cc-tools">Install C/C++ Tools</h2>
+<p><code>sudo apt install build-essential</code> - <code>gcc</code> –&gt; The C compiler - <code>g++</code> –&gt; The C++ compiler</p>
+<blockquote class="blockquote">
+<p>Check - gcc –verison - g++ –version</p>
+</blockquote>
 </section>
-<section id="boot-process-steps" class="level2">
-<h2 class="anchored" data-anchor-id="boot-process-steps">Boot Process Steps</h2>
-<section id="step-1-firmware-initialization" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-firmware-initialization">Step 1: Firmware Initialization</h3>
-<p>When you press the power button:</p>
+<section id="install-java-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-java-tools">Install Java Tools</h2>
+<p><code>sudo apt install default-jdk</code></p>
+<blockquote class="blockquote">
+<p>This command installs:</p>
+</blockquote>
+<pre><code>Java Development Kit (JDK) - Compiler, debugger, and development tools
+Java Runtime Environment (JRE) - Required to run Java applications
+Java Virtual Machine (JVM) - Core execution environment</code></pre>
 <ul>
-<li><strong>CPU</strong> executes the first program BIOS/UEFI
+<li>Configure <code>JAVA_HOME</code> Environment Variable
 <ul>
-<li><strong>BIOS</strong> (Basic Input/Output System) - Legacy firmware (used in old computers)</li>
-<li><strong>UEFI</strong> (Unified Extensible Firmware Interface) - Modern firmware</li>
+<li><code>echo 'export JAVA_HOME="/usr/lib/jvm/default-java"' &gt;&gt; ~/.bashrc</code> ## confirm the path first using below update-alternatiove… command</li>
+<li>restart shell</li>
+</ul></li>
+<li>Install other versions of java
+<ul>
+<li><code>sudo apt install openjdk-17-jdk</code></li>
+</ul></li>
+<li>Set Default Java/Javac installed version
+<ul>
+<li><code>sudo update-alternatives --config java</code></li>
+<li><code>sudo update-alternatives --config javac</code></li>
 </ul></li>
 </ul>
+<blockquote class="blockquote">
+<p>Check<br>
+- <code>java --version</code> - <code>javac --version</code> - <code>echo $JAVA_HOME</code></p>
+</blockquote>
 </section>
-<section id="step-2-post-and-boot-device-detection" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-post-and-boot-device-detection">Step 2: POST and Boot Device Detection</h3>
-<p><strong>POST (Power-On Self Test):</strong></p>
+<section id="use-npx" class="level2">
+<h2 class="anchored" data-anchor-id="use-npx">Use NPX</h2>
 <ul>
-<li>Tests CPU, RAM, and storage devices</li>
-<li>Validates hardware components</li>
-</ul>
-<p><strong>Boot Device Selection:</strong></p>
-<ul>
-<li>Reads <strong>Boot Order</strong> from firmware settings</li>
-<li><strong>GPT drives</strong>: Looks for EFI System Partition</li>
-<li><strong>MBR drives</strong>: Checks Master Boot Record in first sector</li>
-</ul>
-</section>
-<section id="step-3-bootloader-execution" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-bootloader-execution">Step 3: Bootloader Execution</h3>
-<p><strong>Common Bootloaders:</strong></p>
-<p>Linux or Window bootloader, both can scan and start any OS windows or linux.<br>
-- <strong>Linux</strong>: GRUB2, LILO, systemd-boot - <strong>Windows</strong>: Windows Boot Manager</p>
-<p><strong>Bootloader Tasks:</strong></p>
-<ul>
-<li>Scans partitions for installed operating systems</li>
-<li>Presents boot menu (if multiple OS found)</li>
-<li>Loads selected OS kernel into memory</li>
-</ul>
-</section>
-<section id="step-4-operating-system-loading" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-operating-system-loading">Step 4: Operating System Loading</h3>
-<p><strong>Linux OS Boot:</strong></p>
-<ol type="1">
-<li>Kernel loads and initializes hardware</li>
-<li><strong>systemd</strong> starts (modern init system)</li>
-<li>System services launch</li>
-<li>User login interface appears</li>
-</ol>
-<p><strong>Windows OS Boot:</strong></p>
-<ol type="1">
-<li><strong>NT Kernel</strong> (<code>ntoskrnl.exe</code>) loads</li>
-<li><strong>Hardware Abstraction Layer</strong> initializes</li>
-<li><strong>Registry</strong> and system drivers load</li>
-<li><strong>Session Manager</strong> starts Windows subsystems</li>
-<li><strong>Windows Logon</strong> presents login interface</li>
-</ol>
-</section>
-</section>
-<section id="partition-styles-vs-file-systems" class="level2">
-<h2 class="anchored" data-anchor-id="partition-styles-vs-file-systems">Partition Styles vs File Systems</h2>
-<section id="partition-styles" class="level3">
-<h3 class="anchored" data-anchor-id="partition-styles">Partition Styles</h3>
-<p>Partition styles define how a drive is divided into sections:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Feature</th>
-<th style="text-align: left;">MBR</th>
-<th style="text-align: left;">GPT</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Max Partitions</strong></td>
-<td style="text-align: left;">4 primary OR 3 primary + 1 extended</td>
-<td style="text-align: left;">128 primary</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Max Storage</strong></td>
-<td style="text-align: left;">2 TB</td>
-<td style="text-align: left;">18+ exabytes</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Boot Support</strong></td>
-<td style="text-align: left;">BIOS only</td>
-<td style="text-align: left;">BIOS + UEFI</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="file-systems" class="level3">
-<h3 class="anchored" data-anchor-id="file-systems">File Systems</h3>
-<p>File systems determine how data is stored within partitions:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">File System</th>
-<th style="text-align: left;">OS</th>
-<th style="text-align: left;">Use Case</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>NTFS</strong></td>
-<td style="text-align: left;">Windows</td>
-<td style="text-align: left;">System drives, large files</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>FAT32</strong></td>
-<td style="text-align: left;">Cross-platform</td>
-<td style="text-align: left;">USB drives, compatibility</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>ext4</strong></td>
-<td style="text-align: left;">Linux</td>
-<td style="text-align: left;">Linux system drives</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>APFS</strong></td>
-<td style="text-align: left;">macOS</td>
-<td style="text-align: left;">macOS system drives</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="boot-process-summary" class="level2">
-<h2 class="anchored" data-anchor-id="boot-process-summary">Boot Process Summary</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Phase</th>
-<th style="text-align: left;">Component</th>
-<th style="text-align: left;">Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Firmware (BIOS/UEFI)</td>
-<td style="text-align: left;">Hardware initialization</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">POST</td>
-<td style="text-align: left;">Hardware verification</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Bootloader</td>
-<td style="text-align: left;">OS selection and loading</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">OS Kernel</td>
-<td style="text-align: left;">System initialization</td>
-</tr>
-</tbody>
-</table>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A[Power On] --&gt; B[Bios/Uefi]
-    B --&gt; C[POST Check]
-    C --&gt; D[LocateDrive]
-    D --&gt; E[Run Bootloader]
-    E --&gt; F{Select OS}
-    F --&gt;|Linux| G[Kernel + systemd]
-    F --&gt;|Windows| H[NT Kernel]
-    G --&gt; I[User Login]
-    H --&gt; I
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="frequently-asked-questions" class="level2">
-<h2 class="anchored" data-anchor-id="frequently-asked-questions">Frequently Asked Questions</h2>
-<section id="q1-whats-the-difference-between-bios-and-uefi" class="level3">
-<h3 class="anchored" data-anchor-id="q1-whats-the-difference-between-bios-and-uefi">Q1: What’s the difference between BIOS and UEFI?</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Feature</th>
-<th style="text-align: left;">BIOS</th>
-<th style="text-align: left;">UEFI</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Interface</strong></td>
-<td style="text-align: left;">Text-only</td>
-<td style="text-align: left;">Graphical possible</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Storage Support</strong></td>
-<td style="text-align: left;">2 TB max</td>
-<td style="text-align: left;">No practical limit</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Security</strong></td>
-<td style="text-align: left;">Basic</td>
-<td style="text-align: left;">Secure Boot</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Speed</strong></td>
-<td style="text-align: left;">Slower</td>
-<td style="text-align: left;">Faster</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="q2-whats-the-difference-between-partition-style-and-file-system" class="level3">
-<h3 class="anchored" data-anchor-id="q2-whats-the-difference-between-partition-style-and-file-system">Q2: What’s the difference between partition style and file system?</h3>
-<p><strong>Partition Style:</strong> Defines how the drive is divided (MBR vs GPT) <strong>File System:</strong> Defines how files are stored within each partition (NTFS, ext4, etc.)</p>
-</section>
-<section id="q3-can-i-dual-boot-multiple-operating-systems" class="level3">
-<h3 class="anchored" data-anchor-id="q3-can-i-dual-boot-multiple-operating-systems">Q3: Can I dual boot multiple operating systems?</h3>
-<p>Yes, by:</p>
-<ul>
-<li>Installing each OS on separate partitions</li>
-<li>Using a bootloader that detects all systems</li>
-<li>Selecting which OS to boot at startup</li>
-</ul>
-</section>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<section id="video-tutorials" class="level3">
-<h3 class="anchored" data-anchor-id="video-tutorials">Video Tutorials</h3>
-<ul>
-<li><a href="https://youtu.be/XpFsMB6FoOs?si=1I3NxtlIJxR_Rm15">Boot Process (English)</a></li>
-<li><a href="https://youtu.be/sebgrmiYdk4?si=2826LMkJMHlLhExv">Boot Process (Hindi)</a></li>
-<li><a href="https://youtu.be/K2NsltEIUlI?si=AyBhrLQ6RItdx7QL">Windows Partitions (Hindi)</a></li>
+<li><code>npm install -g promptfoo</code> then <code>npx promptfoo view</code></li>
 </ul>
 
 
-</section>
-</section>
+<!-- -->
+
 </section>
 
 </main> <!-- /main -->
@@ -672,6 +591,57 @@ ul.task-list li input[type="checkbox"] {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1001,10 +971,64 @@ ul.task-list li input[type="checkbox"] {
       }
     }
   });
-  </script>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Computer Boot Process: Essential Guide"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Understanding How Your Computer Starts Up"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "HRM"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 21 August 2025</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "MMMM DD, YYYY"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: right</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-title: "Navigation"</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: false</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">    mermaid:</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">      theme: default</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: false</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">    smooth-scroll: true</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">    anchor-sections: true</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 8</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 6</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-align: center</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">    df-print: kable</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight-style: github</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">    css: "../styles.css"</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: false</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">    geometry:</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">      - top=30mm</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">      - left=30mm</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">      - heightrounded</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 7</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 5</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-align: center</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co">    df-print: kable</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co">    fontsize: 14pt</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co">    documentclass: article</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co">    papersize: a4</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co">    keep-tex: false</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="an">link-citations:</span><span class="co"> true</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>{{&lt; include wsl.qmd &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

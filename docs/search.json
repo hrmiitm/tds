@@ -74,35 +74,50 @@
     "href": "index.html",
     "title": "TDS - Tools for Data Science",
     "section": "",
-    "text": "📌 Quick Navigation\n\n\nWeek 1 → Development Tools\nWeek 2 → Deployment Tools\nWeek 3 → LLM APIs\n🚀 Project 1 → ?\nWeek 4 → LangChain\nWeek 5 → LangGraph\nWeek 6 → Quarto Websites & AWK\n🚀 Project 2 → ?\nWeek 7 → ?\n\n\n📌 Small Projects\nW1-&gt; Simple ChatBot (No Memory)\nW2-&gt; Memory-Based ChatBot\nW3-&gt; PDF ChatBot\nW4-&gt; YouTube Playlist QA Assistant\nW5-&gt; SQL Query Agent\nW6-&gt; Portfolio Website\nVoice-enabled AI Chat Assistant\n\n\n\n\n\n\nIntro to Linux (Dual Boot, WSL)\n\nLanguage Setup & Config (bashrc, venv, nvm, etc.)\n\nJS → nvm, node, npm, pnpm, yarn\n\nC/C++ → gcc vs g++\n\nJava → jdk, jre, jvm\n\nPython → venv, pipx, conda, uv\n\n\nGit Basics\n\ninit, add, commit, push\n\nUndo/redo commits\n\n\nFastAPI Basics\n\nOllama Setup\n\n\nSmall Project → Simple ChatBot (No Memory)\n- Build a FastAPI endpoint /ask with Ollama (Gemma).\n- Answers queries without history.\n\n\n\n\n\n\nAdvanced Git/GitHub\n\nBranching, Merging, Actions\n\nDocker/Podman\n\nDockerfile, Volumes, Networks\n\nAdvanced FastAPI\n\nDeployment Platforms\n\nVercel, Render, GitHub Pages\n\nEC2 Deployment with GitHub Actions + Docker\n\n\nSmall Project → Memory-Based ChatBot\n- FastAPI endpoint /chat with Gemini LLM.\n- Maintains multi-turn memory in RAM.\n\n\n\n\n\n\nPrompt Engineering\n\nZero-shot, Few-shot\n\n\nFunction Calling\n\nBase64 Encoding\n\nVector Databases & RAG\n\nOpenAI API Docs\nPromptFoo\n\n\nSmall Project → PDF ChatBot\n- Upload PDF → Extract text → Store in Vector DB.\n- Build RAG pipeline with Streamlit UI + FastAPI backend.\n- Multi-turn Q&A → returns answer + page number.\n\n\n\n\n\n\n\n\n\n\nPydantic Models\n\nStructured Prompts & Output Parsers\n\nChains & Runnables\n\nText Splitters\n\nVectorStores in LangChain\n\nRAG + Tool Calling\n\n\nSmall Project → YouTube Playlist QA Assistant\n- Scrape subtitles from each video of playlist.\n- Store in a vector DB.\n- Build chatbot → answers video-specific queries.\n\n\n\n\n\n\n⚠️ I Don’t have much knowledge on this topic.\n\n\nSmall Project → *SQL Query Agent\n- Convert natural language → SQL query.\n- Run on DB → Return tabular results**.\n\n\n\n\n\n\nQuarto + GitHub Pages\n\nRevealJS Presentations\n\nMarkdown → Website conversion\n\nExcel Toolpack (Correlation, Regression, Data Analysis)\n\nAWK Basics (text processing)\n\n\nSmall Project → Portfolio Website\n- Publish your portfolio with Quarto + GitHub Pages.\n\n\n\n\n\n\n\n\n\n\n\n\n\nVoice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time."
+    "text": "📌 Quick Navigation\n\n\nWeek 1 → Development Tools\nWeek 2 → Deployment Tools\nWeek 3 → LLM APIs\n🚀 Project 1 → ?\nWeek 4 → LangChain\nWeek 5 → LangGraph\nWeek 6 → Quarto Websites & AWK\n🚀 Project 2 → ?\nWeek 7 → ?\n\n\n📌 Small Projects\nW1-&gt; Simple ChatBot (No Memory)\nW2-&gt; Memory-Based ChatBot\nW3-&gt; PDF ChatBot\nW4-&gt; YouTube Playlist QA Assistant\nW5-&gt; SQL Query Agent\nW6-&gt; Portfolio Website\nVoice-enabled AI Chat Assistant\n\n\n\n\n\n\nIntro to Linux (Dual Boot, WSL)\n\nLanguage Setup & Config (bashrc, venv, nvm, etc.)\n\nJS → nvm, node, npm, pnpm, yarn\n\nC/C++ → gcc vs g++\n\nJava → jdk, jre, jvm\n\nPython → venv, pipx, conda, uv\n\n\nGit Basics\n\ninit, add, commit, push\n\nUndo/redo commits\n\n\nFastAPI Basics\n\nOllama Setup\n\n\nSmall Project → Simple ChatBot (No Memory)\n- Build a FastAPI endpoint /ask with Ollama (Gemma).\n- Answers queries without history.\n\n\n\n\n\n\nAdvanced Git/GitHub\n\nBranching, Merging, Actions\n\nDocker/Podman\n\nDockerfile, Volumes, Networks\n\nAdvanced FastAPI\n\nDeployment Platforms\n\nVercel, Render, GitHub Pages\n\nEC2 Deployment with GitHub Actions + Docker\n\n\nSmall Project → Memory-Based ChatBot\n- FastAPI endpoint /chat with Gemini LLM.\n- Maintains multi-turn memory in RAM.\n\n\n\n\n\n\nPrompt Engineering\n\nZero-shot, Few-shot\n\n\nFunction Calling\n\nBase64 Encoding\n\nVector Databases & RAG\n\nOpenAI API Docs\nPromptFoo\n\n\nSmall Project → PDF ChatBot\n- Upload PDF → Extract text → Store in Vector DB.\n- Build RAG pipeline with Streamlit UI + FastAPI backend.\n- Multi-turn Q&A → returns answer + page number.\n\n\n\n\n\n\n\n\n\n\nPydantic Models\n\nStructured Prompts & Output Parsers\n\nChains & Runnables\n\nText Splitters\n\nVectorStores in LangChain\n\nRAG + Tool Calling\n\n\nSmall Project → YouTube Playlist QA Assistant\n- Scrape subtitles from each video of playlist.\n- Store in a vector DB.\n- Build chatbot → answers video-specific queries.\n\n\n\n\n\n\n⚠️ I Don’t have much knowledge on this topic.\n\n\nSmall Project → *SQL Query Agent\n- Convert natural language → SQL query.\n- Run on DB → Return tabular results**.\n\n\n\n\n\n\nQuarto + GitHub Pages\n\nRevealJS Presentations\n\nMarkdown → Website conversion\n\nExcel Toolpack (Correlation, Regression, Data Analysis)\n\nAWK Basics (text processing)\n\n\nSmall Project → Portfolio Website\n- Publish your portfolio with Quarto + GitHub Pages.\n\n\n\n\n\n\n\n\n\n\n\n\n\nVoice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time.",
+    "crumbs": [
+      "About The Course"
+    ]
   },
   {
     "objectID": "index.html#index",
     "href": "index.html#index",
     "title": "TDS - Tools for Data Science",
     "section": "",
-    "text": "📌 Quick Navigation\n\n\nWeek 1 → Development Tools\nWeek 2 → Deployment Tools\nWeek 3 → LLM APIs\n🚀 Project 1 → ?\nWeek 4 → LangChain\nWeek 5 → LangGraph\nWeek 6 → Quarto Websites & AWK\n🚀 Project 2 → ?\nWeek 7 → ?\n\n\n📌 Small Projects\nW1-&gt; Simple ChatBot (No Memory)\nW2-&gt; Memory-Based ChatBot\nW3-&gt; PDF ChatBot\nW4-&gt; YouTube Playlist QA Assistant\nW5-&gt; SQL Query Agent\nW6-&gt; Portfolio Website\nVoice-enabled AI Chat Assistant"
+    "text": "📌 Quick Navigation\n\n\nWeek 1 → Development Tools\nWeek 2 → Deployment Tools\nWeek 3 → LLM APIs\n🚀 Project 1 → ?\nWeek 4 → LangChain\nWeek 5 → LangGraph\nWeek 6 → Quarto Websites & AWK\n🚀 Project 2 → ?\nWeek 7 → ?\n\n\n📌 Small Projects\nW1-&gt; Simple ChatBot (No Memory)\nW2-&gt; Memory-Based ChatBot\nW3-&gt; PDF ChatBot\nW4-&gt; YouTube Playlist QA Assistant\nW5-&gt; SQL Query Agent\nW6-&gt; Portfolio Website\nVoice-enabled AI Chat Assistant",
+    "crumbs": [
+      "About The Course"
+    ]
   },
   {
     "objectID": "index.html#week-1-development-tools",
     "href": "index.html#week-1-development-tools",
     "title": "TDS - Tools for Data Science",
     "section": "",
-    "text": "Intro to Linux (Dual Boot, WSL)\n\nLanguage Setup & Config (bashrc, venv, nvm, etc.)\n\nJS → nvm, node, npm, pnpm, yarn\n\nC/C++ → gcc vs g++\n\nJava → jdk, jre, jvm\n\nPython → venv, pipx, conda, uv\n\n\nGit Basics\n\ninit, add, commit, push\n\nUndo/redo commits\n\n\nFastAPI Basics\n\nOllama Setup\n\n\nSmall Project → Simple ChatBot (No Memory)\n- Build a FastAPI endpoint /ask with Ollama (Gemma).\n- Answers queries without history."
+    "text": "Intro to Linux (Dual Boot, WSL)\n\nLanguage Setup & Config (bashrc, venv, nvm, etc.)\n\nJS → nvm, node, npm, pnpm, yarn\n\nC/C++ → gcc vs g++\n\nJava → jdk, jre, jvm\n\nPython → venv, pipx, conda, uv\n\n\nGit Basics\n\ninit, add, commit, push\n\nUndo/redo commits\n\n\nFastAPI Basics\n\nOllama Setup\n\n\nSmall Project → Simple ChatBot (No Memory)\n- Build a FastAPI endpoint /ask with Ollama (Gemma).\n- Answers queries without history.",
+    "crumbs": [
+      "About The Course"
+    ]
   },
   {
     "objectID": "index.html#week-2-deployment-tools",
     "href": "index.html#week-2-deployment-tools",
     "title": "TDS - Tools for Data Science",
     "section": "",
-    "text": "Advanced Git/GitHub\n\nBranching, Merging, Actions\n\nDocker/Podman\n\nDockerfile, Volumes, Networks\n\nAdvanced FastAPI\n\nDeployment Platforms\n\nVercel, Render, GitHub Pages\n\nEC2 Deployment with GitHub Actions + Docker\n\n\nSmall Project → Memory-Based ChatBot\n- FastAPI endpoint /chat with Gemini LLM.\n- Maintains multi-turn memory in RAM."
+    "text": "Advanced Git/GitHub\n\nBranching, Merging, Actions\n\nDocker/Podman\n\nDockerfile, Volumes, Networks\n\nAdvanced FastAPI\n\nDeployment Platforms\n\nVercel, Render, GitHub Pages\n\nEC2 Deployment with GitHub Actions + Docker\n\n\nSmall Project → Memory-Based ChatBot\n- FastAPI endpoint /chat with Gemini LLM.\n- Maintains multi-turn memory in RAM.",
+    "crumbs": [
+      "About The Course"
+    ]
   },
   {
     "objectID": "index.html#week-3-llm-apis",
     "href": "index.html#week-3-llm-apis",
     "title": "TDS - Tools for Data Science",
     "section": "",
-    "text": "Prompt Engineering\n\nZero-shot, Few-shot\n\n\nFunction Calling\n\nBase64 Encoding\n\nVector Databases & RAG\n\nOpenAI API Docs\nPromptFoo\n\n\nSmall Project → PDF ChatBot\n- Upload PDF → Extract text → Store in Vector DB.\n- Build RAG pipeline with Streamlit UI + FastAPI backend.\n- Multi-turn Q&A → returns answer + page number."
+    "text": "Prompt Engineering\n\nZero-shot, Few-shot\n\n\nFunction Calling\n\nBase64 Encoding\n\nVector Databases & RAG\n\nOpenAI API Docs\nPromptFoo\n\n\nSmall Project → PDF ChatBot\n- Upload PDF → Extract text → Store in Vector DB.\n- Build RAG pipeline with Streamlit UI + FastAPI backend.\n- Multi-turn Q&A → returns answer + page number.",
+    "crumbs": [
+      "About The Course"
+    ]
   },
   {
     "objectID": "index.html#project-1",
@@ -116,21 +131,30 @@
     "href": "index.html#week-4-langchain",
     "title": "TDS - Tools for Data Science",
     "section": "",
-    "text": "Pydantic Models\n\nStructured Prompts & Output Parsers\n\nChains & Runnables\n\nText Splitters\n\nVectorStores in LangChain\n\nRAG + Tool Calling\n\n\nSmall Project → YouTube Playlist QA Assistant\n- Scrape subtitles from each video of playlist.\n- Store in a vector DB.\n- Build chatbot → answers video-specific queries."
+    "text": "Pydantic Models\n\nStructured Prompts & Output Parsers\n\nChains & Runnables\n\nText Splitters\n\nVectorStores in LangChain\n\nRAG + Tool Calling\n\n\nSmall Project → YouTube Playlist QA Assistant\n- Scrape subtitles from each video of playlist.\n- Store in a vector DB.\n- Build chatbot → answers video-specific queries.",
+    "crumbs": [
+      "About The Course"
+    ]
   },
   {
     "objectID": "index.html#week-5-langgraph",
     "href": "index.html#week-5-langgraph",
     "title": "TDS - Tools for Data Science",
     "section": "",
-    "text": "⚠️ I Don’t have much knowledge on this topic.\n\n\nSmall Project → *SQL Query Agent\n- Convert natural language → SQL query.\n- Run on DB → Return tabular results**."
+    "text": "⚠️ I Don’t have much knowledge on this topic.\n\n\nSmall Project → *SQL Query Agent\n- Convert natural language → SQL query.\n- Run on DB → Return tabular results**.",
+    "crumbs": [
+      "About The Course"
+    ]
   },
   {
     "objectID": "index.html#week-6-quarto-websites-awk",
     "href": "index.html#week-6-quarto-websites-awk",
     "title": "TDS - Tools for Data Science",
     "section": "",
-    "text": "Quarto + GitHub Pages\n\nRevealJS Presentations\n\nMarkdown → Website conversion\n\nExcel Toolpack (Correlation, Regression, Data Analysis)\n\nAWK Basics (text processing)\n\n\nSmall Project → Portfolio Website\n- Publish your portfolio with Quarto + GitHub Pages."
+    "text": "Quarto + GitHub Pages\n\nRevealJS Presentations\n\nMarkdown → Website conversion\n\nExcel Toolpack (Correlation, Regression, Data Analysis)\n\nAWK Basics (text processing)\n\n\nSmall Project → Portfolio Website\n- Publish your portfolio with Quarto + GitHub Pages.",
+    "crumbs": [
+      "About The Course"
+    ]
   },
   {
     "objectID": "index.html#project-2",
@@ -151,14 +175,17 @@
     "href": "index.html#bonus-project-optional",
     "title": "TDS - Tools for Data Science",
     "section": "",
-    "text": "Voice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time."
+    "text": "Voice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time.",
+    "crumbs": [
+      "About The Course"
+    ]
   },
   {
     "objectID": "OsBoot/osboot.html",
     "href": "OsBoot/osboot.html",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\nflowchart TD\n    A[Power Button] --&gt; B[Firmware Starts]\n    B --&gt; C[POST Check]\n    C --&gt; D[Find Boot Device]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+    "text": "📖 Boot Process Detailed Guide\n\n\n\n\n\n\n\n\n\nOverview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
   },
   {
     "objectID": "OsBoot/osboot.html#table-of-contents",
@@ -214,7 +241,7 @@
     "href": "OsBoot/note.html",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\nflowchart TD\n    A[Power Button] --&gt; B[Firmware Starts]\n    B --&gt; C[POST Check]\n    C --&gt; D[Find Boot Device]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
   },
   {
     "objectID": "OsBoot/note.html#table-of-contents",
@@ -291,7 +318,7 @@
     "href": "OsBoot/note.html#boot-process-summary",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\nflowchart TD\n    A[Power Button] --&gt; B[Firmware Starts]\n    B --&gt; C[POST Check]\n    C --&gt; D[Find Boot Device]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
+    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
   },
   {
     "objectID": "OsBoot/note.html#frequently-asked-questions",
@@ -312,7 +339,7 @@
     "href": "OsBoot/osboot.html#boot-process-summary",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\nflowchart TD\n    A[Power Button] --&gt; B[Firmware Starts]\n    B --&gt; C[POST Check]\n    C --&gt; D[Find Boot Device]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
+    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
   },
   {
     "objectID": "OsBoot/osboot.html#frequently-asked-questions",
@@ -334,5 +361,681 @@
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
     "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+  },
+  {
+    "objectID": "OsBoot/wsl.html",
+    "href": "OsBoot/wsl.html",
+    "title": "TDS",
+    "section": "",
+    "text": "wsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#table-of-contents-1",
+    "href": "OsBoot/osboot.html#table-of-contents-1",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Table of Contents",
+    "text": "Table of Contents\n\nOverview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources"
+  },
+  {
+    "objectID": "OsBoot/wsl.html#remove-previouse-installed-distributions",
+    "href": "OsBoot/wsl.html#remove-previouse-installed-distributions",
+    "title": "TDS",
+    "section": "",
+    "text": "wsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall"
+  },
+  {
+    "objectID": "OsBoot/wsl.html#update-wsl-ubuntu-installation",
+    "href": "OsBoot/wsl.html#update-wsl-ubuntu-installation",
+    "title": "TDS",
+    "section": "Update WSL –> Ubuntu Installation",
+    "text": "Update WSL –&gt; Ubuntu Installation\nwsl --update\nwsl --list --online\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]"
+  },
+  {
+    "objectID": "OsBoot/wsl.html#install-javascript-tools",
+    "href": "OsBoot/wsl.html#install-javascript-tools",
+    "title": "TDS",
+    "section": "Install JavaScript Tools",
+    "text": "Install JavaScript Tools\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\nnode install https://nodejs.org/en/download\n\nnvm install 22\nnvm list nvm use 22 nvm current\ncorepack enable yarn\ncorepack enable pnpm &gt; Check\n\nnvm -v\nnode -v\nnpm -v npx -v\npnpm -v\nyarn -v"
+  },
+  {
+    "objectID": "OsBoot/wsl.html#install-python-tools",
+    "href": "OsBoot/wsl.html#install-python-tools",
+    "title": "TDS",
+    "section": "Install Python Tools",
+    "text": "Install Python Tools\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false"
+  },
+  {
+    "objectID": "OsBoot/wsl.html#install-cc-tools",
+    "href": "OsBoot/wsl.html#install-cc-tools",
+    "title": "TDS",
+    "section": "Install C/C++ Tools",
+    "text": "Install C/C++ Tools\nsudo apt install build-essential - gcc –&gt; The C compiler - g++ –&gt; The C++ compiler\n\nCheck - gcc –verison - g++ –version"
+  },
+  {
+    "objectID": "OsBoot/wsl.html#install-java-tools",
+    "href": "OsBoot/wsl.html#install-java-tools",
+    "title": "TDS",
+    "section": "Install Java Tools",
+    "text": "Install Java Tools\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools\nJava Runtime Environment (JRE) - Required to run Java applications\nJava Virtual Machine (JVM) - Core execution environment\n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version - javac --version - echo $JAVA_HOME"
+  },
+  {
+    "objectID": "OsBoot/wsl.html#use-npx",
+    "href": "OsBoot/wsl.html#use-npx",
+    "title": "TDS",
+    "section": "Use NPX",
+    "text": "Use NPX\n\nnpm install -g promptfoo then npx promptfoo view"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#remove-previouse-installed-distributions",
+    "href": "OsBoot/osboot.html#remove-previouse-installed-distributions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Remove Previouse Installed Distributions",
+    "text": "Remove Previouse Installed Distributions\nwsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#update-wsl-ubuntu-installation",
+    "href": "OsBoot/osboot.html#update-wsl-ubuntu-installation",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Update WSL –> Ubuntu Installation",
+    "text": "Update WSL –&gt; Ubuntu Installation\nwsl --update\nwsl --list --online\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#install-javascript-tools",
+    "href": "OsBoot/osboot.html#install-javascript-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install JavaScript Tools",
+    "text": "Install JavaScript Tools\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\nnode install https://nodejs.org/en/download\n\nnvm install 22\nnvm list nvm use 22 nvm current\ncorepack enable yarn\ncorepack enable pnpm &gt; Check\n\nnvm -v\nnode -v\nnpm -v npx -v\npnpm -v\nyarn -v"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#install-python-tools",
+    "href": "OsBoot/osboot.html#install-python-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install Python Tools",
+    "text": "Install Python Tools\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#install-cc-tools",
+    "href": "OsBoot/osboot.html#install-cc-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install C/C++ Tools",
+    "text": "Install C/C++ Tools\nsudo apt install build-essential - gcc –&gt; The C compiler - g++ –&gt; The C++ compiler\n\nCheck - gcc –verison - g++ –version"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#install-java-tools",
+    "href": "OsBoot/osboot.html#install-java-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install Java Tools",
+    "text": "Install Java Tools\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools\nJava Runtime Environment (JRE) - Required to run Java applications\nJava Virtual Machine (JVM) - Core execution environment\n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version - javac --version - echo $JAVA_HOME"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#use-npx",
+    "href": "OsBoot/osboot.html#use-npx",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Use NPX",
+    "text": "Use NPX\n\nnpm install -g promptfoo then npx promptfoo view"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#boot-process-detailed-guide",
+    "href": "OsBoot/osboot.html#boot-process-detailed-guide",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Click to view complete boot process guide →"
+  },
+  {
+    "objectID": "OsBoot/osboot.html#wsl-setup-guide",
+    "href": "OsBoot/osboot.html#wsl-setup-guide",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "🔧 WSL Setup Guide",
+    "text": "🔧 WSL Setup Guide\n\n\nClick to view WSL installation and setup →"
+  },
+  {
+    "objectID": "OsBoot/osboot2.html",
+    "href": "OsBoot/osboot2.html",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "wsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall"
+  },
+  {
+    "objectID": "OsBoot/osboot2.html#remove-previouse-installed-distributions",
+    "href": "OsBoot/osboot2.html#remove-previouse-installed-distributions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "wsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall"
+  },
+  {
+    "objectID": "OsBoot/osboot2.html#update-wsl-ubuntu-installation",
+    "href": "OsBoot/osboot2.html#update-wsl-ubuntu-installation",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Update WSL –> Ubuntu Installation",
+    "text": "Update WSL –&gt; Ubuntu Installation\nwsl --update\nwsl --list --online\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]"
+  },
+  {
+    "objectID": "OsBoot/osboot2.html#install-javascript-tools",
+    "href": "OsBoot/osboot2.html#install-javascript-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install JavaScript Tools",
+    "text": "Install JavaScript Tools\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\nnode install https://nodejs.org/en/download\n\nnvm install 22\nnvm list nvm use 22 nvm current\ncorepack enable yarn\ncorepack enable pnpm &gt; Check\n\nnvm -v\nnode -v\nnpm -v npx -v\npnpm -v\nyarn -v"
+  },
+  {
+    "objectID": "OsBoot/osboot2.html#install-python-tools",
+    "href": "OsBoot/osboot2.html#install-python-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install Python Tools",
+    "text": "Install Python Tools\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false"
+  },
+  {
+    "objectID": "OsBoot/osboot2.html#install-cc-tools",
+    "href": "OsBoot/osboot2.html#install-cc-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install C/C++ Tools",
+    "text": "Install C/C++ Tools\nsudo apt install build-essential - gcc –&gt; The C compiler - g++ –&gt; The C++ compiler\n\nCheck - gcc –verison - g++ –version"
+  },
+  {
+    "objectID": "OsBoot/osboot2.html#install-java-tools",
+    "href": "OsBoot/osboot2.html#install-java-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install Java Tools",
+    "text": "Install Java Tools\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools\nJava Runtime Environment (JRE) - Required to run Java applications\nJava Virtual Machine (JVM) - Core execution environment\n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version - javac --version - echo $JAVA_HOME"
+  },
+  {
+    "objectID": "OsBoot/osboot2.html#use-npx",
+    "href": "OsBoot/osboot2.html#use-npx",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Use NPX",
+    "text": "Use NPX\n\nnpm install -g promptfoo then npx promptfoo view"
+  },
+  {
+    "objectID": "OsBoot/osboot1.html",
+    "href": "OsBoot/osboot1.html",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+  },
+  {
+    "objectID": "OsBoot/osboot1.html#table-of-contents",
+    "href": "OsBoot/osboot1.html#table-of-contents",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources"
+  },
+  {
+    "objectID": "OsBoot/osboot1.html#overview",
+    "href": "OsBoot/osboot1.html#overview",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start."
+  },
+  {
+    "objectID": "OsBoot/osboot1.html#boot-process-steps",
+    "href": "OsBoot/osboot1.html#boot-process-steps",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface"
+  },
+  {
+    "objectID": "OsBoot/osboot1.html#partition-styles-vs-file-systems",
+    "href": "OsBoot/osboot1.html#partition-styles-vs-file-systems",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives"
+  },
+  {
+    "objectID": "OsBoot/osboot1.html#boot-process-summary",
+    "href": "OsBoot/osboot1.html#boot-process-summary",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
+  },
+  {
+    "objectID": "OsBoot/osboot1.html#frequently-asked-questions",
+    "href": "OsBoot/osboot1.html#frequently-asked-questions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup"
+  },
+  {
+    "objectID": "OsBoot/osboot1.html#resources",
+    "href": "OsBoot/osboot1.html#resources",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+  },
+  {
+    "objectID": "W1/wsl.html",
+    "href": "W1/wsl.html",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "wsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall"
+  },
+  {
+    "objectID": "W1/wsl.html#remove-previouse-installed-distributions",
+    "href": "W1/wsl.html#remove-previouse-installed-distributions",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "wsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall"
+  },
+  {
+    "objectID": "W1/wsl.html#update-wsl-ubuntu-installation",
+    "href": "W1/wsl.html#update-wsl-ubuntu-installation",
+    "title": "TDS by HRM",
+    "section": "Update WSL –> Ubuntu Installation",
+    "text": "Update WSL –&gt; Ubuntu Installation\nwsl --update\nwsl --list --online\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]"
+  },
+  {
+    "objectID": "W1/wsl.html#install-javascript-tools",
+    "href": "W1/wsl.html#install-javascript-tools",
+    "title": "TDS by HRM",
+    "section": "Install JavaScript Tools",
+    "text": "Install JavaScript Tools\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\nnode install https://nodejs.org/en/download\n\nnvm install 22\nnvm list nvm use 22 nvm current\ncorepack enable yarn\ncorepack enable pnpm &gt; Check\n\nnvm -v\nnode -v\nnpm -v npx -v\npnpm -v\nyarn -v"
+  },
+  {
+    "objectID": "W1/wsl.html#install-python-tools",
+    "href": "W1/wsl.html#install-python-tools",
+    "title": "TDS by HRM",
+    "section": "Install Python Tools",
+    "text": "Install Python Tools\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false"
+  },
+  {
+    "objectID": "W1/wsl.html#install-cc-tools",
+    "href": "W1/wsl.html#install-cc-tools",
+    "title": "TDS by HRM",
+    "section": "Install C/C++ Tools",
+    "text": "Install C/C++ Tools\nsudo apt install build-essential - gcc –&gt; The C compiler - g++ –&gt; The C++ compiler\n\nCheck - gcc –verison - g++ –version"
+  },
+  {
+    "objectID": "W1/wsl.html#install-java-tools",
+    "href": "W1/wsl.html#install-java-tools",
+    "title": "TDS by HRM",
+    "section": "Install Java Tools",
+    "text": "Install Java Tools\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools\nJava Runtime Environment (JRE) - Required to run Java applications\nJava Virtual Machine (JVM) - Core execution environment\n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version - javac --version - echo $JAVA_HOME"
+  },
+  {
+    "objectID": "W1/wsl.html#use-npx",
+    "href": "W1/wsl.html#use-npx",
+    "title": "TDS by HRM",
+    "section": "Use NPX",
+    "text": "Use NPX\n\nnpm install -g promptfoo then npx promptfoo view"
+  },
+  {
+    "objectID": "W1/osboot1.html",
+    "href": "W1/osboot1.html",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot1.html#table-of-contents",
+    "href": "W1/osboot1.html#table-of-contents",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot1.html#overview",
+    "href": "W1/osboot1.html#overview",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot1.html#boot-process-steps",
+    "href": "W1/osboot1.html#boot-process-steps",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot1.html#partition-styles-vs-file-systems",
+    "href": "W1/osboot1.html#partition-styles-vs-file-systems",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot1.html#boot-process-summary",
+    "href": "W1/osboot1.html#boot-process-summary",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot1.html#frequently-asked-questions",
+    "href": "W1/osboot1.html#frequently-asked-questions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot1.html#resources",
+    "href": "W1/osboot1.html#resources",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/note.html",
+    "href": "W1/note.html",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+  },
+  {
+    "objectID": "W1/note.html#table-of-contents",
+    "href": "W1/note.html#table-of-contents",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources"
+  },
+  {
+    "objectID": "W1/note.html#overview",
+    "href": "W1/note.html#overview",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start."
+  },
+  {
+    "objectID": "W1/note.html#boot-process-steps",
+    "href": "W1/note.html#boot-process-steps",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface"
+  },
+  {
+    "objectID": "W1/note.html#partition-styles-vs-file-systems",
+    "href": "W1/note.html#partition-styles-vs-file-systems",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives"
+  },
+  {
+    "objectID": "W1/note.html#boot-process-summary",
+    "href": "W1/note.html#boot-process-summary",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
+  },
+  {
+    "objectID": "W1/note.html#frequently-asked-questions",
+    "href": "W1/note.html#frequently-asked-questions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup"
+  },
+  {
+    "objectID": "W1/note.html#resources",
+    "href": "W1/note.html#resources",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+  },
+  {
+    "objectID": "W1/osboot.html",
+    "href": "W1/osboot.html",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "📖 Boot Process Detailed Guide\n\n\n\n\n\n\n\n\n\nOverview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#table-of-contents",
+    "href": "W1/osboot.html#table-of-contents",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#overview",
+    "href": "W1/osboot.html#overview",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#boot-process-steps",
+    "href": "W1/osboot.html#boot-process-steps",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#partition-styles-vs-file-systems",
+    "href": "W1/osboot.html#partition-styles-vs-file-systems",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#boot-process-summary",
+    "href": "W1/osboot.html#boot-process-summary",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#frequently-asked-questions",
+    "href": "W1/osboot.html#frequently-asked-questions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#resources",
+    "href": "W1/osboot.html#resources",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#remove-previouse-installed-distributions",
+    "href": "W1/osboot.html#remove-previouse-installed-distributions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Remove Previouse Installed Distributions",
+    "text": "Remove Previouse Installed Distributions\nwsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#update-wsl-ubuntu-installation",
+    "href": "W1/osboot.html#update-wsl-ubuntu-installation",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Update WSL –> Ubuntu Installation",
+    "text": "Update WSL –&gt; Ubuntu Installation\nwsl --update\nwsl --list --online\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#install-javascript-tools",
+    "href": "W1/osboot.html#install-javascript-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install JavaScript Tools",
+    "text": "Install JavaScript Tools\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\nnode install https://nodejs.org/en/download\n\nnvm install 22\nnvm list nvm use 22 nvm current\ncorepack enable yarn\ncorepack enable pnpm &gt; Check\n\nnvm -v\nnode -v\nnpm -v npx -v\npnpm -v\nyarn -v",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#install-python-tools",
+    "href": "W1/osboot.html#install-python-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install Python Tools",
+    "text": "Install Python Tools\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#install-cc-tools",
+    "href": "W1/osboot.html#install-cc-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install C/C++ Tools",
+    "text": "Install C/C++ Tools\nsudo apt install build-essential - gcc –&gt; The C compiler - g++ –&gt; The C++ compiler\n\nCheck - gcc –verison - g++ –version",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#install-java-tools",
+    "href": "W1/osboot.html#install-java-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install Java Tools",
+    "text": "Install Java Tools\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools\nJava Runtime Environment (JRE) - Required to run Java applications\nJava Virtual Machine (JVM) - Core execution environment\n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version - javac --version - echo $JAVA_HOME",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot.html#use-npx",
+    "href": "W1/osboot.html#use-npx",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Use NPX",
+    "text": "Use NPX\n\nnpm install -g promptfoo then npx promptfoo view",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/osboot2.html",
+    "href": "W1/osboot2.html",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "wsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot2.html#remove-previouse-installed-distributions",
+    "href": "W1/osboot2.html#remove-previouse-installed-distributions",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "",
+    "text": "wsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot2.html#update-wsl-ubuntu-installation",
+    "href": "W1/osboot2.html#update-wsl-ubuntu-installation",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Update WSL –> Ubuntu Installation",
+    "text": "Update WSL –&gt; Ubuntu Installation\nwsl --update\nwsl --list --online\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot2.html#install-javascript-tools",
+    "href": "W1/osboot2.html#install-javascript-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install JavaScript Tools",
+    "text": "Install JavaScript Tools\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\nnode install https://nodejs.org/en/download\n\nnvm install 22\nnvm list nvm use 22 nvm current\ncorepack enable yarn\ncorepack enable pnpm &gt; Check\n\nnvm -v\nnode -v\nnpm -v npx -v\npnpm -v\nyarn -v",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot2.html#install-python-tools",
+    "href": "W1/osboot2.html#install-python-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install Python Tools",
+    "text": "Install Python Tools\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot2.html#install-cc-tools",
+    "href": "W1/osboot2.html#install-cc-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install C/C++ Tools",
+    "text": "Install C/C++ Tools\nsudo apt install build-essential - gcc –&gt; The C compiler - g++ –&gt; The C++ compiler\n\nCheck - gcc –verison - g++ –version",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot2.html#install-java-tools",
+    "href": "W1/osboot2.html#install-java-tools",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Install Java Tools",
+    "text": "Install Java Tools\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools\nJava Runtime Environment (JRE) - Required to run Java applications\nJava Virtual Machine (JVM) - Core execution environment\n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version - javac --version - echo $JAVA_HOME",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
+  },
+  {
+    "objectID": "W1/osboot2.html#use-npx",
+    "href": "W1/osboot2.html#use-npx",
+    "title": "Computer Boot Process: Essential Guide",
+    "section": "Use NPX",
+    "text": "Use NPX\n\nnpm install -g promptfoo then npx promptfoo view",
+    "crumbs": [
+      "Week1",
+      "Computer Boot Process: Essential Guide"
+    ]
   }
 ]

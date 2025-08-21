@@ -3,23 +3,37 @@ project:
   output-dir: docs
 
 website:
-  title: "TDS"
+  title: "TDS by HRM"
+  search: false
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: "./OsBoot/osboot.qmd"
-        text: "OS Boot"
+    style: "floating"
+    pinned: false
+    tools:
+      - icon: youtube
+        href: https://www.youtube.com/playlist?list=PLn_Nuy1c1Oj9qibyyC4iEitbJ_uY-iAm6
+        target: _blank
+      - icon: house
+        href: https://hrmiitm.github.io
+
+  sidebar:
+    style: "floating"
+    search: false
+    collapse-level: 1
+    contents:
+      - text: "About The Course"
+        href: index.qmd
+      - section: "Week1"
+        href: ./W1/osboot.qmd
+        contents:
+          - ./W1/osboot1.qmd
+          - ./W1/osboot2.qmd
 
 format:
   html:
     theme:
-      light: 
-        - flatly
-      dark:
-        - sketchy
+      light: flatly
+      dark: sketchy
     css: styles.css
     toc: true
-
-
-
+    toc-location: right
+    smooth-scroll: true
