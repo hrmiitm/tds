@@ -329,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../W1/w1_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Other Ways</span></a>
+ <span class="menu-text">VM Virtual Machines</span></a>
   </div>
 </li>
       </ul>
@@ -647,9 +647,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="video-tutorials" class="level3">
 <h3 class="anchored" data-anchor-id="video-tutorials">Video Tutorials</h3>
 <ul>
-<li><a href="https://youtu.be/XpFsMB6FoOs?si=1I3NxtlIJxR_Rm15">Boot Process (English)</a></li>
-<li><a href="https://youtu.be/sebgrmiYdk4?si=2826LMkJMHlLhExv">Boot Process (Hindi)</a></li>
-<li><a href="https://youtu.be/K2NsltEIUlI?si=AyBhrLQ6RItdx7QL">Windows Partitions (Hindi)</a></li>
+<li><a href="https://youtu.be/XpFsMB6FoOs?si=1I3NxtlIJxR_Rm15" target="_blank">Boot Process (English)</a></li>
+<li><a href="https://youtu.be/sebgrmiYdk4?si=2826LMkJMHlLhExv" target="_blank">Boot Process (Hindi)</a></li>
+<li><a href="https://youtu.be/K2NsltEIUlI?si=AyBhrLQ6RItdx7QL" target="_blank">Windows Partitions (Hindi)</a></li>
+</ul>
+<hr>
+<ul>
+<li>Boot Process (English) <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XpFsMB6FoOs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
+<li>Boot Process (Hindi) <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/sebgrmiYdk4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
+<li>Windows Partitions (Hindi) <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/K2NsltEIUlI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
 </ul>
 </section>
 </section>
@@ -657,7 +663,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -666,21 +672,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <section id="install-wsl-in-windows" class="level1 callout-body-container callout-body">
 <h1>Install WSL in Windows</h1>
 <p>We will use windows powershell to install wsl.</p>
-<section id="remove-previouse-installed-distributions" class="level2">
-<h2 class="anchored" data-anchor-id="remove-previouse-installed-distributions">Remove Previouse Installed Distributions</h2>
+<section id="check-wsl-2-installed-or-not" class="level2">
+<h2 class="anchored" data-anchor-id="check-wsl-2-installed-or-not">Check WSL-2 Installed or not?</h2>
+<ul>
+<li>Open PowerShell</li>
+<li><code>wsl --version</code> or <code>wsl.exe --version</code></li>
+<li>If any above command shows wsl version 2 , then it is already installed</li>
+</ul>
+</section>
+<section id="if-wsl-2-not-instlled" class="level2">
+<h2 class="anchored" data-anchor-id="if-wsl-2-not-instlled">If WSL 2 Not Instlled</h2>
+<ul>
+<li>Search <code>Turn Windows features on or off</code><br>
+</li>
+<li>Enable <code>Virtual Machine Platform</code>, <code>Windows Hypervisor Platform</code>, <code>Windows Subsytem for Linux</code><br>
+</li>
+<li><code>Restart</code> Computer (Not power on/off, click on restart)</li>
+<li>Install WSL <a href="https://youtu.be/G4AVNkd_u0E?si=jJSCXi0Oh33MP5HS" target="_blank">WSL-2 Setup</a></li>
+<li>Switch to WSL-2 <code>wsl --set-default-version 2</code></li>
+</ul>
+</section>
+<section id="if-already-installed-then-remove-previous-installed-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="if-already-installed-then-remove-previous-installed-distributions">If already installed then Remove Previous Installed Distributions</h2>
 <p><code>wsl --list --verbose</code></p>
-<p>For Each Listed distribution - <code>wsl --unregister &lt;DistributionName&gt;</code> - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall</p>
+<p>For Each Listed distribution<br>
+- <code>wsl --unregister &lt;DistributionName&gt;</code><br>
+- <code>Open Settings → Apps → Installed apps</code> - Find each Linux distribution, click the three-dot menu, and select Uninstall</p>
 </section>
 <section id="update-wsl-ubuntu-installation" class="level2">
 <h2 class="anchored" data-anchor-id="update-wsl-ubuntu-installation">Update WSL –&gt; Ubuntu Installation</h2>
-<p><code>wsl --update</code><br>
-<code>wsl --list --online</code><br>
-<code>wsl --install Ubuntu-24.04</code> –&gt; Install Ubuntu<br>
-<code>sudo apt update &amp;&amp; sudo apt upgrade -y</code> –&gt; Update Ubuntu</p>
+<ul>
+<li><code>wsl --update</code><br>
+</li>
+<li><code>wsl --list --online</code><br>
+</li>
+<li><code>wsl --install Ubuntu-24.04</code> –&gt; Install Ubuntu<br>
+</li>
+<li><code>sudo apt update &amp;&amp; sudo apt upgrade -y</code> –&gt; Update Ubuntu</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PS</span> C<span class="op">:</span>\Users\hrith<span class="op">&gt;</span> wsl <span class="op">--</span>install Ubuntu-24<span class="op">.</span><span class="dv">04</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">Downloading</span><span class="op">:</span> Ubuntu <span class="dv">24.04</span> LTS</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Installing<span class="op">:</span> Ubuntu <span class="dv">24.04</span> LTS</span>
@@ -699,24 +744,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>sudo<span class="op">]</span> password <span class="cf">for</span> hrm<span class="op">:</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Hit<span class="op">:</span><span class="dv">1</span> http<span class="op">://</span>archive<span class="op">.</span><span class="fu">ubuntu</span><span class="op">.</span><span class="fu">com</span><span class="op">/</span>ubuntu noble InRelease</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Get<span class="op">:</span><span class="dv">2</span> http<span class="op">://</span>security<span class="op">.</span><span class="fu">ubuntu</span><span class="op">.</span><span class="fu">com</span><span class="op">/</span>ubuntu noble-security InRelease <span class="op">[</span><span class="dv">126</span> kB<span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="install-javascript-tools" class="level2">
 <h2 class="anchored" data-anchor-id="install-javascript-tools">Install JavaScript Tools</h2>
 <ul>
-<li>nvm install visit and run bash script <code>https://github.com/nvm-sh/nvm</code></li>
+<li>nvm install visit and run bash script <code>https://github.com/nvm-sh/nvm</code><br>
+</li>
 <li>node install <code>https://nodejs.org/en/download</code>
 <ul>
-<li><code>nvm install 22</code></li>
-<li><code>nvm list</code> <code>nvm use 22</code> <code>nvm current</code></li>
-<li><code>corepack enable yarn</code></li>
-<li><code>corepack enable pnpm</code> &gt; Check</li>
+<li><code>nvm install 22</code><br>
+</li>
+<li><code>nvm list</code> <code>nvm use 22</code> <code>nvm current</code><br>
+</li>
+<li><code>corepack enable yarn</code><br>
+</li>
+<li><code>corepack enable pnpm</code></li>
 </ul></li>
-<li><code>nvm -v</code></li>
-<li><code>node -v</code></li>
-<li><code>npm -v</code> <code>npx -v</code></li>
-<li><code>pnpm -v</code></li>
-<li><code>yarn -v</code></li>
 </ul>
+<blockquote class="blockquote">
+<p>Check<br>
+- <code>nvm -v</code><br>
+- <code>node -v</code><br>
+- <code>npm -v</code> <code>npx -v</code><br>
+- <code>pnpm -v</code><br>
+- <code>yarn -v</code></p>
+</blockquote>
 </section>
 <section id="install-python-tools" class="level2">
 <h2 class="anchored" data-anchor-id="install-python-tools">Install Python Tools</h2>
@@ -753,9 +808,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="install-cc-tools" class="level2">
 <h2 class="anchored" data-anchor-id="install-cc-tools">Install C/C++ Tools</h2>
-<p><code>sudo apt install build-essential</code> - <code>gcc</code> –&gt; The C compiler - <code>g++</code> –&gt; The C++ compiler</p>
+<p><code>sudo apt install build-essential</code></p>
+<ul>
+<li><code>gcc</code> –&gt; The C compiler<br>
+</li>
+<li><code>g++</code> –&gt; The C++ compiler</li>
+</ul>
 <blockquote class="blockquote">
-<p>Check - gcc –verison - g++ –version</p>
+<p>Check - gcc –verison<br>
+- g++ –version</p>
 </blockquote>
 </section>
 <section id="install-java-tools" class="level2">
@@ -764,13 +825,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>This command installs:</p>
 </blockquote>
-<pre><code>Java Development Kit (JDK) - Compiler, debugger, and development tools
-Java Runtime Environment (JRE) - Required to run Java applications
-Java Virtual Machine (JVM) - Core execution environment</code></pre>
+<pre><code>Java Development Kit (JDK) - Compiler, debugger, and development tools  
+Java Runtime Environment (JRE) - Required to run Java applications  
+Java Virtual Machine (JVM) - Core execution environment  </code></pre>
 <ul>
 <li>Configure <code>JAVA_HOME</code> Environment Variable
 <ul>
-<li><code>echo 'export JAVA_HOME="/usr/lib/jvm/default-java"' &gt;&gt; ~/.bashrc</code> ## confirm the path first using below update-alternatiove… command</li>
+<li><code>echo 'export JAVA_HOME="/usr/lib/jvm/default-java"' &gt;&gt; ~/.bashrc</code> ## confirm the path first using below update-alternatiove… command<br>
+</li>
 <li>restart shell</li>
 </ul></li>
 <li>Install other versions of java
@@ -785,20 +847,25 @@ Java Virtual Machine (JVM) - Core execution environment</code></pre>
 </ul>
 <blockquote class="blockquote">
 <p>Check<br>
-- <code>java --version</code> - <code>javac --version</code> - <code>echo $JAVA_HOME</code></p>
+- <code>java --version</code><br>
+- <code>javac --version</code><br>
+- <code>echo $JAVA_HOME</code></p>
 </blockquote>
 </section>
-<section id="use-npx" class="level2">
-<h2 class="anchored" data-anchor-id="use-npx">Use NPX</h2>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="video-tutorials-1" class="level3">
+<h3 class="anchored" data-anchor-id="video-tutorials-1">Video Tutorials</h3>
 <ul>
-<li><code>npm install -g promptfoo</code> then <code>npx promptfoo view</code></li>
+<li>WSL-2 Setup <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/G4AVNkd_u0E" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
 </ul>
+</section>
 </section>
 </section>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -807,7 +874,7 @@ Java Virtual Machine (JVM) - Core execution environment</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <section id="in-windows" class="level1 callout-body-container callout-body">
 <h1>In Windows</h1>
 <section id="using-type-2-hypervisor" class="level2">
@@ -827,6 +894,15 @@ Java Virtual Machine (JVM) - Core execution environment</code></pre>
 <li>Select Iso and fill required data…</li>
 </ul></li>
 </ul>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="video-tutorials-2" class="level3">
+<h3 class="anchored" data-anchor-id="video-tutorials-2">Video Tutorials</h3>
+<ul>
+<li>Virtual Box Setup (Hindi) <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/4j2juiMJIhg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
+</ul>
+</section>
 </section>
 </section>
 </div>
@@ -1353,7 +1429,7 @@ Java Virtual Machine (JVM) - Core execution environment</code></pre>
 <span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>::: {.callout-note collapse="true"}</span>
 <span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="fu"># 📖 Boot Process Detailed Guide</span></span>
 <span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>{{&lt; include note.qmd &gt;}}</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>{{&lt; include boot.qmd &gt;}}</span>
 <span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>::: {.callout-note collapse="true"}  </span>

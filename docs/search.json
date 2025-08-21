@@ -4,28 +4,42 @@
     "href": "W1/wsl.html",
     "title": "Install WSL in Windows",
     "section": "",
-    "text": "We will use windows powershell to install wsl.\n\n\nwsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall\n\n\n\nwsl --update\nwsl --list --online\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]\n\n\n\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\nnode install https://nodejs.org/en/download\n\nnvm install 22\nnvm list nvm use 22 nvm current\ncorepack enable yarn\ncorepack enable pnpm &gt; Check\n\nnvm -v\nnode -v\nnpm -v npx -v\npnpm -v\nyarn -v\n\n\n\n\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false\n\n\n\n\n\nsudo apt install build-essential - gcc –&gt; The C compiler - g++ –&gt; The C++ compiler\n\nCheck - gcc –verison - g++ –version\n\n\n\n\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools\nJava Runtime Environment (JRE) - Required to run Java applications\nJava Virtual Machine (JVM) - Core execution environment\n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version - javac --version - echo $JAVA_HOME\n\n\n\n\n\nnpm install -g promptfoo then npx promptfoo view"
+    "text": "We will use windows powershell to install wsl.\n\n\n\nOpen PowerShell\nwsl --version or wsl.exe --version\nIf any above command shows wsl version 2 , then it is already installed\n\n\n\n\n\nSearch Turn Windows features on or off\n\nEnable Virtual Machine Platform, Windows Hypervisor Platform, Windows Subsytem for Linux\n\nRestart Computer (Not power on/off, click on restart)\nInstall WSL WSL-2 Setup\nSwitch to WSL-2 wsl --set-default-version 2\n\n\n\n\nwsl --list --verbose\nFor Each Listed distribution\n- wsl --unregister &lt;DistributionName&gt;\n- Open Settings → Apps → Installed apps - Find each Linux distribution, click the three-dot menu, and select Uninstall\n\n\n\n\nwsl --update\n\nwsl --list --online\n\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\n\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]\n\n\n\n\n\n\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\n\nnode install https://nodejs.org/en/download\n\nnvm install 22\n\nnvm list nvm use 22 nvm current\n\ncorepack enable yarn\n\ncorepack enable pnpm\n\n\n\nCheck\n- nvm -v\n- node -v\n- npm -v npx -v\n- pnpm -v\n- yarn -v\n\n\n\n\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false\n\n\n\n\n\nsudo apt install build-essential\n\ngcc –&gt; The C compiler\n\ng++ –&gt; The C++ compiler\n\n\nCheck - gcc –verison\n- g++ –version\n\n\n\n\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools  \nJava Runtime Environment (JRE) - Required to run Java applications  \nJava Virtual Machine (JVM) - Core execution environment  \n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\n\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version\n- javac --version\n- echo $JAVA_HOME\n\n\n\n\n\n\n\nWSL-2 Setup"
   },
   {
-    "objectID": "W1/wsl.html#remove-previouse-installed-distributions",
-    "href": "W1/wsl.html#remove-previouse-installed-distributions",
+    "objectID": "W1/wsl.html#check-wsl-2-installed-or-not",
+    "href": "W1/wsl.html#check-wsl-2-installed-or-not",
     "title": "Install WSL in Windows",
     "section": "",
-    "text": "wsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall"
+    "text": "Open PowerShell\nwsl --version or wsl.exe --version\nIf any above command shows wsl version 2 , then it is already installed"
+  },
+  {
+    "objectID": "W1/wsl.html#if-wsl-2-not-instlled",
+    "href": "W1/wsl.html#if-wsl-2-not-instlled",
+    "title": "Install WSL in Windows",
+    "section": "",
+    "text": "Search Turn Windows features on or off\n\nEnable Virtual Machine Platform, Windows Hypervisor Platform, Windows Subsytem for Linux\n\nRestart Computer (Not power on/off, click on restart)\nInstall WSL WSL-2 Setup\nSwitch to WSL-2 wsl --set-default-version 2"
+  },
+  {
+    "objectID": "W1/wsl.html#if-already-installed-then-remove-previous-installed-distributions",
+    "href": "W1/wsl.html#if-already-installed-then-remove-previous-installed-distributions",
+    "title": "Install WSL in Windows",
+    "section": "",
+    "text": "wsl --list --verbose\nFor Each Listed distribution\n- wsl --unregister &lt;DistributionName&gt;\n- Open Settings → Apps → Installed apps - Find each Linux distribution, click the three-dot menu, and select Uninstall"
   },
   {
     "objectID": "W1/wsl.html#update-wsl-ubuntu-installation",
     "href": "W1/wsl.html#update-wsl-ubuntu-installation",
     "title": "Install WSL in Windows",
     "section": "",
-    "text": "wsl --update\nwsl --list --online\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]"
+    "text": "wsl --update\n\nwsl --list --online\n\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\n\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]"
   },
   {
     "objectID": "W1/wsl.html#install-javascript-tools",
     "href": "W1/wsl.html#install-javascript-tools",
     "title": "Install WSL in Windows",
     "section": "",
-    "text": "nvm install visit and run bash script https://github.com/nvm-sh/nvm\nnode install https://nodejs.org/en/download\n\nnvm install 22\nnvm list nvm use 22 nvm current\ncorepack enable yarn\ncorepack enable pnpm &gt; Check\n\nnvm -v\nnode -v\nnpm -v npx -v\npnpm -v\nyarn -v"
+    "text": "nvm install visit and run bash script https://github.com/nvm-sh/nvm\n\nnode install https://nodejs.org/en/download\n\nnvm install 22\n\nnvm list nvm use 22 nvm current\n\ncorepack enable yarn\n\ncorepack enable pnpm\n\n\n\nCheck\n- nvm -v\n- node -v\n- npm -v npx -v\n- pnpm -v\n- yarn -v"
   },
   {
     "objectID": "W1/wsl.html#install-python-tools",
@@ -39,39 +53,61 @@
     "href": "W1/wsl.html#install-cc-tools",
     "title": "Install WSL in Windows",
     "section": "",
-    "text": "sudo apt install build-essential - gcc –&gt; The C compiler - g++ –&gt; The C++ compiler\n\nCheck - gcc –verison - g++ –version"
+    "text": "sudo apt install build-essential\n\ngcc –&gt; The C compiler\n\ng++ –&gt; The C++ compiler\n\n\nCheck - gcc –verison\n- g++ –version"
   },
   {
     "objectID": "W1/wsl.html#install-java-tools",
     "href": "W1/wsl.html#install-java-tools",
     "title": "Install WSL in Windows",
     "section": "",
-    "text": "sudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools\nJava Runtime Environment (JRE) - Required to run Java applications\nJava Virtual Machine (JVM) - Core execution environment\n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version - javac --version - echo $JAVA_HOME"
+    "text": "sudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools  \nJava Runtime Environment (JRE) - Required to run Java applications  \nJava Virtual Machine (JVM) - Core execution environment  \n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\n\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version\n- javac --version\n- echo $JAVA_HOME"
   },
   {
-    "objectID": "W1/wsl.html#use-npx",
-    "href": "W1/wsl.html#use-npx",
+    "objectID": "W1/wsl.html#resources",
+    "href": "W1/wsl.html#resources",
     "title": "Install WSL in Windows",
     "section": "",
-    "text": "npm install -g promptfoo then npx promptfoo view"
+    "text": "WSL-2 Setup"
   },
   {
     "objectID": "W1/w1_2.html",
     "href": "W1/w1_2.html",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
-    "text": "We will use windows powershell to install wsl.\n\n\nwsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall\n\n\n\nwsl --update\nwsl --list --online\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]\n\n\n\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\nnode install https://nodejs.org/en/download\n\nnvm install 22\nnvm list nvm use 22 nvm current\ncorepack enable yarn\ncorepack enable pnpm &gt; Check\n\nnvm -v\nnode -v\nnpm -v npx -v\npnpm -v\nyarn -v\n\n\n\n\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false\n\n\n\n\n\nsudo apt install build-essential - gcc –&gt; The C compiler - g++ –&gt; The C++ compiler\n\nCheck - gcc –verison - g++ –version\n\n\n\n\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools\nJava Runtime Environment (JRE) - Required to run Java applications\nJava Virtual Machine (JVM) - Core execution environment\n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version - javac --version - echo $JAVA_HOME\n\n\n\n\n\nnpm install -g promptfoo then npx promptfoo view",
+    "text": "We will use windows powershell to install wsl.\n\n\n\nOpen PowerShell\nwsl --version or wsl.exe --version\nIf any above command shows wsl version 2 , then it is already installed\n\n\n\n\n\nSearch Turn Windows features on or off\n\nEnable Virtual Machine Platform, Windows Hypervisor Platform, Windows Subsytem for Linux\n\nRestart Computer (Not power on/off, click on restart)\nInstall WSL WSL-2 Setup\nSwitch to WSL-2 wsl --set-default-version 2\n\n\n\n\nwsl --list --verbose\nFor Each Listed distribution\n- wsl --unregister &lt;DistributionName&gt;\n- Open Settings → Apps → Installed apps - Find each Linux distribution, click the three-dot menu, and select Uninstall\n\n\n\n\nwsl --update\n\nwsl --list --online\n\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\n\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]\n\n\n\n\n\n\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\n\nnode install https://nodejs.org/en/download\n\nnvm install 22\n\nnvm list nvm use 22 nvm current\n\ncorepack enable yarn\n\ncorepack enable pnpm\n\n\n\nCheck\n- nvm -v\n- node -v\n- npm -v npx -v\n- pnpm -v\n- yarn -v\n\n\n\n\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false\n\n\n\n\n\nsudo apt install build-essential\n\ngcc –&gt; The C compiler\n\ng++ –&gt; The C++ compiler\n\n\nCheck - gcc –verison\n- g++ –version\n\n\n\n\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools  \nJava Runtime Environment (JRE) - Required to run Java applications  \nJava Virtual Machine (JVM) - Core execution environment  \n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\n\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version\n- javac --version\n- echo $JAVA_HOME\n\n\n\n\n\n\n\nWSL-2 Setup",
     "crumbs": [
       "Week1",
       "WSL - Windows Subsytem for Linux"
     ]
   },
   {
-    "objectID": "W1/w1_2.html#remove-previouse-installed-distributions",
-    "href": "W1/w1_2.html#remove-previouse-installed-distributions",
+    "objectID": "W1/w1_2.html#check-wsl-2-installed-or-not",
+    "href": "W1/w1_2.html#check-wsl-2-installed-or-not",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
-    "text": "wsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall",
+    "text": "Open PowerShell\nwsl --version or wsl.exe --version\nIf any above command shows wsl version 2 , then it is already installed",
+    "crumbs": [
+      "Week1",
+      "WSL - Windows Subsytem for Linux"
+    ]
+  },
+  {
+    "objectID": "W1/w1_2.html#if-wsl-2-not-instlled",
+    "href": "W1/w1_2.html#if-wsl-2-not-instlled",
+    "title": "WSL - Windows Subsytem for Linux",
+    "section": "",
+    "text": "Search Turn Windows features on or off\n\nEnable Virtual Machine Platform, Windows Hypervisor Platform, Windows Subsytem for Linux\n\nRestart Computer (Not power on/off, click on restart)\nInstall WSL WSL-2 Setup\nSwitch to WSL-2 wsl --set-default-version 2",
+    "crumbs": [
+      "Week1",
+      "WSL - Windows Subsytem for Linux"
+    ]
+  },
+  {
+    "objectID": "W1/w1_2.html#if-already-installed-then-remove-previous-installed-distributions",
+    "href": "W1/w1_2.html#if-already-installed-then-remove-previous-installed-distributions",
+    "title": "WSL - Windows Subsytem for Linux",
+    "section": "",
+    "text": "wsl --list --verbose\nFor Each Listed distribution\n- wsl --unregister &lt;DistributionName&gt;\n- Open Settings → Apps → Installed apps - Find each Linux distribution, click the three-dot menu, and select Uninstall",
     "crumbs": [
       "Week1",
       "WSL - Windows Subsytem for Linux"
@@ -82,7 +118,7 @@
     "href": "W1/w1_2.html#update-wsl-ubuntu-installation",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
-    "text": "wsl --update\nwsl --list --online\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]",
+    "text": "wsl --update\n\nwsl --list --online\n\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\n\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]",
     "crumbs": [
       "Week1",
       "WSL - Windows Subsytem for Linux"
@@ -93,7 +129,7 @@
     "href": "W1/w1_2.html#install-javascript-tools",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
-    "text": "nvm install visit and run bash script https://github.com/nvm-sh/nvm\nnode install https://nodejs.org/en/download\n\nnvm install 22\nnvm list nvm use 22 nvm current\ncorepack enable yarn\ncorepack enable pnpm &gt; Check\n\nnvm -v\nnode -v\nnpm -v npx -v\npnpm -v\nyarn -v",
+    "text": "nvm install visit and run bash script https://github.com/nvm-sh/nvm\n\nnode install https://nodejs.org/en/download\n\nnvm install 22\n\nnvm list nvm use 22 nvm current\n\ncorepack enable yarn\n\ncorepack enable pnpm\n\n\n\nCheck\n- nvm -v\n- node -v\n- npm -v npx -v\n- pnpm -v\n- yarn -v",
     "crumbs": [
       "Week1",
       "WSL - Windows Subsytem for Linux"
@@ -115,7 +151,7 @@
     "href": "W1/w1_2.html#install-cc-tools",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
-    "text": "sudo apt install build-essential - gcc –&gt; The C compiler - g++ –&gt; The C++ compiler\n\nCheck - gcc –verison - g++ –version",
+    "text": "sudo apt install build-essential\n\ngcc –&gt; The C compiler\n\ng++ –&gt; The C++ compiler\n\n\nCheck - gcc –verison\n- g++ –version",
     "crumbs": [
       "Week1",
       "WSL - Windows Subsytem for Linux"
@@ -126,18 +162,18 @@
     "href": "W1/w1_2.html#install-java-tools",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
-    "text": "sudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools\nJava Runtime Environment (JRE) - Required to run Java applications\nJava Virtual Machine (JVM) - Core execution environment\n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version - javac --version - echo $JAVA_HOME",
+    "text": "sudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools  \nJava Runtime Environment (JRE) - Required to run Java applications  \nJava Virtual Machine (JVM) - Core execution environment  \n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\n\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version\n- javac --version\n- echo $JAVA_HOME",
     "crumbs": [
       "Week1",
       "WSL - Windows Subsytem for Linux"
     ]
   },
   {
-    "objectID": "W1/w1_2.html#use-npx",
-    "href": "W1/w1_2.html#use-npx",
+    "objectID": "W1/w1_2.html#resources",
+    "href": "W1/w1_2.html#resources",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
-    "text": "npm install -g promptfoo then npx promptfoo view",
+    "text": "WSL-2 Setup",
     "crumbs": [
       "Week1",
       "WSL - Windows Subsytem for Linux"
@@ -148,7 +184,7 @@
     "href": "W1/w1.html",
     "title": "How Computer on?",
     "section": "",
-    "text": "📖 Boot Process Detailed Guide\n\n\n\n\n\n\n\n\n\nOverview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)",
+    "text": "📖 Boot Process Detailed Guide\n\n\n\n\n\n\n\n\n\nOverview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)",
     "crumbs": [
       "Week1"
     ]
@@ -217,18 +253,38 @@
     "objectID": "W1/w1.html#resources",
     "href": "W1/w1.html#resources",
     "title": "How Computer on?",
-    "section": "",
-    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)",
+    "section": "Resources",
+    "text": "Resources\n\nVideo Tutorials\n\nVirtual Box Setup (Hindi)",
     "crumbs": [
       "Week1"
     ]
   },
   {
-    "objectID": "W1/w1.html#remove-previouse-installed-distributions",
-    "href": "W1/w1.html#remove-previouse-installed-distributions",
+    "objectID": "W1/w1.html#check-wsl-2-installed-or-not",
+    "href": "W1/w1.html#check-wsl-2-installed-or-not",
     "title": "How Computer on?",
-    "section": "Remove Previouse Installed Distributions",
-    "text": "Remove Previouse Installed Distributions\nwsl --list --verbose\nFor Each Listed distribution - wsl --unregister &lt;DistributionName&gt; - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall",
+    "section": "Check WSL-2 Installed or not?",
+    "text": "Check WSL-2 Installed or not?\n\nOpen PowerShell\nwsl --version or wsl.exe --version\nIf any above command shows wsl version 2 , then it is already installed",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/w1.html#if-wsl-2-not-instlled",
+    "href": "W1/w1.html#if-wsl-2-not-instlled",
+    "title": "How Computer on?",
+    "section": "If WSL 2 Not Instlled",
+    "text": "If WSL 2 Not Instlled\n\nSearch Turn Windows features on or off\n\nEnable Virtual Machine Platform, Windows Hypervisor Platform, Windows Subsytem for Linux\n\nRestart Computer (Not power on/off, click on restart)\nInstall WSL WSL-2 Setup\nSwitch to WSL-2 wsl --set-default-version 2",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/w1.html#if-already-installed-then-remove-previous-installed-distributions",
+    "href": "W1/w1.html#if-already-installed-then-remove-previous-installed-distributions",
+    "title": "How Computer on?",
+    "section": "If already installed then Remove Previous Installed Distributions",
+    "text": "If already installed then Remove Previous Installed Distributions\nwsl --list --verbose\nFor Each Listed distribution\n- wsl --unregister &lt;DistributionName&gt;\n- Open Settings → Apps → Installed apps - Find each Linux distribution, click the three-dot menu, and select Uninstall",
     "crumbs": [
       "Week1"
     ]
@@ -238,7 +294,7 @@
     "href": "W1/w1.html#update-wsl-ubuntu-installation",
     "title": "How Computer on?",
     "section": "Update WSL –> Ubuntu Installation",
-    "text": "Update WSL –&gt; Ubuntu Installation\nwsl --update\nwsl --list --online\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]",
+    "text": "Update WSL –&gt; Ubuntu Installation\n\nwsl --update\n\nwsl --list --online\n\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\n\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]",
     "crumbs": [
       "Week1"
     ]
@@ -248,7 +304,7 @@
     "href": "W1/w1.html#install-javascript-tools",
     "title": "How Computer on?",
     "section": "Install JavaScript Tools",
-    "text": "Install JavaScript Tools\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\nnode install https://nodejs.org/en/download\n\nnvm install 22\nnvm list nvm use 22 nvm current\ncorepack enable yarn\ncorepack enable pnpm &gt; Check\n\nnvm -v\nnode -v\nnpm -v npx -v\npnpm -v\nyarn -v",
+    "text": "Install JavaScript Tools\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\n\nnode install https://nodejs.org/en/download\n\nnvm install 22\n\nnvm list nvm use 22 nvm current\n\ncorepack enable yarn\n\ncorepack enable pnpm\n\n\n\nCheck\n- nvm -v\n- node -v\n- npm -v npx -v\n- pnpm -v\n- yarn -v",
     "crumbs": [
       "Week1"
     ]
@@ -268,7 +324,7 @@
     "href": "W1/w1.html#install-cc-tools",
     "title": "How Computer on?",
     "section": "Install C/C++ Tools",
-    "text": "Install C/C++ Tools\nsudo apt install build-essential - gcc –&gt; The C compiler - g++ –&gt; The C++ compiler\n\nCheck - gcc –verison - g++ –version",
+    "text": "Install C/C++ Tools\nsudo apt install build-essential\n\ngcc –&gt; The C compiler\n\ng++ –&gt; The C++ compiler\n\n\nCheck - gcc –verison\n- g++ –version",
     "crumbs": [
       "Week1"
     ]
@@ -278,17 +334,7 @@
     "href": "W1/w1.html#install-java-tools",
     "title": "How Computer on?",
     "section": "Install Java Tools",
-    "text": "Install Java Tools\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools\nJava Runtime Environment (JRE) - Required to run Java applications\nJava Virtual Machine (JVM) - Core execution environment\n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version - javac --version - echo $JAVA_HOME",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#use-npx",
-    "href": "W1/w1.html#use-npx",
-    "title": "How Computer on?",
-    "section": "Use NPX",
-    "text": "Use NPX\n\nnpm install -g promptfoo then npx promptfoo view",
+    "text": "Install Java Tools\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools  \nJava Runtime Environment (JRE) - Required to run Java applications  \nJava Virtual Machine (JVM) - Core execution environment  \n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\n\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version\n- javac --version\n- echo $JAVA_HOME",
     "crumbs": [
       "Week1"
     ]
@@ -304,60 +350,60 @@
     ]
   },
   {
-    "objectID": "W1/note.html",
-    "href": "W1/note.html",
+    "objectID": "W1/boot.html",
+    "href": "W1/boot.html",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)"
   },
   {
-    "objectID": "W1/note.html#table-of-contents",
-    "href": "W1/note.html#table-of-contents",
+    "objectID": "W1/boot.html#table-of-contents",
+    "href": "W1/boot.html#table-of-contents",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
     "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources"
   },
   {
-    "objectID": "W1/note.html#overview",
-    "href": "W1/note.html#overview",
+    "objectID": "W1/boot.html#overview",
+    "href": "W1/boot.html#overview",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
     "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start."
   },
   {
-    "objectID": "W1/note.html#boot-process-steps",
-    "href": "W1/note.html#boot-process-steps",
+    "objectID": "W1/boot.html#boot-process-steps",
+    "href": "W1/boot.html#boot-process-steps",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
     "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface"
   },
   {
-    "objectID": "W1/note.html#partition-styles-vs-file-systems",
-    "href": "W1/note.html#partition-styles-vs-file-systems",
+    "objectID": "W1/boot.html#partition-styles-vs-file-systems",
+    "href": "W1/boot.html#partition-styles-vs-file-systems",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
     "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives"
   },
   {
-    "objectID": "W1/note.html#boot-process-summary",
-    "href": "W1/note.html#boot-process-summary",
+    "objectID": "W1/boot.html#boot-process-summary",
+    "href": "W1/boot.html#boot-process-summary",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
     "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
   },
   {
-    "objectID": "W1/note.html#frequently-asked-questions",
-    "href": "W1/note.html#frequently-asked-questions",
+    "objectID": "W1/boot.html#frequently-asked-questions",
+    "href": "W1/boot.html#frequently-asked-questions",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
     "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup"
   },
   {
-    "objectID": "W1/note.html#resources",
-    "href": "W1/note.html#resources",
+    "objectID": "W1/boot.html#resources",
+    "href": "W1/boot.html#resources",
     "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)"
+    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)"
   },
   {
     "objectID": "index.html",
@@ -517,7 +563,7 @@
     "href": "W1/vm.html",
     "title": "In Windows",
     "section": "",
-    "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…"
+    "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…\n\n\n\n\n\n\n\n\nVirtual Box Setup (Hindi)"
   },
   {
     "objectID": "W1/vm.html#using-type-2-hypervisor",
@@ -527,11 +573,18 @@
     "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…"
   },
   {
+    "objectID": "W1/vm.html#resources",
+    "href": "W1/vm.html#resources",
+    "title": "In Windows",
+    "section": "",
+    "text": "Virtual Box Setup (Hindi)"
+  },
+  {
     "objectID": "W1/w1_1.html",
     "href": "W1/w1_1.html",
     "title": "Computer Boot Process",
     "section": "",
-    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)",
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)",
     "crumbs": [
       "Week1",
       "Computer Boot Process"
@@ -608,7 +661,7 @@
     "href": "W1/w1_1.html#resources",
     "title": "Computer Boot Process",
     "section": "",
-    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)",
+    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)",
     "crumbs": [
       "Week1",
       "Computer Boot Process"
@@ -617,23 +670,34 @@
   {
     "objectID": "W1/w1_3.html",
     "href": "W1/w1_3.html",
-    "title": "Other Ways",
+    "title": "VM Virtual Machines",
     "section": "",
-    "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…",
+    "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…\n\n\n\n\n\n\n\n\nVirtual Box Setup (Hindi)",
     "crumbs": [
       "Week1",
-      "Other Ways"
+      "VM Virtual Machines"
     ]
   },
   {
     "objectID": "W1/w1_3.html#using-type-2-hypervisor",
     "href": "W1/w1_3.html#using-type-2-hypervisor",
-    "title": "Other Ways",
+    "title": "VM Virtual Machines",
     "section": "",
     "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…",
     "crumbs": [
       "Week1",
-      "Other Ways"
+      "VM Virtual Machines"
+    ]
+  },
+  {
+    "objectID": "W1/w1_3.html#resources",
+    "href": "W1/w1_3.html#resources",
+    "title": "VM Virtual Machines",
+    "section": "",
+    "text": "Virtual Box Setup (Hindi)",
+    "crumbs": [
+      "Week1",
+      "VM Virtual Machines"
     ]
   }
 ]

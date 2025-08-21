@@ -9,3 +9,9 @@
 - Install iso file in Virtual Box
     - Click on New
     - Select Iso and fill required data...
+
+## Resources {#resources}
+
+### Video Tutorials
+
+- Virtual Box Setup (Hindi) {{< video https://www.youtube.com/embed/4j2juiMJIhg >}}

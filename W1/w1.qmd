@@ -51,7 +51,7 @@ link-citations: true
 ::: {.callout-note collapse="true"}
 # 📖 Boot Process Detailed Guide
 
-{{< include note.qmd >}}
+{{< include boot.qmd >}}
 :::
 
 ::: {.callout-note collapse="true"}  

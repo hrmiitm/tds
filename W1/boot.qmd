@@ -148,7 +148,12 @@ Yes, by:
 
 ### Video Tutorials
 
-- [Boot Process (English)](https://youtu.be/XpFsMB6FoOs?si=1I3NxtlIJxR_Rm15)
-- [Boot Process (Hindi)](https://youtu.be/sebgrmiYdk4?si=2826LMkJMHlLhExv)
-- [Windows Partitions (Hindi)](https://youtu.be/K2NsltEIUlI?si=AyBhrLQ6RItdx7QL)
+- [Boot Process (English)](https://youtu.be/XpFsMB6FoOs?si=1I3NxtlIJxR_Rm15){target="_blank"} 
+- [Boot Process (Hindi)](https://youtu.be/sebgrmiYdk4?si=2826LMkJMHlLhExv){target="_blank"}
+- [Windows Partitions (Hindi)](https://youtu.be/K2NsltEIUlI?si=AyBhrLQ6RItdx7QL){target="_blank"}
 
+---
+
+- Boot Process (English) {{< video https://www.youtube.com/embed/XpFsMB6FoOs >}}
+- Boot Process (Hindi) {{< video https://www.youtube.com/embed/sebgrmiYdk4 >}}
+- Windows Partitions (Hindi) {{< video https://www.youtube.com/embed/K2NsltEIUlI >}}
