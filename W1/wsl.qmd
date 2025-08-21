@@ -1,3 +1,6 @@
+# Install WSL in Windows  
+We will use windows powershell to install wsl.
+
 ## Remove Previouse Installed Distributions
 
 `wsl --list --verbose`  

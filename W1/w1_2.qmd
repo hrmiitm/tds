@@ -1,0 +1,51 @@
+---
+title: "WSL - Windows Subsytem for Linux"
+author: "HRM"
+date: 21 August 2025
+date-format: "MMMM DD, YYYY"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    toc-title: "Navigation"
+    number-sections: false
+    html-math-method: katex
+    mermaid:
+      theme: default
+    code-fold: false
+    code-tools: true
+    smooth-scroll: true
+    anchor-sections: true
+    fig-width: 8
+    fig-height: 6
+    fig-align: center
+    df-print: kable
+    highlight-style: github
+    css: "../styles.css"
+  pdf:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    geometry:
+      - top=30mm
+      - left=30mm
+      - heightrounded
+    fig-width: 7
+    fig-height: 5
+    fig-align: center
+    df-print: kable
+    fontsize: 14pt
+    documentclass: article
+    papersize: a4
+    keep-tex: false
+
+execute:
+  echo: false
+  warning: false
+  message: false
+link-citations: true
+---
+
+
+{{< include wsl.qmd >}}

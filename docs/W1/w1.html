@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="HRM">
+<meta name="dcterms.date" content="2025-08-21">
 
-<title>note – TDS by HRM</title>
+<title>How Computer on? – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -32,14 +69,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-59898bd1c6b9d2bb783127feaa000c76.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d329e753491efaeac79c98c4b193a686.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-59898bd1c6b9d2bb783127feaa000c76.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1dc3000b8b2862970729446b73cd7afa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-64a89669c3516b6e2b2f1e17ceabfc6e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-1dc3000b8b2862970729446b73cd7afa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f1557a2841506a0fb2a49f2cbc7c7b09.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d91a074644d004b7f36fed34b76002c9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f1557a2841506a0fb2a49f2cbc7c7b09.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -56,6 +93,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<meta name="mermaid-theme" content="default">
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -249,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../W1/w1.html">Week1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -269,13 +307,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../W1/w1.html" class="sidebar-item-text sidebar-link">
+            <a href="../W1/w1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../W1/w1_1.html" class="sidebar-item-text sidebar-link">
@@ -302,49 +340,56 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#computer-boot-process-essential-guide" id="toc-computer-boot-process-essential-guide" class="nav-link active" data-scroll-target="#computer-boot-process-essential-guide">Computer Boot Process: Essential Guide</a>
-  <ul class="collapse">
-  <li><a href="#table-of-contents" id="toc-table-of-contents" class="nav-link" data-scroll-target="#table-of-contents">Table of Contents</a></li>
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#boot-process-steps" id="toc-boot-process-steps" class="nav-link" data-scroll-target="#boot-process-steps">Boot Process Steps</a>
-  <ul class="collapse">
-  <li><a href="#step-1-firmware-initialization" id="toc-step-1-firmware-initialization" class="nav-link" data-scroll-target="#step-1-firmware-initialization">Step 1: Firmware Initialization</a></li>
-  <li><a href="#step-2-post-and-boot-device-detection" id="toc-step-2-post-and-boot-device-detection" class="nav-link" data-scroll-target="#step-2-post-and-boot-device-detection">Step 2: POST and Boot Device Detection</a></li>
-  <li><a href="#step-3-bootloader-execution" id="toc-step-3-bootloader-execution" class="nav-link" data-scroll-target="#step-3-bootloader-execution">Step 3: Bootloader Execution</a></li>
-  <li><a href="#step-4-operating-system-loading" id="toc-step-4-operating-system-loading" class="nav-link" data-scroll-target="#step-4-operating-system-loading">Step 4: Operating System Loading</a></li>
-  </ul></li>
-  <li><a href="#partition-styles-vs-file-systems" id="toc-partition-styles-vs-file-systems" class="nav-link" data-scroll-target="#partition-styles-vs-file-systems">Partition Styles vs File Systems</a>
-  <ul class="collapse">
-  <li><a href="#partition-styles" id="toc-partition-styles" class="nav-link" data-scroll-target="#partition-styles">Partition Styles</a></li>
-  <li><a href="#file-systems" id="toc-file-systems" class="nav-link" data-scroll-target="#file-systems">File Systems</a></li>
-  </ul></li>
-  <li><a href="#boot-process-summary" id="toc-boot-process-summary" class="nav-link" data-scroll-target="#boot-process-summary">Boot Process Summary</a></li>
-  <li><a href="#frequently-asked-questions" id="toc-frequently-asked-questions" class="nav-link" data-scroll-target="#frequently-asked-questions">Frequently Asked Questions</a>
-  <ul class="collapse">
-  <li><a href="#q1-whats-the-difference-between-bios-and-uefi" id="toc-q1-whats-the-difference-between-bios-and-uefi" class="nav-link" data-scroll-target="#q1-whats-the-difference-between-bios-and-uefi">Q1: What’s the difference between BIOS and UEFI?</a></li>
-  <li><a href="#q2-whats-the-difference-between-partition-style-and-file-system" id="toc-q2-whats-the-difference-between-partition-style-and-file-system" class="nav-link" data-scroll-target="#q2-whats-the-difference-between-partition-style-and-file-system">Q2: What’s the difference between partition style and file system?</a></li>
-  <li><a href="#q3-can-i-dual-boot-multiple-operating-systems" id="toc-q3-can-i-dual-boot-multiple-operating-systems" class="nav-link" data-scroll-target="#q3-can-i-dual-boot-multiple-operating-systems">Q3: Can I dual boot multiple operating systems?</a></li>
-  </ul></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
-  <ul class="collapse">
-  <li><a href="#video-tutorials" id="toc-video-tutorials" class="nav-link" data-scroll-target="#video-tutorials">Video Tutorials</a></li>
-  </ul></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="w1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">How Computer on?</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Understanding How Your Computer Starts Up</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>HRM </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 21, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
-<section id="computer-boot-process-essential-guide" class="level1">
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+📖 Boot Process Detailed Guide
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<section id="computer-boot-process-essential-guide" class="level1 callout-body-container callout-body">
 <h1>Computer Boot Process: Essential Guide</h1>
 <section id="table-of-contents" class="level2">
 <h2 class="anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
@@ -525,7 +570,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<div class="cell" data-layout-align="default">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
@@ -606,11 +651,190 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://youtu.be/sebgrmiYdk4?si=2826LMkJMHlLhExv">Boot Process (Hindi)</a></li>
 <li><a href="https://youtu.be/K2NsltEIUlI?si=AyBhrLQ6RItdx7QL">Windows Partitions (Hindi)</a></li>
 </ul>
+</section>
+</section>
+</section>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🔧 WSL Setup
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<section id="install-wsl-in-windows" class="level1 callout-body-container callout-body">
+<h1>Install WSL in Windows</h1>
+<p>We will use windows powershell to install wsl.</p>
+<section id="remove-previouse-installed-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="remove-previouse-installed-distributions">Remove Previouse Installed Distributions</h2>
+<p><code>wsl --list --verbose</code></p>
+<p>For Each Listed distribution - <code>wsl --unregister &lt;DistributionName&gt;</code> - Open Settings → Apps → Installed apps, Find each Linux distribution, click the three-dot menu, and select Uninstall</p>
+</section>
+<section id="update-wsl-ubuntu-installation" class="level2">
+<h2 class="anchored" data-anchor-id="update-wsl-ubuntu-installation">Update WSL –&gt; Ubuntu Installation</h2>
+<p><code>wsl --update</code><br>
+<code>wsl --list --online</code><br>
+<code>wsl --install Ubuntu-24.04</code> –&gt; Install Ubuntu<br>
+<code>sudo apt update &amp;&amp; sudo apt upgrade -y</code> –&gt; Update Ubuntu</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PS</span> C<span class="op">:</span>\Users\hrith<span class="op">&gt;</span> wsl <span class="op">--</span>install Ubuntu-24<span class="op">.</span><span class="dv">04</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">Downloading</span><span class="op">:</span> Ubuntu <span class="dv">24.04</span> LTS</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Installing<span class="op">:</span> Ubuntu <span class="dv">24.04</span> LTS</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Distribution successfully installed<span class="op">.</span> It can be launched via <span class="st">'wsl.exe -d Ubuntu-24.04'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Launching Ubuntu-24<span class="op">.</span><span class="dv">04</span><span class="op">...</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Provisioning the new WSL instance Ubuntu-24<span class="op">.</span><span class="dv">04</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">This</span> might take a <span class="cf">while</span><span class="op">...</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Create a default Unix user account<span class="op">:</span> hrm</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>New password<span class="op">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Retype new password<span class="op">:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>passwd<span class="op">:</span> password updated successfully</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>To run a command as administrator <span class="op">(</span>user <span class="st">"root"</span><span class="op">),</span> use <span class="st">"sudo &lt;command&gt;"</span><span class="op">.</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>See <span class="st">"man sudo_root"</span> <span class="cf">for</span> details<span class="op">.</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>hrm@bitnd<span class="op">:/</span>mnt<span class="op">/</span>c<span class="op">/</span>Users<span class="op">/</span>hrith$ sudo apt update <span class="op">&amp;&amp;</span> sudo apt upgrade <span class="op">-</span>y</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>sudo<span class="op">]</span> password <span class="cf">for</span> hrm<span class="op">:</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Hit<span class="op">:</span><span class="dv">1</span> http<span class="op">://</span>archive<span class="op">.</span><span class="fu">ubuntu</span><span class="op">.</span><span class="fu">com</span><span class="op">/</span>ubuntu noble InRelease</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Get<span class="op">:</span><span class="dv">2</span> http<span class="op">://</span>security<span class="op">.</span><span class="fu">ubuntu</span><span class="op">.</span><span class="fu">com</span><span class="op">/</span>ubuntu noble-security InRelease <span class="op">[</span><span class="dv">126</span> kB<span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="install-javascript-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-javascript-tools">Install JavaScript Tools</h2>
+<ul>
+<li>nvm install visit and run bash script <code>https://github.com/nvm-sh/nvm</code></li>
+<li>node install <code>https://nodejs.org/en/download</code>
+<ul>
+<li><code>nvm install 22</code></li>
+<li><code>nvm list</code> <code>nvm use 22</code> <code>nvm current</code></li>
+<li><code>corepack enable yarn</code></li>
+<li><code>corepack enable pnpm</code> &gt; Check</li>
+</ul></li>
+<li><code>nvm -v</code></li>
+<li><code>node -v</code></li>
+<li><code>npm -v</code> <code>npx -v</code></li>
+<li><code>pnpm -v</code></li>
+<li><code>yarn -v</code></li>
+</ul>
+</section>
+<section id="install-python-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-python-tools">Install Python Tools</h2>
+<ol type="1">
+<li>Python VENV
+<ul>
+<li><code>python3 -m venv .venv</code> –&gt; Copy error code and run <code>sudo apt install python3.12-venv</code></li>
+</ul></li>
+<li>PIPX
+<ul>
+<li><code>sudo apt install pipx</code></li>
+</ul></li>
+<li>UV - Rust-based Python package installer
+<ul>
+<li><code>pipx install uv</code> It will maintain isolation</li>
+</ul></li>
+<li>LLM
+<ul>
+<li><code>pipx install llm</code> –&gt; <code>pipx ensurepath</code></li>
+<li>Configure it
+<ul>
+<li><code>llm install llm-gemini</code> or <code>llm install llm-ollama</code></li>
+<li><code>llm keys set gemini</code></li>
+<li><code>llm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'</code></li>
+</ul></li>
+</ul></li>
+<li>MiniConda
+<ul>
+<li>Download .sh <code>https://www.anaconda.com/download/success</code></li>
+<li><code>bash &lt;pathto .sh file&gt;</code></li>
+<li><code>conda config --set auto_activate_base false</code></li>
+</ul></li>
+</ol>
+</section>
+<section id="install-cc-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-cc-tools">Install C/C++ Tools</h2>
+<p><code>sudo apt install build-essential</code> - <code>gcc</code> –&gt; The C compiler - <code>g++</code> –&gt; The C++ compiler</p>
+<blockquote class="blockquote">
+<p>Check - gcc –verison - g++ –version</p>
+</blockquote>
+</section>
+<section id="install-java-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-java-tools">Install Java Tools</h2>
+<p><code>sudo apt install default-jdk</code></p>
+<blockquote class="blockquote">
+<p>This command installs:</p>
+</blockquote>
+<pre><code>Java Development Kit (JDK) - Compiler, debugger, and development tools
+Java Runtime Environment (JRE) - Required to run Java applications
+Java Virtual Machine (JVM) - Core execution environment</code></pre>
+<ul>
+<li>Configure <code>JAVA_HOME</code> Environment Variable
+<ul>
+<li><code>echo 'export JAVA_HOME="/usr/lib/jvm/default-java"' &gt;&gt; ~/.bashrc</code> ## confirm the path first using below update-alternatiove… command</li>
+<li>restart shell</li>
+</ul></li>
+<li>Install other versions of java
+<ul>
+<li><code>sudo apt install openjdk-17-jdk</code></li>
+</ul></li>
+<li>Set Default Java/Javac installed version
+<ul>
+<li><code>sudo update-alternatives --config java</code></li>
+<li><code>sudo update-alternatives --config javac</code></li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>Check<br>
+- <code>java --version</code> - <code>javac --version</code> - <code>echo $JAVA_HOME</code></p>
+</blockquote>
+</section>
+<section id="use-npx" class="level2">
+<h2 class="anchored" data-anchor-id="use-npx">Use NPX</h2>
+<ul>
+<li><code>npm install -g promptfoo</code> then <code>npx promptfoo view</code></li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🔧 Local VM Setup
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<section id="in-windows" class="level1 callout-body-container callout-body">
+<h1>In Windows</h1>
+<section id="using-type-2-hypervisor" class="level2">
+<h2 class="anchored" data-anchor-id="using-type-2-hypervisor">Using Type-2 Hypervisor</h2>
+<ul>
+<li>Download and Install Virtual Box
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">Link</a></li>
+</ul></li>
+<li>Download .iso file of any distribution
+<ul>
+<li>e.g.&nbsp;<a href="https://mirror.ajl.albony.in/ubuntu-releases/" target="_blank">Ubuntu</a></li>
+</ul></li>
+<li>Install iso file in Virtual Box
+<ul>
+<li>Click on New</li>
+<li>Select Iso and fill required data…</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</div>
+</div>
 
 
-</section>
-</section>
-</section>
+<!-- -->
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -695,6 +919,57 @@ ul.task-list li input[type="checkbox"] {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1024,7 +1299,75 @@ ul.task-list li input[type="checkbox"] {
       }
     }
   });
-  </script>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "How Computer on?"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Understanding How Your Computer Starts Up"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "HRM"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 21 August 2025</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "MMMM DD, YYYY"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: right</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-title: "Navigation"</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: false</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">    mermaid:</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">      theme: default</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: false</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">    smooth-scroll: true</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">    anchor-sections: true</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 8</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 6</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-align: center</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">    df-print: kable</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight-style: github</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">    css: "../styles.css"</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: false</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">    geometry:</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">      - top=30mm</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">      - left=30mm</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">      - heightrounded</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 7</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 5</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-align: center</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co">    df-print: kable</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co">    fontsize: 14pt</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co">    documentclass: article</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co">    papersize: a4</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co">    keep-tex: false</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="an">link-citations:</span><span class="co"> true</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>::: {.callout-note collapse="true"}</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="fu"># 📖 Boot Process Detailed Guide</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>{{&lt; include note.qmd &gt;}}</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>::: {.callout-note collapse="true"}  </span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="fu"># 🔧 WSL Setup</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>{{&lt; include wsl.qmd &gt;}}</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>::: {.callout-note collapse="true"}  </span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="fu"># 🔧 Local VM Setup</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>{{&lt; include vm.qmd &gt;}}</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

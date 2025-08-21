@@ -23,10 +23,11 @@ website:
       - text: "About The Course"
         href: index.qmd
       - section: "Week1"
-        href: ./W1/osboot.qmd
+        href: ./W1/w1.qmd
         contents:
-          - ./W1/osboot1.qmd
-          - ./W1/osboot2.qmd
+          - ./W1/w1_1.qmd
+          - ./W1/w1_2.qmd
+          - ./W1/w1_3.qmd
 
 format:
   html:
