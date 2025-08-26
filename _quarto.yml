@@ -28,6 +28,7 @@ website:
           - ./W1/w1_1.qmd
           - ./W1/w1_2.qmd
           - ./W1/w1_3.qmd
+          - ./W1/w1_4.qmd
 
 format:
   html:

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>vm – TDS by HRM</title>
+<title>git_basics – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -309,13 +309,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#in-windows" id="toc-in-windows" class="nav-link active" data-scroll-target="#in-windows">In Windows</a>
+  <li><a href="#git" id="toc-git" class="nav-link active" data-scroll-target="#git">Git</a>
   <ul class="collapse">
-  <li><a href="#using-type-2-hypervisor" id="toc-using-type-2-hypervisor" class="nav-link" data-scroll-target="#using-type-2-hypervisor">Using Type-2 Hypervisor</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
-  <ul class="collapse">
-  <li><a href="#video-tutorials" id="toc-video-tutorials" class="nav-link" data-scroll-target="#video-tutorials">Video Tutorials</a></li>
-  </ul></li>
+  <li><a href="#lets-start-maintaining-history" id="toc-lets-start-maintaining-history" class="nav-link" data-scroll-target="#lets-start-maintaining-history">Lets start maintaining history</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -327,36 +323,31 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="in-windows" class="level1">
-<h1>In Windows</h1>
-<section id="using-type-2-hypervisor" class="level2">
-<h2 class="anchored" data-anchor-id="using-type-2-hypervisor">Using Type-2 Hypervisor</h2>
+<section id="git" class="level1">
+<h1>Git</h1>
 <ul>
-<li>Download and Install Virtual Box
-<ul>
-<li><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">Link</a></li>
-</ul></li>
-<li>Download .iso file of any distribution
-<ul>
-<li>e.g.&nbsp;<a href="https://mirror.ajl.albony.in/ubuntu-releases/" target="_blank">Ubuntu</a></li>
-</ul></li>
-<li>Install iso file in Virtual Box
-<ul>
-<li>Click on New</li>
-<li>Select Iso and fill required data…</li>
-</ul></li>
+<li>Git is a distributed <code>VCS(Version Control Software)</code></li>
+<li>It store all code history/snapshots in <code>.git</code> folder</li>
+<li>If you delete even all files, then you can recover all files from <code>.git</code> folder, because all codes are stored there with history</li>
 </ul>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<section id="video-tutorials" class="level3">
-<h3 class="anchored" data-anchor-id="video-tutorials">Video Tutorials</h3>
+<section id="lets-start-maintaining-history" class="level2">
+<h2 class="anchored" data-anchor-id="lets-start-maintaining-history">Lets start maintaining history</h2>
+<ol type="1">
+<li><code>git init</code> create .git folder</li>
+<li>create some files and write something</li>
+<li><code>git add .</code> add all files in staging area (except the files/folder name in <code>.gitignore</code> file)</li>
+<li><code>git commit -m "first commit"</code> record this history in .git folder</li>
+<li>now repeat 2nd, 3rd and 4th steps</li>
+<li>If somewhere you want to go back to any specify commit
 <ul>
-<li>Virtual Box Setup (Hindi) <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/4j2juiMJIhg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
-</ul>
+<li><code>git log --one line</code></li>
+<li><code>git checkout &lt;commit_id&gt;</code></li>
+<li><code>git checkout main</code></li>
+<li><code>git reset &lt;file&gt;</code> or <code>git reset</code></li>
+</ul></li>
+</ol>
 
 
-</section>
 </section>
 </section>
 

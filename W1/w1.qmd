@@ -1,6 +1,6 @@
 ---
-title: "How Computer on?"
-subtitle: "Understanding How Your Computer Starts Up"
+title: "Windows to Linux"
+subtitle: "Understanding How Your Computer Starts Up and Load Different OS"
 author: "HRM"
 date: 21 August 2025
 date-format: "MMMM DD, YYYY"
@@ -15,7 +15,7 @@ format:
     mermaid:
       theme: default
     code-fold: false
-    code-tools: true
+    code-tools: false
     smooth-scroll: true
     anchor-sections: true
     fig-width: 8
@@ -48,21 +48,35 @@ execute:
 link-citations: true
 ---
 
-::: {.callout-note collapse="true"}
-# 📖 Boot Process Detailed Guide
+
+
+::: {.callout-tip collapse="true" icon="📚"}
+## 📖 Understanding the Boot Process
+*Learn the fundamental steps of how your computer starts up*
 
 {{< include boot.qmd >}}
 :::
 
-::: {.callout-note collapse="true"}  
-# 🔧 WSL Setup
+
+::: {.callout-tip collapse="true" icon="🐧"}
+## 🐧 Windows Subsystem for Linux (WSL)
+*Run Linux seamlessly on Windows*
 
 {{< include wsl.qmd >}}
 :::
 
-::: {.callout-note collapse="true"}  
-# 🔧 Local VM Setup
+
+::: {.callout-warning collapse="true" icon="💻"}
+## 💻 Virtual Machine Setup
+*Create isolated computing environments*
 
 {{< include vm.qmd >}}
 :::
 
+
+::: {.callout-important collapse="true" icon="⚖️"}
+## ⚖️ Dual Boot Configuration
+*Run multiple operating systems on one machine*
+
+{{< include dual_boot.qmd >}}
+:::

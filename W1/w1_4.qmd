@@ -1,7 +1,7 @@
 ---
-title: "Computer Boot Process"
+title: "Dual Boot"
 author: "HRM"
-date: 21 August 2025
+date: 27 August 2025
 date-format: "MMMM DD, YYYY"
 format:
   html:
@@ -48,5 +48,4 @@ link-citations: true
 ---
 
 
-{{< include boot.qmd >}}
-
+{{< include dual_boot.qmd >}}

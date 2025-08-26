@@ -14,7 +14,7 @@ format:
     mermaid:
       theme: default
     code-fold: false
-    code-tools: true
+    code-tools: false
     smooth-scroll: true
     anchor-sections: true
     fig-width: 8

@@ -9,7 +9,7 @@
 <meta name="author" content="HRM">
 <meta name="dcterms.date" content="2025-08-21">
 
-<title>How Computer on? – TDS by HRM</title>
+<title>Windows to Linux – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -332,6 +332,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">VM Virtual Machines</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../W1/w1_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dual Boot</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -348,8 +354,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">How Computer on?</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">Understanding How Your Computer Starts Up</p>
+<h1 class="title">Windows to Linux</h1>
+<p class="subtitle lead">Understanding How Your Computer Starts Up and Load Different OS</p>
 </div>
 
 
@@ -378,18 +384,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-📖 Boot Process Detailed Guide
+📖 Understanding the Boot Process
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<section id="computer-boot-process-essential-guide" class="level1 callout-body-container callout-body">
+<div class="callout-body-container callout-body">
+<p><em>Learn the fundamental steps of how your computer starts up</em></p>
+<section id="computer-boot-process-essential-guide" class="level1">
 <h1>Computer Boot Process: Essential Guide</h1>
 <section id="table-of-contents" class="level2">
 <h2 class="anchored" data-anchor-id="table-of-contents">Table of Contents</h2>
@@ -662,18 +670,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-🔧 WSL Setup
+🐧 Windows Subsystem for Linux (WSL)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<section id="install-wsl-in-windows" class="level1 callout-body-container callout-body">
+<div class="callout-body-container callout-body">
+<p><em>Run Linux seamlessly on Windows</em></p>
+<section id="install-wsl-in-windows" class="level1">
 <h1>Install WSL in Windows</h1>
 <p>We will use windows powershell to install wsl.</p>
 <section id="check-wsl-2-installed-or-not" class="level2">
@@ -864,18 +875,21 @@ Java Virtual Machine (JVM) - Core execution environment  </code></pre>
 </section>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-🔧 Local VM Setup
+💻 Virtual Machine Setup
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<section id="in-windows" class="level1 callout-body-container callout-body">
+<div class="callout-body-container callout-body">
+<p><em>Create isolated computing environments</em></p>
+<section id="in-windows" class="level1">
 <h1>In Windows</h1>
 <section id="using-type-2-hypervisor" class="level2">
 <h2 class="anchored" data-anchor-id="using-type-2-hypervisor">Using Type-2 Hypervisor</h2>
@@ -907,9 +921,166 @@ Java Virtual Machine (JVM) - Core execution environment  </code></pre>
 </section>
 </div>
 </div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+⚖️ Dual Boot Configuration
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><em>Run multiple operating systems on one machine</em></p>
+<section id="dual-boot-setup-guide" class="level1">
+<h1>Dual-Boot Setup Guide</h1>
+<p>This guide will help you install another operating system (Linux) alongside your existing Windows installation.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Disclaimer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><code>Do this at your own risk.</code> Please watch various YouTube videos and proceed with dual boot only when you are 100% sure about the process.</p>
+<p>If you want to minimize the risk:<br>
+1. <strong>Use External SSD/HDD</strong> to install Linux<br>
+- This will prevent almost 99% of any accidental damage to your main system<br>
+2. <strong>Install Kubuntu</strong><br>
+- Since dual boot requires creating partitions<br>
+- Kubuntu has a <code>Replace Partition</code> option which avoids most of the headache</p>
+</div>
+</div>
+</div>
+<section id="requirements" class="level2">
+<h2 class="anchored" data-anchor-id="requirements">Requirements</h2>
+<ol type="1">
+<li>New SSD/HDD or at least 30GB free storage on your current Windows drive
+<ul>
+<li>If installing on the same SSD/HDD where Windows is installed:</li>
+<li>I recommend shrinking at least a 30GB partition
+<ul>
+<li><a href="https://youtu.be/eJYwbqlAMd4?si=-1Kj0QSHjBtPxEJf" target="_blank">How To Shrink Partition</a></li>
+</ul></li>
+</ul></li>
+<li>Pendrive/USB drive (8GB or larger)</li>
+<li>One ISO file of any Linux distribution. <a href="https://kubuntu.org/getkubuntu/" target="_blank">Kubuntu</a></li>
+<li>Software to create a bootable USB drive. <a href="https://www.ventoy.net/en/download.html" target="_blank">Ventoy</a></li>
+</ol>
+</section>
+<section id="prepare-the-usb-drive" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-the-usb-drive">Prepare the USB Drive</h2>
+<ol type="1">
+<li>Insert your USB drive and run Ventoy</li>
+<li>Format your USB drive with Ventoy to make it bootable</li>
+<li>Just Copy and paste the Linux distribution ISO files into the USB drive</li>
+<li>To be sure that iso file not got corrupted, you can run sha256sum and check both on local and server matches or not</li>
+</ol>
+</section>
+<section id="prepare-your-laptopcomputer" class="level2">
+<h2 class="anchored" data-anchor-id="prepare-your-laptopcomputer">Prepare Your Laptop/Computer</h2>
+<ul>
+<li>Restart your computer</li>
+<li>Go to BIOS/UEFI Settings
+<ul>
+<li>On HP laptops: restart and keep pressing the <code>F10</code> key</li>
+</ul></li>
+<li>Navigate to Boot Settings</li>
+<li><code>Disable Secure Boot</code> (you can re-enable it after installation)</li>
+</ul>
+</section>
+<section id="installation-process" class="level2">
+<h2 class="anchored" data-anchor-id="installation-process">Installation Process</h2>
+<p>Once your USB drive and laptop BIOS/UEFI settings are ready, proceed with the installation:</p>
+<ul>
+<li>Restart your computer</li>
+<li>Go to Boot Device Options
+<ul>
+<li>On HP laptops: keep pressing the <code>F9</code> key</li>
+</ul></li>
+<li>Choose your USB Drive</li>
+<li>If using Ventoy:
+<ul>
+<li>It will ask which OS to boot (based on the ISOs you’ve copied)</li>
+</ul></li>
+<li>If using BalenaEtcher: it will directly boot into that particular OS</li>
+<li>For Kubuntu installation:
+<ul>
+<li>Click on “Install”</li>
+<li>Select language, keyboard layout, etc.</li>
+<li>When choosing where to install or configure <code>partitions</code>:
+<ul>
+<li>Choose <code>Replace Partition</code> –&gt; then Select the newly created(shrinked) 30GB partition</li>
+<li>The installer will format two partitions
+<ul>
+<li>One for your Linux installation that you just selected</li>
+<li>One will be EFI partition of windows(first partition in most cases)</li>
+</ul></li>
+</ul></li>
+<li>Choose your username, password, etc., and proceed</li>
+<li>Once installation is complete, your computer will automatically reboot or ask you to remove the USB drive and press Enter</li>
+<li>Remove the USB drive and press Enter to reboot</li>
+</ul></li>
+</ul>
+</section>
+<section id="final-computer-setup" class="level2">
+<h2 class="anchored" data-anchor-id="final-computer-setup">Final Computer Setup</h2>
+<ul>
+<li>Restart your computer</li>
+<li>Go to BIOS/UEFI settings
+<ul>
+<li>You can enable Secure Boot if desired</li>
+</ul></li>
+<li>Most importantly:
+<ul>
+<li>Navigate to Boot Settings</li>
+<li>Change the boot order</li>
+<li>Set Ubuntu/Linux as the first boot option</li>
+</ul></li>
+</ul>
+</section>
+<section id="final-notes" class="level2">
+<h2 class="anchored" data-anchor-id="final-notes">Final Notes</h2>
+<ul>
+<li>When you turn on your computer, you’ll have the option to boot into Ubuntu or Windows</li>
+<li><strong>Important</strong>:
+<ul>
+<li>The first time you boot into Windows after installation:
+<ul>
+<li>You may see a blue screen asking for a BitLocker recovery key</li>
+<li>You can easily log in with your Microsoft account and retrieve the password from <a href="https://account.microsoft.com/devices/recoverykey" target="_blank">BitLocker Recovery</a></li>
+<li>This will only be asked once.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="resources-1" class="level2">
+<h2 class="anchored" data-anchor-id="resources-1">Resources</h2>
+<ul>
+<li><a href="https://account.microsoft.com/devices/recoverykey" target="_blank">BitLocker Recovery</a></li>
+<li><a href="https://kubuntu.org/getkubuntu/" target="_blank">Kubuntu ISO</a></li>
+<li><a href="https://www.ventoy.net/en/download.html" target="_blank">Ventoy</a></li>
+</ul>
+<section id="video-tutorials-3" class="level3">
+<h3 class="anchored" data-anchor-id="video-tutorials-3">Video Tutorials</h3>
+<ul>
+<li>Shrink Partition <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/eJYwbqlAMd4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
+</ul>
+</section>
+</section>
+</section>
+</div>
+</div>
+</div>
 
-
-<!-- -->
 
 
 </main> <!-- /main -->
@@ -995,57 +1166,6 @@ Java Virtual Machine (JVM) - Core execution environment  </code></pre>
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1375,75 +1495,7 @@ Java Virtual Machine (JVM) - Core execution environment  </code></pre>
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "How Computer on?"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Understanding How Your Computer Starts Up"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "HRM"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 21 August 2025</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "MMMM DD, YYYY"</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: right</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-title: "Navigation"</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: false</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">    mermaid:</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">      theme: default</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: false</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">    smooth-scroll: true</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">    anchor-sections: true</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 8</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 6</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-align: center</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">    df-print: kable</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight-style: github</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">    css: "../styles.css"</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: false</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">    geometry:</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">      - top=30mm</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">      - left=30mm</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">      - heightrounded</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-width: 7</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-height: 5</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-align: center</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co">    df-print: kable</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co">    fontsize: 14pt</span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co">    documentclass: article</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co">    papersize: a4</span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co">    keep-tex: false</span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="an">link-citations:</span><span class="co"> true</span></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>::: {.callout-note collapse="true"}</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="fu"># 📖 Boot Process Detailed Guide</span></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>{{&lt; include boot.qmd &gt;}}</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>::: {.callout-note collapse="true"}  </span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="fu"># 🔧 WSL Setup</span></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>{{&lt; include wsl.qmd &gt;}}</span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>::: {.callout-note collapse="true"}  </span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="fu"># 🔧 Local VM Setup</span></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>{{&lt; include vm.qmd &gt;}}</span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+  </script>
 </div> <!-- /content -->
 
 
