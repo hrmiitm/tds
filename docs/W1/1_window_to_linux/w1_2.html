@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="HRM">
-<meta name="dcterms.date" content="2025-08-18">
+<meta name="dcterms.date" content="2025-08-21">
 
-<title>TDS - Tools for Data Science – TDS by HRM</title>
+<title>WSL - Windows Subsytem for Linux – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,26 +22,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9abcedaa66623c4356fc84edb00eef4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-9abcedaa66623c4356fc84edb00eef4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -60,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -232,7 +267,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">TDS by HRM</span>
     </a>
   </div>
@@ -248,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">About The Course</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../W1/w1.html">Week1</a></li><li class="breadcrumb-item"><a href="../../W1/1_window_to_linux/w1_1.html">1. Windows To Linux</a></li><li class="breadcrumb-item"><a href="../../W1/1_window_to_linux/w1_2.html">WSL</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -262,49 +297,49 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About The Course</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./W1/w1.html" class="sidebar-item-text sidebar-link">
+            <a href="../../W1/w1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">1. Windows To Linux</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computer Boot Process</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">WSL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">VM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dual Boot</span></a>
   </div>
 </li>
@@ -321,25 +356,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/1_git.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/1_git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GIT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/2_before_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/2_before_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Before Github</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/3_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/3_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Github</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/4_opensource_contributions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/4_opensource_contributions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contribute To Open Source</span></a>
   </div>
 </li>
@@ -356,19 +391,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/1_uv.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/1_uv.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">UV</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/2_conda.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/2_conda.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Miniconda</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/3_pipx_uvx.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/3_pipx_uvx.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LLM,UVX,PIPX</span></a>
   </div>
 </li>
@@ -385,13 +420,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/4_bash/1_bashrc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/4_bash/1_bashrc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Environment Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/4_bash/2_bash_script.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/4_bash/2_bash_script.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bash Script</span></a>
   </div>
 </li>
@@ -404,16 +439,36 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#install-wsl-in-windows" id="toc-install-wsl-in-windows" class="nav-link active" data-scroll-target="#install-wsl-in-windows">Install WSL in Windows</a>
+  <ul class="collapse">
+  <li><a href="#check-wsl-2-installed-or-not" id="toc-check-wsl-2-installed-or-not" class="nav-link" data-scroll-target="#check-wsl-2-installed-or-not">Check WSL-2 Installed or not?</a></li>
+  <li><a href="#if-wsl-2-not-instlled" id="toc-if-wsl-2-not-instlled" class="nav-link" data-scroll-target="#if-wsl-2-not-instlled">If WSL 2 Not Instlled</a></li>
+  <li><a href="#if-already-installed-then-remove-previous-installed-distributions" id="toc-if-already-installed-then-remove-previous-installed-distributions" class="nav-link" data-scroll-target="#if-already-installed-then-remove-previous-installed-distributions">If already installed then Remove Previous Installed Distributions</a></li>
+  <li><a href="#update-wsl-ubuntu-installation" id="toc-update-wsl-ubuntu-installation" class="nav-link" data-scroll-target="#update-wsl-ubuntu-installation">Update WSL –&gt; Ubuntu Installation</a></li>
+  <li><a href="#install-javascript-tools" id="toc-install-javascript-tools" class="nav-link" data-scroll-target="#install-javascript-tools">Install JavaScript Tools</a></li>
+  <li><a href="#install-python-tools" id="toc-install-python-tools" class="nav-link" data-scroll-target="#install-python-tools">Install Python Tools</a></li>
+  <li><a href="#install-cc-tools" id="toc-install-cc-tools" class="nav-link" data-scroll-target="#install-cc-tools">Install C/C++ Tools</a></li>
+  <li><a href="#install-java-tools" id="toc-install-java-tools" class="nav-link" data-scroll-target="#install-java-tools">Install Java Tools</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+  <ul class="collapse">
+  <li><a href="#video-tutorials" id="toc-video-tutorials" class="nav-link" data-scroll-target="#video-tutorials">Video Tutorials</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../W1/w1.html">Week1</a></li><li class="breadcrumb-item"><a href="../../W1/1_window_to_linux/w1_1.html">1. Windows To Linux</a></li><li class="breadcrumb-item"><a href="../../W1/1_window_to_linux/w1_2.html">WSL</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">TDS - Tools for Data Science</h1>
+<h1 class="title">WSL - Windows Subsytem for Linux</h1>
 </div>
 
 
@@ -430,7 +485,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 18, 2025</p>
+      <p class="date">August 21, 2025</p>
     </div>
   </div>
   
@@ -442,9 +497,197 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- {{< include tds_syllabus.md >}} -->
+<section id="install-wsl-in-windows" class="level1">
+<h1>Install WSL in Windows</h1>
+<p>We will use windows powershell to install wsl.</p>
+<section id="check-wsl-2-installed-or-not" class="level2">
+<h2 class="anchored" data-anchor-id="check-wsl-2-installed-or-not">Check WSL-2 Installed or not?</h2>
+<ul>
+<li>Open PowerShell</li>
+<li><code>wsl --version</code> or <code>wsl.exe --version</code></li>
+<li>If any above command shows wsl version 2 , then it is already installed</li>
+</ul>
+</section>
+<section id="if-wsl-2-not-instlled" class="level2">
+<h2 class="anchored" data-anchor-id="if-wsl-2-not-instlled">If WSL 2 Not Instlled</h2>
+<ul>
+<li>Search <code>Turn Windows features on or off</code><br>
+</li>
+<li>Enable <code>Virtual Machine Platform</code>, <code>Windows Hypervisor Platform</code>, <code>Windows Subsytem for Linux</code><br>
+</li>
+<li><code>Restart</code> Computer (Not power on/off, click on restart)</li>
+<li>Install WSL <a href="https://youtu.be/G4AVNkd_u0E?si=jJSCXi0Oh33MP5HS" target="_blank">WSL-2 Setup</a></li>
+<li>Switch to WSL-2 <code>wsl --set-default-version 2</code></li>
+</ul>
+</section>
+<section id="if-already-installed-then-remove-previous-installed-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="if-already-installed-then-remove-previous-installed-distributions">If already installed then Remove Previous Installed Distributions</h2>
+<p><code>wsl --list --verbose</code></p>
+<p>For Each Listed distribution<br>
+- <code>wsl --unregister &lt;DistributionName&gt;</code><br>
+- <code>Open Settings → Apps → Installed apps</code> - Find each Linux distribution, click the three-dot menu, and select Uninstall</p>
+</section>
+<section id="update-wsl-ubuntu-installation" class="level2">
+<h2 class="anchored" data-anchor-id="update-wsl-ubuntu-installation">Update WSL –&gt; Ubuntu Installation</h2>
+<ul>
+<li><code>wsl --update</code><br>
+</li>
+<li><code>wsl --list --online</code><br>
+</li>
+<li><code>wsl --install Ubuntu-24.04</code> –&gt; Install Ubuntu<br>
+</li>
+<li><code>sudo apt update &amp;&amp; sudo apt upgrade -y</code> –&gt; Update Ubuntu</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">PS</span> C<span class="op">:</span>\Users\hrith<span class="op">&gt;</span> wsl <span class="op">--</span>install Ubuntu-24<span class="op">.</span><span class="dv">04</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="dt">Downloading</span><span class="op">:</span> Ubuntu <span class="dv">24.04</span> LTS</span>
+<span id="cb1-3"><a href="#cb1-3"></a>Installing<span class="op">:</span> Ubuntu <span class="dv">24.04</span> LTS</span>
+<span id="cb1-4"><a href="#cb1-4"></a>Distribution successfully installed<span class="op">.</span> It can be launched via <span class="st">'wsl.exe -d Ubuntu-24.04'</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>Launching Ubuntu-24<span class="op">.</span><span class="dv">04</span><span class="op">...</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>Provisioning the new WSL instance Ubuntu-24<span class="op">.</span><span class="dv">04</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="dt">This</span> might take a <span class="cf">while</span><span class="op">...</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>Create a default Unix user account<span class="op">:</span> hrm</span>
+<span id="cb1-9"><a href="#cb1-9"></a>New password<span class="op">:</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>Retype new password<span class="op">:</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>passwd<span class="op">:</span> password updated successfully</span>
+<span id="cb1-12"><a href="#cb1-12"></a>To run a command as administrator <span class="op">(</span>user <span class="st">"root"</span><span class="op">),</span> use <span class="st">"sudo &lt;command&gt;"</span><span class="op">.</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>See <span class="st">"man sudo_root"</span> <span class="cf">for</span> details<span class="op">.</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a>hrm@bitnd<span class="op">:/</span>mnt<span class="op">/</span>c<span class="op">/</span>Users<span class="op">/</span>hrith$ sudo apt update <span class="op">&amp;&amp;</span> sudo apt upgrade <span class="op">-</span>y</span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="op">[</span>sudo<span class="op">]</span> password <span class="cf">for</span> hrm<span class="op">:</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>Hit<span class="op">:</span><span class="dv">1</span> http<span class="op">://</span>archive<span class="op">.</span><span class="fu">ubuntu</span><span class="op">.</span><span class="fu">com</span><span class="op">/</span>ubuntu noble InRelease</span>
+<span id="cb1-18"><a href="#cb1-18"></a>Get<span class="op">:</span><span class="dv">2</span> http<span class="op">://</span>security<span class="op">.</span><span class="fu">ubuntu</span><span class="op">.</span><span class="fu">com</span><span class="op">/</span>ubuntu noble-security InRelease <span class="op">[</span><span class="dv">126</span> kB<span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="install-javascript-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-javascript-tools">Install JavaScript Tools</h2>
+<ul>
+<li>nvm install visit and run bash script <code>https://github.com/nvm-sh/nvm</code><br>
+</li>
+<li>node install <code>https://nodejs.org/en/download</code>
+<ul>
+<li><code>nvm install 22</code><br>
+</li>
+<li><code>nvm list</code> <code>nvm use 22</code> <code>nvm current</code><br>
+</li>
+<li><code>corepack enable yarn</code><br>
+</li>
+<li><code>corepack enable pnpm</code></li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>Check<br>
+- <code>nvm -v</code><br>
+- <code>node -v</code><br>
+- <code>npm -v</code> <code>npx -v</code><br>
+- <code>pnpm -v</code><br>
+- <code>yarn -v</code></p>
+</blockquote>
+</section>
+<section id="install-python-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-python-tools">Install Python Tools</h2>
+<ol type="1">
+<li>Python VENV
+<ul>
+<li><code>python3 -m venv .venv</code> –&gt; Copy error code and run <code>sudo apt install python3.12-venv</code></li>
+</ul></li>
+<li>PIPX
+<ul>
+<li><code>sudo apt install pipx</code></li>
+</ul></li>
+<li>UV - Rust-based Python package installer
+<ul>
+<li><code>pipx install uv</code> It will maintain isolation</li>
+</ul></li>
+<li>LLM
+<ul>
+<li><code>pipx install llm</code> –&gt; <code>pipx ensurepath</code></li>
+<li>Configure it
+<ul>
+<li><code>llm install llm-gemini</code> or <code>llm install llm-ollama</code></li>
+<li><code>llm keys set gemini</code></li>
+<li><code>llm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'</code></li>
+</ul></li>
+</ul></li>
+<li>MiniConda
+<ul>
+<li>Download .sh <code>https://www.anaconda.com/download/success</code></li>
+<li><code>bash &lt;pathto .sh file&gt;</code></li>
+<li><code>conda config --set auto_activate_base false</code></li>
+</ul></li>
+</ol>
+</section>
+<section id="install-cc-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-cc-tools">Install C/C++ Tools</h2>
+<p><code>sudo apt install build-essential</code></p>
+<ul>
+<li><code>gcc</code> –&gt; The C compiler<br>
+</li>
+<li><code>g++</code> –&gt; The C++ compiler</li>
+</ul>
+<blockquote class="blockquote">
+<p>Check - gcc –verison<br>
+- g++ –version</p>
+</blockquote>
+</section>
+<section id="install-java-tools" class="level2">
+<h2 class="anchored" data-anchor-id="install-java-tools">Install Java Tools</h2>
+<p><code>sudo apt install default-jdk</code></p>
+<blockquote class="blockquote">
+<p>This command installs:</p>
+</blockquote>
+<pre><code>Java Development Kit (JDK) - Compiler, debugger, and development tools  
+Java Runtime Environment (JRE) - Required to run Java applications  
+Java Virtual Machine (JVM) - Core execution environment  </code></pre>
+<ul>
+<li>Configure <code>JAVA_HOME</code> Environment Variable
+<ul>
+<li><code>echo 'export JAVA_HOME="/usr/lib/jvm/default-java"' &gt;&gt; ~/.bashrc</code> ## confirm the path first using below update-alternatiove… command<br>
+</li>
+<li>restart shell</li>
+</ul></li>
+<li>Install other versions of java
+<ul>
+<li><code>sudo apt install openjdk-17-jdk</code></li>
+</ul></li>
+<li>Set Default Java/Javac installed version
+<ul>
+<li><code>sudo update-alternatives --config java</code></li>
+<li><code>sudo update-alternatives --config javac</code></li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>Check<br>
+- <code>java --version</code><br>
+- <code>javac --version</code><br>
+- <code>echo $JAVA_HOME</code></p>
+</blockquote>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="video-tutorials" class="level3">
+<h3 class="anchored" data-anchor-id="video-tutorials">Video Tutorials</h3>
+<ul>
+<li>WSL-2 Setup <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/G4AVNkd_u0E" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
+</ul>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -864,5 +1107,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -1,82 +1,25 @@
 ---
-title: "Windows to Linux"
-subtitle: "Understanding How Your Computer Starts Up and Load Different OS"
+title: "Week - 1"
+subtitle: "Working on Linux"
 author: "HRM"
-date: 21 August 2025
-date-format: "MMMM DD, YYYY"
+# date: 21 August 2025
+# date-format: "MMMM DD, YYYY"
 format:
   html:
     toc: true
-    toc-depth: 3
     toc-location: right
-    toc-title: "Navigation"
-    number-sections: false
-    html-math-method: katex
-    mermaid:
-      theme: default
-    code-fold: false
-    code-tools: false
-    smooth-scroll: true
-    anchor-sections: true
-    fig-width: 8
-    fig-height: 6
-    fig-align: center
-    df-print: kable
-    highlight-style: github
-    css: "../styles.css"
-  pdf:
-    toc: true
     toc-depth: 3
-    number-sections: false
-    geometry:
-      - top=30mm
-      - left=30mm
-      - heightrounded
-    fig-width: 7
-    fig-height: 5
-    fig-align: center
-    df-print: kable
-    fontsize: 14pt
-    documentclass: article
-    papersize: a4
-    keep-tex: false
+    smooth-scroll: true
 
-execute:
-  echo: false
-  warning: false
-  message: false
-link-citations: true
+    # Code formatting
+    code-copy: true
+    code-fold: show
+    code-line-numbers: true
+#     code-overflow: wrap
+    highlight-style: dracula
 ---
 
+Hi Everyone.
 
 
-::: {.callout-tip collapse="true" icon="📚"}
-## 📖 Understanding the Boot Process
-*Learn the fundamental steps of how your computer starts up*
 
-{{< include boot.qmd >}}
-:::
-
-
-::: {.callout-tip collapse="true" icon="🐧"}
-## 🐧 Windows Subsystem for Linux (WSL)
-*Run Linux seamlessly on Windows*
-
-{{< include wsl.qmd >}}
-:::
-
-
-::: {.callout-warning collapse="true" icon="💻"}
-## 💻 Virtual Machine Setup
-*Create isolated computing environments*
-
-{{< include vm.qmd >}}
-:::
-
-
-::: {.callout-important collapse="true" icon="⚖️"}
-## ⚖️ Dual Boot Configuration
-*Run multiple operating systems on one machine*
-
-{{< include dual_boot.qmd >}}
-:::

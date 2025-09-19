@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="HRM">
-<meta name="dcterms.date" content="2025-08-18">
+<meta name="dcterms.date" content="2025-09-19">
 
-<title>TDS - Tools for Data Science – TDS by HRM</title>
+<title>OpenSource Contribution – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,26 +22,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9abcedaa66623c4356fc84edb00eef4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-9abcedaa66623c4356fc84edb00eef4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -60,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -232,7 +267,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">TDS by HRM</span>
     </a>
   </div>
@@ -248,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">About The Course</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../W1/w1.html">Week1</a></li><li class="breadcrumb-item"><a href="../../W1/2_git_github/1_git.html">2. Git &amp; Github</a></li><li class="breadcrumb-item"><a href="../../W1/2_git_github/4_opensource_contributions.html">Contribute To Open Source</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -262,19 +297,19 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About The Course</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./W1/w1.html" class="sidebar-item-text sidebar-link">
+            <a href="../../W1/w1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -286,25 +321,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computer Boot Process</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">WSL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">VM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dual Boot</span></a>
   </div>
 </li>
@@ -312,34 +347,34 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">2. Git &amp; Github</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/1_git.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/1_git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GIT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/2_before_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/2_before_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Before Github</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/3_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/3_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Github</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/4_opensource_contributions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/4_opensource_contributions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Contribute To Open Source</span></a>
   </div>
 </li>
@@ -356,19 +391,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/1_uv.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/1_uv.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">UV</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/2_conda.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/2_conda.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Miniconda</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/3_pipx_uvx.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/3_pipx_uvx.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LLM,UVX,PIPX</span></a>
   </div>
 </li>
@@ -385,13 +420,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/4_bash/1_bashrc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/4_bash/1_bashrc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Environment Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/4_bash/2_bash_script.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/4_bash/2_bash_script.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bash Script</span></a>
   </div>
 </li>
@@ -404,16 +439,31 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#steps-to-contribute-code-fix-on-github" id="toc-steps-to-contribute-code-fix-on-github" class="nav-link active" data-scroll-target="#steps-to-contribute-code-fix-on-github">Steps to Contribute Code Fix on GitHub</a>
+  <ul class="collapse">
+  <li><a href="#fork-the-repository" id="toc-fork-the-repository" class="nav-link" data-scroll-target="#fork-the-repository">1. Fork the Repository</a></li>
+  <li><a href="#clone-the-forked-repository-to-your-machine" id="toc-clone-the-forked-repository-to-your-machine" class="nav-link" data-scroll-target="#clone-the-forked-repository-to-your-machine">2. Clone the Forked Repository to Your Machine</a></li>
+  <li><a href="#create-a-new-branch-for-your-changes" id="toc-create-a-new-branch-for-your-changes" class="nav-link" data-scroll-target="#create-a-new-branch-for-your-changes">3. Create a New Branch for Your Changes</a></li>
+  <li><a href="#make-your-code-fixes" id="toc-make-your-code-fixes" class="nav-link" data-scroll-target="#make-your-code-fixes">4. Make Your Code Fixes</a></li>
+  <li><a href="#commit-your-changes" id="toc-commit-your-changes" class="nav-link" data-scroll-target="#commit-your-changes">5. Commit Your Changes</a></li>
+  <li><a href="#push-your-branch-to-your-fork" id="toc-push-your-branch-to-your-fork" class="nav-link" data-scroll-target="#push-your-branch-to-your-fork">6. Push Your Branch to Your Fork</a></li>
+  <li><a href="#create-a-pull-request-pr" id="toc-create-a-pull-request-pr" class="nav-link" data-scroll-target="#create-a-pull-request-pr">7. Create a Pull Request (PR)</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../W1/w1.html">Week1</a></li><li class="breadcrumb-item"><a href="../../W1/2_git_github/1_git.html">2. Git &amp; Github</a></li><li class="breadcrumb-item"><a href="../../W1/2_git_github/4_opensource_contributions.html">Contribute To Open Source</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">TDS - Tools for Data Science</h1>
+<h1 class="title">OpenSource Contribution</h1>
 </div>
 
 
@@ -430,7 +480,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 18, 2025</p>
+      <p class="date">September 19, 2025</p>
     </div>
   </div>
   
@@ -442,9 +492,77 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- {{< include tds_syllabus.md >}} -->
+<p>To fetch someone else’s code from GitHub, fix an issue, and contribute your changes so they can merge your fixes, follow this standard Git workflow using Fork, Clone, Branch, Commit, Push, and Pull Request:</p>
+<section id="steps-to-contribute-code-fix-on-github" class="level2">
+<h2 class="anchored" data-anchor-id="steps-to-contribute-code-fix-on-github">Steps to Contribute Code Fix on GitHub</h2>
+<section id="fork-the-repository" class="level3">
+<h3 class="anchored" data-anchor-id="fork-the-repository">1. Fork the Repository</h3>
+<ul>
+<li>Go to the repository page on GitHub where the original code is.</li>
+<li>Click the “Fork” button (top-right) to create your own copy of the repository under your GitHub account.</li>
+</ul>
+</section>
+<section id="clone-the-forked-repository-to-your-machine" class="level3">
+<h3 class="anchored" data-anchor-id="clone-the-forked-repository-to-your-machine">2. Clone the Forked Repository to Your Machine</h3>
+<ul>
+<li>On your GitHub fork page, click the green “Code” button and copy the repository URL.</li>
+<li>In your terminal, run:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>your-fork-repo-url<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>This downloads the code to your local machine.</li>
+</ul>
+</section>
+<section id="create-a-new-branch-for-your-changes" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-new-branch-for-your-changes">3. Create a New Branch for Your Changes</h3>
+<ul>
+<li>Change directory into the cloned repo:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">cd</span> <span class="op">&lt;</span>repo-name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Create and switch to a new branch for your fix:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> fix-issue-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="make-your-code-fixes" class="level3">
+<h3 class="anchored" data-anchor-id="make-your-code-fixes">4. Make Your Code Fixes</h3>
+<ul>
+<li>Edit the code locally to fix the issue.</li>
+</ul>
+</section>
+<section id="commit-your-changes" class="level3">
+<h3 class="anchored" data-anchor-id="commit-your-changes">5. Commit Your Changes</h3>
+<ul>
+<li>Stage the changed files:</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">git</span> add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Commit with a meaningful message:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Fix issue with XYZ"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="push-your-branch-to-your-fork" class="level3">
+<h3 class="anchored" data-anchor-id="push-your-branch-to-your-fork">6. Push Your Branch to Your Fork</h3>
+<ul>
+<li>Push your fix branch to your GitHub fork:</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">git</span> push origin fix-issue-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="create-a-pull-request-pr" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-pull-request-pr">7. Create a Pull Request (PR)</h3>
+<ul>
+<li>Go to your GitHub fork page.</li>
+<li>You should see a prompt to create a pull request from your pushed branch.</li>
+<li>Click “Compare &amp; pull request” or “New pull request.”</li>
+<li>Add a descriptive title and description of the fix.</li>
+<li>Submit the pull request so the original repo owner can review and merge your fix.</li>
+</ul>
+<hr>
+<p>This process ensures your contribution is linked to your GitHub profile and gives the repo owner a clear way to review and merge your changes. It also preserves the original repository history cleanly.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -864,5 +982,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

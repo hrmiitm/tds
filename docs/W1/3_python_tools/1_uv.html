@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="HRM">
-<meta name="dcterms.date" content="2025-08-18">
 
-<title>TDS - Tools for Data Science – TDS by HRM</title>
+<title>Python Tool - UV – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,26 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9abcedaa66623c4356fc84edb00eef4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-9abcedaa66623c4356fc84edb00eef4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -60,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -232,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">TDS by HRM</span>
     </a>
   </div>
@@ -248,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">About The Course</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../W1/w1.html">Week1</a></li><li class="breadcrumb-item"><a href="../../W1/3_python_tools/1_uv.html">3. Python Tools</a></li><li class="breadcrumb-item"><a href="../../W1/3_python_tools/1_uv.html">UV</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -262,19 +296,19 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About The Course</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./W1/w1.html" class="sidebar-item-text sidebar-link">
+            <a href="../../W1/w1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -286,25 +320,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computer Boot Process</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">WSL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">VM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dual Boot</span></a>
   </div>
 </li>
@@ -321,25 +355,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/1_git.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/1_git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GIT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/2_before_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/2_before_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Before Github</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/3_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/3_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Github</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/4_opensource_contributions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/4_opensource_contributions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contribute To Open Source</span></a>
   </div>
 </li>
@@ -347,28 +381,28 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">3. Python Tools</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/1_uv.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/1_uv.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">UV</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/2_conda.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/2_conda.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Miniconda</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/3_pipx_uvx.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/3_pipx_uvx.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LLM,UVX,PIPX</span></a>
   </div>
 </li>
@@ -385,13 +419,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/4_bash/1_bashrc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/4_bash/1_bashrc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Environment Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/4_bash/2_bash_script.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/4_bash/2_bash_script.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bash Script</span></a>
   </div>
 </li>
@@ -404,16 +438,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#running-any-standalone-python-script" id="toc-running-any-standalone-python-script" class="nav-link active" data-scroll-target="#running-any-standalone-python-script">Running any standalone python script</a></li>
+  <li><a href="#use-as-normal-virtual-environment" id="toc-use-as-normal-virtual-environment" class="nav-link" data-scroll-target="#use-as-normal-virtual-environment">Use as normal Virtual Environment</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../W1/w1.html">Week1</a></li><li class="breadcrumb-item"><a href="../../W1/3_python_tools/1_uv.html">3. Python Tools</a></li><li class="breadcrumb-item"><a href="../../W1/3_python_tools/1_uv.html">UV</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">TDS - Tools for Data Science</h1>
+<h1 class="title">Python Tool - UV</h1>
 </div>
 
 
@@ -427,12 +468,6 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 18, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -442,9 +477,85 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- {{< include tds_syllabus.md >}} -->
+<section id="running-any-standalone-python-script" class="level2">
+<h2 class="anchored" data-anchor-id="running-any-standalone-python-script">Running any standalone python script</h2>
+<p>No need to globally do pip install xyz</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">uv</span> add <span class="at">--script</span> a.py numpy</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">uv</span> run a.py</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="ex">uv</span> remove <span class="at">--script</span> a.py numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">hrm@bitnd:~$</span> batcat a.py</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">───────┬───────────────────────────────────</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>       <span class="ex">│</span> File: a.py</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="ex">───────┼───────────────────────────────────</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>   <span class="ex">1</span>   │ import numpy as np</span>
+<span id="cb2-6"><a href="#cb2-6"></a>   <span class="ex">2</span>   │</span>
+<span id="cb2-7"><a href="#cb2-7"></a>   <span class="ex">3</span>   │ print<span class="er">(</span><span class="ex">np.array</span><span class="er">(</span><span class="ex">[1,2,3]</span><span class="kw">))</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="ex">───────┴───────────────────────────────────</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="ex">hrm@bitnd:~$</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="ex">hrm@bitnd:~$</span> uv add <span class="at">--script</span> a.py numpy</span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="ex">Updated</span> <span class="kw">`</span><span class="ex">a.py</span><span class="kw">`</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="ex">hrm@bitnd:~$</span> batcat a.py</span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="ex">───────┬───────────────────────────────────</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a>       <span class="ex">│</span> File: a.py</span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="ex">───────┼───────────────────────────────────</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a>   <span class="ex">1</span>   │ <span class="co"># /// script</span></span>
+<span id="cb2-18"><a href="#cb2-18"></a>   <span class="ex">2</span>   │ <span class="co"># requires-python = "&gt;=3.12"</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a>   <span class="ex">3</span>   │ <span class="co"># dependencies = [</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a>   <span class="ex">4</span>   │ <span class="co">#     "numpy",</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a>   <span class="ex">5</span>   │ <span class="co"># ]</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a>   <span class="ex">6</span>   │ <span class="co"># ///</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a>   <span class="ex">7</span>   │ import numpy as np</span>
+<span id="cb2-24"><a href="#cb2-24"></a>   <span class="ex">8</span>   │</span>
+<span id="cb2-25"><a href="#cb2-25"></a>   <span class="ex">9</span>   │ print<span class="er">(</span><span class="ex">np.array</span><span class="er">(</span><span class="ex">[1,2,3]</span><span class="kw">))</span></span>
+<span id="cb2-26"><a href="#cb2-26"></a><span class="ex">───────┴───────────────────────────────────</span></span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="ex">hrm@bitnd:~$</span> uv run a.py</span>
+<span id="cb2-28"><a href="#cb2-28"></a><span class="ex">[1</span> 2 3]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="use-as-normal-virtual-environment" class="level2">
+<h2 class="anchored" data-anchor-id="use-as-normal-virtual-environment">Use as normal Virtual Environment</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">uv</span> venv myvenv</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># myvenv activate command will be given, execute it</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="ex">uv</span> pip install numpy</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="ex">uv</span> pip install <span class="at">-r</span> requirements.txt</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="ex">uv</span> pip freeze <span class="op">&gt;</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Note</strong> Don’t use uv pip3</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">hrm@bitnd:~/test$</span> ls <span class="kw">&amp;&amp;</span> <span class="ex">batcat</span> a.py</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">a.py</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="ex">───────┬────────────────────────────</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>       <span class="ex">│</span> File: a.py</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="ex">───────┼────────────────────────────</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>   <span class="ex">1</span>   │ import numpy as np</span>
+<span id="cb4-7"><a href="#cb4-7"></a>   <span class="ex">2</span>   │</span>
+<span id="cb4-8"><a href="#cb4-8"></a>   <span class="ex">3</span>   │ print<span class="er">(</span><span class="ex">np.array</span><span class="er">(</span><span class="ex">[1,2,3]</span><span class="kw">))</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="ex">───────┴────────────────────────────</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="ex">hrm@bitnd:~/test$</span> uv venv myvenv</span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="ex">Using</span> CPython 3.12.3 interpreter at: /usr/bin/python3</span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="ex">Creating</span> virtual environment at: myvenv</span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="ex">Activate</span> with: source myvenv/bin/activate</span>
+<span id="cb4-15"><a href="#cb4-15"></a></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="ex">hrm@bitnd:~/test$</span> source myvenv/bin/activate</span>
+<span id="cb4-17"><a href="#cb4-17"></a></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="kw">(</span><span class="ex">myvenv</span><span class="kw">)</span> <span class="ex">hrm@bitnd:~/test$</span> which python</span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="ex">/home/hrm/test/myvenv/bin/python</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a></span>
+<span id="cb4-21"><a href="#cb4-21"></a></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="kw">(</span><span class="ex">myvenv</span><span class="kw">)</span> <span class="ex">hrm@bitnd:~/test$</span> uv pip install numpy</span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="ex">Using</span> Python 3.12.3 environment at: myvenv</span>
+<span id="cb4-24"><a href="#cb4-24"></a><span class="ex">Resolved</span> 1 package in 6ms</span>
+<span id="cb4-25"><a href="#cb4-25"></a><span class="ex">Installed</span> 1 package in 35ms</span>
+<span id="cb4-26"><a href="#cb4-26"></a> <span class="ex">+</span> numpy==2.3.3</span>
+<span id="cb4-27"><a href="#cb4-27"></a></span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="kw">(</span><span class="ex">myvenv</span><span class="kw">)</span> <span class="ex">hrm@bitnd:~/test$</span> uv pip freeze</span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="ex">Using</span> Python 3.12.3 environment at: myvenv</span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="va">numpy</span><span class="op">=</span>=2.3.3</span>
+<span id="cb4-31"><a href="#cb4-31"></a></span>
+<span id="cb4-32"><a href="#cb4-32"></a><span class="kw">(</span><span class="ex">myvenv</span><span class="kw">)</span> <span class="ex">hrm@bitnd:~/test$</span> python3 a.py</span>
+<span id="cb4-33"><a href="#cb4-33"></a><span class="ex">[1</span> 2 3]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -864,5 +975,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

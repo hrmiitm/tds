@@ -1,0 +1,108 @@
+---
+title: "Python Tool - UV"
+author: "HRM"
+format:
+  html:
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    smooth-scroll: true
+
+    # Code formatting
+    code-copy: true
+    code-fold: show
+    code-line-numbers: true
+    highlight-style: dracula
+---
+
+## Running any standalone python script
+
+No need to globally do pip install xyz
+
+```bash
+uv add --script a.py numpy
+uv run a.py
+uv remove --script a.py numpy
+```
+
+
+```bash
+hrm@bitnd:~$ batcat a.py
+───────┬───────────────────────────────────
+       │ File: a.py
+───────┼───────────────────────────────────
+   1   │ import numpy as np
+   2   │
+   3   │ print(np.array([1,2,3]))
+───────┴───────────────────────────────────
+hrm@bitnd:~$
+hrm@bitnd:~$ uv add --script a.py numpy
+Updated `a.py`
+
+hrm@bitnd:~$ batcat a.py
+───────┬───────────────────────────────────
+       │ File: a.py
+───────┼───────────────────────────────────
+   1   │ # /// script
+   2   │ # requires-python = ">=3.12"
+   3   │ # dependencies = [
+   4   │ #     "numpy",
+   5   │ # ]
+   6   │ # ///
+   7   │ import numpy as np
+   8   │
+   9   │ print(np.array([1,2,3]))
+───────┴───────────────────────────────────
+hrm@bitnd:~$ uv run a.py
+[1 2 3]
+```
+
+## Use as normal Virtual Environment
+
+```bash
+uv venv myvenv
+# myvenv activate command will be given, execute it
+uv pip install numpy
+uv pip install -r requirements.txt
+uv pip freeze > requirements.txt
+```
+
+**Note** Don't use uv pip3
+
+
+
+```bash
+hrm@bitnd:~/test$ ls && batcat a.py
+a.py
+───────┬────────────────────────────
+       │ File: a.py
+───────┼────────────────────────────
+   1   │ import numpy as np
+   2   │
+   3   │ print(np.array([1,2,3]))
+───────┴────────────────────────────
+
+hrm@bitnd:~/test$ uv venv myvenv
+Using CPython 3.12.3 interpreter at: /usr/bin/python3
+Creating virtual environment at: myvenv
+Activate with: source myvenv/bin/activate
+
+hrm@bitnd:~/test$ source myvenv/bin/activate
+
+(myvenv) hrm@bitnd:~/test$ which python
+/home/hrm/test/myvenv/bin/python
+
+
+(myvenv) hrm@bitnd:~/test$ uv pip install numpy
+Using Python 3.12.3 environment at: myvenv
+Resolved 1 package in 6ms
+Installed 1 package in 35ms
+ + numpy==2.3.3
+
+(myvenv) hrm@bitnd:~/test$ uv pip freeze
+Using Python 3.12.3 environment at: myvenv
+numpy==2.3.3
+
+(myvenv) hrm@bitnd:~/test$ python3 a.py
+[1 2 3]
+```

@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="HRM">
-<meta name="dcterms.date" content="2025-08-18">
 
-<title>TDS - Tools for Data Science – TDS by HRM</title>
+<title>Linux - Environment Variables – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,26 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-9abcedaa66623c4356fc84edb00eef4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ffffa96520c6cf7ec6bfd4297e4347f0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-9abcedaa66623c4356fc84edb00eef4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-d5e0c1151a2c97d362fc4a8b877fbc5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -60,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -232,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">TDS by HRM</span>
     </a>
   </div>
@@ -248,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">About The Course</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../W1/w1.html">Week1</a></li><li class="breadcrumb-item"><a href="../../W1/4_bash/1_bashrc.html">LINUX/BASH - Basic</a></li><li class="breadcrumb-item"><a href="../../W1/4_bash/1_bashrc.html">Environment Variable</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -262,19 +296,19 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About The Course</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./W1/w1.html" class="sidebar-item-text sidebar-link">
+            <a href="../../W1/w1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week1</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
@@ -286,25 +320,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computer Boot Process</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">WSL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">VM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dual Boot</span></a>
   </div>
 </li>
@@ -321,25 +355,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/1_git.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/1_git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GIT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/2_before_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/2_before_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Before Github</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/3_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/3_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Github</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/4_opensource_contributions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/4_opensource_contributions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contribute To Open Source</span></a>
   </div>
 </li>
@@ -356,19 +390,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/1_uv.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/1_uv.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">UV</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/2_conda.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/2_conda.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Miniconda</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/3_pipx_uvx.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/3_pipx_uvx.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LLM,UVX,PIPX</span></a>
   </div>
 </li>
@@ -376,22 +410,22 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">LINUX/BASH - Basic</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/4_bash/1_bashrc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/4_bash/1_bashrc.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Environment Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/4_bash/2_bash_script.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/4_bash/2_bash_script.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bash Script</span></a>
   </div>
 </li>
@@ -404,16 +438,36 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#linux-.bashrc-notes" id="toc-linux-.bashrc-notes" class="nav-link active" data-scroll-target="#linux-.bashrc-notes">Linux .bashrc Notes</a>
+  <ul class="collapse">
+  <li><a href="#writing-variables-in-.bashrc" id="toc-writing-variables-in-.bashrc" class="nav-link" data-scroll-target="#writing-variables-in-.bashrc">Writing Variables in .bashrc</a>
+  <ul class="collapse">
+  <li><a href="#shell-variables-local" id="toc-shell-variables-local" class="nav-link" data-scroll-target="#shell-variables-local">Shell Variables (Local)</a></li>
+  <li><a href="#environment-variables-global" id="toc-environment-variables-global" class="nav-link" data-scroll-target="#environment-variables-global">Environment Variables (Global)</a></li>
+  </ul></li>
+  <li><a href="#why-use-variables-in-.bashrc" id="toc-why-use-variables-in-.bashrc" class="nav-link" data-scroll-target="#why-use-variables-in-.bashrc">Why Use Variables in .bashrc</a></li>
+  <li><a href="#export-vs-source" id="toc-export-vs-source" class="nav-link" data-scroll-target="#export-vs-source">Export vs Source</a>
+  <ul class="collapse">
+  <li><a href="#export-command" id="toc-export-command" class="nav-link" data-scroll-target="#export-command">Export Command</a></li>
+  <li><a href="#source-command" id="toc-source-command" class="nav-link" data-scroll-target="#source-command">Source Command</a></li>
+  <li><a href="#key-difference" id="toc-key-difference" class="nav-link" data-scroll-target="#key-difference">Key Difference</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../W1/w1.html">Week1</a></li><li class="breadcrumb-item"><a href="../../W1/4_bash/1_bashrc.html">LINUX/BASH - Basic</a></li><li class="breadcrumb-item"><a href="../../W1/4_bash/1_bashrc.html">Environment Variable</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">TDS - Tools for Data Science</h1>
+<h1 class="title">Linux - Environment Variables</h1>
 </div>
 
 
@@ -427,12 +481,6 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 18, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -442,9 +490,69 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- {{< include tds_syllabus.md >}} -->
+<section id="linux-.bashrc-notes" class="level1">
+<h1>Linux .bashrc Notes</h1>
+<p>The <strong>.bashrc</strong> file is a shell script that automatically runs whenever you open a new interactive bash terminal session. It’s your personal configuration file located in your home directory (<code>~/.bashrc</code>) that sets up your shell environment.</p>
+<section id="writing-variables-in-.bashrc" class="level2">
+<h2 class="anchored" data-anchor-id="writing-variables-in-.bashrc">Writing Variables in .bashrc</h2>
+<section id="shell-variables-local" class="level3">
+<h3 class="anchored" data-anchor-id="shell-variables-local">Shell Variables (Local)</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="va">MY_VAR</span><span class="op">=</span><span class="st">"value"</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="va">PATH_TO_PROJECT</span><span class="op">=</span><span class="st">"/home/user/project"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These variables are <strong>only available in the current shell</strong> and won’t be inherited by child processes.</p>
+</section>
+<section id="environment-variables-global" class="level3">
+<h3 class="anchored" data-anchor-id="environment-variables-global">Environment Variables (Global)</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">export</span> <span class="va">MY_VAR</span><span class="op">=</span><span class="st">"value"</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$HOME</span><span class="st">/bin:</span><span class="va">$PATH</span><span class="st">"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="bu">export</span> <span class="va">DATABASE_URL</span><span class="op">=</span><span class="st">"localhost:5432"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Variables defined with <code>export</code> become <strong>environment variables</strong> that are automatically passed to all child processes and subshells.</p>
+</section>
+</section>
+<section id="why-use-variables-in-.bashrc" class="level2">
+<h2 class="anchored" data-anchor-id="why-use-variables-in-.bashrc">Why Use Variables in .bashrc</h2>
+<ul>
+<li><strong>PATH modifications</strong>: Add custom directories to your command search path</li>
+<li><strong>Project settings</strong>: Define project-specific environment variables</li>
+<li><strong>Aliases and shortcuts</strong>: Create convenient command shortcuts</li>
+<li><strong>Tool configuration</strong>: Set up development tools and their configurations</li>
+</ul>
+</section>
+<section id="export-vs-source" class="level2">
+<h2 class="anchored" data-anchor-id="export-vs-source">Export vs Source</h2>
+<section id="export-command" class="level3">
+<h3 class="anchored" data-anchor-id="export-command">Export Command</h3>
+<ul>
+<li><strong>Purpose</strong>: Makes variables available to child processes and subshells</li>
+<li><strong>Scope</strong>: Variables flow <strong>downward</strong> from parent to child shells only</li>
+<li><strong>Usage</strong>: <code>export VAR_NAME="value"</code></li>
+</ul>
+</section>
+<section id="source-command" class="level3">
+<h3 class="anchored" data-anchor-id="source-command">Source Command</h3>
+<ul>
+<li><strong>Purpose</strong>: Executes a script in the <strong>current shell</strong> (not a subshell)</li>
+<li><strong>Usage</strong>: <code>source ~/.bashrc</code> or <code>. ~/.bashrc</code></li>
+<li><strong>Effect</strong>: Loads variables and functions into your current session without restarting the terminal</li>
+</ul>
+</section>
+<section id="key-difference" class="level3">
+<h3 class="anchored" data-anchor-id="key-difference">Key Difference</h3>
+<p>When you run a script with <code>./script.sh</code>, exported variables disappear when the script ends because it runs in a subshell. When you use <code>source script.sh</code>, variables persist in your current shell.</p>
+<p><strong>Example workflow:</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Edit .bashrc</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="bu">echo</span> <span class="st">'export MY_APP_PATH="/usr/local/myapp"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Apply changes without restarting terminal</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">source</span> ~/.bashrc</span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># Now MY_APP_PATH is available</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="bu">echo</span> <span class="va">$MY_APP_PATH</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -864,5 +972,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

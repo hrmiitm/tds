@@ -10,7 +10,7 @@ website:
     pinned: false
     tools:
       - icon: youtube
-        href: https://www.youtube.com/playlist?list=PLn_Nuy1c1Oj9qibyyC4iEitbJ_uY-iAm6
+        href: https://www.youtube.com/@deepinside333hrm
         target: _blank
       - icon: house
         href: https://hrmiitm.github.io
@@ -25,16 +25,49 @@ website:
       - section: "Week1"
         href: ./W1/w1.qmd
         contents:
-          - ./W1/w1_1.qmd
-          - ./W1/w1_2.qmd
-          - ./W1/w1_3.qmd
-          - ./W1/w1_4.qmd
+          - section: "1. Windows To Linux"
+            contents:
+              - text: "Computer Boot Process"
+                href: ./W1/1_window_to_linux/w1_1.qmd
+              - text: "WSL"
+                href: ./W1/1_window_to_linux/w1_2.qmd
+              - text: "VM"
+                href: ./W1/1_window_to_linux/w1_3.qmd
+              - text: "Dual Boot"
+                href: ./W1/1_window_to_linux/w1_4.qmd
+          - section: "2. Git & Github"
+            contents:
+              - text: "GIT"
+                href: ./W1/2_git_github/1_git.qmd
+              - text: "Before Github"
+                href: ./W1/2_git_github/2_before_github.qmd
+              - text: "Github"
+                href: ./W1/2_git_github/3_github.qmd
+              - text: "Contribute To Open Source"
+                href: ./W1/2_git_github/4_opensource_contributions.qmd
+          - section: "3. Python Tools"
+            contents:
+              - text: "UV"
+                href: ./W1/3_python_tools/1_uv.qmd
+              - text: "Miniconda"
+                href: ./W1/3_python_tools/2_conda.qmd
+              - text: "LLM,UVX,PIPX"
+                href: ./W1/3_python_tools/3_pipx_uvx.qmd
+          - section: "LINUX/BASH - Basic"
+            contents:
+              - text: "Environment Variable"
+                href: ./W1/4_bash/1_bashrc.qmd
+              - text: "Bash Script"
+                href: ./W1/4_bash/2_bash_script.qmd
+             
 
 format:
   html:
     theme:
-      light: flatly
-      dark: sketchy
+      # light: morph
+      light: zephyr
+      dark: lux
+      # dark: flatly
     css: styles.css
     toc: true
     toc-location: right

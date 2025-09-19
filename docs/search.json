@@ -1,375 +1,379 @@
 [
   {
-    "objectID": "W1/wsl.html",
-    "href": "W1/wsl.html",
+    "objectID": "W1/w1.html",
+    "href": "W1/w1.html",
+    "title": "Week - 1",
+    "section": "",
+    "text": "Hi Everyone.",
+    "crumbs": [
+      "Week1"
+    ]
+  },
+  {
+    "objectID": "W1/4_bash/1_bashrc.html",
+    "href": "W1/4_bash/1_bashrc.html",
+    "title": "Linux - Environment Variables",
+    "section": "",
+    "text": "The .bashrc file is a shell script that automatically runs whenever you open a new interactive bash terminal session. It’s your personal configuration file located in your home directory (~/.bashrc) that sets up your shell environment.\n\n\n\n\nMY_VAR=\"value\"\nPATH_TO_PROJECT=\"/home/user/project\"\nThese variables are only available in the current shell and won’t be inherited by child processes.\n\n\n\nexport MY_VAR=\"value\"\nexport PATH=\"$HOME/bin:$PATH\"\nexport DATABASE_URL=\"localhost:5432\"\nVariables defined with export become environment variables that are automatically passed to all child processes and subshells.\n\n\n\n\n\nPATH modifications: Add custom directories to your command search path\nProject settings: Define project-specific environment variables\nAliases and shortcuts: Create convenient command shortcuts\nTool configuration: Set up development tools and their configurations\n\n\n\n\n\n\n\nPurpose: Makes variables available to child processes and subshells\nScope: Variables flow downward from parent to child shells only\nUsage: export VAR_NAME=\"value\"\n\n\n\n\n\nPurpose: Executes a script in the current shell (not a subshell)\nUsage: source ~/.bashrc or . ~/.bashrc\nEffect: Loads variables and functions into your current session without restarting the terminal\n\n\n\n\nWhen you run a script with ./script.sh, exported variables disappear when the script ends because it runs in a subshell. When you use source script.sh, variables persist in your current shell.\nExample workflow:\n# Edit .bashrc\necho 'export MY_APP_PATH=\"/usr/local/myapp\"' &gt;&gt; ~/.bashrc\n\n# Apply changes without restarting terminal\nsource ~/.bashrc\n\n# Now MY_APP_PATH is available\necho $MY_APP_PATH",
+    "crumbs": [
+      "Week1",
+      "LINUX/BASH - Basic",
+      "Environment Variable"
+    ]
+  },
+  {
+    "objectID": "W1/4_bash/1_bashrc.html#writing-variables-in-.bashrc",
+    "href": "W1/4_bash/1_bashrc.html#writing-variables-in-.bashrc",
+    "title": "Linux - Environment Variables",
+    "section": "",
+    "text": "MY_VAR=\"value\"\nPATH_TO_PROJECT=\"/home/user/project\"\nThese variables are only available in the current shell and won’t be inherited by child processes.\n\n\n\nexport MY_VAR=\"value\"\nexport PATH=\"$HOME/bin:$PATH\"\nexport DATABASE_URL=\"localhost:5432\"\nVariables defined with export become environment variables that are automatically passed to all child processes and subshells.",
+    "crumbs": [
+      "Week1",
+      "LINUX/BASH - Basic",
+      "Environment Variable"
+    ]
+  },
+  {
+    "objectID": "W1/4_bash/1_bashrc.html#why-use-variables-in-.bashrc",
+    "href": "W1/4_bash/1_bashrc.html#why-use-variables-in-.bashrc",
+    "title": "Linux - Environment Variables",
+    "section": "",
+    "text": "PATH modifications: Add custom directories to your command search path\nProject settings: Define project-specific environment variables\nAliases and shortcuts: Create convenient command shortcuts\nTool configuration: Set up development tools and their configurations",
+    "crumbs": [
+      "Week1",
+      "LINUX/BASH - Basic",
+      "Environment Variable"
+    ]
+  },
+  {
+    "objectID": "W1/4_bash/1_bashrc.html#export-vs-source",
+    "href": "W1/4_bash/1_bashrc.html#export-vs-source",
+    "title": "Linux - Environment Variables",
+    "section": "",
+    "text": "Purpose: Makes variables available to child processes and subshells\nScope: Variables flow downward from parent to child shells only\nUsage: export VAR_NAME=\"value\"\n\n\n\n\n\nPurpose: Executes a script in the current shell (not a subshell)\nUsage: source ~/.bashrc or . ~/.bashrc\nEffect: Loads variables and functions into your current session without restarting the terminal\n\n\n\n\nWhen you run a script with ./script.sh, exported variables disappear when the script ends because it runs in a subshell. When you use source script.sh, variables persist in your current shell.\nExample workflow:\n# Edit .bashrc\necho 'export MY_APP_PATH=\"/usr/local/myapp\"' &gt;&gt; ~/.bashrc\n\n# Apply changes without restarting terminal\nsource ~/.bashrc\n\n# Now MY_APP_PATH is available\necho $MY_APP_PATH",
+    "crumbs": [
+      "Week1",
+      "LINUX/BASH - Basic",
+      "Environment Variable"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/4_opensource_contributions.html",
+    "href": "W1/2_git_github/4_opensource_contributions.html",
+    "title": "OpenSource Contribution",
+    "section": "",
+    "text": "To fetch someone else’s code from GitHub, fix an issue, and contribute your changes so they can merge your fixes, follow this standard Git workflow using Fork, Clone, Branch, Commit, Push, and Pull Request:",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "Contribute To Open Source"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/4_opensource_contributions.html#steps-to-contribute-code-fix-on-github",
+    "href": "W1/2_git_github/4_opensource_contributions.html#steps-to-contribute-code-fix-on-github",
+    "title": "OpenSource Contribution",
+    "section": "Steps to Contribute Code Fix on GitHub",
+    "text": "Steps to Contribute Code Fix on GitHub\n\n1. Fork the Repository\n\nGo to the repository page on GitHub where the original code is.\nClick the “Fork” button (top-right) to create your own copy of the repository under your GitHub account.\n\n\n\n2. Clone the Forked Repository to Your Machine\n\nOn your GitHub fork page, click the green “Code” button and copy the repository URL.\nIn your terminal, run:\n\ngit clone &lt;your-fork-repo-url&gt;\n\nThis downloads the code to your local machine.\n\n\n\n3. Create a New Branch for Your Changes\n\nChange directory into the cloned repo:\n\ncd &lt;repo-name&gt;\n\nCreate and switch to a new branch for your fix:\n\ngit checkout -b fix-issue-branch\n\n\n4. Make Your Code Fixes\n\nEdit the code locally to fix the issue.\n\n\n\n5. Commit Your Changes\n\nStage the changed files:\n\ngit add .\n\nCommit with a meaningful message:\n\ngit commit -m \"Fix issue with XYZ\"\n\n\n6. Push Your Branch to Your Fork\n\nPush your fix branch to your GitHub fork:\n\ngit push origin fix-issue-branch\n\n\n7. Create a Pull Request (PR)\n\nGo to your GitHub fork page.\nYou should see a prompt to create a pull request from your pushed branch.\nClick “Compare & pull request” or “New pull request.”\nAdd a descriptive title and description of the fix.\nSubmit the pull request so the original repo owner can review and merge your fix.\n\n\nThis process ensures your contribution is linked to your GitHub profile and gives the repo owner a clear way to review and merge your changes. It also preserves the original repository history cleanly.",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "Contribute To Open Source"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/2_before_github.html",
+    "href": "W1/2_git_github/2_before_github.html",
+    "title": "Setup to connect Local — Github",
+    "section": "",
+    "text": "Git : Locally you need to setup your github username and email\nGithub : Generate an SSH key and add the public key to your’s github account.\n\n\n\n\nMake account in github.com and copy username and email\n\nOpen Terminal (Linux/Mac) or PowerShell/GitBash (Windows).\n\ngit config --global user.name \"Your Github UserName\"\ngit config --global user.email \"your_github_email@example.com\"\n\n\n\n\nOpen Terminal (Linux/Mac) or PowerShell/GitBash (Windows).\nRun:\nssh-keygen\nPress Enter through the prompts.\nThis generates two files, e.g., id_ed25519 (private) and id_ed25519.pub (public), usually in(exact path will be present in output of command ssh-keygen):\n/home/username/.ssh/\nOpen id_ed25519.pub, copy its contents, and add it to your GitHub:\n\nSettings → Access → SSH and GPG Keys → New SSH Key\nSelect Authentication Key as the type.\n\n\nSo now you are ready to push your code on your github account",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "Before Github"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/2_before_github.html#local-git-config",
+    "href": "W1/2_git_github/2_before_github.html#local-git-config",
+    "title": "Setup to connect Local — Github",
+    "section": "",
+    "text": "Make account in github.com and copy username and email\n\nOpen Terminal (Linux/Mac) or PowerShell/GitBash (Windows).\n\ngit config --global user.name \"Your Github UserName\"\ngit config --global user.email \"your_github_email@example.com\"",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "Before Github"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/2_before_github.html#ssh-key-setup",
+    "href": "W1/2_git_github/2_before_github.html#ssh-key-setup",
+    "title": "Setup to connect Local — Github",
+    "section": "",
+    "text": "Open Terminal (Linux/Mac) or PowerShell/GitBash (Windows).\nRun:\nssh-keygen\nPress Enter through the prompts.\nThis generates two files, e.g., id_ed25519 (private) and id_ed25519.pub (public), usually in(exact path will be present in output of command ssh-keygen):\n/home/username/.ssh/\nOpen id_ed25519.pub, copy its contents, and add it to your GitHub:\n\nSettings → Access → SSH and GPG Keys → New SSH Key\nSelect Authentication Key as the type.\n\n\nSo now you are ready to push your code on your github account",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "Before Github"
+    ]
+  },
+  {
+    "objectID": "W1/1_window_to_linux/wsl.html",
+    "href": "W1/1_window_to_linux/wsl.html",
     "title": "Install WSL in Windows",
     "section": "",
     "text": "We will use windows powershell to install wsl.\n\n\n\nOpen PowerShell\nwsl --version or wsl.exe --version\nIf any above command shows wsl version 2 , then it is already installed\n\n\n\n\n\nSearch Turn Windows features on or off\n\nEnable Virtual Machine Platform, Windows Hypervisor Platform, Windows Subsytem for Linux\n\nRestart Computer (Not power on/off, click on restart)\nInstall WSL WSL-2 Setup\nSwitch to WSL-2 wsl --set-default-version 2\n\n\n\n\nwsl --list --verbose\nFor Each Listed distribution\n- wsl --unregister &lt;DistributionName&gt;\n- Open Settings → Apps → Installed apps - Find each Linux distribution, click the three-dot menu, and select Uninstall\n\n\n\n\nwsl --update\n\nwsl --list --online\n\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\n\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]\n\n\n\n\n\n\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\n\nnode install https://nodejs.org/en/download\n\nnvm install 22\n\nnvm list nvm use 22 nvm current\n\ncorepack enable yarn\n\ncorepack enable pnpm\n\n\n\nCheck\n- nvm -v\n- node -v\n- npm -v npx -v\n- pnpm -v\n- yarn -v\n\n\n\n\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false\n\n\n\n\n\nsudo apt install build-essential\n\ngcc –&gt; The C compiler\n\ng++ –&gt; The C++ compiler\n\n\nCheck - gcc –verison\n- g++ –version\n\n\n\n\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools  \nJava Runtime Environment (JRE) - Required to run Java applications  \nJava Virtual Machine (JVM) - Core execution environment  \n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\n\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version\n- javac --version\n- echo $JAVA_HOME\n\n\n\n\n\n\n\nWSL-2 Setup"
   },
   {
-    "objectID": "W1/wsl.html#check-wsl-2-installed-or-not",
-    "href": "W1/wsl.html#check-wsl-2-installed-or-not",
+    "objectID": "W1/1_window_to_linux/wsl.html#check-wsl-2-installed-or-not",
+    "href": "W1/1_window_to_linux/wsl.html#check-wsl-2-installed-or-not",
     "title": "Install WSL in Windows",
     "section": "",
     "text": "Open PowerShell\nwsl --version or wsl.exe --version\nIf any above command shows wsl version 2 , then it is already installed"
   },
   {
-    "objectID": "W1/wsl.html#if-wsl-2-not-instlled",
-    "href": "W1/wsl.html#if-wsl-2-not-instlled",
+    "objectID": "W1/1_window_to_linux/wsl.html#if-wsl-2-not-instlled",
+    "href": "W1/1_window_to_linux/wsl.html#if-wsl-2-not-instlled",
     "title": "Install WSL in Windows",
     "section": "",
     "text": "Search Turn Windows features on or off\n\nEnable Virtual Machine Platform, Windows Hypervisor Platform, Windows Subsytem for Linux\n\nRestart Computer (Not power on/off, click on restart)\nInstall WSL WSL-2 Setup\nSwitch to WSL-2 wsl --set-default-version 2"
   },
   {
-    "objectID": "W1/wsl.html#if-already-installed-then-remove-previous-installed-distributions",
-    "href": "W1/wsl.html#if-already-installed-then-remove-previous-installed-distributions",
+    "objectID": "W1/1_window_to_linux/wsl.html#if-already-installed-then-remove-previous-installed-distributions",
+    "href": "W1/1_window_to_linux/wsl.html#if-already-installed-then-remove-previous-installed-distributions",
     "title": "Install WSL in Windows",
     "section": "",
     "text": "wsl --list --verbose\nFor Each Listed distribution\n- wsl --unregister &lt;DistributionName&gt;\n- Open Settings → Apps → Installed apps - Find each Linux distribution, click the three-dot menu, and select Uninstall"
   },
   {
-    "objectID": "W1/wsl.html#update-wsl-ubuntu-installation",
-    "href": "W1/wsl.html#update-wsl-ubuntu-installation",
+    "objectID": "W1/1_window_to_linux/wsl.html#update-wsl-ubuntu-installation",
+    "href": "W1/1_window_to_linux/wsl.html#update-wsl-ubuntu-installation",
     "title": "Install WSL in Windows",
     "section": "",
     "text": "wsl --update\n\nwsl --list --online\n\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\n\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]"
   },
   {
-    "objectID": "W1/wsl.html#install-javascript-tools",
-    "href": "W1/wsl.html#install-javascript-tools",
+    "objectID": "W1/1_window_to_linux/wsl.html#install-javascript-tools",
+    "href": "W1/1_window_to_linux/wsl.html#install-javascript-tools",
     "title": "Install WSL in Windows",
     "section": "",
     "text": "nvm install visit and run bash script https://github.com/nvm-sh/nvm\n\nnode install https://nodejs.org/en/download\n\nnvm install 22\n\nnvm list nvm use 22 nvm current\n\ncorepack enable yarn\n\ncorepack enable pnpm\n\n\n\nCheck\n- nvm -v\n- node -v\n- npm -v npx -v\n- pnpm -v\n- yarn -v"
   },
   {
-    "objectID": "W1/wsl.html#install-python-tools",
-    "href": "W1/wsl.html#install-python-tools",
+    "objectID": "W1/1_window_to_linux/wsl.html#install-python-tools",
+    "href": "W1/1_window_to_linux/wsl.html#install-python-tools",
     "title": "Install WSL in Windows",
     "section": "",
     "text": "Python VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false"
   },
   {
-    "objectID": "W1/wsl.html#install-cc-tools",
-    "href": "W1/wsl.html#install-cc-tools",
+    "objectID": "W1/1_window_to_linux/wsl.html#install-cc-tools",
+    "href": "W1/1_window_to_linux/wsl.html#install-cc-tools",
     "title": "Install WSL in Windows",
     "section": "",
     "text": "sudo apt install build-essential\n\ngcc –&gt; The C compiler\n\ng++ –&gt; The C++ compiler\n\n\nCheck - gcc –verison\n- g++ –version"
   },
   {
-    "objectID": "W1/wsl.html#install-java-tools",
-    "href": "W1/wsl.html#install-java-tools",
+    "objectID": "W1/1_window_to_linux/wsl.html#install-java-tools",
+    "href": "W1/1_window_to_linux/wsl.html#install-java-tools",
     "title": "Install WSL in Windows",
     "section": "",
     "text": "sudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools  \nJava Runtime Environment (JRE) - Required to run Java applications  \nJava Virtual Machine (JVM) - Core execution environment  \n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\n\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version\n- javac --version\n- echo $JAVA_HOME"
   },
   {
-    "objectID": "W1/wsl.html#resources",
-    "href": "W1/wsl.html#resources",
+    "objectID": "W1/1_window_to_linux/wsl.html#resources",
+    "href": "W1/1_window_to_linux/wsl.html#resources",
     "title": "Install WSL in Windows",
     "section": "",
     "text": "WSL-2 Setup"
   },
   {
-    "objectID": "W1/w1_3.html",
-    "href": "W1/w1_3.html",
+    "objectID": "W1/1_window_to_linux/w1_3.html",
+    "href": "W1/1_window_to_linux/w1_3.html",
     "title": "VM Virtual Machines",
     "section": "",
     "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…\n\n\n\n\n\n\n\n\nVirtual Box Setup (Hindi)",
     "crumbs": [
       "Week1",
-      "VM Virtual Machines"
+      "1. Windows To Linux",
+      "VM"
     ]
   },
   {
-    "objectID": "W1/w1_3.html#using-type-2-hypervisor",
-    "href": "W1/w1_3.html#using-type-2-hypervisor",
+    "objectID": "W1/1_window_to_linux/w1_3.html#using-type-2-hypervisor",
+    "href": "W1/1_window_to_linux/w1_3.html#using-type-2-hypervisor",
     "title": "VM Virtual Machines",
     "section": "",
     "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…",
     "crumbs": [
       "Week1",
-      "VM Virtual Machines"
+      "1. Windows To Linux",
+      "VM"
     ]
   },
   {
-    "objectID": "W1/w1_3.html#resources",
-    "href": "W1/w1_3.html#resources",
+    "objectID": "W1/1_window_to_linux/w1_3.html#resources",
+    "href": "W1/1_window_to_linux/w1_3.html#resources",
     "title": "VM Virtual Machines",
     "section": "",
     "text": "Virtual Box Setup (Hindi)",
     "crumbs": [
       "Week1",
-      "VM Virtual Machines"
+      "1. Windows To Linux",
+      "VM"
     ]
   },
   {
-    "objectID": "W1/w1_1.html",
-    "href": "W1/w1_1.html",
+    "objectID": "W1/1_window_to_linux/w1_1.html",
+    "href": "W1/1_window_to_linux/w1_1.html",
     "title": "Computer Boot Process",
     "section": "",
     "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Computer Boot Process"
     ]
   },
   {
-    "objectID": "W1/w1_1.html#table-of-contents",
-    "href": "W1/w1_1.html#table-of-contents",
+    "objectID": "W1/1_window_to_linux/w1_1.html#table-of-contents",
+    "href": "W1/1_window_to_linux/w1_1.html#table-of-contents",
     "title": "Computer Boot Process",
     "section": "",
     "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Computer Boot Process"
     ]
   },
   {
-    "objectID": "W1/w1_1.html#overview",
-    "href": "W1/w1_1.html#overview",
+    "objectID": "W1/1_window_to_linux/w1_1.html#overview",
+    "href": "W1/1_window_to_linux/w1_1.html#overview",
     "title": "Computer Boot Process",
     "section": "",
     "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Computer Boot Process"
     ]
   },
   {
-    "objectID": "W1/w1_1.html#boot-process-steps",
-    "href": "W1/w1_1.html#boot-process-steps",
+    "objectID": "W1/1_window_to_linux/w1_1.html#boot-process-steps",
+    "href": "W1/1_window_to_linux/w1_1.html#boot-process-steps",
     "title": "Computer Boot Process",
     "section": "",
     "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Computer Boot Process"
     ]
   },
   {
-    "objectID": "W1/w1_1.html#partition-styles-vs-file-systems",
-    "href": "W1/w1_1.html#partition-styles-vs-file-systems",
+    "objectID": "W1/1_window_to_linux/w1_1.html#partition-styles-vs-file-systems",
+    "href": "W1/1_window_to_linux/w1_1.html#partition-styles-vs-file-systems",
     "title": "Computer Boot Process",
     "section": "",
     "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Computer Boot Process"
     ]
   },
   {
-    "objectID": "W1/w1_1.html#boot-process-summary",
-    "href": "W1/w1_1.html#boot-process-summary",
+    "objectID": "W1/1_window_to_linux/w1_1.html#boot-process-summary",
+    "href": "W1/1_window_to_linux/w1_1.html#boot-process-summary",
     "title": "Computer Boot Process",
     "section": "",
     "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Computer Boot Process"
     ]
   },
   {
-    "objectID": "W1/w1_1.html#frequently-asked-questions",
-    "href": "W1/w1_1.html#frequently-asked-questions",
+    "objectID": "W1/1_window_to_linux/w1_1.html#frequently-asked-questions",
+    "href": "W1/1_window_to_linux/w1_1.html#frequently-asked-questions",
     "title": "Computer Boot Process",
     "section": "",
     "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Computer Boot Process"
     ]
   },
   {
-    "objectID": "W1/w1_1.html#resources",
-    "href": "W1/w1_1.html#resources",
+    "objectID": "W1/1_window_to_linux/w1_1.html#resources",
+    "href": "W1/1_window_to_linux/w1_1.html#resources",
     "title": "Computer Boot Process",
     "section": "",
     "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Computer Boot Process"
     ]
   },
   {
-    "objectID": "W1/vm.html",
-    "href": "W1/vm.html",
-    "title": "In Windows",
+    "objectID": "W1/1_window_to_linux/dual_boot.html",
+    "href": "W1/1_window_to_linux/dual_boot.html",
+    "title": "Dual-Boot Setup Guide",
     "section": "",
-    "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…\n\n\n\n\n\n\n\n\nVirtual Box Setup (Hindi)"
+    "text": "This guide will help you install another operating system (Linux) alongside your existing Windows installation.\n\n\n\n\n\n\nDisclaimer\n\n\n\n\n\nDo this at your own risk. Please watch various YouTube videos and proceed with dual boot only when you are 100% sure about the process.\nIf you want to minimize the risk:\n1. Use External SSD/HDD to install Linux\n- This will prevent almost 99% of any accidental damage to your main system\n2. Install Kubuntu\n- Since dual boot requires creating partitions\n- Kubuntu has a Replace Partition option which avoids most of the headache\n\n\n\n\n\n\nNew SSD/HDD or at least 30GB free storage on your current Windows drive\n\nIf installing on the same SSD/HDD where Windows is installed:\nI recommend shrinking at least a 30GB partition\n\nHow To Shrink Partition\n\n\nPendrive/USB drive (8GB or larger)\nOne ISO file of any Linux distribution. Kubuntu\nSoftware to create a bootable USB drive. Ventoy\n\n\n\n\n\nInsert your USB drive and run Ventoy\nFormat your USB drive with Ventoy to make it bootable\nJust Copy and paste the Linux distribution ISO files into the USB drive\nTo be sure that iso file not got corrupted, you can run sha256sum and check both on local and server matches or not\n\n\n\n\n\nRestart your computer\nGo to BIOS/UEFI Settings\n\nOn HP laptops: restart and keep pressing the F10 key\n\nNavigate to Boot Settings\nDisable Secure Boot (you can re-enable it after installation)\n\n\n\n\nOnce your USB drive and laptop BIOS/UEFI settings are ready, proceed with the installation:\n\nRestart your computer\nGo to Boot Device Options\n\nOn HP laptops: keep pressing the F9 key\n\nChoose your USB Drive\nIf using Ventoy:\n\nIt will ask which OS to boot (based on the ISOs you’ve copied)\n\nIf using BalenaEtcher: it will directly boot into that particular OS\nFor Kubuntu installation:\n\nClick on “Install”\nSelect language, keyboard layout, etc.\nWhen choosing where to install or configure partitions:\n\nChoose Replace Partition –&gt; then Select the newly created(shrinked) 30GB partition\nThe installer will format two partitions\n\nOne for your Linux installation that you just selected\nOne will be EFI partition of windows(first partition in most cases)\n\n\nChoose your username, password, etc., and proceed\nOnce installation is complete, your computer will automatically reboot or ask you to remove the USB drive and press Enter\nRemove the USB drive and press Enter to reboot\n\n\n\n\n\n\nRestart your computer\nGo to BIOS/UEFI settings\n\nYou can enable Secure Boot if desired\n\nMost importantly:\n\nNavigate to Boot Settings\nChange the boot order\nSet Ubuntu/Linux as the first boot option\n\n\n\n\n\n\nWhen you turn on your computer, you’ll have the option to boot into Ubuntu or Windows\nImportant:\n\nThe first time you boot into Windows after installation:\n\nYou may see a blue screen asking for a BitLocker recovery key\nYou can easily log in with your Microsoft account and retrieve the password from BitLocker Recovery\nThis will only be asked once.\n\n\n\n\n\n\n\nBitLocker Recovery\nKubuntu ISO\nVentoy\n\n\n\n\nShrink Partition"
   },
   {
-    "objectID": "W1/vm.html#using-type-2-hypervisor",
-    "href": "W1/vm.html#using-type-2-hypervisor",
-    "title": "In Windows",
+    "objectID": "W1/1_window_to_linux/dual_boot.html#requirements",
+    "href": "W1/1_window_to_linux/dual_boot.html#requirements",
+    "title": "Dual-Boot Setup Guide",
     "section": "",
-    "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…"
+    "text": "New SSD/HDD or at least 30GB free storage on your current Windows drive\n\nIf installing on the same SSD/HDD where Windows is installed:\nI recommend shrinking at least a 30GB partition\n\nHow To Shrink Partition\n\n\nPendrive/USB drive (8GB or larger)\nOne ISO file of any Linux distribution. Kubuntu\nSoftware to create a bootable USB drive. Ventoy"
   },
   {
-    "objectID": "W1/vm.html#resources",
-    "href": "W1/vm.html#resources",
-    "title": "In Windows",
+    "objectID": "W1/1_window_to_linux/dual_boot.html#prepare-the-usb-drive",
+    "href": "W1/1_window_to_linux/dual_boot.html#prepare-the-usb-drive",
+    "title": "Dual-Boot Setup Guide",
     "section": "",
-    "text": "Virtual Box Setup (Hindi)"
+    "text": "Insert your USB drive and run Ventoy\nFormat your USB drive with Ventoy to make it bootable\nJust Copy and paste the Linux distribution ISO files into the USB drive\nTo be sure that iso file not got corrupted, you can run sha256sum and check both on local and server matches or not"
   },
   {
-    "objectID": "W1/boot.html",
-    "href": "W1/boot.html",
-    "title": "Computer Boot Process: Essential Guide",
+    "objectID": "W1/1_window_to_linux/dual_boot.html#prepare-your-laptopcomputer",
+    "href": "W1/1_window_to_linux/dual_boot.html#prepare-your-laptopcomputer",
+    "title": "Dual-Boot Setup Guide",
     "section": "",
-    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)"
+    "text": "Restart your computer\nGo to BIOS/UEFI Settings\n\nOn HP laptops: restart and keep pressing the F10 key\n\nNavigate to Boot Settings\nDisable Secure Boot (you can re-enable it after installation)"
   },
   {
-    "objectID": "W1/boot.html#table-of-contents",
-    "href": "W1/boot.html#table-of-contents",
-    "title": "Computer Boot Process: Essential Guide",
+    "objectID": "W1/1_window_to_linux/dual_boot.html#installation-process",
+    "href": "W1/1_window_to_linux/dual_boot.html#installation-process",
+    "title": "Dual-Boot Setup Guide",
     "section": "",
-    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources"
+    "text": "Once your USB drive and laptop BIOS/UEFI settings are ready, proceed with the installation:\n\nRestart your computer\nGo to Boot Device Options\n\nOn HP laptops: keep pressing the F9 key\n\nChoose your USB Drive\nIf using Ventoy:\n\nIt will ask which OS to boot (based on the ISOs you’ve copied)\n\nIf using BalenaEtcher: it will directly boot into that particular OS\nFor Kubuntu installation:\n\nClick on “Install”\nSelect language, keyboard layout, etc.\nWhen choosing where to install or configure partitions:\n\nChoose Replace Partition –&gt; then Select the newly created(shrinked) 30GB partition\nThe installer will format two partitions\n\nOne for your Linux installation that you just selected\nOne will be EFI partition of windows(first partition in most cases)\n\n\nChoose your username, password, etc., and proceed\nOnce installation is complete, your computer will automatically reboot or ask you to remove the USB drive and press Enter\nRemove the USB drive and press Enter to reboot"
   },
   {
-    "objectID": "W1/boot.html#overview",
-    "href": "W1/boot.html#overview",
-    "title": "Computer Boot Process: Essential Guide",
+    "objectID": "W1/1_window_to_linux/dual_boot.html#final-computer-setup",
+    "href": "W1/1_window_to_linux/dual_boot.html#final-computer-setup",
+    "title": "Dual-Boot Setup Guide",
     "section": "",
-    "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start."
+    "text": "Restart your computer\nGo to BIOS/UEFI settings\n\nYou can enable Secure Boot if desired\n\nMost importantly:\n\nNavigate to Boot Settings\nChange the boot order\nSet Ubuntu/Linux as the first boot option"
   },
   {
-    "objectID": "W1/boot.html#boot-process-steps",
-    "href": "W1/boot.html#boot-process-steps",
-    "title": "Computer Boot Process: Essential Guide",
+    "objectID": "W1/1_window_to_linux/dual_boot.html#final-notes",
+    "href": "W1/1_window_to_linux/dual_boot.html#final-notes",
+    "title": "Dual-Boot Setup Guide",
     "section": "",
-    "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface"
+    "text": "When you turn on your computer, you’ll have the option to boot into Ubuntu or Windows\nImportant:\n\nThe first time you boot into Windows after installation:\n\nYou may see a blue screen asking for a BitLocker recovery key\nYou can easily log in with your Microsoft account and retrieve the password from BitLocker Recovery\nThis will only be asked once."
   },
   {
-    "objectID": "W1/boot.html#partition-styles-vs-file-systems",
-    "href": "W1/boot.html#partition-styles-vs-file-systems",
-    "title": "Computer Boot Process: Essential Guide",
+    "objectID": "W1/1_window_to_linux/dual_boot.html#resources",
+    "href": "W1/1_window_to_linux/dual_boot.html#resources",
+    "title": "Dual-Boot Setup Guide",
     "section": "",
-    "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives"
-  },
-  {
-    "objectID": "W1/boot.html#boot-process-summary",
-    "href": "W1/boot.html#boot-process-summary",
-    "title": "Computer Boot Process: Essential Guide",
-    "section": "",
-    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
-  },
-  {
-    "objectID": "W1/boot.html#frequently-asked-questions",
-    "href": "W1/boot.html#frequently-asked-questions",
-    "title": "Computer Boot Process: Essential Guide",
-    "section": "",
-    "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup"
-  },
-  {
-    "objectID": "W1/boot.html#resources",
-    "href": "W1/boot.html#resources",
-    "title": "Computer Boot Process: Essential Guide",
-    "section": "",
-    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "TDS - Tools for Data Science",
-    "section": "",
-    "text": "📌 Quick Navigation\n\n\nWeek 1 → Development Tools\nWeek 2 → Deployment Tools\nWeek 3 → LLM APIs\n🚀 Project 1 → ?\nWeek 4 → LangChain\nWeek 5 → LangGraph\nWeek 6 → Quarto Websites & AWK\n🚀 Project 2 → ?\nWeek 7 → ?\n\n\n📌 Small Projects\nW1-&gt; Simple ChatBot (No Memory)\nW2-&gt; Memory-Based ChatBot\nW3-&gt; PDF ChatBot\nW4-&gt; YouTube Playlist QA Assistant\nW5-&gt; SQL Query Agent\nW6-&gt; Portfolio Website\nVoice-enabled AI Chat Assistant\n\n\n\n\n\n\nIntro to Linux (Dual Boot, WSL)\n\nLanguage Setup & Config (bashrc, venv, nvm, etc.)\n\nJS → nvm, node, npm, pnpm, yarn\n\nC/C++ → gcc vs g++\n\nJava → jdk, jre, jvm\n\nPython → venv, pipx, conda, uv\n\n\nGit Basics\n\ninit, add, commit, push\n\nUndo/redo commits\n\n\nFastAPI Basics\n\nOllama Setup\n\n\nSmall Project → Simple ChatBot (No Memory)\n- Build a FastAPI endpoint /ask with Ollama (Gemma).\n- Answers queries without history.\n\n\n\n\n\n\nAdvanced Git/GitHub\n\nBranching, Merging, Actions\n\nDocker/Podman\n\nDockerfile, Volumes, Networks\n\nAdvanced FastAPI\n\nDeployment Platforms\n\nVercel, Render, GitHub Pages\n\nEC2 Deployment with GitHub Actions + Docker\n\n\nSmall Project → Memory-Based ChatBot\n- FastAPI endpoint /chat with Gemini LLM.\n- Maintains multi-turn memory in RAM.\n\n\n\n\n\n\nPrompt Engineering\n\nZero-shot, Few-shot\n\n\nFunction Calling\n\nBase64 Encoding\n\nVector Databases & RAG\n\nOpenAI API Docs\nPromptFoo\n\n\nSmall Project → PDF ChatBot\n- Upload PDF → Extract text → Store in Vector DB.\n- Build RAG pipeline with Streamlit UI + FastAPI backend.\n- Multi-turn Q&A → returns answer + page number.\n\n\n\n\n\n\n\n\n\n\nPydantic Models\n\nStructured Prompts & Output Parsers\n\nChains & Runnables\n\nText Splitters\n\nVectorStores in LangChain\n\nRAG + Tool Calling\n\n\nSmall Project → YouTube Playlist QA Assistant\n- Scrape subtitles from each video of playlist.\n- Store in a vector DB.\n- Build chatbot → answers video-specific queries.\n\n\n\n\n\n\n⚠️ I Don’t have much knowledge on this topic.\n\n\nSmall Project → *SQL Query Agent\n- Convert natural language → SQL query.\n- Run on DB → Return tabular results**.\n\n\n\n\n\n\nQuarto + GitHub Pages\n\nRevealJS Presentations\n\nMarkdown → Website conversion\n\nExcel Toolpack (Correlation, Regression, Data Analysis)\n\nAWK Basics (text processing)\n\n\nSmall Project → Portfolio Website\n- Publish your portfolio with Quarto + GitHub Pages.\n\n\n\n\n\n\n\n\n\n\n\n\n\nVoice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time.",
-    "crumbs": [
-      "About The Course"
-    ]
-  },
-  {
-    "objectID": "index.html#index",
-    "href": "index.html#index",
-    "title": "TDS - Tools for Data Science",
-    "section": "",
-    "text": "📌 Quick Navigation\n\n\nWeek 1 → Development Tools\nWeek 2 → Deployment Tools\nWeek 3 → LLM APIs\n🚀 Project 1 → ?\nWeek 4 → LangChain\nWeek 5 → LangGraph\nWeek 6 → Quarto Websites & AWK\n🚀 Project 2 → ?\nWeek 7 → ?\n\n\n📌 Small Projects\nW1-&gt; Simple ChatBot (No Memory)\nW2-&gt; Memory-Based ChatBot\nW3-&gt; PDF ChatBot\nW4-&gt; YouTube Playlist QA Assistant\nW5-&gt; SQL Query Agent\nW6-&gt; Portfolio Website\nVoice-enabled AI Chat Assistant",
-    "crumbs": [
-      "About The Course"
-    ]
-  },
-  {
-    "objectID": "index.html#week-1-development-tools",
-    "href": "index.html#week-1-development-tools",
-    "title": "TDS - Tools for Data Science",
-    "section": "",
-    "text": "Intro to Linux (Dual Boot, WSL)\n\nLanguage Setup & Config (bashrc, venv, nvm, etc.)\n\nJS → nvm, node, npm, pnpm, yarn\n\nC/C++ → gcc vs g++\n\nJava → jdk, jre, jvm\n\nPython → venv, pipx, conda, uv\n\n\nGit Basics\n\ninit, add, commit, push\n\nUndo/redo commits\n\n\nFastAPI Basics\n\nOllama Setup\n\n\nSmall Project → Simple ChatBot (No Memory)\n- Build a FastAPI endpoint /ask with Ollama (Gemma).\n- Answers queries without history.",
-    "crumbs": [
-      "About The Course"
-    ]
-  },
-  {
-    "objectID": "index.html#week-2-deployment-tools",
-    "href": "index.html#week-2-deployment-tools",
-    "title": "TDS - Tools for Data Science",
-    "section": "",
-    "text": "Advanced Git/GitHub\n\nBranching, Merging, Actions\n\nDocker/Podman\n\nDockerfile, Volumes, Networks\n\nAdvanced FastAPI\n\nDeployment Platforms\n\nVercel, Render, GitHub Pages\n\nEC2 Deployment with GitHub Actions + Docker\n\n\nSmall Project → Memory-Based ChatBot\n- FastAPI endpoint /chat with Gemini LLM.\n- Maintains multi-turn memory in RAM.",
-    "crumbs": [
-      "About The Course"
-    ]
-  },
-  {
-    "objectID": "index.html#week-3-llm-apis",
-    "href": "index.html#week-3-llm-apis",
-    "title": "TDS - Tools for Data Science",
-    "section": "",
-    "text": "Prompt Engineering\n\nZero-shot, Few-shot\n\n\nFunction Calling\n\nBase64 Encoding\n\nVector Databases & RAG\n\nOpenAI API Docs\nPromptFoo\n\n\nSmall Project → PDF ChatBot\n- Upload PDF → Extract text → Store in Vector DB.\n- Build RAG pipeline with Streamlit UI + FastAPI backend.\n- Multi-turn Q&A → returns answer + page number.",
-    "crumbs": [
-      "About The Course"
-    ]
-  },
-  {
-    "objectID": "index.html#week-4-langchain",
-    "href": "index.html#week-4-langchain",
-    "title": "TDS - Tools for Data Science",
-    "section": "",
-    "text": "Pydantic Models\n\nStructured Prompts & Output Parsers\n\nChains & Runnables\n\nText Splitters\n\nVectorStores in LangChain\n\nRAG + Tool Calling\n\n\nSmall Project → YouTube Playlist QA Assistant\n- Scrape subtitles from each video of playlist.\n- Store in a vector DB.\n- Build chatbot → answers video-specific queries.",
-    "crumbs": [
-      "About The Course"
-    ]
-  },
-  {
-    "objectID": "index.html#week-5-langgraph",
-    "href": "index.html#week-5-langgraph",
-    "title": "TDS - Tools for Data Science",
-    "section": "",
-    "text": "⚠️ I Don’t have much knowledge on this topic.\n\n\nSmall Project → *SQL Query Agent\n- Convert natural language → SQL query.\n- Run on DB → Return tabular results**.",
-    "crumbs": [
-      "About The Course"
-    ]
-  },
-  {
-    "objectID": "index.html#week-6-quarto-websites-awk",
-    "href": "index.html#week-6-quarto-websites-awk",
-    "title": "TDS - Tools for Data Science",
-    "section": "",
-    "text": "Quarto + GitHub Pages\n\nRevealJS Presentations\n\nMarkdown → Website conversion\n\nExcel Toolpack (Correlation, Regression, Data Analysis)\n\nAWK Basics (text processing)\n\n\nSmall Project → Portfolio Website\n- Publish your portfolio with Quarto + GitHub Pages.",
-    "crumbs": [
-      "About The Course"
-    ]
-  },
-  {
-    "objectID": "index.html#bonus-project-optional",
-    "href": "index.html#bonus-project-optional",
-    "title": "TDS - Tools for Data Science",
-    "section": "",
-    "text": "Voice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time.",
-    "crumbs": [
-      "About The Course"
-    ]
-  },
-  {
-    "objectID": "Git/git_basics.html",
-    "href": "Git/git_basics.html",
-    "title": "Git",
-    "section": "",
-    "text": "Git is a distributed VCS(Version Control Software)\nIt store all code history/snapshots in .git folder\nIf you delete even all files, then you can recover all files from .git folder, because all codes are stored there with history\n\n\n\n\ngit init create .git folder\ncreate some files and write something\ngit add . add all files in staging area (except the files/folder name in .gitignore file)\ngit commit -m \"first commit\" record this history in .git folder\nnow repeat 2nd, 3rd and 4th steps\nIf somewhere you want to go back to any specify commit\n\ngit log --one line\ngit checkout &lt;commit_id&gt;\ngit checkout main\ngit reset &lt;file&gt; or git reset"
-  },
-  {
-    "objectID": "Git/git_basics.html#lets-start-maintaining-history",
-    "href": "Git/git_basics.html#lets-start-maintaining-history",
-    "title": "Git",
-    "section": "",
-    "text": "git init create .git folder\ncreate some files and write something\ngit add . add all files in staging area (except the files/folder name in .gitignore file)\ngit commit -m \"first commit\" record this history in .git folder\nnow repeat 2nd, 3rd and 4th steps\nIf somewhere you want to go back to any specify commit\n\ngit log --one line\ngit checkout &lt;commit_id&gt;\ngit checkout main\ngit reset &lt;file&gt; or git reset"
+    "text": "BitLocker Recovery\nKubuntu ISO\nVentoy\n\n\n\n\nShrink Partition"
   },
   {
     "objectID": "Tds_Syllabus.html",
@@ -435,497 +439,452 @@
     "text": "Voice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time."
   },
   {
-    "objectID": "W1/dual_boot.html",
-    "href": "W1/dual_boot.html",
-    "title": "Dual-Boot Setup Guide",
+    "objectID": "W1/1_window_to_linux/boot.html",
+    "href": "W1/1_window_to_linux/boot.html",
+    "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "This guide will help you install another operating system (Linux) alongside your existing Windows installation.\n\n\n\n\n\n\nDisclaimer\n\n\n\n\n\nDo this at your own risk. Please watch various YouTube videos and proceed with dual boot only when you are 100% sure about the process.\nIf you want to minimize the risk:\n1. Use External SSD/HDD to install Linux\n- This will prevent almost 99% of any accidental damage to your main system\n2. Install Kubuntu\n- Since dual boot requires creating partitions\n- Kubuntu has a Replace Partition option which avoids most of the headache\n\n\n\n\n\n\nNew SSD/HDD or at least 30GB free storage on your current Windows drive\n\nIf installing on the same SSD/HDD where Windows is installed:\nI recommend shrinking at least a 30GB partition\n\nHow To Shrink Partition\n\n\nPendrive/USB drive (8GB or larger)\nOne ISO file of any Linux distribution. Kubuntu\nSoftware to create a bootable USB drive. Ventoy\n\n\n\n\n\nInsert your USB drive and run Ventoy\nFormat your USB drive with Ventoy to make it bootable\nJust Copy and paste the Linux distribution ISO files into the USB drive\nTo be sure that iso file not got corrupted, you can run sha256sum and check both on local and server matches or not\n\n\n\n\n\nRestart your computer\nGo to BIOS/UEFI Settings\n\nOn HP laptops: restart and keep pressing the F10 key\n\nNavigate to Boot Settings\nDisable Secure Boot (you can re-enable it after installation)\n\n\n\n\nOnce your USB drive and laptop BIOS/UEFI settings are ready, proceed with the installation:\n\nRestart your computer\nGo to Boot Device Options\n\nOn HP laptops: keep pressing the F9 key\n\nChoose your USB Drive\nIf using Ventoy:\n\nIt will ask which OS to boot (based on the ISOs you’ve copied)\n\nIf using BalenaEtcher: it will directly boot into that particular OS\nFor Kubuntu installation:\n\nClick on “Install”\nSelect language, keyboard layout, etc.\nWhen choosing where to install or configure partitions:\n\nChoose Replace Partition –&gt; then Select the newly created(shrinked) 30GB partition\nThe installer will format two partitions\n\nOne for your Linux installation that you just selected\nOne will be EFI partition of windows(first partition in most cases)\n\n\nChoose your username, password, etc., and proceed\nOnce installation is complete, your computer will automatically reboot or ask you to remove the USB drive and press Enter\nRemove the USB drive and press Enter to reboot\n\n\n\n\n\n\nRestart your computer\nGo to BIOS/UEFI settings\n\nYou can enable Secure Boot if desired\n\nMost importantly:\n\nNavigate to Boot Settings\nChange the boot order\nSet Ubuntu/Linux as the first boot option\n\n\n\n\n\n\nWhen you turn on your computer, you’ll have the option to boot into Ubuntu or Windows\nImportant:\n\nThe first time you boot into Windows after installation:\n\nYou may see a blue screen asking for a BitLocker recovery key\nYou can easily log in with your Microsoft account and retrieve the password from BitLocker Recovery\nThis will only be asked once.\n\n\n\n\n\n\n\nBitLocker Recovery\nKubuntu ISO\nVentoy\n\n\n\n\nShrink Partition"
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)"
   },
   {
-    "objectID": "W1/dual_boot.html#requirements",
-    "href": "W1/dual_boot.html#requirements",
-    "title": "Dual-Boot Setup Guide",
+    "objectID": "W1/1_window_to_linux/boot.html#table-of-contents",
+    "href": "W1/1_window_to_linux/boot.html#table-of-contents",
+    "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "New SSD/HDD or at least 30GB free storage on your current Windows drive\n\nIf installing on the same SSD/HDD where Windows is installed:\nI recommend shrinking at least a 30GB partition\n\nHow To Shrink Partition\n\n\nPendrive/USB drive (8GB or larger)\nOne ISO file of any Linux distribution. Kubuntu\nSoftware to create a bootable USB drive. Ventoy"
+    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources"
   },
   {
-    "objectID": "W1/dual_boot.html#prepare-the-usb-drive",
-    "href": "W1/dual_boot.html#prepare-the-usb-drive",
-    "title": "Dual-Boot Setup Guide",
+    "objectID": "W1/1_window_to_linux/boot.html#overview",
+    "href": "W1/1_window_to_linux/boot.html#overview",
+    "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "Insert your USB drive and run Ventoy\nFormat your USB drive with Ventoy to make it bootable\nJust Copy and paste the Linux distribution ISO files into the USB drive\nTo be sure that iso file not got corrupted, you can run sha256sum and check both on local and server matches or not"
+    "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start."
   },
   {
-    "objectID": "W1/dual_boot.html#prepare-your-laptopcomputer",
-    "href": "W1/dual_boot.html#prepare-your-laptopcomputer",
-    "title": "Dual-Boot Setup Guide",
+    "objectID": "W1/1_window_to_linux/boot.html#boot-process-steps",
+    "href": "W1/1_window_to_linux/boot.html#boot-process-steps",
+    "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "Restart your computer\nGo to BIOS/UEFI Settings\n\nOn HP laptops: restart and keep pressing the F10 key\n\nNavigate to Boot Settings\nDisable Secure Boot (you can re-enable it after installation)"
+    "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface"
   },
   {
-    "objectID": "W1/dual_boot.html#installation-process",
-    "href": "W1/dual_boot.html#installation-process",
-    "title": "Dual-Boot Setup Guide",
+    "objectID": "W1/1_window_to_linux/boot.html#partition-styles-vs-file-systems",
+    "href": "W1/1_window_to_linux/boot.html#partition-styles-vs-file-systems",
+    "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "Once your USB drive and laptop BIOS/UEFI settings are ready, proceed with the installation:\n\nRestart your computer\nGo to Boot Device Options\n\nOn HP laptops: keep pressing the F9 key\n\nChoose your USB Drive\nIf using Ventoy:\n\nIt will ask which OS to boot (based on the ISOs you’ve copied)\n\nIf using BalenaEtcher: it will directly boot into that particular OS\nFor Kubuntu installation:\n\nClick on “Install”\nSelect language, keyboard layout, etc.\nWhen choosing where to install or configure partitions:\n\nChoose Replace Partition –&gt; then Select the newly created(shrinked) 30GB partition\nThe installer will format two partitions\n\nOne for your Linux installation that you just selected\nOne will be EFI partition of windows(first partition in most cases)\n\n\nChoose your username, password, etc., and proceed\nOnce installation is complete, your computer will automatically reboot or ask you to remove the USB drive and press Enter\nRemove the USB drive and press Enter to reboot"
+    "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives"
   },
   {
-    "objectID": "W1/dual_boot.html#final-computer-setup",
-    "href": "W1/dual_boot.html#final-computer-setup",
-    "title": "Dual-Boot Setup Guide",
+    "objectID": "W1/1_window_to_linux/boot.html#boot-process-summary",
+    "href": "W1/1_window_to_linux/boot.html#boot-process-summary",
+    "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "Restart your computer\nGo to BIOS/UEFI settings\n\nYou can enable Secure Boot if desired\n\nMost importantly:\n\nNavigate to Boot Settings\nChange the boot order\nSet Ubuntu/Linux as the first boot option"
+    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I"
   },
   {
-    "objectID": "W1/dual_boot.html#final-notes",
-    "href": "W1/dual_boot.html#final-notes",
-    "title": "Dual-Boot Setup Guide",
+    "objectID": "W1/1_window_to_linux/boot.html#frequently-asked-questions",
+    "href": "W1/1_window_to_linux/boot.html#frequently-asked-questions",
+    "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "When you turn on your computer, you’ll have the option to boot into Ubuntu or Windows\nImportant:\n\nThe first time you boot into Windows after installation:\n\nYou may see a blue screen asking for a BitLocker recovery key\nYou can easily log in with your Microsoft account and retrieve the password from BitLocker Recovery\nThis will only be asked once."
+    "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup"
   },
   {
-    "objectID": "W1/dual_boot.html#resources",
-    "href": "W1/dual_boot.html#resources",
-    "title": "Dual-Boot Setup Guide",
+    "objectID": "W1/1_window_to_linux/boot.html#resources",
+    "href": "W1/1_window_to_linux/boot.html#resources",
+    "title": "Computer Boot Process: Essential Guide",
     "section": "",
-    "text": "BitLocker Recovery\nKubuntu ISO\nVentoy\n\n\n\n\nShrink Partition"
+    "text": "Boot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)"
   },
   {
-    "objectID": "W1/w1.html",
-    "href": "W1/w1.html",
-    "title": "Windows to Linux",
+    "objectID": "W1/1_window_to_linux/vm.html",
+    "href": "W1/1_window_to_linux/vm.html",
+    "title": "In Windows",
     "section": "",
-    "text": "📖 Understanding the Boot Process\n\n\n\n\n\nLearn the fundamental steps of how your computer starts up\n\n\n\n\n\nOverview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources\n\n\n\n\nThe computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.\n\n\n\n\n\nWhen you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface\n\n\n\n\n\n\n\nPartition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives\n\n\n\n\n\n\n\n\n\n\nPhase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup\n\n\n\n\n\n\n\n\nBoot Process (English)\nBoot Process (Hindi)\nWindows Partitions (Hindi)\n\n\n\nBoot Process (English) \nBoot Process (Hindi) \nWindows Partitions (Hindi)",
-    "crumbs": [
-      "Week1"
-    ]
+    "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…\n\n\n\n\n\n\n\n\nVirtual Box Setup (Hindi)"
   },
   {
-    "objectID": "W1/w1.html#table-of-contents",
-    "href": "W1/w1.html#table-of-contents",
-    "title": "Windows to Linux",
+    "objectID": "W1/1_window_to_linux/vm.html#using-type-2-hypervisor",
+    "href": "W1/1_window_to_linux/vm.html#using-type-2-hypervisor",
+    "title": "In Windows",
     "section": "",
-    "text": "Overview\nBoot Process Steps\nPartition Styles vs File Systems\nBoot Process Summary\nFrequently Asked Questions\nResources",
-    "crumbs": [
-      "Week1"
-    ]
+    "text": "Download and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…"
   },
   {
-    "objectID": "W1/w1.html#overview",
-    "href": "W1/w1.html#overview",
-    "title": "Windows to Linux",
+    "objectID": "W1/1_window_to_linux/vm.html#resources",
+    "href": "W1/1_window_to_linux/vm.html#resources",
+    "title": "In Windows",
     "section": "",
-    "text": "The computer boot process transforms your computer from powered-off state to a fully operational system. This guide covers the essential steps and concepts needed to understand how computers start.",
-    "crumbs": [
-      "Week1"
-    ]
+    "text": "Virtual Box Setup (Hindi)"
   },
   {
-    "objectID": "W1/w1.html#boot-process-steps",
-    "href": "W1/w1.html#boot-process-steps",
-    "title": "Windows to Linux",
-    "section": "",
-    "text": "When you press the power button:\n\nCPU executes the first program BIOS/UEFI\n\nBIOS (Basic Input/Output System) - Legacy firmware (used in old computers)\nUEFI (Unified Extensible Firmware Interface) - Modern firmware\n\n\n\n\n\nPOST (Power-On Self Test):\n\nTests CPU, RAM, and storage devices\nValidates hardware components\n\nBoot Device Selection:\n\nReads Boot Order from firmware settings\nGPT drives: Looks for EFI System Partition\nMBR drives: Checks Master Boot Record in first sector\n\n\n\n\nCommon Bootloaders:\nLinux or Window bootloader, both can scan and start any OS windows or linux.\n- Linux: GRUB2, LILO, systemd-boot - Windows: Windows Boot Manager\nBootloader Tasks:\n\nScans partitions for installed operating systems\nPresents boot menu (if multiple OS found)\nLoads selected OS kernel into memory\n\n\n\n\nLinux OS Boot:\n\nKernel loads and initializes hardware\nsystemd starts (modern init system)\nSystem services launch\nUser login interface appears\n\nWindows OS Boot:\n\nNT Kernel (ntoskrnl.exe) loads\nHardware Abstraction Layer initializes\nRegistry and system drivers load\nSession Manager starts Windows subsystems\nWindows Logon presents login interface",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#partition-styles-vs-file-systems",
-    "href": "W1/w1.html#partition-styles-vs-file-systems",
-    "title": "Windows to Linux",
-    "section": "",
-    "text": "Partition styles define how a drive is divided into sections:\n\n\n\n\n\n\n\n\nFeature\nMBR\nGPT\n\n\n\n\nMax Partitions\n4 primary OR 3 primary + 1 extended\n128 primary\n\n\nMax Storage\n2 TB\n18+ exabytes\n\n\nBoot Support\nBIOS only\nBIOS + UEFI\n\n\n\n\n\n\nFile systems determine how data is stored within partitions:\n\n\n\nFile System\nOS\nUse Case\n\n\n\n\nNTFS\nWindows\nSystem drives, large files\n\n\nFAT32\nCross-platform\nUSB drives, compatibility\n\n\next4\nLinux\nLinux system drives\n\n\nAPFS\nmacOS\nmacOS system drives",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#boot-process-summary",
-    "href": "W1/w1.html#boot-process-summary",
-    "title": "Windows to Linux",
-    "section": "",
-    "text": "Phase\nComponent\nPurpose\n\n\n\n\n1\nFirmware (BIOS/UEFI)\nHardware initialization\n\n\n2\nPOST\nHardware verification\n\n\n3\nBootloader\nOS selection and loading\n\n\n4\nOS Kernel\nSystem initialization\n\n\n\n\n\n\n\n\nflowchart LR\n    A[Power On] --&gt; B[Bios/Uefi]\n    B --&gt; C[POST Check]\n    C --&gt; D[LocateDrive]\n    D --&gt; E[Run Bootloader]\n    E --&gt; F{Select OS}\n    F --&gt;|Linux| G[Kernel + systemd]\n    F --&gt;|Windows| H[NT Kernel]\n    G --&gt; I[User Login]\n    H --&gt; I",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#frequently-asked-questions",
-    "href": "W1/w1.html#frequently-asked-questions",
-    "title": "Windows to Linux",
-    "section": "",
-    "text": "Feature\nBIOS\nUEFI\n\n\n\n\nInterface\nText-only\nGraphical possible\n\n\nStorage Support\n2 TB max\nNo practical limit\n\n\nSecurity\nBasic\nSecure Boot\n\n\nSpeed\nSlower\nFaster\n\n\n\n\n\n\nPartition Style: Defines how the drive is divided (MBR vs GPT) File System: Defines how files are stored within each partition (NTFS, ext4, etc.)\n\n\n\nYes, by:\n\nInstalling each OS on separate partitions\nUsing a bootloader that detects all systems\nSelecting which OS to boot at startup",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#resources",
-    "href": "W1/w1.html#resources",
-    "title": "Windows to Linux",
-    "section": "Resources",
-    "text": "Resources\n\nVideo Tutorials\n\nVirtual Box Setup (Hindi)",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#check-wsl-2-installed-or-not",
-    "href": "W1/w1.html#check-wsl-2-installed-or-not",
-    "title": "Windows to Linux",
-    "section": "Check WSL-2 Installed or not?",
-    "text": "Check WSL-2 Installed or not?\n\nOpen PowerShell\nwsl --version or wsl.exe --version\nIf any above command shows wsl version 2 , then it is already installed",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#if-wsl-2-not-instlled",
-    "href": "W1/w1.html#if-wsl-2-not-instlled",
-    "title": "Windows to Linux",
-    "section": "If WSL 2 Not Instlled",
-    "text": "If WSL 2 Not Instlled\n\nSearch Turn Windows features on or off\n\nEnable Virtual Machine Platform, Windows Hypervisor Platform, Windows Subsytem for Linux\n\nRestart Computer (Not power on/off, click on restart)\nInstall WSL WSL-2 Setup\nSwitch to WSL-2 wsl --set-default-version 2",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#if-already-installed-then-remove-previous-installed-distributions",
-    "href": "W1/w1.html#if-already-installed-then-remove-previous-installed-distributions",
-    "title": "Windows to Linux",
-    "section": "If already installed then Remove Previous Installed Distributions",
-    "text": "If already installed then Remove Previous Installed Distributions\nwsl --list --verbose\nFor Each Listed distribution\n- wsl --unregister &lt;DistributionName&gt;\n- Open Settings → Apps → Installed apps - Find each Linux distribution, click the three-dot menu, and select Uninstall",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#update-wsl-ubuntu-installation",
-    "href": "W1/w1.html#update-wsl-ubuntu-installation",
-    "title": "Windows to Linux",
-    "section": "Update WSL –> Ubuntu Installation",
-    "text": "Update WSL –&gt; Ubuntu Installation\n\nwsl --update\n\nwsl --list --online\n\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\n\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#install-javascript-tools",
-    "href": "W1/w1.html#install-javascript-tools",
-    "title": "Windows to Linux",
-    "section": "Install JavaScript Tools",
-    "text": "Install JavaScript Tools\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\n\nnode install https://nodejs.org/en/download\n\nnvm install 22\n\nnvm list nvm use 22 nvm current\n\ncorepack enable yarn\n\ncorepack enable pnpm\n\n\n\nCheck\n- nvm -v\n- node -v\n- npm -v npx -v\n- pnpm -v\n- yarn -v",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#install-python-tools",
-    "href": "W1/w1.html#install-python-tools",
-    "title": "Windows to Linux",
-    "section": "Install Python Tools",
-    "text": "Install Python Tools\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#install-cc-tools",
-    "href": "W1/w1.html#install-cc-tools",
-    "title": "Windows to Linux",
-    "section": "Install C/C++ Tools",
-    "text": "Install C/C++ Tools\nsudo apt install build-essential\n\ngcc –&gt; The C compiler\n\ng++ –&gt; The C++ compiler\n\n\nCheck - gcc –verison\n- g++ –version",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#install-java-tools",
-    "href": "W1/w1.html#install-java-tools",
-    "title": "Windows to Linux",
-    "section": "Install Java Tools",
-    "text": "Install Java Tools\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools  \nJava Runtime Environment (JRE) - Required to run Java applications  \nJava Virtual Machine (JVM) - Core execution environment  \n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\n\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version\n- javac --version\n- echo $JAVA_HOME",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#using-type-2-hypervisor",
-    "href": "W1/w1.html#using-type-2-hypervisor",
-    "title": "Windows to Linux",
-    "section": "Using Type-2 Hypervisor",
-    "text": "Using Type-2 Hypervisor\n\nDownload and Install Virtual Box\n\nLink\n\nDownload .iso file of any distribution\n\ne.g. Ubuntu\n\nInstall iso file in Virtual Box\n\nClick on New\nSelect Iso and fill required data…",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#requirements",
-    "href": "W1/w1.html#requirements",
-    "title": "Windows to Linux",
-    "section": "Requirements",
-    "text": "Requirements\n\nNew SSD/HDD or at least 30GB free storage on your current Windows drive\n\nIf installing on the same SSD/HDD where Windows is installed:\nI recommend shrinking at least a 30GB partition\n\nHow To Shrink Partition\n\n\nPendrive/USB drive (8GB or larger)\nOne ISO file of any Linux distribution. Kubuntu\nSoftware to create a bootable USB drive. Ventoy",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#prepare-the-usb-drive",
-    "href": "W1/w1.html#prepare-the-usb-drive",
-    "title": "Windows to Linux",
-    "section": "Prepare the USB Drive",
-    "text": "Prepare the USB Drive\n\nInsert your USB drive and run Ventoy\nFormat your USB drive with Ventoy to make it bootable\nJust Copy and paste the Linux distribution ISO files into the USB drive\nTo be sure that iso file not got corrupted, you can run sha256sum and check both on local and server matches or not",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#prepare-your-laptopcomputer",
-    "href": "W1/w1.html#prepare-your-laptopcomputer",
-    "title": "Windows to Linux",
-    "section": "Prepare Your Laptop/Computer",
-    "text": "Prepare Your Laptop/Computer\n\nRestart your computer\nGo to BIOS/UEFI Settings\n\nOn HP laptops: restart and keep pressing the F10 key\n\nNavigate to Boot Settings\nDisable Secure Boot (you can re-enable it after installation)",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#installation-process",
-    "href": "W1/w1.html#installation-process",
-    "title": "Windows to Linux",
-    "section": "Installation Process",
-    "text": "Installation Process\nOnce your USB drive and laptop BIOS/UEFI settings are ready, proceed with the installation:\n\nRestart your computer\nGo to Boot Device Options\n\nOn HP laptops: keep pressing the F9 key\n\nChoose your USB Drive\nIf using Ventoy:\n\nIt will ask which OS to boot (based on the ISOs you’ve copied)\n\nIf using BalenaEtcher: it will directly boot into that particular OS\nFor Kubuntu installation:\n\nClick on “Install”\nSelect language, keyboard layout, etc.\nWhen choosing where to install or configure partitions:\n\nChoose Replace Partition –&gt; then Select the newly created(shrinked) 30GB partition\nThe installer will format two partitions\n\nOne for your Linux installation that you just selected\nOne will be EFI partition of windows(first partition in most cases)\n\n\nChoose your username, password, etc., and proceed\nOnce installation is complete, your computer will automatically reboot or ask you to remove the USB drive and press Enter\nRemove the USB drive and press Enter to reboot",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#final-computer-setup",
-    "href": "W1/w1.html#final-computer-setup",
-    "title": "Windows to Linux",
-    "section": "Final Computer Setup",
-    "text": "Final Computer Setup\n\nRestart your computer\nGo to BIOS/UEFI settings\n\nYou can enable Secure Boot if desired\n\nMost importantly:\n\nNavigate to Boot Settings\nChange the boot order\nSet Ubuntu/Linux as the first boot option",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#final-notes",
-    "href": "W1/w1.html#final-notes",
-    "title": "Windows to Linux",
-    "section": "Final Notes",
-    "text": "Final Notes\n\nWhen you turn on your computer, you’ll have the option to boot into Ubuntu or Windows\nImportant:\n\nThe first time you boot into Windows after installation:\n\nYou may see a blue screen asking for a BitLocker recovery key\nYou can easily log in with your Microsoft account and retrieve the password from BitLocker Recovery\nThis will only be asked once.",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1.html#resources-1",
-    "href": "W1/w1.html#resources-1",
-    "title": "Windows to Linux",
-    "section": "Resources",
-    "text": "Resources\n\nBitLocker Recovery\nKubuntu ISO\nVentoy\n\n\nVideo Tutorials\n\nShrink Partition",
-    "crumbs": [
-      "Week1"
-    ]
-  },
-  {
-    "objectID": "W1/w1_2.html",
-    "href": "W1/w1_2.html",
+    "objectID": "W1/1_window_to_linux/w1_2.html",
+    "href": "W1/1_window_to_linux/w1_2.html",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
     "text": "We will use windows powershell to install wsl.\n\n\n\nOpen PowerShell\nwsl --version or wsl.exe --version\nIf any above command shows wsl version 2 , then it is already installed\n\n\n\n\n\nSearch Turn Windows features on or off\n\nEnable Virtual Machine Platform, Windows Hypervisor Platform, Windows Subsytem for Linux\n\nRestart Computer (Not power on/off, click on restart)\nInstall WSL WSL-2 Setup\nSwitch to WSL-2 wsl --set-default-version 2\n\n\n\n\nwsl --list --verbose\nFor Each Listed distribution\n- wsl --unregister &lt;DistributionName&gt;\n- Open Settings → Apps → Installed apps - Find each Linux distribution, click the three-dot menu, and select Uninstall\n\n\n\n\nwsl --update\n\nwsl --list --online\n\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\n\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]\n\n\n\n\n\n\n\nnvm install visit and run bash script https://github.com/nvm-sh/nvm\n\nnode install https://nodejs.org/en/download\n\nnvm install 22\n\nnvm list nvm use 22 nvm current\n\ncorepack enable yarn\n\ncorepack enable pnpm\n\n\n\nCheck\n- nvm -v\n- node -v\n- npm -v npx -v\n- pnpm -v\n- yarn -v\n\n\n\n\n\nPython VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false\n\n\n\n\n\nsudo apt install build-essential\n\ngcc –&gt; The C compiler\n\ng++ –&gt; The C++ compiler\n\n\nCheck - gcc –verison\n- g++ –version\n\n\n\n\nsudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools  \nJava Runtime Environment (JRE) - Required to run Java applications  \nJava Virtual Machine (JVM) - Core execution environment  \n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\n\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version\n- javac --version\n- echo $JAVA_HOME\n\n\n\n\n\n\n\nWSL-2 Setup",
     "crumbs": [
       "Week1",
-      "WSL - Windows Subsytem for Linux"
+      "1. Windows To Linux",
+      "WSL"
     ]
   },
   {
-    "objectID": "W1/w1_2.html#check-wsl-2-installed-or-not",
-    "href": "W1/w1_2.html#check-wsl-2-installed-or-not",
+    "objectID": "W1/1_window_to_linux/w1_2.html#check-wsl-2-installed-or-not",
+    "href": "W1/1_window_to_linux/w1_2.html#check-wsl-2-installed-or-not",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
     "text": "Open PowerShell\nwsl --version or wsl.exe --version\nIf any above command shows wsl version 2 , then it is already installed",
     "crumbs": [
       "Week1",
-      "WSL - Windows Subsytem for Linux"
+      "1. Windows To Linux",
+      "WSL"
     ]
   },
   {
-    "objectID": "W1/w1_2.html#if-wsl-2-not-instlled",
-    "href": "W1/w1_2.html#if-wsl-2-not-instlled",
+    "objectID": "W1/1_window_to_linux/w1_2.html#if-wsl-2-not-instlled",
+    "href": "W1/1_window_to_linux/w1_2.html#if-wsl-2-not-instlled",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
     "text": "Search Turn Windows features on or off\n\nEnable Virtual Machine Platform, Windows Hypervisor Platform, Windows Subsytem for Linux\n\nRestart Computer (Not power on/off, click on restart)\nInstall WSL WSL-2 Setup\nSwitch to WSL-2 wsl --set-default-version 2",
     "crumbs": [
       "Week1",
-      "WSL - Windows Subsytem for Linux"
+      "1. Windows To Linux",
+      "WSL"
     ]
   },
   {
-    "objectID": "W1/w1_2.html#if-already-installed-then-remove-previous-installed-distributions",
-    "href": "W1/w1_2.html#if-already-installed-then-remove-previous-installed-distributions",
+    "objectID": "W1/1_window_to_linux/w1_2.html#if-already-installed-then-remove-previous-installed-distributions",
+    "href": "W1/1_window_to_linux/w1_2.html#if-already-installed-then-remove-previous-installed-distributions",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
     "text": "wsl --list --verbose\nFor Each Listed distribution\n- wsl --unregister &lt;DistributionName&gt;\n- Open Settings → Apps → Installed apps - Find each Linux distribution, click the three-dot menu, and select Uninstall",
     "crumbs": [
       "Week1",
-      "WSL - Windows Subsytem for Linux"
+      "1. Windows To Linux",
+      "WSL"
     ]
   },
   {
-    "objectID": "W1/w1_2.html#update-wsl-ubuntu-installation",
-    "href": "W1/w1_2.html#update-wsl-ubuntu-installation",
+    "objectID": "W1/1_window_to_linux/w1_2.html#update-wsl-ubuntu-installation",
+    "href": "W1/1_window_to_linux/w1_2.html#update-wsl-ubuntu-installation",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
     "text": "wsl --update\n\nwsl --list --online\n\nwsl --install Ubuntu-24.04 –&gt; Install Ubuntu\n\nsudo apt update && sudo apt upgrade -y –&gt; Update Ubuntu\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nPS C:\\Users\\hrith&gt; wsl --install Ubuntu-24.04\nDownloading: Ubuntu 24.04 LTS\nInstalling: Ubuntu 24.04 LTS\nDistribution successfully installed. It can be launched via 'wsl.exe -d Ubuntu-24.04'\nLaunching Ubuntu-24.04...\nProvisioning the new WSL instance Ubuntu-24.04\nThis might take a while...\nCreate a default Unix user account: hrm\nNew password:\nRetype new password:\npasswd: password updated successfully\nTo run a command as administrator (user \"root\"), use \"sudo &lt;command&gt;\".\nSee \"man sudo_root\" for details.\n\nhrm@bitnd:/mnt/c/Users/hrith$ sudo apt update && sudo apt upgrade -y\n[sudo] password for hrm:\nHit:1 http://archive.ubuntu.com/ubuntu noble InRelease\nGet:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]",
     "crumbs": [
       "Week1",
-      "WSL - Windows Subsytem for Linux"
+      "1. Windows To Linux",
+      "WSL"
     ]
   },
   {
-    "objectID": "W1/w1_2.html#install-javascript-tools",
-    "href": "W1/w1_2.html#install-javascript-tools",
+    "objectID": "W1/1_window_to_linux/w1_2.html#install-javascript-tools",
+    "href": "W1/1_window_to_linux/w1_2.html#install-javascript-tools",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
     "text": "nvm install visit and run bash script https://github.com/nvm-sh/nvm\n\nnode install https://nodejs.org/en/download\n\nnvm install 22\n\nnvm list nvm use 22 nvm current\n\ncorepack enable yarn\n\ncorepack enable pnpm\n\n\n\nCheck\n- nvm -v\n- node -v\n- npm -v npx -v\n- pnpm -v\n- yarn -v",
     "crumbs": [
       "Week1",
-      "WSL - Windows Subsytem for Linux"
+      "1. Windows To Linux",
+      "WSL"
     ]
   },
   {
-    "objectID": "W1/w1_2.html#install-python-tools",
-    "href": "W1/w1_2.html#install-python-tools",
+    "objectID": "W1/1_window_to_linux/w1_2.html#install-python-tools",
+    "href": "W1/1_window_to_linux/w1_2.html#install-python-tools",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
     "text": "Python VENV\n\npython3 -m venv .venv –&gt; Copy error code and run sudo apt install python3.12-venv\n\nPIPX\n\nsudo apt install pipx\n\nUV - Rust-based Python package installer\n\npipx install uv It will maintain isolation\n\nLLM\n\npipx install llm –&gt; pipx ensurepath\nConfigure it\n\nllm install llm-gemini or llm install llm-ollama\nllm keys set gemini\nllm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'\n\n\nMiniConda\n\nDownload .sh https://www.anaconda.com/download/success\nbash &lt;pathto .sh file&gt;\nconda config --set auto_activate_base false",
     "crumbs": [
       "Week1",
-      "WSL - Windows Subsytem for Linux"
+      "1. Windows To Linux",
+      "WSL"
     ]
   },
   {
-    "objectID": "W1/w1_2.html#install-cc-tools",
-    "href": "W1/w1_2.html#install-cc-tools",
+    "objectID": "W1/1_window_to_linux/w1_2.html#install-cc-tools",
+    "href": "W1/1_window_to_linux/w1_2.html#install-cc-tools",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
     "text": "sudo apt install build-essential\n\ngcc –&gt; The C compiler\n\ng++ –&gt; The C++ compiler\n\n\nCheck - gcc –verison\n- g++ –version",
     "crumbs": [
       "Week1",
-      "WSL - Windows Subsytem for Linux"
+      "1. Windows To Linux",
+      "WSL"
     ]
   },
   {
-    "objectID": "W1/w1_2.html#install-java-tools",
-    "href": "W1/w1_2.html#install-java-tools",
+    "objectID": "W1/1_window_to_linux/w1_2.html#install-java-tools",
+    "href": "W1/1_window_to_linux/w1_2.html#install-java-tools",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
     "text": "sudo apt install default-jdk\n\nThis command installs:\n\nJava Development Kit (JDK) - Compiler, debugger, and development tools  \nJava Runtime Environment (JRE) - Required to run Java applications  \nJava Virtual Machine (JVM) - Core execution environment  \n\nConfigure JAVA_HOME Environment Variable\n\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc ## confirm the path first using below update-alternatiove… command\n\nrestart shell\n\nInstall other versions of java\n\nsudo apt install openjdk-17-jdk\n\nSet Default Java/Javac installed version\n\nsudo update-alternatives --config java\nsudo update-alternatives --config javac\n\n\n\nCheck\n- java --version\n- javac --version\n- echo $JAVA_HOME",
     "crumbs": [
       "Week1",
-      "WSL - Windows Subsytem for Linux"
+      "1. Windows To Linux",
+      "WSL"
     ]
   },
   {
-    "objectID": "W1/w1_2.html#resources",
-    "href": "W1/w1_2.html#resources",
+    "objectID": "W1/1_window_to_linux/w1_2.html#resources",
+    "href": "W1/1_window_to_linux/w1_2.html#resources",
     "title": "WSL - Windows Subsytem for Linux",
     "section": "",
     "text": "WSL-2 Setup",
     "crumbs": [
       "Week1",
-      "WSL - Windows Subsytem for Linux"
+      "1. Windows To Linux",
+      "WSL"
     ]
   },
   {
-    "objectID": "W1/w1_4.html",
-    "href": "W1/w1_4.html",
+    "objectID": "W1/1_window_to_linux/w1_4.html",
+    "href": "W1/1_window_to_linux/w1_4.html",
     "title": "Dual Boot",
     "section": "",
     "text": "This guide will help you install another operating system (Linux) alongside your existing Windows installation.\n\n\n\n\n\n\nDisclaimer\n\n\n\n\n\nDo this at your own risk. Please watch various YouTube videos and proceed with dual boot only when you are 100% sure about the process.\nIf you want to minimize the risk:\n1. Use External SSD/HDD to install Linux\n- This will prevent almost 99% of any accidental damage to your main system\n2. Install Kubuntu\n- Since dual boot requires creating partitions\n- Kubuntu has a Replace Partition option which avoids most of the headache\n\n\n\n\n\n\nNew SSD/HDD or at least 30GB free storage on your current Windows drive\n\nIf installing on the same SSD/HDD where Windows is installed:\nI recommend shrinking at least a 30GB partition\n\nHow To Shrink Partition\n\n\nPendrive/USB drive (8GB or larger)\nOne ISO file of any Linux distribution. Kubuntu\nSoftware to create a bootable USB drive. Ventoy\n\n\n\n\n\nInsert your USB drive and run Ventoy\nFormat your USB drive with Ventoy to make it bootable\nJust Copy and paste the Linux distribution ISO files into the USB drive\nTo be sure that iso file not got corrupted, you can run sha256sum and check both on local and server matches or not\n\n\n\n\n\nRestart your computer\nGo to BIOS/UEFI Settings\n\nOn HP laptops: restart and keep pressing the F10 key\n\nNavigate to Boot Settings\nDisable Secure Boot (you can re-enable it after installation)\n\n\n\n\nOnce your USB drive and laptop BIOS/UEFI settings are ready, proceed with the installation:\n\nRestart your computer\nGo to Boot Device Options\n\nOn HP laptops: keep pressing the F9 key\n\nChoose your USB Drive\nIf using Ventoy:\n\nIt will ask which OS to boot (based on the ISOs you’ve copied)\n\nIf using BalenaEtcher: it will directly boot into that particular OS\nFor Kubuntu installation:\n\nClick on “Install”\nSelect language, keyboard layout, etc.\nWhen choosing where to install or configure partitions:\n\nChoose Replace Partition –&gt; then Select the newly created(shrinked) 30GB partition\nThe installer will format two partitions\n\nOne for your Linux installation that you just selected\nOne will be EFI partition of windows(first partition in most cases)\n\n\nChoose your username, password, etc., and proceed\nOnce installation is complete, your computer will automatically reboot or ask you to remove the USB drive and press Enter\nRemove the USB drive and press Enter to reboot\n\n\n\n\n\n\nRestart your computer\nGo to BIOS/UEFI settings\n\nYou can enable Secure Boot if desired\n\nMost importantly:\n\nNavigate to Boot Settings\nChange the boot order\nSet Ubuntu/Linux as the first boot option\n\n\n\n\n\n\nWhen you turn on your computer, you’ll have the option to boot into Ubuntu or Windows\nImportant:\n\nThe first time you boot into Windows after installation:\n\nYou may see a blue screen asking for a BitLocker recovery key\nYou can easily log in with your Microsoft account and retrieve the password from BitLocker Recovery\nThis will only be asked once.\n\n\n\n\n\n\n\nBitLocker Recovery\nKubuntu ISO\nVentoy\n\n\n\n\nShrink Partition",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Dual Boot"
     ]
   },
   {
-    "objectID": "W1/w1_4.html#requirements",
-    "href": "W1/w1_4.html#requirements",
+    "objectID": "W1/1_window_to_linux/w1_4.html#requirements",
+    "href": "W1/1_window_to_linux/w1_4.html#requirements",
     "title": "Dual Boot",
     "section": "",
     "text": "New SSD/HDD or at least 30GB free storage on your current Windows drive\n\nIf installing on the same SSD/HDD where Windows is installed:\nI recommend shrinking at least a 30GB partition\n\nHow To Shrink Partition\n\n\nPendrive/USB drive (8GB or larger)\nOne ISO file of any Linux distribution. Kubuntu\nSoftware to create a bootable USB drive. Ventoy",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Dual Boot"
     ]
   },
   {
-    "objectID": "W1/w1_4.html#prepare-the-usb-drive",
-    "href": "W1/w1_4.html#prepare-the-usb-drive",
+    "objectID": "W1/1_window_to_linux/w1_4.html#prepare-the-usb-drive",
+    "href": "W1/1_window_to_linux/w1_4.html#prepare-the-usb-drive",
     "title": "Dual Boot",
     "section": "",
     "text": "Insert your USB drive and run Ventoy\nFormat your USB drive with Ventoy to make it bootable\nJust Copy and paste the Linux distribution ISO files into the USB drive\nTo be sure that iso file not got corrupted, you can run sha256sum and check both on local and server matches or not",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Dual Boot"
     ]
   },
   {
-    "objectID": "W1/w1_4.html#prepare-your-laptopcomputer",
-    "href": "W1/w1_4.html#prepare-your-laptopcomputer",
+    "objectID": "W1/1_window_to_linux/w1_4.html#prepare-your-laptopcomputer",
+    "href": "W1/1_window_to_linux/w1_4.html#prepare-your-laptopcomputer",
     "title": "Dual Boot",
     "section": "",
     "text": "Restart your computer\nGo to BIOS/UEFI Settings\n\nOn HP laptops: restart and keep pressing the F10 key\n\nNavigate to Boot Settings\nDisable Secure Boot (you can re-enable it after installation)",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Dual Boot"
     ]
   },
   {
-    "objectID": "W1/w1_4.html#installation-process",
-    "href": "W1/w1_4.html#installation-process",
+    "objectID": "W1/1_window_to_linux/w1_4.html#installation-process",
+    "href": "W1/1_window_to_linux/w1_4.html#installation-process",
     "title": "Dual Boot",
     "section": "",
     "text": "Once your USB drive and laptop BIOS/UEFI settings are ready, proceed with the installation:\n\nRestart your computer\nGo to Boot Device Options\n\nOn HP laptops: keep pressing the F9 key\n\nChoose your USB Drive\nIf using Ventoy:\n\nIt will ask which OS to boot (based on the ISOs you’ve copied)\n\nIf using BalenaEtcher: it will directly boot into that particular OS\nFor Kubuntu installation:\n\nClick on “Install”\nSelect language, keyboard layout, etc.\nWhen choosing where to install or configure partitions:\n\nChoose Replace Partition –&gt; then Select the newly created(shrinked) 30GB partition\nThe installer will format two partitions\n\nOne for your Linux installation that you just selected\nOne will be EFI partition of windows(first partition in most cases)\n\n\nChoose your username, password, etc., and proceed\nOnce installation is complete, your computer will automatically reboot or ask you to remove the USB drive and press Enter\nRemove the USB drive and press Enter to reboot",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Dual Boot"
     ]
   },
   {
-    "objectID": "W1/w1_4.html#final-computer-setup",
-    "href": "W1/w1_4.html#final-computer-setup",
+    "objectID": "W1/1_window_to_linux/w1_4.html#final-computer-setup",
+    "href": "W1/1_window_to_linux/w1_4.html#final-computer-setup",
     "title": "Dual Boot",
     "section": "",
     "text": "Restart your computer\nGo to BIOS/UEFI settings\n\nYou can enable Secure Boot if desired\n\nMost importantly:\n\nNavigate to Boot Settings\nChange the boot order\nSet Ubuntu/Linux as the first boot option",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Dual Boot"
     ]
   },
   {
-    "objectID": "W1/w1_4.html#final-notes",
-    "href": "W1/w1_4.html#final-notes",
+    "objectID": "W1/1_window_to_linux/w1_4.html#final-notes",
+    "href": "W1/1_window_to_linux/w1_4.html#final-notes",
     "title": "Dual Boot",
     "section": "",
     "text": "When you turn on your computer, you’ll have the option to boot into Ubuntu or Windows\nImportant:\n\nThe first time you boot into Windows after installation:\n\nYou may see a blue screen asking for a BitLocker recovery key\nYou can easily log in with your Microsoft account and retrieve the password from BitLocker Recovery\nThis will only be asked once.",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Dual Boot"
     ]
   },
   {
-    "objectID": "W1/w1_4.html#resources",
-    "href": "W1/w1_4.html#resources",
+    "objectID": "W1/1_window_to_linux/w1_4.html#resources",
+    "href": "W1/1_window_to_linux/w1_4.html#resources",
     "title": "Dual Boot",
     "section": "",
     "text": "BitLocker Recovery\nKubuntu ISO\nVentoy\n\n\n\n\nShrink Partition",
     "crumbs": [
       "Week1",
+      "1. Windows To Linux",
       "Dual Boot"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/1_git.html",
+    "href": "W1/2_git_github/1_git.html",
+    "title": "Git",
+    "section": "",
+    "text": "Git is a distributed VCS(Version Control Software)\nIt store all code history/snapshots in .git folder\nIf you delete even all files, then you can recover all files from .git folder, because all codes are stored there with history\n\n\n\n\nInstall from official website git-scm\n\n\n\n\n\n\n\nFLOW\n\n\n\n\n\nwork --&gt; add/commit --&gt; work --&gt; add/commit --&gt; ...\nwhenever we need we can do undo/redo\n\n\n\nCreate a folder for your project/work\n\ngit config --global init.defaultBranch main or later you may need to do git branch -m master main\ngit init create .git folder\ncreate some files and write something\ngit add . add all files in staging area (except the files/folder name in .gitignore file)\n\n\n\ngit reset abc.txt will unstage, if something done by mistake\n\n\ngit commit -m \"first commit\" record this history in .git folder\nnow repeat 2nd, 3rd and 4th steps\nIf somewhere you want to go back to any specify commit\n\ngit log --one line\ngit checkout &lt;commit_id&gt;\ngit checkout main\ngit reset --soft &lt;commit_id&gt;\n\nsoft -&gt; keeps your changes staged\nmixed -&gt; keeps your changes unstaged\nhard -&gt; ⚠️ discards everything after that commit\n\n\n\n\n\n\n\n\n\nJust Previous Commit\n\n\n\n\n\n\ngit reset --soft HEAD~1\n\ngit reset --mixed HEAD~1\n\ngit reset --hard HEAD~1",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "GIT"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/1_git.html#lets-start-maintaining-history",
+    "href": "W1/2_git_github/1_git.html#lets-start-maintaining-history",
+    "title": "Git",
+    "section": "",
+    "text": "Install from official website git-scm\n\n\n\n\n\n\n\nFLOW\n\n\n\n\n\nwork --&gt; add/commit --&gt; work --&gt; add/commit --&gt; ...\nwhenever we need we can do undo/redo\n\n\n\nCreate a folder for your project/work\n\ngit config --global init.defaultBranch main or later you may need to do git branch -m master main\ngit init create .git folder\ncreate some files and write something\ngit add . add all files in staging area (except the files/folder name in .gitignore file)\n\n\n\ngit reset abc.txt will unstage, if something done by mistake\n\n\ngit commit -m \"first commit\" record this history in .git folder\nnow repeat 2nd, 3rd and 4th steps\nIf somewhere you want to go back to any specify commit\n\ngit log --one line\ngit checkout &lt;commit_id&gt;\ngit checkout main\ngit reset --soft &lt;commit_id&gt;\n\nsoft -&gt; keeps your changes staged\nmixed -&gt; keeps your changes unstaged\nhard -&gt; ⚠️ discards everything after that commit\n\n\n\n\n\n\n\n\n\nJust Previous Commit\n\n\n\n\n\n\ngit reset --soft HEAD~1\n\ngit reset --mixed HEAD~1\n\ngit reset --hard HEAD~1",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "GIT"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/3_github.html",
+    "href": "W1/2_git_github/3_github.html",
+    "title": "Github",
+    "section": "",
+    "text": "GitHub is a cloud-based platform that hosts Git repositories.\n\nIt provides collaboration features like pull requests, issues, and project management.\n\nUnlike Git (local), GitHub makes your code accessible online, enabling teamwork, backups, and sharing.\n\n\nGit = a software (Version Control System)\nGitHub = a cloud service for hosting programming repositories (like Google Drive, but for code)\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nGit itself manages local repositories and pushes/pulls to/from remotes, but it does not create remote repositories on hosting platforms like Github.\n\n\n\nThe repository already exists on GitHub.\n\nThe repository does not yet exist on GitHub but locally exist.\n\n\n\n\n\nLocate the repository on GitHub → Click on &lt;&gt; Code → Copy the SSH path.\n\nClone the repo into your local machine:\ngit clone git@github.com:myusername/myreponame.git\nA folder myreponame will be created with all repo contents.\nWork as usual → edit files, then stage & commit changes:\ngit add .\ngit commit -m \"your message\"\nPush your updates back to GitHub:\ngit push origin main\n\norigin → alias for the remote repo URL (e.g., GitHub).\nmain → branch name (default branch, often main instead of master).\n\n\n\n\n\n\n\n\nGo to GitHub → New Repo.\nEnter repository name → e.g., myrepo.\nLeave it empty (don’t add README, .gitignore, or license).\n\nNote you can again follow scenario 1 where you can clone and then copy paste your new work and then commit and then push, or you can follow below steps.\n\n\n\nFrom your project folder, run:\ngit remote add origin git@github.com:your-username/myrepo.git\n(replace your-username with your actual GitHub username)\n\n\n\ngit branch -M main     # ensure current branch is 'main'\ngit push -u origin main\n\n-u sets the upstream, so later you can simply use:\ngit push\n\nNow your local repo is connected to GitHub. Check it online at: https://github.com/your-username/myrepo",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "Github"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/3_github.html#two-scenarios",
+    "href": "W1/2_git_github/3_github.html#two-scenarios",
+    "title": "Github",
+    "section": "",
+    "text": "Important\n\n\n\nGit itself manages local repositories and pushes/pulls to/from remotes, but it does not create remote repositories on hosting platforms like Github.\n\n\n\nThe repository already exists on GitHub.\n\nThe repository does not yet exist on GitHub but locally exist.",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "Github"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/3_github.html#scenario-1-repo-already-on-github",
+    "href": "W1/2_git_github/3_github.html#scenario-1-repo-already-on-github",
+    "title": "Github",
+    "section": "",
+    "text": "Locate the repository on GitHub → Click on &lt;&gt; Code → Copy the SSH path.\n\nClone the repo into your local machine:\ngit clone git@github.com:myusername/myreponame.git\nA folder myreponame will be created with all repo contents.\nWork as usual → edit files, then stage & commit changes:\ngit add .\ngit commit -m \"your message\"\nPush your updates back to GitHub:\ngit push origin main\n\norigin → alias for the remote repo URL (e.g., GitHub).\nmain → branch name (default branch, often main instead of master).",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "Github"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/3_github.html#scenario-2-repo-not-yet-on-github",
+    "href": "W1/2_git_github/3_github.html#scenario-2-repo-not-yet-on-github",
+    "title": "Github",
+    "section": "",
+    "text": "Go to GitHub → New Repo.\nEnter repository name → e.g., myrepo.\nLeave it empty (don’t add README, .gitignore, or license).\n\nNote you can again follow scenario 1 where you can clone and then copy paste your new work and then commit and then push, or you can follow below steps.\n\n\n\nFrom your project folder, run:\ngit remote add origin git@github.com:your-username/myrepo.git\n(replace your-username with your actual GitHub username)\n\n\n\ngit branch -M main     # ensure current branch is 'main'\ngit push -u origin main\n\n-u sets the upstream, so later you can simply use:\ngit push\n\nNow your local repo is connected to GitHub. Check it online at: https://github.com/your-username/myrepo",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "Github"
+    ]
+  },
+  {
+    "objectID": "W1/3_python_tools/1_uv.html",
+    "href": "W1/3_python_tools/1_uv.html",
+    "title": "Python Tool - UV",
+    "section": "",
+    "text": "No need to globally do pip install xyz\nuv add --script a.py numpy\nuv run a.py\nuv remove --script a.py numpy\nhrm@bitnd:~$ batcat a.py\n───────┬───────────────────────────────────\n       │ File: a.py\n───────┼───────────────────────────────────\n   1   │ import numpy as np\n   2   │\n   3   │ print(np.array([1,2,3]))\n───────┴───────────────────────────────────\nhrm@bitnd:~$\nhrm@bitnd:~$ uv add --script a.py numpy\nUpdated `a.py`\n\nhrm@bitnd:~$ batcat a.py\n───────┬───────────────────────────────────\n       │ File: a.py\n───────┼───────────────────────────────────\n   1   │ # /// script\n   2   │ # requires-python = \"&gt;=3.12\"\n   3   │ # dependencies = [\n   4   │ #     \"numpy\",\n   5   │ # ]\n   6   │ # ///\n   7   │ import numpy as np\n   8   │\n   9   │ print(np.array([1,2,3]))\n───────┴───────────────────────────────────\nhrm@bitnd:~$ uv run a.py\n[1 2 3]",
+    "crumbs": [
+      "Week1",
+      "3. Python Tools",
+      "UV"
+    ]
+  },
+  {
+    "objectID": "W1/3_python_tools/1_uv.html#running-any-standalone-python-script",
+    "href": "W1/3_python_tools/1_uv.html#running-any-standalone-python-script",
+    "title": "Python Tool - UV",
+    "section": "",
+    "text": "No need to globally do pip install xyz\nuv add --script a.py numpy\nuv run a.py\nuv remove --script a.py numpy\nhrm@bitnd:~$ batcat a.py\n───────┬───────────────────────────────────\n       │ File: a.py\n───────┼───────────────────────────────────\n   1   │ import numpy as np\n   2   │\n   3   │ print(np.array([1,2,3]))\n───────┴───────────────────────────────────\nhrm@bitnd:~$\nhrm@bitnd:~$ uv add --script a.py numpy\nUpdated `a.py`\n\nhrm@bitnd:~$ batcat a.py\n───────┬───────────────────────────────────\n       │ File: a.py\n───────┼───────────────────────────────────\n   1   │ # /// script\n   2   │ # requires-python = \"&gt;=3.12\"\n   3   │ # dependencies = [\n   4   │ #     \"numpy\",\n   5   │ # ]\n   6   │ # ///\n   7   │ import numpy as np\n   8   │\n   9   │ print(np.array([1,2,3]))\n───────┴───────────────────────────────────\nhrm@bitnd:~$ uv run a.py\n[1 2 3]",
+    "crumbs": [
+      "Week1",
+      "3. Python Tools",
+      "UV"
+    ]
+  },
+  {
+    "objectID": "W1/3_python_tools/1_uv.html#use-as-normal-virtual-environment",
+    "href": "W1/3_python_tools/1_uv.html#use-as-normal-virtual-environment",
+    "title": "Python Tool - UV",
+    "section": "Use as normal Virtual Environment",
+    "text": "Use as normal Virtual Environment\nuv venv myvenv\n# myvenv activate command will be given, execute it\nuv pip install numpy\nuv pip install -r requirements.txt\nuv pip freeze &gt; requirements.txt\nNote Don’t use uv pip3\nhrm@bitnd:~/test$ ls && batcat a.py\na.py\n───────┬────────────────────────────\n       │ File: a.py\n───────┼────────────────────────────\n   1   │ import numpy as np\n   2   │\n   3   │ print(np.array([1,2,3]))\n───────┴────────────────────────────\n\nhrm@bitnd:~/test$ uv venv myvenv\nUsing CPython 3.12.3 interpreter at: /usr/bin/python3\nCreating virtual environment at: myvenv\nActivate with: source myvenv/bin/activate\n\nhrm@bitnd:~/test$ source myvenv/bin/activate\n\n(myvenv) hrm@bitnd:~/test$ which python\n/home/hrm/test/myvenv/bin/python\n\n\n(myvenv) hrm@bitnd:~/test$ uv pip install numpy\nUsing Python 3.12.3 environment at: myvenv\nResolved 1 package in 6ms\nInstalled 1 package in 35ms\n + numpy==2.3.3\n\n(myvenv) hrm@bitnd:~/test$ uv pip freeze\nUsing Python 3.12.3 environment at: myvenv\nnumpy==2.3.3\n\n(myvenv) hrm@bitnd:~/test$ python3 a.py\n[1 2 3]",
+    "crumbs": [
+      "Week1",
+      "3. Python Tools",
+      "UV"
+    ]
+  },
+  {
+    "objectID": "W1/3_python_tools/3_pipx_uvx.html",
+    "href": "W1/3_python_tools/3_pipx_uvx.html",
+    "title": "Python Tool - UVX, PIPX, LLM",
+    "section": "",
+    "text": "# Install a tool, e.g., black formatter\npipx install llm\n# Run a tool once temporarily without installing\npipx run pycowsay hello\n\npipx list # list tools\npipx uninstall black # uninstall a tool \n# Install a tool, e.g., black formatter\nuv tool install llm\n# Run a tool once temporarily without installing\nuvx pycowsay hello\n\n\nuv tool list # list tools\nuv tool uninstall black # uninstall a tool",
+    "crumbs": [
+      "Week1",
+      "3. Python Tools",
+      "LLM,UVX,PIPX"
+    ]
+  },
+  {
+    "objectID": "W1/3_python_tools/3_pipx_uvx.html#uvx-vs-pipx",
+    "href": "W1/3_python_tools/3_pipx_uvx.html#uvx-vs-pipx",
+    "title": "Python Tool - UVX, PIPX, LLM",
+    "section": "",
+    "text": "# Install a tool, e.g., black formatter\npipx install llm\n# Run a tool once temporarily without installing\npipx run pycowsay hello\n\npipx list # list tools\npipx uninstall black # uninstall a tool \n# Install a tool, e.g., black formatter\nuv tool install llm\n# Run a tool once temporarily without installing\nuvx pycowsay hello\n\n\nuv tool list # list tools\nuv tool uninstall black # uninstall a tool",
+    "crumbs": [
+      "Week1",
+      "3. Python Tools",
+      "LLM,UVX,PIPX"
+    ]
+  },
+  {
+    "objectID": "W1/3_python_tools/3_pipx_uvx.html#llmterminal-setup",
+    "href": "W1/3_python_tools/3_pipx_uvx.html#llmterminal-setup",
+    "title": "Python Tool - UVX, PIPX, LLM",
+    "section": "LLM(terminal) setup",
+    "text": "LLM(terminal) setup\n\nCopy Proxy token from here aipipe\nExport relvant environment variable aipipe sannad repo\nexport OPENAI_BASE_URL=https://aipipe.org/openai/v1\nApi key can be set permanently\n\n  hrm@bitnd:~$ llm keys set openai\n  Enter key:\n\n\nhrm@bitnd:~$ uv tool install llm\n`llm` is already installed\n\nhrm@bitnd:~$ export OPENAI_BASE_URL=https://aipipe.org/openai/v1\nhrm@bitnd:~$ llm keys set openai\nEnter key:\n\nhrm@bitnd:~$ llm 'hi'\nHello! How can I assist you today?\n\n\nhrm@bitnd:~$ llm -m 'gpt-4o-mini' 'hi'\nHello! How can I assist you today?",
+    "crumbs": [
+      "Week1",
+      "3. Python Tools",
+      "LLM,UVX,PIPX"
+    ]
+  },
+  {
+    "objectID": "W1/4_bash/2_bash_script.html",
+    "href": "W1/4_bash/2_bash_script.html",
+    "title": "Linux - Bash Scripting",
+    "section": "",
+    "text": "Variables\nVariables store data and don’t require type declaration. Use $ to access variable values.\n# Variable assignment (no spaces around =)\nname=\"John\"\nage=25\npath=\"/home/user\"\n\n# Access variables\necho $name\necho ${name}  # preferred for clarity\n\n\nData Types\nBash treats everything as strings by default, but supports:\n# String\nmessage=\"Hello World\"\n\n# Integer (for arithmetic)\nnum1=10\nnum2=20\nresult=$((num1 + num2))\n\n# Array\nfruits=(\"apple\" \"banana\" \"cherry\")\necho ${fruits[0]}  # access first element\necho ${fruits[@]}  # all elements\necho ${#fruits[@]} # array length\n\n\nConditionals\nUse if-then-else for decision making:\n# Basic if statement\nif [ $age -gt 18 ]; then\n    echo \"Adult\"\nelif [ $age -eq 18 ]; then\n    echo \"Just turned adult\"\nelse\n    echo \"Minor\"\nfi\n\n# String comparison\nif [ \"$name\" = \"John\" ]; then\n    echo \"Hello John!\"\nfi\n\n# File checks\nif [ -f \"file.txt\" ]; then\n    echo \"File exists\"\nfi\nCommon operators:\n\n-eq equal, -ne not equal\n-gt greater than, -lt less than\n-f file exists, -d directory exists\n\n\n\nLoops\n\nFor Loop\n# Loop through range\nfor i in {1..5}; do\n    echo \"Number: $i\"\ndone\n\n# Loop through array\nfor fruit in \"${fruits[@]}\"; do\n    echo \"Fruit: $fruit\"\ndone\n\n# Loop through files\nfor file in *.txt; do\n    echo \"Processing: $file\"\ndone\n\n\nWhile Loop\ncounter=1\nwhile [ $counter -le 5 ]; do\n    echo \"Count: $counter\"\n    counter=$((counter + 1))\ndone\n\n\n\nText File Handling\n\nReading Files\n# Read line by line\nwhile IFS= read -r line; do\n    echo \"Line: $line\"\ndone &lt; \"input.txt\"\n\n# Read entire file\ncontent=$(cat \"file.txt\")\n\n\nWriting Files\n# Overwrite file\necho \"Hello\" &gt; output.txt\n\n# Append to file\necho \"World\" &gt;&gt; output.txt\n\n# Write multiple lines\ncat &lt;&lt; EOF &gt; config.txt\nSetting1=value1\nSetting2=value2\nEOF\n\n\nText Processing\n# Search in file\ngrep \"pattern\" file.txt\n\n# Replace text\nsed 's/old/new/g' file.txt\n\n# Count lines\nwc -l file.txt\n\n# Extract columns\nawk '{print $1}' file.txt\n\n\n\nFunctions\nfunction greet() {\n    echo \"Hello $1!\"\n}\n\n# Call function\ngreet \"Alice\"\n\n\nCommand Line Arguments\n# Access arguments\necho \"Script name: $0\"\necho \"First argument: $1\"\necho \"All arguments: $@\"\necho \"Number of arguments: $#\"\n\n\n\nExamples\n\nExample 1: Basic System Info Script\n#!/bin/bash\necho \"=== System Information ===\"\necho \"Current user: $(whoami)\"\necho \"Current directory: $(pwd)\"\necho \"Date: $(date)\"\necho \"Disk usage:\"\ndf -h | head -5\n\n\nExample 2: File Processor\n#!/bin/bash\ninput_file=\"data.txt\"\noutput_file=\"processed.txt\"\n\nif [ -f \"$input_file\" ]; then\n    echo \"Processing $input_file...\"\n    \n    # Count lines and words\n    lines=$(wc -l &lt; \"$input_file\")\n    words=$(wc -w &lt; \"$input_file\")\n    \n    echo \"File Stats:\" &gt; \"$output_file\"\n    echo \"Lines: $lines\" &gt;&gt; \"$output_file\"\n    echo \"Words: $words\" &gt;&gt; \"$output_file\"\n    echo \"Content:\" &gt;&gt; \"$output_file\"\n    cat \"$input_file\" &gt;&gt; \"$output_file\"\n    \n    echo \"Processing complete! Check $output_file\"\nelse\n    echo \"Error: $input_file not found!\"\nfi\n\n\nExample 3: Log File Analyzer\n#!/bin/bash\nlog_file=\"/var/log/syslog\"\n\necho \"=== Log Analysis ===\"\necho \"Total lines: $(wc -l &lt; \"$log_file\")\"\necho \"Error count: $(grep -c \"error\" \"$log_file\")\"\necho \"Warning count: $(grep -c \"warning\" \"$log_file\")\"\n\n# Recent errors\necho \"Recent errors:\"\ngrep \"error\" \"$log_file\" | tail -5",
+    "crumbs": [
+      "Week1",
+      "LINUX/BASH - Basic",
+      "Bash Script"
     ]
   }
 ]

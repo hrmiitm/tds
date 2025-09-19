@@ -1,0 +1,96 @@
+---
+title: "OpenSource Contribution"
+author: "HRM"
+date: 19 Sep 2025
+date-format: "MMMM DD, YYYY"
+format:
+  html:
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    smooth-scroll: true
+
+    # Code formatting
+    code-copy: true
+    code-fold: show
+    code-line-numbers: true
+    highlight-style: dracula
+---
+
+To fetch someone else's code from GitHub, fix an issue, and contribute your changes so they can merge your fixes, follow this standard Git workflow using Fork, Clone, Branch, Commit, Push, and Pull Request:
+
+## Steps to Contribute Code Fix on GitHub
+
+### 1. Fork the Repository
+
+- Go to the repository page on GitHub where the original code is.
+- Click the "Fork" button (top-right) to create your own copy of the repository under your GitHub account.
+
+
+### 2. Clone the Forked Repository to Your Machine
+
+- On your GitHub fork page, click the green "Code" button and copy the repository URL.
+- In your terminal, run:
+
+```bash
+git clone <your-fork-repo-url>
+```
+
+- This downloads the code to your local machine.
+
+
+### 3. Create a New Branch for Your Changes
+
+- Change directory into the cloned repo:
+
+```bash
+cd <repo-name>
+```
+
+- Create and switch to a new branch for your fix:
+
+```bash
+git checkout -b fix-issue-branch
+```
+
+
+### 4. Make Your Code Fixes
+
+- Edit the code locally to fix the issue.
+
+
+### 5. Commit Your Changes
+
+- Stage the changed files:
+
+```bash
+git add .
+```
+
+- Commit with a meaningful message:
+
+```bash
+git commit -m "Fix issue with XYZ"
+```
+
+
+### 6. Push Your Branch to Your Fork
+
+- Push your fix branch to your GitHub fork:
+
+```bash
+git push origin fix-issue-branch
+```
+
+
+### 7. Create a Pull Request (PR)
+
+- Go to your GitHub fork page.
+- You should see a prompt to create a pull request from your pushed branch.
+- Click "Compare \& pull request" or "New pull request."
+- Add a descriptive title and description of the fix.
+- Submit the pull request so the original repo owner can review and merge your fix.
+
+***
+
+This process ensures your contribution is linked to your GitHub profile and gives the repo owner a clear way to review and merge your changes. It also preserves the original repository history cleanly.

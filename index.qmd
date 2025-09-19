@@ -1,6 +1,6 @@
 ---
 title: "TDS - Tools for Data Science"
-subtitle: "🚀 Proposed Syllabus"
+subtitle: ""
 author: "HRM"
 date: 18 August 2025
 format:
@@ -9,10 +9,14 @@ format:
     toc-location: right
     toc-depth: 3
     smooth-scroll: true
+
+    # Code formatting
     code-copy: true
-    css: styles.css
-    highlight-style: github
+    code-fold: show
+    code-line-numbers: true
+#     code-overflow: wrap
+    highlight-style: dracula
 ---
 
 
-{{< include tds_syllabus.md >}}
+<!-- {{< include tds_syllabus.md >}} -->

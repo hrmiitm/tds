@@ -1,0 +1,107 @@
+---
+title: "Github"
+author: "HRM"
+date: 19 Sep 2025
+date-format: "MMMM DD, YYYY"
+format:
+  html:
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    smooth-scroll: true
+
+    # Code formatting
+    code-copy: true
+    code-fold: show
+    code-line-numbers: true
+    highlight-style: dracula
+---
+
+# GitHub
+
+- **GitHub** is a cloud-based platform that hosts Git repositories.  
+- It provides collaboration features like pull requests, issues, and project management.  
+- Unlike Git (local), GitHub makes your code accessible online, enabling **teamwork, backups, and sharing**.  
+
+> **Git** = a software (Version Control System)  
+> **GitHub** = a cloud service for hosting programming repositories (like Google Drive, but for code)  
+
+
+## Two Scenarios
+
+::: {.callout-important}
+Git itself manages local repositories and pushes/pulls to/from remotes, but it does not create remote repositories on hosting platforms like Github.
+:::
+
+1. The repository already exists on GitHub.  
+2. The repository does **not** yet exist on GitHub but locally exist.  
+
+
+## Scenario 1: Repo Already on GitHub
+
+1. Locate the repository on GitHub → Click on **`<> Code`** → Copy the **SSH path**.  
+2. Clone the repo into your local machine:  
+
+   ```bash
+   git clone git@github.com:myusername/myreponame.git
+   ```
+
+3. A folder `myreponame` will be created with all repo contents.
+
+4. Work as usual → edit files, then stage & commit changes:
+
+   ```bash
+   git add .
+   git commit -m "your message"
+   ```
+
+5. Push your updates back to GitHub:
+
+   ```bash
+   git push origin main
+   ```
+
+   * **origin** → alias for the remote repo URL (e.g., GitHub).
+   * **main** → branch name (default branch, often `main` instead of `master`).
+
+
+## Scenario 2: Repo Not Yet on GitHub
+
+### 1. Create New Repo on GitHub
+
+* Go to [GitHub → New Repo](https://github.com/new).
+* Enter repository name → e.g., `myrepo`.
+* Leave it **empty** (don’t add README, `.gitignore`, or license).
+
+**Note** you can again follow scenario 1 where you can clone and then copy paste your new work and then commit and then push, or you can follow below steps.
+
+### 2. Link Local Repo to GitHub
+
+From your project folder, run:
+
+```bash
+git remote add origin git@github.com:your-username/myrepo.git
+```
+
+*(replace `your-username` with your actual GitHub username)*
+
+### 3. Push Local Commits to GitHub
+
+```bash
+git branch -M main     # ensure current branch is 'main'
+git push -u origin main
+```
+
+* `-u` sets the upstream, so later you can simply use:
+
+  ```bash
+  git push
+  ```
+
+Now your local repo is connected to GitHub. Check it online at:
+`https://github.com/your-username/myrepo`
+
+
+
+
+
