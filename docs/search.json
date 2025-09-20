@@ -86,7 +86,7 @@
     "href": "W1/2_git_github/2_before_github.html",
     "title": "Setup to connect Local — Github",
     "section": "",
-    "text": "Git : Locally you need to setup your github username and email\nGithub : Generate an SSH key and add the public key to your’s github account.\n\n\n\n\nMake account in github.com and copy username and email\n\nOpen Terminal (Linux/Mac) or PowerShell/GitBash (Windows).\n\ngit config --global user.name \"Your Github UserName\"\ngit config --global user.email \"your_github_email@example.com\"\n\n\n\n\nOpen Terminal (Linux/Mac) or PowerShell/GitBash (Windows).\nRun:\nssh-keygen\nPress Enter through the prompts.\nThis generates two files, e.g., id_ed25519 (private) and id_ed25519.pub (public), usually in(exact path will be present in output of command ssh-keygen):\n/home/username/.ssh/\nOpen id_ed25519.pub, copy its contents, and add it to your GitHub:\n\nSettings → Access → SSH and GPG Keys → New SSH Key\nSelect Authentication Key as the type.\n\n\nSo now you are ready to push your code on your github account",
+    "text": "Git : Locally you need to setup your github username and email\nGithub : Generate an SSH key and add the public key to your’s github account.\n\n\n\n\nMake account in github.com and copy username and email\n\nOpen Terminal (Linux/Mac) or PowerShell/GitBash (Windows).\n\ngit config --global user.name \"Your Github UserName\"\ngit config --global user.email \"your_github_email@example.com\"\n\n\n\n\nOpen Terminal (Linux/Mac) or PowerShell/GitBash (Windows).\nRun:\nssh-keygen\nPress Enter through the prompts.\nThis generates two files, e.g., id_ed25519 (private) and id_ed25519.pub (public), usually in(exact path will be present in output of command ssh-keygen):\n/home/username/.ssh/\nOpen id_ed25519.pub, copy its contents, and add it to your GitHub:\n\nSettings → Access → SSH and GPG Keys → New SSH Key\nSelect Authentication Key as the type.\n\n\nSo now you are ready to push your code on your github account\n\n\n\n\nSSH (Secure Shell) enables secure communication between a client (your machine) and a server (e.g., GitHub).\nIt uses public-key cryptography consisting of two keys:\n\nPrivate key: stays secure on your local machine.\nPublic key: shared with the server.\n\n\nAuthentication process:\n\nThe client initiates an SSH connection.\nThe server checks if the client’s public key is authorized.\nThe server creates a challenge (encrypted message) using the stored public key.\nThe client must decrypt it with its private key and return the correct response.\nIf valid, the server confirms the client’s identity.\nA secure encrypted channel is then established for further communication.\n\nKey properties:\n\nNo password is transmitted.\nOnly the holder of the private key can authenticate.\nProtects against brute-force and interception attacks.",
     "crumbs": [
       "Week1",
       "2. Git & Github",
@@ -885,6 +885,18 @@
       "Week1",
       "LINUX/BASH - Basic",
       "Bash Script"
+    ]
+  },
+  {
+    "objectID": "W1/2_git_github/2_before_github.html#ssh---a-new-authentication-way",
+    "href": "W1/2_git_github/2_before_github.html#ssh---a-new-authentication-way",
+    "title": "Setup to connect Local — Github",
+    "section": "",
+    "text": "SSH (Secure Shell) enables secure communication between a client (your machine) and a server (e.g., GitHub).\nIt uses public-key cryptography consisting of two keys:\n\nPrivate key: stays secure on your local machine.\nPublic key: shared with the server.\n\n\nAuthentication process:\n\nThe client initiates an SSH connection.\nThe server checks if the client’s public key is authorized.\nThe server creates a challenge (encrypted message) using the stored public key.\nThe client must decrypt it with its private key and return the correct response.\nIf valid, the server confirms the client’s identity.\nA secure encrypted channel is then established for further communication.\n\nKey properties:\n\nNo password is transmitted.\nOnly the holder of the private key can authenticate.\nProtects against brute-force and interception attacks.",
+    "crumbs": [
+      "Week1",
+      "2. Git & Github",
+      "Before Github"
     ]
   }
 ]

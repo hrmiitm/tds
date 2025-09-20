@@ -448,6 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#local-git-config" id="toc-local-git-config" class="nav-link" data-scroll-target="#local-git-config">Local git config</a></li>
   <li><a href="#ssh-key-setup" id="toc-ssh-key-setup" class="nav-link" data-scroll-target="#ssh-key-setup">SSH Key Setup</a></li>
+  <li><a href="#ssh---a-new-authentication-way" id="toc-ssh---a-new-authentication-way" class="nav-link" data-scroll-target="#ssh---a-new-authentication-way">SSH - A New Authentication Way</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -519,6 +520,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ol>
 <p>So now you are ready to push your code on your github account</p>
+</section>
+<section id="ssh---a-new-authentication-way" class="level2">
+<h2 class="anchored" data-anchor-id="ssh---a-new-authentication-way">SSH - A New Authentication Way</h2>
+<ul>
+<li>SSH (Secure Shell) enables secure communication between a client (your machine) and a server (e.g., GitHub).</li>
+<li>It uses <strong>public-key cryptography</strong> consisting of two keys:
+<ul>
+<li><strong>Private key</strong>: stays secure on your local machine.</li>
+<li><strong>Public key</strong>: shared with the server.</li>
+</ul></li>
+</ul>
+<p><strong>Authentication process:</strong></p>
+<ol type="1">
+<li>The client initiates an SSH connection.</li>
+<li>The server checks if the client’s public key is authorized.</li>
+<li>The server creates a challenge (encrypted message) using the stored public key.</li>
+<li>The client must decrypt it with its private key and return the correct response.</li>
+<li>If valid, the server confirms the client’s identity.</li>
+<li>A secure encrypted channel is then established for further communication.</li>
+</ol>
+<p><strong>Key properties:</strong></p>
+<ul>
+<li>No password is transmitted.</li>
+<li>Only the holder of the private key can authenticate.</li>
+<li>Protects against brute-force and interception attacks.</li>
+</ul>
+<hr>
 
 
 </section>
