@@ -80,3 +80,7 @@ source ~/.bashrc
 # Now MY_APP_PATH is available
 echo $MY_APP_PATH
 ```
+
+### Video Tutorials
+- {{< video https://www.youtube.com/embed/4L7r-Y_OSyE >}}
+- {{< video https://www.youtube.com/embed/KjZ3IakXzFA >}}

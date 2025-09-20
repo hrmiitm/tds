@@ -249,3 +249,10 @@ echo "Warning count: $(grep -c "warning" "$log_file")"
 echo "Recent errors:"
 grep "error" "$log_file" | tail -5
 ```
+
+
+### Video Tutorials
+
+- [Linux Playlist](https://www.youtube.com/embed/videoseries?list=PLZ2ps__7DhBajgl-4et7X2BjOIObqlp81){target="_blank"} 
+
+- {{< video https://www.youtube.com/embed/videoseries?list=PLZ2ps__7DhBajgl-4et7X2BjOIObqlp81 >}}
