@@ -57,25 +57,11 @@ Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
 :::
 
 
-## Install JavaScript Tools  
-- nvm install visit and run bash script `https://github.com/nvm-sh/nvm`  
-- node install `https://nodejs.org/en/download`  
-    - `nvm install 22`   
-    - `nvm list` `nvm use 22` `nvm current`  
-    - `corepack enable yarn`   
-    - `corepack enable pnpm`  
-
-> Check  
-- `nvm -v`  
-- `node -v`  
-- `npm -v` `npx -v`  
-- `pnpm -v`  
-- `yarn -v`  
-  
 ## Install Python Tools
 
 1) Python VENV
-    - `python3 -m venv .venv` --> Copy error code and run `sudo apt install python3.12-venv`
+    - `python3 -m venv .venv` --> Copy error code and run `sudo apt install python3.12-venv`  
+    - `sudo apt install python3-pip`
 
 2) PIPX
     - `sudo apt install pipx`
@@ -94,6 +80,24 @@ Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
     - Download .sh `https://www.anaconda.com/download/success`
     - `bash <pathto .sh file>`
     - `conda config --set auto_activate_base false`
+
+
+## Install JavaScript Tools  
+- nvm install visit and run bash script `https://github.com/nvm-sh/nvm`  
+- node install `https://nodejs.org/en/download`  
+    - `nvm install 22`   
+    - `nvm list` `nvm use 22` `nvm current`  
+    - `corepack enable yarn`   
+    - `corepack enable pnpm`  
+
+> Check  
+- `nvm -v`  
+- `node -v`  
+- `npm -v` `npx -v`  
+- `pnpm -v`  
+- `yarn -v`  
+  
+
 
 ## Install C/C++ Tools
 
@@ -132,6 +136,13 @@ Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
 - `java --version`  
 - `javac --version`  
 - `echo $JAVA_HOME`  
+
+## Install any .deb packages
+
+For example let install quarto `https://quarto.org/docs/get-started/`
+
+- Download and move to directory where deb package is downloaded  
+- `sudo apt install ./quarto-1.8.24-linux-amd64.deb`  
 
 
 ## Resources {#resources}
