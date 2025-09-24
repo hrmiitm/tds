@@ -917,5 +917,57 @@
       "1. Windows To Linux",
       "WSL"
     ]
+  },
+  {
+    "objectID": "Podman/podman.html",
+    "href": "Podman/podman.html",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Ubuntu: sudo apt-get -y install podman"
+  },
+  {
+    "objectID": "Podman/podman.html#install-podman",
+    "href": "Podman/podman.html#install-podman",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Ubuntu: sudo apt-get -y install podman"
+  },
+  {
+    "objectID": "Podman/podman.html#setup-podman",
+    "href": "Podman/podman.html#setup-podman",
+    "title": "TDS by HRM",
+    "section": "Setup Podman",
+    "text": "Setup Podman\nRun below commands one by one\n\nsudo apt install qemu-system-x86\n\npodman machine init\n\npodman machine start sometimes not work\n\nhttps://stackoverflow.com/questions/72092497/podman-machine-start-on-ubuntu\n\nsudo mv /mnt/c/Users/hrith/Downloads/gvproxy-linux-amd64 /usr/libexec/podman\n\n\nwsl2 has some issue with kvm so you may need to run sudo chmod 666 /dev/kvm before running podman machine start"
+  },
+  {
+    "objectID": "Podman/podman.html#download-images",
+    "href": "Podman/podman.html#download-images",
+    "title": "TDS by HRM",
+    "section": "Download Images",
+    "text": "Download Images\npodman pull docker.io/library/nginx:latest  # Download from dockerhub\npodman pull podman.io/library/alpine:latest # Download from podman\n\n# Check/list downloaded images\npodman images\n\n# Delete Downloaded\npodman rmi image_name_or_id"
+  },
+  {
+    "objectID": "Podman/podman.html#run-image",
+    "href": "Podman/podman.html#run-image",
+    "title": "TDS by HRM",
+    "section": "Run Image",
+    "text": "Run Image\n\nstop & start are used for to turn on or off pods or\n\nrun & rm are used to create or remove pods\n\n# 0. List the running/stopped containers\npodman ps -a\n\n# 1. Start a new container from an image (run interactively or detached)\npodman run nginx\npodman run -d --name container_name imagename:tag\n\n# 2. Stop / Shutdown a running container\npodman stop container_name_or_id\n\n# 3. Restart the stopped container\npodman start container_name_or_id\n\n# 4. Delete the stopped container\npodman rm container_name_or_id\n\n# 5. Delete all stopped containers\npodman container prune"
+  },
+  {
+    "objectID": "Podman/podman.html#some-userfull-podman-commands",
+    "href": "Podman/podman.html#some-userfull-podman-commands",
+    "title": "TDS by HRM",
+    "section": "Some userfull podman commands",
+    "text": "Some userfull podman commands\n# Port expose\npodman run -p host_port:container_port/protocol image_name # -p = --publish\npodman run -p 8080-8085:80-85/tcp image_name    # range of ports\npodman port container_name_or_id    # Check port mapping of running containers\n\npodman run -v volume_name_or_hostpath:/container/path image_name # mount named volumes to containers"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "TDS - Tools for Data Science",
+    "section": "",
+    "text": "22f3002460@ds.study.iitm.ac.in",
+    "crumbs": [
+      "About The Course"
+    ]
   }
 ]

@@ -1,0 +1,71 @@
+
+## Install Podman
+
+- Ubuntu: `sudo apt-get -y install podman`
+
+## Setup Podman
+
+Run below commands one by one
+
+- `sudo apt install qemu-system-x86`  
+- `podman machine init`  
+- `podman machine start` sometimes not work  
+    - `https://stackoverflow.com/questions/72092497/podman-machine-start-on-ubuntu`  
+    - `sudo mv /mnt/c/Users/hrith/Downloads/gvproxy-linux-amd64 /usr/libexec/podman`  
+- wsl2 has some issue with kvm so you may need to run `sudo chmod 666 /dev/kvm` before running podman machine start  
+
+## Download Images
+
+```bash
+podman pull docker.io/library/nginx:latest  # Download from dockerhub
+podman pull podman.io/library/alpine:latest # Download from podman
+
+# Check/list downloaded images
+podman images
+
+# Delete Downloaded
+podman rmi image_name_or_id
+
+```
+
+
+## Run Image
+
+- `stop & start` are used for to turn on or off pods or  
+- `run & rm` are used to create or remove pods
+
+```bash
+# 0. List the running/stopped containers
+podman ps -a
+
+# 1. Start a new container from an image (run interactively or detached)
+podman run nginx
+podman run -d --name container_name imagename:tag
+
+# 2. Stop / Shutdown a running container
+podman stop container_name_or_id
+
+# 3. Restart the stopped container
+podman start container_name_or_id
+
+# 4. Delete the stopped container
+podman rm container_name_or_id
+
+# 5. Delete all stopped containers
+podman container prune
+```
+
+## Some userfull podman commands
+
+```bash
+# Port expose
+podman run -p host_port:container_port/protocol image_name # -p = --publish
+podman run -p 8080-8085:80-85/tcp image_name    # range of ports
+podman port container_name_or_id    # Check port mapping of running containers
+
+podman run -v volume_name_or_hostpath:/container/path image_name # mount named volumes to containers
+
+
+
+
+```
