@@ -13,6 +13,7 @@ Run below commands one by one
     - `https://stackoverflow.com/questions/72092497/podman-machine-start-on-ubuntu`  
     - `sudo mv /mnt/c/Users/hrith/Downloads/gvproxy-linux-amd64 /usr/libexec/podman`  
 - wsl2 has some issue with kvm so you may need to run `sudo chmod 666 /dev/kvm` before running podman machine start  
+- `WARN[0001] "/" is not a shared mount, this could cause issues or missing mounts with rootless containers` to fix it `sudo mount --make-rshared /`
 
 ## Download Images
 
@@ -31,7 +32,7 @@ podman rmi image_name_or_id
 
 ## Run Image
 
-- `stop & start` are used for to turn on or off pods or  
+- `stop & start` are used for to turn on or off pods  
 - `run & rm` are used to create or remove pods
 
 ```bash
@@ -55,7 +56,7 @@ podman rm container_name_or_id
 podman container prune
 ```
 
-## Some userfull podman commands
+## Some usefull podman commands
 
 ```bash
 # Port expose
@@ -63,9 +64,20 @@ podman run -p host_port:container_port/protocol image_name # -p = --publish
 podman run -p 8080-8085:80-85/tcp image_name    # range of ports
 podman port container_name_or_id    # Check port mapping of running containers
 
+# Volumes
+podman volume create xyz
+podman volume ls
+podman volume inspect mydata
+podman volume rm xyz
+
 podman run -v volume_name_or_hostpath:/container/path image_name # mount named volumes to containers
 
-
-
-
+# Network
+podman network create mynet
+podman network ls
+podman network inspect mynet
+podman network rm mynet
 ```
+
+
+## Dockerfile and Deployemnt to HuggingFace

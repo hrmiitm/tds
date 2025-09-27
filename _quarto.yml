@@ -59,7 +59,24 @@ website:
                 href: ./W1/4_bash/1_bashrc.qmd
               - text: "Bash Script"
                 href: ./W1/4_bash/2_bash_script.qmd
-             
+      - section: "Podman"
+        contents:
+          - text: "Image to Containers"
+            href: ./Podman/1_podman.qmd
+          - text: "Project-1 **OllamaTalkPod**"
+            href: ./Podman/2_MiniProject1.qmd
+          - text: "Project-2 **JupyLab**"
+            href: ./Podman/3_MiniProject2.qmd
+          - text: "Project-3 **FormaliAI**"
+            href: ./Podman/4_MiniProject3.qmd
+          - text: "Project-4 **FormaliAI Dockerfile**"
+            href: ./Podman/5_MiniProject4.qmd
+      - section: "Projects"
+        contents:
+          - section: "1. MiniProject Chatbot"
+            contents:
+              - text: "Chatbot with History"
+                href: "./Projects/MiniProject_1_Chatbot/1_basic.qmd"
 
 format:
   html:

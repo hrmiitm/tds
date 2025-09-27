@@ -969,5 +969,346 @@
     "crumbs": [
       "About The Course"
     ]
+  },
+  {
+    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html",
+    "href": "Projects/MiniProject_1_Chatbot/1_basic.html",
+    "title": "Chatbot",
+    "section": "",
+    "text": "Llm output is generally unstructred. Getting structured output is often very lenghty process.\nPydantic AI is useful because it bridges the gap between messy AI outputs and structured, safe, typed data—making AI-powered applications easier to build, debug, and trust.\n\n\n\nRequires Python 3.10+\n- uv: uv add pydantic-ai\n- pip: pip install pydantic-ai\n\n\n\n\nSystem Message: Set the context, rules or persona for the conversation.\nUser Message: What user ask to ai.\nAssistance/Model Message: What ai respond back to user.\n\n\n\n\n\nThe raw model (like GPT, Claude, Gemini etc.) is stateless.\nIt does not remember previous chats on its own.\nHence we must send past messages again in every request.\n\n\n\n\nMethod-1: in .bashrc\n.bashrc\nexport OPENAI_API_KEY=\"your_api_key\"\nexport GOOGLE_API_KEY=\"your_api_key\"\nexport ANTHROPIC_API_KEY=\"your_api_key\"\n\n\nexport OPENAI_BASE_URL=\"https://api.openai.com/v1\"\n# export OPENAI_BASE_URL=https://aipipe.org/openai/v1 # if aipipe token used\nexport GOOGLE_API_BASE_URL=\"https://generativelanguage.googleapis.com/v1beta\"\nexport ANTHROPIC_BASE_URL=\"https://api.anthropic.com\"\nMethod-2: in main python file We avoide this method\nimport os\nos.environ[\"GOOGLE_API_KEY\"] = \"paste your api key here\"\nMethod-3: use .env file We always try to use this method\n.env\nGOOGLE_API_KEY=yourapikeyhere\npythonfile\n...\nfrom dotenv import load_dotenv\nload_dotenv()\n...\n\n\n\n.env\n# Google Api key from --&gt; https://aistudio.google.com/apikey\nGOOGLE_API_KEY=your-api-key\nmain.py\nfrom pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik.\"\nuser_prompt2 = \"What is my name?\"\n\nresult1 = agent.run_sync(user_prompt1) # return type is RunResult\nresult2 = agent.run_sync(user_prompt2)\n\nprint(result1.output)\nprint(result2.output)\nOutput\n❯ uv run main.py\nNoted, Hritik, for future reference.\nI don't know your name because I don't retain information from past conversations.\n\n\n\nall_messages() and all_messages_json()\nnew_messages() and new_messages_json()\n\n\n[ ModelRequest(…), ModelResponse(…), …]\n\n\nModelRequest( parts = [SystemPromptpart, UserPromptPart] ) ModelReponse( parts = [TextPart] )\n\n\n\n\n\n\n\n\nfrom pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik\"\nuser_prompt2 = \"What did I say my name was?\"\nuser_prompt3 = \"List down all the things that i asked/told you?\"\n\nresult1 = agent.run_sync(user_prompt1)\nresult2 = agent.run_sync(user_prompt2, message_history=result1.new_messages())\nresult3 = agent.run_sync(user_prompt3, message_history=result2.new_messages())\n\n\nprint(result1.output)\nprint(result2.output)\nprint(result3.output)\n\n# print(result1.all_messages()) # [ModelRequest(parts=[systemprompt, userprompt]), ModelResponse(parts=[Textpart]) ]\n# print(result2.all_messages()) # [ModelRequest(parts=[userprompt]), ModelResponse(parts=[Textpart]), ... ]\n# print(result3.all_messages())\n\n# print(result3.new_messages()) # [ModelRequest(parts=[userprompt]), ModelResponse(parts=[Textpart]) ]\nOutput\nOkay, Hritik, I've noted your name to personalize our conversation.\nYour name is Hritik, as you just mentioned it to me.\nBased on our current conversation, here are the things you have asked/told me:\n\n1.  \"What did I say my name was?\"\n2.  \"List down all the things that i asked/told you?\"\n...",
+    "crumbs": [
+      "Projects",
+      "1. MiniProject Chatbot",
+      "Chatbot with History"
+    ]
+  },
+  {
+    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#why-pydantic-ai",
+    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#why-pydantic-ai",
+    "title": "Chatbot",
+    "section": "",
+    "text": "Llm output is generally unstructred. Getting structured output is often very lenghty process.\nPydantic AI is useful because it bridges the gap between messy AI outputs and structured, safe, typed data—making AI-powered applications easier to build, debug, and trust.",
+    "crumbs": [
+      "Projects",
+      "1. MiniProject Chatbot",
+      "Chatbot with History"
+    ]
+  },
+  {
+    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#installation",
+    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#installation",
+    "title": "Chatbot",
+    "section": "",
+    "text": "Requires Python 3.10+\n- uv: uv add pydantic-ai\n- pip: pip install pydantic-ai",
+    "crumbs": [
+      "Projects",
+      "1. MiniProject Chatbot",
+      "Chatbot with History"
+    ]
+  },
+  {
+    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#messages-types-in-chatbots",
+    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#messages-types-in-chatbots",
+    "title": "Chatbot",
+    "section": "",
+    "text": "System Message: Set the context, rules or persona for the conversation.\nUser Message: What user ask to ai.\nAssistance/Model Message: What ai respond back to user.",
+    "crumbs": [
+      "Projects",
+      "1. MiniProject Chatbot",
+      "Chatbot with History"
+    ]
+  },
+  {
+    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#llms-are-stateless",
+    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#llms-are-stateless",
+    "title": "Chatbot",
+    "section": "",
+    "text": "The raw model (like GPT, Claude, Gemini etc.) is stateless.\nIt does not remember previous chats on its own.\nHence we must send past messages again in every request.",
+    "crumbs": [
+      "Projects",
+      "1. MiniProject Chatbot",
+      "Chatbot with History"
+    ]
+  },
+  {
+    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#api-key-setup-in-pydantic",
+    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#api-key-setup-in-pydantic",
+    "title": "Chatbot",
+    "section": "",
+    "text": "Method-1: in .bashrc\n.bashrc\nexport OPENAI_API_KEY=\"your_api_key\"\nexport GOOGLE_API_KEY=\"your_api_key\"\nexport ANTHROPIC_API_KEY=\"your_api_key\"\n\n\nexport OPENAI_BASE_URL=\"https://api.openai.com/v1\"\nexport GOOGLE_API_BASE_URL=\"https://generativelanguage.googleapis.com/v1beta\"\nexport ANTHROPIC_BASE_URL=\"https://api.anthropic.com\"\nMethod-2: in main python file We avoide this method\nimport os\nos.environ[\"GOOGLE_API_KEY\"] = \"paste your api key here\"\nMethod-3: use .env file We always try to use this way\n.env\nGOOGLE_API_KEY=yourapikeyhere\npythonfile\n...\nfrom dotenv import load_dotenv\nload_dotenv()\n...",
+    "crumbs": [
+      "Projects",
+      "1. MiniProject Chatbot",
+      "Chatbot with History"
+    ]
+  },
+  {
+    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#let-us-ask-something-to-ai-models",
+    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#let-us-ask-something-to-ai-models",
+    "title": "Chatbot",
+    "section": "",
+    "text": "from pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik\"\nuser_prompt2 = \"What is my name?\"\n\nresult1 = agent.run_sync(user_prompt1)\nresult2 = agent.run_sync(user_prompt2)\n\nprint(result1.output)\nprint(result2.output)\nOutput\n❯ uv run 1_ask.py\nNoted, Hritik, for future reference.\nI don't know your name because I don't retain information from past conversations.",
+    "crumbs": [
+      "Projects",
+      "1. MiniProject Chatbot",
+      "Chatbot with History"
+    ]
+  },
+  {
+    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#api-key-setup-in-pydantic-ai",
+    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#api-key-setup-in-pydantic-ai",
+    "title": "Chatbot",
+    "section": "",
+    "text": "Method-1: in .bashrc\n.bashrc\nexport OPENAI_API_KEY=\"your_api_key\"\nexport GOOGLE_API_KEY=\"your_api_key\"\nexport ANTHROPIC_API_KEY=\"your_api_key\"\n\n\nexport OPENAI_BASE_URL=\"https://api.openai.com/v1\"\n# export OPENAI_BASE_URL=https://aipipe.org/openai/v1 # if aipipe token used\nexport GOOGLE_API_BASE_URL=\"https://generativelanguage.googleapis.com/v1beta\"\nexport ANTHROPIC_BASE_URL=\"https://api.anthropic.com\"\nMethod-2: in main python file We avoide this method\nimport os\nos.environ[\"GOOGLE_API_KEY\"] = \"paste your api key here\"\nMethod-3: use .env file We always try to use this method\n.env\nGOOGLE_API_KEY=yourapikeyhere\npythonfile\n...\nfrom dotenv import load_dotenv\nload_dotenv()\n...",
+    "crumbs": [
+      "Projects",
+      "1. MiniProject Chatbot",
+      "Chatbot with History"
+    ]
+  },
+  {
+    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#example1-just-ask-to-ai",
+    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#example1-just-ask-to-ai",
+    "title": "Chatbot",
+    "section": "",
+    "text": ".env\n# Google Api key from --&gt; https://aistudio.google.com/apikey\nGOOGLE_API_KEY=your-api-key\nmain.py\nfrom pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik.\"\nuser_prompt2 = \"What is my name?\"\n\nresult1 = agent.run_sync(user_prompt1) # return type is RunResult\nresult2 = agent.run_sync(user_prompt2)\n\nprint(result1.output)\nprint(result2.output)\nOutput\n❯ uv run main.py\nNoted, Hritik, for future reference.\nI don't know your name because I don't retain information from past conversations.\n\n\n\nall_messages() and all_messages_json()\nnew_messages() and new_messages_json()\n\n\n[ ModelRequest(…), ModelResponse(…), …]\n\n\nModelRequest( parts = [SystemPromptpart, UserPromptPart] ) ModelReponse( parts = [TextPart] )",
+    "crumbs": [
+      "Projects",
+      "1. MiniProject Chatbot",
+      "Chatbot with History"
+    ]
+  },
+  {
+    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#runresult-methods",
+    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#runresult-methods",
+    "title": "Chatbot",
+    "section": "",
+    "text": "all_messages() and all_messages_json()\nnew_messages() and new_messages_json()\n\n\n[ ModelRequest(…), ModelResponse(…), …]\n\n\nModelRequest( parts = [SystemPromptpart, UserPromptPart] ) ModelReponse( parts = [TextPart] )",
+    "crumbs": [
+      "Projects",
+      "1. MiniProject Chatbot",
+      "Chatbot with History"
+    ]
+  },
+  {
+    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#example2-just-ask-to-ai-with-history",
+    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#example2-just-ask-to-ai-with-history",
+    "title": "Chatbot",
+    "section": "",
+    "text": "from pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik\"\nuser_prompt2 = \"What did I say my name was?\"\nuser_prompt3 = \"List down all the things that i asked/told you?\"\n\nresult1 = agent.run_sync(user_prompt1)\nresult2 = agent.run_sync(user_prompt2, message_history=result1.new_messages())\nresult3 = agent.run_sync(user_prompt3, message_history=result2.new_messages())\n\n\nprint(result1.output)\nprint(result2.output)\nprint(result3.output)\n\n# print(result1.all_messages()) # [ModelRequest(parts=[systemprompt, userprompt]), ModelResponse(parts=[Textpart]) ]\n# print(result2.all_messages()) # [ModelRequest(parts=[userprompt]), ModelResponse(parts=[Textpart]), ... ]\n# print(result3.all_messages())\n\n# print(result3.new_messages()) # [ModelRequest(parts=[userprompt]), ModelResponse(parts=[Textpart]) ]\nOutput\nOkay, Hritik, I've noted your name to personalize our conversation.\nYour name is Hritik, as you just mentioned it to me.\nBased on our current conversation, here are the things you have asked/told me:\n\n1.  \"What did I say my name was?\"\n2.  \"List down all the things that i asked/told you?\"\n...",
+    "crumbs": [
+      "Projects",
+      "1. MiniProject Chatbot",
+      "Chatbot with History"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html",
+    "href": "Podman/1_podman.html",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Ubuntu: sudo apt-get -y install podman",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#install-podman",
+    "href": "Podman/1_podman.html#install-podman",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Ubuntu: sudo apt-get -y install podman",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#setup-podman",
+    "href": "Podman/1_podman.html#setup-podman",
+    "title": "TDS by HRM",
+    "section": "Setup Podman",
+    "text": "Setup Podman\nRun below commands one by one\n\nsudo apt install qemu-system-x86\n\npodman machine init\n\npodman machine start sometimes not work\n\nhttps://stackoverflow.com/questions/72092497/podman-machine-start-on-ubuntu\n\nsudo mv /mnt/c/Users/hrith/Downloads/gvproxy-linux-amd64 /usr/libexec/podman\n\n\nwsl2 has some issue with kvm so you may need to run sudo chmod 666 /dev/kvm before running podman machine start\n\nWARN[0001] \"/\" is not a shared mount, this could cause issues or missing mounts with rootless containers to fix it sudo mount --make-rshared /",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#download-images",
+    "href": "Podman/1_podman.html#download-images",
+    "title": "TDS by HRM",
+    "section": "Download Images",
+    "text": "Download Images\npodman pull docker.io/library/nginx:latest  # Download from dockerhub\npodman pull podman.io/library/alpine:latest # Download from podman\n\n# Check/list downloaded images\npodman images\n\n# Delete Downloaded\npodman rmi image_name_or_id",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#run-image",
+    "href": "Podman/1_podman.html#run-image",
+    "title": "TDS by HRM",
+    "section": "Run Image",
+    "text": "Run Image\n\nstop & start are used for to turn on or off pods\n\nrun & rm are used to create or remove pods\n\n# 0. List the running/stopped containers\npodman ps -a\n\n# 1. Start a new container from an image (run interactively or detached)\npodman run nginx\npodman run -d --name container_name imagename:tag\n\n# 2. Stop / Shutdown a running container\npodman stop container_name_or_id\n\n# 3. Restart the stopped container\npodman start container_name_or_id\n\n# 4. Delete the stopped container\npodman rm container_name_or_id\n\n# 5. Delete all stopped containers\npodman container prune",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#some-userfull-podman-commands",
+    "href": "Podman/1_podman.html#some-userfull-podman-commands",
+    "title": "TDS by HRM",
+    "section": "Some userfull podman commands",
+    "text": "Some userfull podman commands\n# Port expose\npodman run -p host_port:container_port/protocol image_name # -p = --publish\npodman run -p 8080-8085:80-85/tcp image_name    # range of ports\npodman port container_name_or_id    # Check port mapping of running containers\n\npodman run -v volume_name_or_hostpath:/container/path image_name # mount named volumes to containers",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#some-usefull-podman-commands",
+    "href": "Podman/1_podman.html#some-usefull-podman-commands",
+    "title": "TDS by HRM",
+    "section": "Some usefull podman commands",
+    "text": "Some usefull podman commands\n# Port expose\npodman run -p host_port:container_port/protocol image_name # -p = --publish\npodman run -p 8080-8085:80-85/tcp image_name    # range of ports\npodman port container_name_or_id    # Check port mapping of running containers\n\n# Volumes\npodman volume create xyz\npodman volume ls\npodman volume inspect mydata\npodman volume rm xyz\n\npodman run -v volume_name_or_hostpath:/container/path image_name # mount named volumes to containers\n\n# Network\npodman network create mynet\npodman network ls\npodman network inspect mynet\npodman network rm mynet",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#miniproject-1-run-ollama-with-gemma-locally",
+    "href": "Podman/1_podman.html#miniproject-1-run-ollama-with-gemma-locally",
+    "title": "TDS by HRM",
+    "section": "MiniProject-1 Run Ollama with Gemma Locally",
+    "text": "MiniProject-1 Run Ollama with Gemma Locally\n# Pull small ollama imaege\npodman pull docker.io/alpine/ollama:0.12.0\n\npodman volume create ollama \npodman run -d -p 11434:11434 -v ollama:/root/.ollama --name ollama docker.io/alpine/ollama:0.12.0\n\n# Check\n# http://localhost:11434/\n\n# install model and test it\npodman exec -it ollama sh # To exit we can run: exit\nollama pull gemma3:270m\nollama run gemma3:270m\n...\n...\n/exit\n\nexit\nmain.py -&gt; A Simple LLM talk\nfrom pydantic_ai import Agent\nfrom pydantic_ai.models.openai import OpenAIChatModel\nfrom pydantic_ai.providers.ollama import OllamaProvider\n\n\nollama_model = OpenAIChatModel(\n    model_name='gemma3:270m',\n    provider=OllamaProvider(base_url='http://localhost:11434/v1'),\n)\nagent = Agent(ollama_model)\n\nimport uvicorn\nfrom fastapi import FastAPI, Query\napp = FastAPI()\n\n@app.get('/')\ndef index(ask: str = Query(..., description=\"User prompt\")):\n    result = agent.run_sync(ask)\n    return {'ai_answer': result.output}\n\nif __name__ == \"__main__\":\n    # Run the server when script is executed directly\n    uvicorn.run(\n        app, \n        host=\"0.0.0.0\", \n        port=8000\n    )",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#miniproject-2-run-jupyter-with-podman-volumnes",
+    "href": "Podman/1_podman.html#miniproject-2-run-jupyter-with-podman-volumnes",
+    "title": "TDS by HRM",
+    "section": "MiniProject-2 Run Jupyter with Podman Volumnes",
+    "text": "MiniProject-2 Run Jupyter with Podman Volumnes\n# Pull small jupyter_notebook imaege\npodman pull quay.io/jupyter/base-notebook\n\nmkdir jupyter_work \nchmod 777 jupyter_work\n\npodman run -d --name jupyter_server quay.io/jupyter/base-notebook\npodman ps\npodman logs container_id/name #  http://127.0.0.1:8888\npodman logs -f container_id\npodman rm  jupyter_server\n\n\npodman run -d -p 8888:8888 --name jupyter_server quay.io/jupyter/base-notebook # /home/jovyan/work\npodman stop jupyter_server && podman rm jupyter_server\n\n\npodman run -d -p 8888:8888 -v ~/jupyter_work:/home/jovyan/work --name jupyter_server quay.io/jupyter/base-notebook",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#build-ollama-fastapi-app",
+    "href": "Podman/1_podman.html#build-ollama-fastapi-app",
+    "title": "TDS by HRM",
+    "section": "Build Ollama + FastApi app",
+    "text": "Build Ollama + FastApi app\npodman build -t ollama_ai .\n\npodman run -d --name $CONTAINER_NAME -p 8000:8000 -p 11434:11434 ollama_ai",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#miniproject-3-ai-text-summarizer",
+    "href": "Podman/1_podman.html#miniproject-3-ai-text-summarizer",
+    "title": "TDS by HRM",
+    "section": "MiniProject-3 Ai Text Summarizer",
+    "text": "MiniProject-3 Ai Text Summarizer\nollama_python.py\nimport requests\n\ndef gemma3_response(user_prompt, summary_type):\n    url = \"http://localhost:11434/api/chat\"\n    \n    payload = {\n        \"model\": \"gemma3:270m\",\n        \"messages\": [\n            {\n                \"role\": \"system\",\n                \"content\": f\"You are a text summarizer/modifier. Rewrite the input in a formal and {summary_type} style.\"\n            },\n            {\n                \"role\": \"user\",\n                \"content\": user_prompt\n            }\n        ],\n        \"stream\": False\n    }\n    \n    response = requests.post(url, json=payload)\n    # return response.text\n    return response.json()['message']['content']\n\n# print(gemma3_response('adsv hi howss arse yo?', 'email'))\n\nfrom flask import Flask\nfrom flask import request\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n    return \"\"\"\n    &lt;form action='/' method='POST'&gt;\n        Text: &lt;textarea name='user_prompt'&gt;&lt;/textarea&gt; &lt;br&gt;\n        Style: &lt;input name='style' type='text'&gt; &lt;br&gt;\n        &lt;button type='submit'&gt;Ask&lt;/button&gt;\n    &lt;/form&gt;\n    \"\"\"\n\n@app.route('/', methods=['POST'])\ndef ask():\n    user_prompt = request.form.get('user_prompt')\n    style = request.form.get('style')\n    ai_answer = gemma3_response(user_prompt, style)\n    return f\"&lt;textarea&gt;{ai_answer}&lt;/textarea&gt;\"\n\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)\npodman network create mynet\n\n# Run Ollama container\npodman run -d --name ollama \\\n  --network mynet \\\n  -p 11434:11434 \\\n  -v ollama:/root/.ollama \\\n  docker.io/alpine/ollama \n\n# Run Jupyter container\npodman run -d --name jupyter_server \\\n  --network mynet \\\n  -p 8888:8888 \\\n  -p 5000:5000 \\\n  -v ~/jupyter_work:/home/jovyan/work \\\n  quay.io/jupyter/base-notebook\n\n# insited of localhost user container name\nurl = \"http://ollama:11434/api/chat\"\n\n# inside jupyter \nstart-notebook.sh --NotebookApp.token='' --ip=0.0.0.0",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#build-ollama-flask-app",
+    "href": "Podman/1_podman.html#build-ollama-flask-app",
+    "title": "TDS by HRM",
+    "section": "Build Ollama + Flask app",
+    "text": "Build Ollama + Flask app\npodman build -t ollama_ai .\n\npodman run -d --name $CONTAINER_NAME -p 8000:8000 -p 11434:11434 ollama_ai",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/4_MiniProject3.html",
+    "href": "Podman/4_MiniProject3.html",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "ollama_python.py\nimport requests\n\ndef gemma3_response(user_prompt, summary_type):\n    url = \"http://ollama:11434/api/chat\"\n    \n    payload = {\n        \"model\": \"gemma3:270m\",\n        \"messages\": [\n            {\n                \"role\": \"system\",\n                \"content\": f\"You are a text summarizer/modifier. Rewrite the input in a formal and {summary_type} style.\"\n            },\n            {\n                \"role\": \"user\",\n                \"content\": user_prompt\n            }\n        ],\n        \"stream\": False\n    }\n    \n    response = requests.post(url, json=payload)\n    # return response.text\n    return response.json()['message']['content']\n\n# print(gemma3_response('adsv hi howss arse yo?', 'email'))\n\nfrom flask import Flask\nfrom flask import request\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n    return \"\"\"\n    &lt;form action='/' method='POST'&gt;\n        Text: &lt;textarea name='user_prompt'&gt;&lt;/textarea&gt; &lt;br&gt;\n        Style: &lt;input name='style' type='text'&gt; &lt;br&gt;\n        &lt;button type='submit'&gt;Ask&lt;/button&gt;\n    &lt;/form&gt;\n    \"\"\"\n\n@app.route('/', methods=['POST'])\ndef ask():\n    user_prompt = request.form.get('user_prompt')\n    style = request.form.get('style')\n    ai_answer = gemma3_response(user_prompt, style)\n    return f\"&lt;textarea&gt;{ai_answer}&lt;/textarea&gt;\"\n\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)\npodman network create mynet\n\n# Run Ollama container\npodman run -d --name ollama \\\n  --network mynet \\\n  -p 11434:11434 \\\n  -v ollama:/root/.ollama \\\n  docker.io/alpine/ollama \n\n# Run Jupyter container\npodman run -d --name jupyter_server \\\n  --network mynet \\\n  -p 8888:8888 \\\n  -p 5000:5000 \\\n  -v ~/jupyter_work:/home/jovyan/work \\\n  quay.io/jupyter/base-notebook\n\n# insited of localhost user container name\nurl = \"http://ollama:11434/api/chat\"",
+    "crumbs": [
+      "Podman",
+      "Project-3 **FormaliAI**"
+    ]
+  },
+  {
+    "objectID": "Podman/4_MiniProject3.html#miniproject-3-formali-ai-emphasizes-formal-or-official-writing-modification.",
+    "href": "Podman/4_MiniProject3.html#miniproject-3-formali-ai-emphasizes-formal-or-official-writing-modification.",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "ollama_python.py\nimport requests\n\ndef gemma3_response(user_prompt, summary_type):\n    url = \"http://ollama:11434/api/chat\"\n    \n    payload = {\n        \"model\": \"gemma3:270m\",\n        \"messages\": [\n            {\n                \"role\": \"system\",\n                \"content\": f\"You are a text summarizer/modifier. Rewrite the input in a formal and {summary_type} style.\"\n            },\n            {\n                \"role\": \"user\",\n                \"content\": user_prompt\n            }\n        ],\n        \"stream\": False\n    }\n    \n    response = requests.post(url, json=payload)\n    # return response.text\n    return response.json()['message']['content']\n\n# print(gemma3_response('adsv hi howss arse yo?', 'email'))\n\nfrom flask import Flask\nfrom flask import request\napp = Flask(__name__)\n\n@app.route('/')\ndef index():\n    return \"\"\"\n    &lt;form action='/' method='POST'&gt;\n        Text: &lt;textarea name='user_prompt'&gt;&lt;/textarea&gt; &lt;br&gt;\n        Style: &lt;input name='style' type='text'&gt; &lt;br&gt;\n        &lt;button type='submit'&gt;Ask&lt;/button&gt;\n    &lt;/form&gt;\n    \"\"\"\n\n@app.route('/', methods=['POST'])\ndef ask():\n    user_prompt = request.form.get('user_prompt')\n    style = request.form.get('style')\n    ai_answer = gemma3_response(user_prompt, style)\n    return f\"&lt;textarea&gt;{ai_answer}&lt;/textarea&gt;\"\n\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)\npodman network create mynet\n\n# Run Ollama container\npodman run -d --name ollama \\\n  --network mynet \\\n  -p 11434:11434 \\\n  -v ollama:/root/.ollama \\\n  docker.io/alpine/ollama \n\n# Run Jupyter container\npodman run -d --name jupyter_server \\\n  --network mynet \\\n  -p 8888:8888 \\\n  -p 5000:5000 \\\n  -v ~/jupyter_work:/home/jovyan/work \\\n  quay.io/jupyter/base-notebook\n\n# insited of localhost user container name\nurl = \"http://ollama:11434/api/chat\"",
+    "crumbs": [
+      "Podman",
+      "Project-3 **FormaliAI**"
+    ]
+  },
+  {
+    "objectID": "Podman/2_MiniProject1.html",
+    "href": "Podman/2_MiniProject1.html",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Ollama in podman\nOther work in normal vs code\nVolumne in Podman\n\n# Pull small ollama imaege\npodman pull docker.io/alpine/ollama:0.12.0\n\npodman volume create ollama \npodman run -d -p 11434:11434 -v ollama:/root/.ollama --name ollama docker.io/alpine/ollama:0.12.0\n\n# Check\n# http://localhost:11434/\n\n# install model and test it\npodman exec -it ollama sh # To exit we can run: exit\nollama pull gemma3:270m\nollama run gemma3:270m\n...\n...\n/exit\n\nexit\nmain.py -&gt; A Simple LLM talk\nfrom pydantic_ai import Agent\nfrom pydantic_ai.models.openai import OpenAIChatModel\nfrom pydantic_ai.providers.ollama import OllamaProvider\n\n\nollama_model = OpenAIChatModel(\n    model_name='gemma3:270m',\n    provider=OllamaProvider(base_url='http://localhost:11434/v1'),\n)\nagent = Agent(ollama_model)\n\nimport uvicorn\nfrom fastapi import FastAPI, Query\napp = FastAPI()\n\n@app.get('/')\ndef index(ask: str = Query(..., description=\"User prompt\")):\n    result = agent.run_sync(ask)\n    return {'ai_answer': result.output}\n\nif __name__ == \"__main__\":\n    # Run the server when script is executed directly\n    uvicorn.run(\n        app, \n        host=\"0.0.0.0\", \n        port=8000\n    )",
+    "crumbs": [
+      "Podman",
+      "Project-1 **OllamaTalkPod**"
+    ]
+  },
+  {
+    "objectID": "Podman/2_MiniProject1.html#miniproject-1-ollamatalk-gemma-model-running-in-a-podman-container",
+    "href": "Podman/2_MiniProject1.html#miniproject-1-ollamatalk-gemma-model-running-in-a-podman-container",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Ollama in podman\nOther work in normal vs code\nVolumne in Podman\n\n# Pull small ollama imaege\npodman pull docker.io/alpine/ollama:0.12.0\n\npodman volume create ollama \npodman run -d -p 11434:11434 -v ollama:/root/.ollama --name ollama docker.io/alpine/ollama:0.12.0\n\n# Check\n# http://localhost:11434/\n\n# install model and test it\npodman exec -it ollama sh # To exit we can run: exit\nollama pull gemma3:270m\nollama run gemma3:270m\n...\n...\n/exit\n\nexit\nmain.py -&gt; A Simple LLM talk\nfrom pydantic_ai import Agent\nfrom pydantic_ai.models.openai import OpenAIChatModel\nfrom pydantic_ai.providers.ollama import OllamaProvider\n\n\nollama_model = OpenAIChatModel(\n    model_name='gemma3:270m',\n    provider=OllamaProvider(base_url='http://localhost:11434/v1'),\n)\nagent = Agent(ollama_model)\n\nimport uvicorn\nfrom fastapi import FastAPI, Query\napp = FastAPI()\n\n@app.get('/')\ndef index(ask: str = Query(..., description=\"User prompt\")):\n    result = agent.run_sync(ask)\n    return {'ai_answer': result.output}\n\nif __name__ == \"__main__\":\n    # Run the server when script is executed directly\n    uvicorn.run(\n        app, \n        host=\"0.0.0.0\", \n        port=8000\n    )",
+    "crumbs": [
+      "Podman",
+      "Project-1 **OllamaTalkPod**"
+    ]
+  },
+  {
+    "objectID": "Podman/1_podman.html#dockerfile-and-deployemnt-to-huggingface",
+    "href": "Podman/1_podman.html#dockerfile-and-deployemnt-to-huggingface",
+    "title": "TDS by HRM",
+    "section": "Dockerfile and Deployemnt to HuggingFace",
+    "text": "Dockerfile and Deployemnt to HuggingFace",
+    "crumbs": [
+      "Podman",
+      "Image to Containers"
+    ]
+  },
+  {
+    "objectID": "Podman/3_MiniProject2.html",
+    "href": "Podman/3_MiniProject2.html",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Run Jupyter Notebook in Podman\nMount Directory/Folder volumne\n\n# Pull small jupyter_notebook imaege\npodman pull quay.io/jupyter/base-notebook\n\nmkdir jupyter_work \nchmod 777 jupyter_work\n\npodman run -d --name jupyter_server quay.io/jupyter/base-notebook\npodman ps\npodman logs container_id/name #  http://127.0.0.1:8888\npodman logs -f container_id\npodman rm  jupyter_server\n\n\npodman run -d -p 8888:8888 --name jupyter_server quay.io/jupyter/base-notebook # /home/jovyan/work\npodman stop jupyter_server && podman rm jupyter_server\n\n\npodman run -d -p 8888:8888 -v ~/jupyter_work:/home/jovyan/work --name jupyter_server quay.io/jupyter/base-notebook",
+    "crumbs": [
+      "Podman",
+      "MiniProject-2 JupyLab"
+    ]
+  },
+  {
+    "objectID": "Podman/3_MiniProject2.html#miniproject-2-jupylab-notebook-workspace-in-a-podman-container",
+    "href": "Podman/3_MiniProject2.html#miniproject-2-jupylab-notebook-workspace-in-a-podman-container",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Run Jupyter Notebook in Podman\nMount Directory/Folder volumne\n\n# Pull small jupyter_notebook imaege\npodman pull quay.io/jupyter/base-notebook\n\nmkdir jupyter_work \nchmod 777 jupyter_work\n\npodman run -d --name jupyter_server quay.io/jupyter/base-notebook\npodman ps\npodman logs container_id/name #  http://127.0.0.1:8888\npodman logs -f container_id\npodman rm  jupyter_server\n\n\npodman run -d -p 8888:8888 --name jupyter_server quay.io/jupyter/base-notebook # /home/jovyan/work\npodman stop jupyter_server && podman rm jupyter_server\n\n\npodman run -d -p 8888:8888 -v ~/jupyter_work:/home/jovyan/work --name jupyter_server quay.io/jupyter/base-notebook",
+    "crumbs": [
+      "Podman",
+      "MiniProject-2 JupyLab"
+    ]
   }
 ]

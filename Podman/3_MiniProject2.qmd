@@ -1,0 +1,26 @@
+## MiniProject-2 JupyLab (Notebook workspace in a Podman container)
+
+- Run Jupyter Notebook in Podman
+- Mount Directory/Folder volumne
+
+```bash
+# Pull small jupyter_notebook imaege
+podman pull quay.io/jupyter/base-notebook
+
+mkdir jupyter_work 
+chmod 777 jupyter_work
+
+podman run -d --name jupyter_server quay.io/jupyter/base-notebook
+podman ps
+podman logs container_id/name #  http://127.0.0.1:8888
+podman logs -f container_id
+podman rm  jupyter_server
+
+
+podman run -d -p 8888:8888 --name jupyter_server quay.io/jupyter/base-notebook # /home/jovyan/work
+podman stop jupyter_server && podman rm jupyter_server
+
+
+podman run -d -p 8888:8888 -v ~/jupyter_work:/home/jovyan/work --name jupyter_server quay.io/jupyter/base-notebook
+
+```
