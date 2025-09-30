@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>wsl – TDS by HRM</title>
+<title>output – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -284,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Projects</li><li class="breadcrumb-item"><a href="../../Projects/PydanticAi/1_basic.html">Pydantic AI</a></li><li class="breadcrumb-item"><a href="../../Projects/PydanticAi/3_output.html">Structered Output &amp; Retry</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -482,22 +482,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Projects</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
  <span class="menu-text">Pydantic AI</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../Projects/PydanticAi/1_basic.html" class="sidebar-item-text sidebar-link">
@@ -512,7 +512,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../Projects/PydanticAi/3_output.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Projects/PydanticAi/3_output.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Structered Output &amp; Retry</span></a>
   </div>
 </li>
@@ -554,232 +554,308 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#install-wsl-in-windows" id="toc-install-wsl-in-windows" class="nav-link active" data-scroll-target="#install-wsl-in-windows">Install WSL in Windows</a>
+  <li><a href="#pydantic-ai---output-handling-guide" id="toc-pydantic-ai---output-handling-guide" class="nav-link active" data-scroll-target="#pydantic-ai---output-handling-guide">Pydantic AI - Output Handling Guide</a>
   <ul class="collapse">
-  <li><a href="#check-wsl-2-installed-or-not" id="toc-check-wsl-2-installed-or-not" class="nav-link" data-scroll-target="#check-wsl-2-installed-or-not">Check WSL-2 Installed or not?</a></li>
-  <li><a href="#if-wsl-2-not-instlled" id="toc-if-wsl-2-not-instlled" class="nav-link" data-scroll-target="#if-wsl-2-not-instlled">If WSL 2 Not Instlled</a></li>
-  <li><a href="#if-already-installed-then-remove-previous-installed-distributions" id="toc-if-already-installed-then-remove-previous-installed-distributions" class="nav-link" data-scroll-target="#if-already-installed-then-remove-previous-installed-distributions">If already installed then Remove Previous Installed Distributions</a></li>
-  <li><a href="#update-wsl-ubuntu-installation" id="toc-update-wsl-ubuntu-installation" class="nav-link" data-scroll-target="#update-wsl-ubuntu-installation">Update WSL –&gt; Ubuntu Installation</a></li>
-  <li><a href="#install-python-tools" id="toc-install-python-tools" class="nav-link" data-scroll-target="#install-python-tools">Install Python Tools</a></li>
-  <li><a href="#install-javascript-tools" id="toc-install-javascript-tools" class="nav-link" data-scroll-target="#install-javascript-tools">Install JavaScript Tools</a></li>
-  <li><a href="#install-cc-tools" id="toc-install-cc-tools" class="nav-link" data-scroll-target="#install-cc-tools">Install C/C++ Tools</a></li>
-  <li><a href="#install-java-tools" id="toc-install-java-tools" class="nav-link" data-scroll-target="#install-java-tools">Install Java Tools</a></li>
-  <li><a href="#install-any-.deb-packages" id="toc-install-any-.deb-packages" class="nav-link" data-scroll-target="#install-any-.deb-packages">Install any .deb packages</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#output-types" id="toc-output-types" class="nav-link" data-scroll-target="#output-types">Output Types</a>
   <ul class="collapse">
-  <li><a href="#video-tutorials" id="toc-video-tutorials" class="nav-link" data-scroll-target="#video-tutorials">Video Tutorials</a></li>
+  <li><a href="#scalar-types" id="toc-scalar-types" class="nav-link" data-scroll-target="#scalar-types">Scalar Types</a></li>
+  <li><a href="#basic-example---pydantic-model" id="toc-basic-example---pydantic-model" class="nav-link" data-scroll-target="#basic-example---pydantic-model">Basic Example - Pydantic Model</a></li>
+  <li><a href="#multiple-output-types" id="toc-multiple-output-types" class="nav-link" data-scroll-target="#multiple-output-types">Multiple Output Types</a></li>
   </ul></li>
+  <li><a href="#output-functions" id="toc-output-functions" class="nav-link" data-scroll-target="#output-functions">Output Functions</a>
+  <ul class="collapse">
+  <li><a href="#simple-output-function" id="toc-simple-output-function" class="nav-link" data-scroll-target="#simple-output-function">Simple Output Function</a></li>
+  <li><a href="#output-function-with-pydantic-model" id="toc-output-function-with-pydantic-model" class="nav-link" data-scroll-target="#output-function-with-pydantic-model">Output Function with Pydantic Model</a></li>
+  <li><a href="#key-features-of-output-functions" id="toc-key-features-of-output-functions" class="nav-link" data-scroll-target="#key-features-of-output-functions">Key Features of Output Functions</a></li>
+  </ul></li>
+  <li><a href="#output-validators" id="toc-output-validators" class="nav-link" data-scroll-target="#output-validators">Output Validators</a></li>
+  <li><a href="#output-validator---a-good-example-to-understand" id="toc-output-validator---a-good-example-to-understand" class="nav-link" data-scroll-target="#output-validator---a-good-example-to-understand">Output Validator - A Good Example To Understand</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key Points</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Projects</li><li class="breadcrumb-item"><a href="../../Projects/PydanticAi/1_basic.html">Pydantic AI</a></li><li class="breadcrumb-item"><a href="../../Projects/PydanticAi/3_output.html">Structered Output &amp; Retry</a></li></ol></nav></header>
 
 
 
 
 
-<section id="install-wsl-in-windows" class="level1">
-<h1>Install WSL in Windows</h1>
-<p>We will use windows powershell to install wsl.</p>
-<section id="check-wsl-2-installed-or-not" class="level2">
-<h2 class="anchored" data-anchor-id="check-wsl-2-installed-or-not">Check WSL-2 Installed or not?</h2>
+<section id="pydantic-ai---output-handling-guide" class="level1">
+<h1>Pydantic AI - Output Handling Guide</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>The <strong>Output</strong> in Pydantic AI refers to the final value returned from running an agent. This can be plain text, structured data, or the result of a function called with arguments provided by the model.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>agent <span class="op">==&gt;</span> AgentRunResult <span class="kw">or</span> StreamedRunResult</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="output-types" class="level2">
+<h2 class="anchored" data-anchor-id="output-types">Output Types</h2>
+<p>The <code>Agent</code> class constructor accepts an <code>output_type</code> argument that supports:</p>
 <ul>
-<li>Open PowerShell</li>
-<li><code>wsl --version</code> or <code>wsl.exe --version</code></li>
-<li>If any above command shows wsl version 2 , then it is already installed</li>
+<li><strong>Simple scalar types</strong>: <code>str</code>, <code>int</code>, <code>float</code>, <code>bool</code></li>
+<li><strong>Pydantic models</strong>: <code>BaseModel</code> subclasses</li>
+<li><strong>Dataclasses</strong>: Python dataclasses</li>
+<li><strong>TypedDict</strong>: Typed dictionaries</li>
+<li><strong>Functions</strong>: Output functions that process model arguments</li>
+<li><strong>Lists/Unions</strong>: Multiple output types (e.g., <code>[Fruit, Vehicle]</code>)</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Agent <span class="kw">class</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">-&gt;</span> output_type argument <span class="op">-&gt;</span> Pydantic models, dataclasses, typedict, function, <span class="bu">list</span> etc.</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="op">-&gt;</span> agent <span class="op">=</span> Agent(<span class="st">'model-id'</span>, output_type<span class="op">=</span><span class="bu">str</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">-&gt;</span> agent <span class="op">=</span> Agent(<span class="st">'model-id'</span>, output_type<span class="op">=</span>split_into_words)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">-&gt;</span> agent <span class="op">=</span> Agent(<span class="st">'model-id'</span>, output_type<span class="op">=</span>[Fruit, Vehicle]) <span class="co"># either fruit or vehicle</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="scalar-types" class="level3">
+<h3 class="anchored" data-anchor-id="scalar-types">Scalar Types</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>load_dotenv(dotenv_path<span class="op">=</span><span class="st">'.env'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic_ai <span class="im">import</span> Agent</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>agent1 <span class="op">=</span> Agent(<span class="st">'google-gla:gemini-2.5-flash'</span>, output_type<span class="op">=</span><span class="bu">str</span>) <span class="co"># default value is string</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>agent2 <span class="op">=</span> Agent(<span class="st">'google-gla:gemini-2.5-flash'</span>, output_type<span class="op">=</span><span class="bu">int</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>result1 <span class="op">=</span> agent1.run_sync(<span class="st">'hi how can i solve 54*10'</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>result2 <span class="op">=</span> agent2.run_sync(<span class="st">'hi how can i solve 54*10'</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"===Result1.output==="</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result1.output)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"===Result2.output==="</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result2.output)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre class="text"><code>===Result1.output===
+Solving $54 \times 10$ is quite straightforward!
+
+Here's how you do it:
+
+1.  **The Rule for Multiplying by 10:** When you multiply a whole number by 10, you simply add one zero to the end of that number.        
+
+2.  **Apply the Rule:**
+    *   Your original number is 54.
+    *   Add a zero to the end of 54.
+    *   You get 540.
+
+So, $54 \times 10 = 540$.
+===Result2.output===
+540</code></pre>
+</section>
+<section id="basic-example---pydantic-model" class="level3">
+<h3 class="anchored" data-anchor-id="basic-example---pydantic-model">Basic Example - Pydantic Model</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic <span class="im">import</span> BaseModel</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic_ai <span class="im">import</span> Agent</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CityLocation(BaseModel):</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    city: <span class="bu">str</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    country: <span class="bu">str</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> Agent(<span class="st">'google-gla:gemini-1.5-flash'</span>, output_type<span class="op">=</span>CityLocation)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> agent.run_sync(<span class="st">'Where were the olympics held in 2012?'</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result.output)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: city='London' country='United Kingdom'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="multiple-output-types" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-output-types">Multiple Output Types</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>load_dotenv(dotenv_path<span class="op">=</span><span class="st">'.env'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic <span class="im">import</span> BaseModel</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic_ai <span class="im">import</span> Agent</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Box(BaseModel):</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    width: <span class="bu">int</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    height: <span class="bu">int</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    depth: <span class="bu">int</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    units: <span class="bu">str</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> Agent(</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'openai:gpt-5-nano'</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    output_type<span class="op">=</span>[Box, <span class="bu">str</span>],  <span class="co"># Either Box or str</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    system_prompt<span class="op">=</span>(</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Extract box dimensions, "</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"if you can't extract all data, ask the user to try again."</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> agent.run_sync(<span class="st">'The box is 10x20x30'</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result.output, <span class="bu">type</span>(result.output))</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: "Please provide the units...", &lt;class 'str'&gt;</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> agent.run_sync(<span class="st">'The box is 10x20x30 cm'</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result.output, <span class="bu">type</span>(result.output))</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Box(width=10, height=20, depth=30, units='cm'), &lt;class '__main__.Box'&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="output-functions" class="level2">
+<h2 class="anchored" data-anchor-id="output-functions">Output Functions</h2>
+<p>Output functions allow the model to call a function with arguments, and the function’s return value becomes the agent’s output.</p>
+<section id="simple-output-function" class="level3">
+<h3 class="anchored" data-anchor-id="simple-output-function">Simple Output Function</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>load_dotenv(dotenv_path<span class="op">=</span><span class="st">'.env'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic_ai <span class="im">import</span> Agent</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> table_of(num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Number choose is:"</span>, num, <span class="bu">type</span>(num))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>):</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        r <span class="op">+=</span> <span class="bu">str</span>(num<span class="op">*</span>i) <span class="op">+</span> <span class="st">' '</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> r</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> Agent(<span class="st">'google-gla:gemini-2.5-flash'</span>, output_type<span class="op">=</span>table_of)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> agent.run_sync(<span class="st">'hi how can i solve 5*3'</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result.output)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Number choose is: 15 &lt;class 'int'&gt;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 15 30 45 60 75 90 105 120 135 </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>load_dotenv(dotenv_path<span class="op">=</span><span class="st">'.env'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic_ai <span class="im">import</span> Agent</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> table_of(num: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Despite user input, model/llm will choose number 2"""</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Number choose is:"</span>, num, <span class="bu">type</span>(num))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>):</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        r <span class="op">+=</span> <span class="bu">str</span>(num<span class="op">*</span>i) <span class="op">+</span> <span class="st">' '</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> r</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> Agent(<span class="st">'google-gla:gemini-2.5-flash'</span>, output_type<span class="op">=</span>table_of)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> agent.run_sync(<span class="st">'hi how can i solve 5*3'</span>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result.output)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Number choose is: 2 &lt;class 'int'&gt;</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 2 4 6 8 10 12 14 16 18 </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Learning</strong><br>
+&gt; Docstring are passed and interpereted by llm before responding.</p>
+</section>
+<section id="output-function-with-pydantic-model" class="level3">
+<h3 class="anchored" data-anchor-id="output-function-with-pydantic-model">Output Function with Pydantic Model</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>load_dotenv(dotenv_path<span class="op">=</span><span class="st">'.env'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic <span class="im">import</span> BaseModel, Field</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic_ai <span class="im">import</span> Agent</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Fruit(BaseModel):</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span> <span class="op">=</span> Field(..., min_length<span class="op">=</span><span class="dv">3</span>, max_length<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    country: <span class="bu">str</span> <span class="op">=</span> Field(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        description<span class="op">=</span><span class="st">'Country short code (reversed) e.g., USA -&gt; ASU'</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_fruit(f: Fruit) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span>f<span class="sc">.</span>name<span class="sc">}</span><span class="ss"> is from </span><span class="sc">{</span>f<span class="sc">.</span>country<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> Agent(<span class="st">'openai:gpt-5-nano'</span>, output_type<span class="op">=</span>format_fruit)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> agent.run_sync(<span class="st">'The fruit Salak is commonly known as?'</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result) <span class="co"># AgentRunResult(output='SNA is from NDI')</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="key-features-of-output-functions" class="level3">
+<h3 class="anchored" data-anchor-id="key-features-of-output-functions">Key Features of Output Functions</h3>
+<ul>
+<li>Arguments are validated using Pydantic</li>
+<li>Can optionally take <code>RunContext</code> as first argument</li>
+<li>Can raise <code>ModelRetry</code> to ask the model to try again</li>
+<li>The result is <strong>not</strong> passed back to the model</li>
 </ul>
 </section>
-<section id="if-wsl-2-not-instlled" class="level2">
-<h2 class="anchored" data-anchor-id="if-wsl-2-not-instlled">If WSL 2 Not Instlled</h2>
-<ul>
-<li>Search <code>Turn Windows features on or off</code><br>
-</li>
-<li>Enable <code>Virtual Machine Platform</code>, <code>Windows Hypervisor Platform</code>, <code>Windows Subsytem for Linux</code><br>
-</li>
-<li><code>Restart</code> Computer (Not power on/off, click on restart)</li>
-<li>Install WSL <a href="https://youtu.be/G4AVNkd_u0E?si=jJSCXi0Oh33MP5HS" target="_blank">WSL-2 Setup</a></li>
-<li>Switch to WSL-2 <code>wsl --set-default-version 2</code></li>
-</ul>
 </section>
-<section id="if-already-installed-then-remove-previous-installed-distributions" class="level2">
-<h2 class="anchored" data-anchor-id="if-already-installed-then-remove-previous-installed-distributions">If already installed then Remove Previous Installed Distributions</h2>
-<p><code>wsl --list --verbose</code></p>
-<p>For Each Listed distribution<br>
-- <code>wsl --unregister &lt;DistributionName&gt;</code><br>
-- <code>Open Settings → Apps → Installed apps</code> - Find each Linux distribution, click the three-dot menu, and select Uninstall</p>
+<section id="output-validators" class="level2">
+<h2 class="anchored" data-anchor-id="output-validators">Output Validators</h2>
+<p>Add validation logic that requires IO or is asynchronous using the <code>@agent.output_validator</code> decorator.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic <span class="im">import</span> BaseModel</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic_ai <span class="im">import</span> Agent, RunContext, ModelRetry</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Success(BaseModel):</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    sql_query: <span class="bu">str</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> InvalidRequest(BaseModel):</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    error_message: <span class="bu">str</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> Agent(<span class="st">'google-gla:gemini-1.5-flash'</span>, output_type<span class="op">=</span>Success <span class="op">|</span> InvalidRequest)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="at">@agent.output_validator</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> validate_sql(ctx: RunContext, output: Success <span class="op">|</span> InvalidRequest):</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(output, InvalidRequest):</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> output</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">await</span> ctx.deps.execute(<span class="ss">f'EXPLAIN </span><span class="sc">{</span>output<span class="sc">.</span>sql_query<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> QueryError <span class="im">as</span> e:</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> ModelRetry(<span class="ss">f'Invalid query: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">'</span>) <span class="im">from</span> e</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> output</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="update-wsl-ubuntu-installation" class="level2">
-<h2 class="anchored" data-anchor-id="update-wsl-ubuntu-installation">Update WSL –&gt; Ubuntu Installation</h2>
-<ul>
-<li><code>wsl --update</code><br>
-</li>
-<li><code>wsl --list --online</code><br>
-</li>
-<li><code>wsl --install Ubuntu-24.04</code> –&gt; Install Ubuntu<br>
-</li>
-<li><code>sudo apt update &amp;&amp; sudo apt upgrade -y</code> –&gt; Update Ubuntu</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PS</span> C<span class="op">:</span>\Users\hrith<span class="op">&gt;</span> wsl <span class="op">--</span>install Ubuntu-24<span class="op">.</span><span class="dv">04</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">Downloading</span><span class="op">:</span> Ubuntu <span class="dv">24.04</span> LTS</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Installing<span class="op">:</span> Ubuntu <span class="dv">24.04</span> LTS</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Distribution successfully installed<span class="op">.</span> It can be launched via <span class="st">'wsl.exe -d Ubuntu-24.04'</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Launching Ubuntu-24<span class="op">.</span><span class="dv">04</span><span class="op">...</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Provisioning the new WSL instance Ubuntu-24<span class="op">.</span><span class="dv">04</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">This</span> might take a <span class="cf">while</span><span class="op">...</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Create a default Unix user account<span class="op">:</span> hrm</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>New password<span class="op">:</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Retype new password<span class="op">:</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>passwd<span class="op">:</span> password updated successfully</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>To run a command as administrator <span class="op">(</span>user <span class="st">"root"</span><span class="op">),</span> use <span class="st">"sudo &lt;command&gt;"</span><span class="op">.</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>See <span class="st">"man sudo_root"</span> <span class="cf">for</span> details<span class="op">.</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>hrm@bitnd<span class="op">:/</span>mnt<span class="op">/</span>c<span class="op">/</span>Users<span class="op">/</span>hrith$ sudo apt update <span class="op">&amp;&amp;</span> sudo apt upgrade <span class="op">-</span>y</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>sudo<span class="op">]</span> password <span class="cf">for</span> hrm<span class="op">:</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Hit<span class="op">:</span><span class="dv">1</span> http<span class="op">://</span>archive<span class="op">.</span><span class="fu">ubuntu</span><span class="op">.</span><span class="fu">com</span><span class="op">/</span>ubuntu noble InRelease</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Get<span class="op">:</span><span class="dv">2</span> http<span class="op">://</span>security<span class="op">.</span><span class="fu">ubuntu</span><span class="op">.</span><span class="fu">com</span><span class="op">/</span>ubuntu noble-security InRelease <span class="op">[</span><span class="dv">126</span> kB<span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
+<section id="output-validator---a-good-example-to-understand" class="level2">
+<h2 class="anchored" data-anchor-id="output-validator---a-good-example-to-understand">Output Validator - A Good Example To Understand</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>load_dotenv(dotenv_path<span class="op">=</span><span class="st">'.env'</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic <span class="im">import</span> BaseModel</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic_ai <span class="im">import</span> Agent, RunContext, ModelRetry</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ValidAge(BaseModel):</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    age: <span class="bu">int</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> InvalidAge(BaseModel):</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    error: <span class="bu">str</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Agent with union output type</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> Agent(</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'openai:gpt-5-nano'</span>,</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    output_type<span class="op">=</span>ValidAge <span class="op">|</span> InvalidAge, </span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    system_prompt<span class="op">=</span><span class="st">'Model Will always Extract person name and age from text, ValidAge is 0 to 200'</span>,</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    retries<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="at">@agent.output_validator</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> validate_age(ctx: RunContext[<span class="va">None</span>], output: ValidAge <span class="op">|</span> InvalidAge):</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If already an error, return it</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(output, InvalidAge):</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> output</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check if age is reasonable (between 0 and 120)</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (output.age <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span> output.age <span class="op">&gt;</span> <span class="dv">100</span>) <span class="kw">and</span> ctx.retry<span class="op">&lt;</span><span class="dv">2</span>:</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Ask model to try again</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"retrying</span><span class="sc">{</span>ctx<span class="sc">.</span>retry<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>output<span class="sc">.</span>age<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> ModelRetry(</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f'What if my age is </span><span class="sc">{</span>output<span class="sc">.</span>age<span class="op">-</span><span class="dv">1</span><span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ctx.retry <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> ModelRetry(</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f'What if my age is </span><span class="sc">{</span>output<span class="sc">.</span>age<span class="op">+</span><span class="dv">100</span><span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>        )  </span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> output</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Usage</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> agent.run_sync(<span class="st">'My name is John and I am 25 years old'</span>)</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result.output)</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: ValidAge(age=25, name='John')</span></span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>result2 <span class="op">=</span> agent.run_sync(<span class="st">'My name is Alice and I am 105 years old'</span>)</span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result2.output, <span class="bu">type</span>(result2))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Output</strong></p>
+<pre class="text"><code>age=25 name='John'
+
+retrying0 105
+retrying1 104
+error='Invalid age: 203. Age must be between 0 and 200.' &lt;class 'pydantic_ai.run.AgentRunResult'&gt;</code></pre>
 </section>
-<section id="install-python-tools" class="level2">
-<h2 class="anchored" data-anchor-id="install-python-tools">Install Python Tools</h2>
-<ol type="1">
-<li>Python VENV
+<section id="key-points" class="level2">
+<h2 class="anchored" data-anchor-id="key-points">Key Points</h2>
 <ul>
-<li><code>python3 -m venv .venv</code> –&gt; Copy error code and run <code>sudo apt install python3.12-venv</code><br>
-</li>
-<li><code>sudo apt install python3-pip</code></li>
-</ul></li>
-<li>PIPX
-<ul>
-<li><code>sudo apt install pipx</code></li>
-</ul></li>
-<li>UV - Rust-based Python package installer
-<ul>
-<li><code>pipx install uv</code> It will maintain isolation</li>
-</ul></li>
-<li>LLM
-<ul>
-<li><code>pipx install llm</code> –&gt; <code>pipx ensurepath</code></li>
-<li>Configure it
-<ul>
-<li><code>llm install llm-gemini</code> or <code>llm install llm-ollama</code></li>
-<li><code>llm keys set gemini</code></li>
-<li><code>llm -m gemini-2.0-flash 'Tell me fun facts about Mountain View'</code></li>
-</ul></li>
-</ul></li>
-<li>MiniConda
-<ul>
-<li>Download .sh <code>https://www.anaconda.com/download/success</code></li>
-<li><code>bash &lt;pathto .sh file&gt;</code></li>
-<li><code>conda config --set auto_activate_base false</code></li>
-</ul></li>
-</ol>
-</section>
-<section id="install-javascript-tools" class="level2">
-<h2 class="anchored" data-anchor-id="install-javascript-tools">Install JavaScript Tools</h2>
-<ul>
-<li>nvm install visit and run bash script <code>https://github.com/nvm-sh/nvm</code><br>
-</li>
-<li>node install <code>https://nodejs.org/en/download</code>
-<ul>
-<li><code>nvm install 22</code><br>
-</li>
-<li><code>nvm list</code> <code>nvm use 22</code> <code>nvm current</code><br>
-</li>
-<li><code>corepack enable yarn</code><br>
-</li>
-<li><code>corepack enable pnpm</code></li>
-</ul></li>
-</ul>
-<blockquote class="blockquote">
-<p>Check<br>
-- <code>nvm -v</code><br>
-- <code>node -v</code><br>
-- <code>npm -v</code> <code>npx -v</code><br>
-- <code>pnpm -v</code><br>
-- <code>yarn -v</code></p>
-</blockquote>
-</section>
-<section id="install-cc-tools" class="level2">
-<h2 class="anchored" data-anchor-id="install-cc-tools">Install C/C++ Tools</h2>
-<p><code>sudo apt install build-essential</code></p>
-<ul>
-<li><code>gcc</code> –&gt; The C compiler<br>
-</li>
-<li><code>g++</code> –&gt; The C++ compiler</li>
-</ul>
-<blockquote class="blockquote">
-<p>Check - gcc –verison<br>
-- g++ –version</p>
-</blockquote>
-</section>
-<section id="install-java-tools" class="level2">
-<h2 class="anchored" data-anchor-id="install-java-tools">Install Java Tools</h2>
-<p><code>sudo apt install default-jdk</code></p>
-<blockquote class="blockquote">
-<p>This command installs:</p>
-</blockquote>
-<pre><code>Java Development Kit (JDK) - Compiler, debugger, and development tools  
-Java Runtime Environment (JRE) - Required to run Java applications  
-Java Virtual Machine (JVM) - Core execution environment  </code></pre>
-<ul>
-<li>Configure <code>JAVA_HOME</code> Environment Variable
-<ul>
-<li><code>echo 'export JAVA_HOME="/usr/lib/jvm/default-java"' &gt;&gt; ~/.bashrc</code> ## confirm the path first using below update-alternatiove… command<br>
-</li>
-<li>restart shell</li>
-</ul></li>
-<li>Install other versions of java
-<ul>
-<li><code>sudo apt install openjdk-17-jdk</code></li>
-</ul></li>
-<li>Set Default Java/Javac installed version
-<ul>
-<li><code>sudo update-alternatives --config java</code></li>
-<li><code>sudo update-alternatives --config javac</code></li>
-</ul></li>
-</ul>
-<blockquote class="blockquote">
-<p>Check<br>
-- <code>java --version</code><br>
-- <code>javac --version</code><br>
-- <code>echo $JAVA_HOME</code></p>
-</blockquote>
-</section>
-<section id="install-any-.deb-packages" class="level2">
-<h2 class="anchored" data-anchor-id="install-any-.deb-packages">Install any .deb packages</h2>
-<p>For example let install quarto <code>https://quarto.org/docs/get-started/</code></p>
-<ul>
-<li>Download and move to directory where deb package is downloaded<br>
-</li>
-<li><code>sudo apt install ./quarto-1.8.24-linux-amd64.deb</code></li>
-</ul>
-</section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<section id="video-tutorials" class="level3">
-<h3 class="anchored" data-anchor-id="video-tutorials">Video Tutorials</h3>
-<ul>
-<li>WSL-2 Setup <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/G4AVNkd_u0E" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
+<li>Default output type is <code>str</code></li>
+<li>Output is wrapped in <code>AgentRunResult</code> or <code>StreamedRunResult</code></li>
+<li>Access usage data via <code>result.usage()</code></li>
+<li>Output functions can raise <code>ModelRetry</code> for validation errors</li>
 </ul>
 
 
-</section>
 </section>
 </section>
 

@@ -458,6 +458,234 @@
     "text": "Voice-enabled AI Chat Assistant - 🎤 Integrate STT + TTS + LLM.\n- Speak → Listen → Respond in real-time."
   },
   {
+    "objectID": "Projects/PydanticAi/6_media.html",
+    "href": "Projects/PydanticAi/6_media.html",
+    "title": "Multimodal Input in Pydantic AI",
+    "section": "",
+    "text": "Modern LLMs can understand images, audio, video, and documents in addition to text.\n\n\n\nTwo methods: Use URL or local file.\n\n\nfrom dotenv import load_dotenv\nload_dotenv()\nfrom pydantic_ai import Agent, ImageUrl\n\nagent = Agent(model='openai:gpt-5-nano')\n\nresult = agent.run_sync(\n    [\n        'What company is this logo from?',\n        ImageUrl(url='https://images.moneycontrol.com/static-mcnews/2024/02/rbi.jpeg?impolicy=website&width=770&height=431')\n    ]\n)\n\nprint(result.output)\n# Output: Reserve Bank of India (RBI) — the central bank of India.\n\n\n\nfrom dotenv import load_dotenv\nload_dotenv()\nfrom pathlib import Path\nfrom pydantic_ai import Agent, BinaryContent\n\n# Read local image\nimage_data = Path('rbi.png').read_bytes()\n\nagent = Agent(model='openai:gpt-5-nano')\n\nresult = agent.run_sync(\n    [\n        'What company is this logo from?',\n        BinaryContent(data=image_data, media_type='image/png')\n    ]\n)\n\nprint(result.output)\n# Output: The Reserve Bank of India (RBI).\nKey points:\n\nUse ImageUrl for web images\nUse BinaryContent for local files\nSpecify correct media_type (e.g., ‘image/png’, ‘image/jpeg’)\n\n\n\n\n\n\nWorks the same way as images.\nfrom pydantic_ai import Agent, AudioUrl, ImageUrl\n\nAudioUrl(url='https://example.com/audio.mp3')\nVideoUrl(url='https://example.com/video.mp4')\nDocumentUrl(url='https://example.com/paper.pdf')\n\nfrom pathlib import Path\nfrom pydantic_ai import Agent, BinaryContent\npdf_data = Path('report.pdf').read_bytes()\n\nBinaryContent(data=video_data, media_type='video/mp4')\nBinaryContent(data=audio_data, media_type='audio/mpeg')\nBinaryContent(data=pdf_data, media_type='application/pdf')\n\n\n\nYou can pass multiple files in a single request.\nfrom dotenv import load_dotenv\nload_dotenv()\nfrom pathlib import Path\nfrom pydantic_ai import Agent, ImageUrl, DocumentUrl\n\nagent = Agent(model='openai:gpt-5-nano')\n\nresult = agent.run_sync(\n    [\n        'Compare the logo in the image with the company name in the PDF',\n        ImageUrl(url='https://images.moneycontrol.com/static-mcnews/2024/02/rbi.jpeg?impolicy=website&width=770&height=431'),\n        DocumentUrl(url='https://morth.nic.in/sites/default/files/dd12-13_0.pdf')\n    ]\n)\n\nprint(result.output)\n\n'''\n- Logo in the image: Reserve Bank of India (RBI) emblem — circular orange seal with a tiger and a palm tree, text around the edge in English and Hindi: “RESERVE BANK OF INDIA” / “भारतीय रिज़र्व बैंक”.\n\n- Company name in the PDF: The page text shown is “Dummy PDF file” (no actual company name is present).\n\nConclusion: The RBI logo does not match the company name shown in the PDF. The PDF appears to be a placeholder with no real company name. If you provide the correct PDF or specify the expected company name, I can re-check.\n'''\n\n\n\n\nDefault: Pydantic AI downloads file content from URLs and sends it to the model.\nExceptions:\n\nAnthropic: PDFs via DocumentUrl are sent as URLs (not downloaded)\nGoogle Vertex AI: All URLs sent directly (not downloaded)\nGoogle GLA: YouTube URLs sent directly\n\n\n\nIf the model can’t access a URL, force local download:\nfrom pydantic_ai import Agent, ImageUrl\n\nagent = Agent(model='google-gla:gemini-2.5-flash')\n\nresult = agent.run_sync(\n    [\n        'Describe this image',\n        ImageUrl(url='https://private-site.com/image.png', force_download=True)\n    ]\n)\nSetting force_download=True makes Pydantic AI download the file first.\n\n\n\n\n\n\n\n\nInput Type\nURL Class\nBinaryContent\nMedia Type Example\n\n\n\n\nImage\nImageUrl\nSupported\nimage/png, image/jpeg\n\n\nAudio\nAudioUrl\nSupported\naudio/mpeg, audio/wav\n\n\nVideo\nVideoUrl\nSupported\nvideo/mp4, video/avi\n\n\nDocument\nDocumentUrl\nSupported\napplication/pdf\n\n\n\n\n\n\n\n\nTwo options: URL-based or local file-based input\nUse BinaryContent for local files with correct media_type\nModel support varies → Check model documentation first\nMultiple files can be passed in one request\nDownload behavior differs by provider",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Media"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/6_media.html#image-input",
+    "href": "Projects/PydanticAi/6_media.html#image-input",
+    "title": "Multimodal Input in Pydantic AI",
+    "section": "",
+    "text": "Two methods: Use URL or local file.\n\n\nfrom dotenv import load_dotenv\nload_dotenv()\nfrom pydantic_ai import Agent, ImageUrl\n\nagent = Agent(model='openai:gpt-5-nano')\n\nresult = agent.run_sync(\n    [\n        'What company is this logo from?',\n        ImageUrl(url='https://images.moneycontrol.com/static-mcnews/2024/02/rbi.jpeg?impolicy=website&width=770&height=431')\n    ]\n)\n\nprint(result.output)\n# Output: Reserve Bank of India (RBI) — the central bank of India.\n\n\n\nfrom dotenv import load_dotenv\nload_dotenv()\nfrom pathlib import Path\nfrom pydantic_ai import Agent, BinaryContent\n\n# Read local image\nimage_data = Path('rbi.png').read_bytes()\n\nagent = Agent(model='openai:gpt-5-nano')\n\nresult = agent.run_sync(\n    [\n        'What company is this logo from?',\n        BinaryContent(data=image_data, media_type='image/png')\n    ]\n)\n\nprint(result.output)\n# Output: The Reserve Bank of India (RBI).\nKey points:\n\nUse ImageUrl for web images\nUse BinaryContent for local files\nSpecify correct media_type (e.g., ‘image/png’, ‘image/jpeg’)",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Media"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/6_media.html#audiovideodocument-input",
+    "href": "Projects/PydanticAi/6_media.html#audiovideodocument-input",
+    "title": "Multimodal Input in Pydantic AI",
+    "section": "",
+    "text": "Works the same way as images.\nfrom pydantic_ai import Agent, AudioUrl, ImageUrl\n\nAudioUrl(url='https://example.com/audio.mp3')\nVideoUrl(url='https://example.com/video.mp4')\nDocumentUrl(url='https://example.com/paper.pdf')\n\nfrom pathlib import Path\nfrom pydantic_ai import Agent, BinaryContent\npdf_data = Path('report.pdf').read_bytes()\n\nBinaryContent(data=video_data, media_type='video/mp4')\nBinaryContent(data=audio_data, media_type='audio/mpeg')\nBinaryContent(data=pdf_data, media_type='application/pdf')",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Media"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/6_media.html#multiple-inputs",
+    "href": "Projects/PydanticAi/6_media.html#multiple-inputs",
+    "title": "Multimodal Input in Pydantic AI",
+    "section": "",
+    "text": "You can pass multiple files in a single request.\nfrom dotenv import load_dotenv\nload_dotenv()\nfrom pathlib import Path\nfrom pydantic_ai import Agent, ImageUrl, DocumentUrl\n\nagent = Agent(model='openai:gpt-5-nano')\n\nresult = agent.run_sync(\n    [\n        'Compare the logo in the image with the company name in the PDF',\n        ImageUrl(url='https://images.moneycontrol.com/static-mcnews/2024/02/rbi.jpeg?impolicy=website&width=770&height=431'),\n        DocumentUrl(url='https://morth.nic.in/sites/default/files/dd12-13_0.pdf')\n    ]\n)\n\nprint(result.output)\n\n'''\n- Logo in the image: Reserve Bank of India (RBI) emblem — circular orange seal with a tiger and a palm tree, text around the edge in English and Hindi: “RESERVE BANK OF INDIA” / “भारतीय रिज़र्व बैंक”.\n\n- Company name in the PDF: The page text shown is “Dummy PDF file” (no actual company name is present).\n\nConclusion: The RBI logo does not match the company name shown in the PDF. The PDF appears to be a placeholder with no real company name. If you provide the correct PDF or specify the expected company name, I can re-check.\n'''",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Media"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/6_media.html#url-download-behavior",
+    "href": "Projects/PydanticAi/6_media.html#url-download-behavior",
+    "title": "Multimodal Input in Pydantic AI",
+    "section": "",
+    "text": "Default: Pydantic AI downloads file content from URLs and sends it to the model.\nExceptions:\n\nAnthropic: PDFs via DocumentUrl are sent as URLs (not downloaded)\nGoogle Vertex AI: All URLs sent directly (not downloaded)\nGoogle GLA: YouTube URLs sent directly\n\n\n\nIf the model can’t access a URL, force local download:\nfrom pydantic_ai import Agent, ImageUrl\n\nagent = Agent(model='google-gla:gemini-2.5-flash')\n\nresult = agent.run_sync(\n    [\n        'Describe this image',\n        ImageUrl(url='https://private-site.com/image.png', force_download=True)\n    ]\n)\nSetting force_download=True makes Pydantic AI download the file first.",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Media"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/6_media.html#summary-table",
+    "href": "Projects/PydanticAi/6_media.html#summary-table",
+    "title": "Multimodal Input in Pydantic AI",
+    "section": "",
+    "text": "Input Type\nURL Class\nBinaryContent\nMedia Type Example\n\n\n\n\nImage\nImageUrl\nSupported\nimage/png, image/jpeg\n\n\nAudio\nAudioUrl\nSupported\naudio/mpeg, audio/wav\n\n\nVideo\nVideoUrl\nSupported\nvideo/mp4, video/avi\n\n\nDocument\nDocumentUrl\nSupported\napplication/pdf",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Media"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/6_media.html#key-takeaways",
+    "href": "Projects/PydanticAi/6_media.html#key-takeaways",
+    "title": "Multimodal Input in Pydantic AI",
+    "section": "",
+    "text": "Two options: URL-based or local file-based input\nUse BinaryContent for local files with correct media_type\nModel support varies → Check model documentation first\nMultiple files can be passed in one request\nDownload behavior differs by provider",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Media"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/4_tool_calling.html",
+    "href": "Projects/PydanticAi/4_tool_calling.html",
+    "title": "Function Calling vs Tool Calling in AI",
+    "section": "",
+    "text": "Originated with OpenAI’s “function calling” API (2023).\nThe model doesn’t execute anything itself.\nInstead, it outputs a structured JSON object (arguments) describing how a function should be called.\nThe developer is responsible for implementing the function, running it, and then optionally passing the result back to the model.\n\nExample flow:\nUser: What's the weather in Delhi?\nModel: {\"name\": \"get_weather\", \"arguments\": {\"location\": \"Delhi\"}}\nYour code: calls `get_weather(\"Delhi\")`, gets result, sends back.\nSo the model is just an intent recognizer + argument filler.\n\n\n\n\n\nA newer generalization of function calling (introduced in 2024 by OpenAI, and also adopted by frameworks like LangChain, LlamaIndex, Pydantic-AI).\nTools are functions, APIs, or even external systems that the model can invoke dynamically.\nInstead of just spitting out JSON, the framework integrates execution:\n\nThe model says “use tool X”.\nThe framework runs the tool automatically.\nThe result can be given back to the model for reasoning.\n\n\nExample flow (tool calling):\nUser: What's the weather in Delhi?\nModel (internal reasoning): I should call the \"WeatherTool\".\nFramework: calls WeatherTool(location=\"Delhi\") → 30°C\nModel: \"It's 30°C in Delhi right now.\"\nSo tool calling is function calling + automatic execution + integration with the agent loop.",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Tool Calling"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/4_tool_calling.html#what-are-function-tools",
+    "href": "Projects/PydanticAi/4_tool_calling.html#what-are-function-tools",
+    "title": "Function Calling vs Tool Calling in AI",
+    "section": "What Are Function Tools?",
+    "text": "What Are Function Tools?\nFunction tools let AI models perform actions and retrieve information during a conversation to generate better responses. Think of them as giving the AI the ability to “call functions” when it needs extra data or capabilities.\nUse cases:\n\nWhen the model needs to fetch data dynamically\nWhen context is too large to fit in prompt\nTo make AI behavior more deterministic",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Tool Calling"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/4_tool_calling.html#key-concepts",
+    "href": "Projects/PydanticAi/4_tool_calling.html#key-concepts",
+    "title": "Function Calling vs Tool Calling in AI",
+    "section": "Key Concepts",
+    "text": "Key Concepts\nTool vs Function Calling: In Pydantic AI, these terms are interchangeable. The model “calls” Python functions registered as “tools”.\nRunContext: A special parameter that gives tools access to dependencies, retry info, and other agent context.",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Tool Calling"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/4_tool_calling.html#three-ways-to-register-tools",
+    "href": "Projects/PydanticAi/4_tool_calling.html#three-ways-to-register-tools",
+    "title": "Function Calling vs Tool Calling in AI",
+    "section": "Three Ways to Register Tools",
+    "text": "Three Ways to Register Tools\n\nMethod 1: Using Decorators\nimport random\nfrom pydantic_ai import Agent, RunContext\n\nagent = Agent(\n    'openai:gpt-5-nano',\n    deps_type=str,  # Dependencies type\n    system_prompt=\"You are a helpful assistant.\"\n)\n\n# Tool WITHOUT context (simple function)\n@agent.tool_plain\ndef roll_dice() -&gt; str:\n    \"\"\"Roll a six-sided die.\"\"\"\n    return str(random.randint(1, 6))\n\n# Tool WITH context (needs RunContext)\n@agent.tool\ndef get_user_name(ctx: RunContext[str]) -&gt; str:\n    \"\"\"Get the user's name from context.\"\"\"\n    return ctx.deps\n\n# Run the agent\nresult = agent.run_sync(\"Roll a dice\", deps=\"Alice\")\nprint(result.output)\nKey differences:\n\n@agent.tool_plain → No context needed\n@agent.tool → Needs RunContext for dependencies\n\n\n\nMethod 2: Via Agent Constructor\nfrom pydantic_ai import Agent, RunContext\n\n# Define tools as regular functions\ndef get_weather(city: str) -&gt; str:\n    \"\"\"Get weather for a city.\"\"\"\n    return f\"Sunny in {city}\"\n\ndef get_user_location(ctx: RunContext[str]) -&gt; str:\n    \"\"\"Get user location from context.\"\"\"\n    return ctx.deps\n\n# Pass tools to Agent\nagent = Agent(\n    'openai:gpt-5-nano',\n    deps_type=str,\n    tools=[get_weather, get_user_location],  # List of functions\n    system_prompt=\"Help with weather info\"\n)\n\nresult = agent.run_sync(\"What's the weather?\", deps=\"Mumbai\")\nThis method is better for reusing tools across multiple agents.\n\n\nMethod 3: Using Tool Class\nfrom pydantic_ai import Agent, Tool\n\ndef calculate(x: int, y: int) -&gt; int:\n    \"\"\"Add two numbers.\"\"\"\n    return x + y\n\nagent = Agent(\n    'openai:gpt-5-nano',\n    tools=[\n        Tool(calculate, takes_ctx=False)  # Explicit control\n    ]\n)\n\nresult = agent.run_sync(\"What is 5 + 3?\")\nUse Tool class for fine-grained control over tool behavior.",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Tool Calling"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/4_tool_calling.html#how-tool-calling-works",
+    "href": "Projects/PydanticAi/4_tool_calling.html#how-tool-calling-works",
+    "title": "Function Calling vs Tool Calling in AI",
+    "section": "How Tool Calling Works",
+    "text": "How Tool Calling Works\nExecution flow:\n\nUser sends prompt to agent\nLLM decides which tool to call\nAgent executes the tool function\nTool returns result to LLM\nLLM uses result to generate final response\n\n# Example: Dice game\nagent = Agent(\n    'google-gla:gemini-2.5-flash',\n    deps_type=str,\n    system_prompt=\"You're a dice game. Roll and check if it matches user's guess.\"\n)\n\n@agent.tool_plain\ndef roll_dice() -&gt; str:\n    \"\"\"Roll a six-sided die.\"\"\"\n    return str(random.randint(1, 6))\n\n@agent.tool\ndef get_player_name(ctx: RunContext[str]) -&gt; str:\n    \"\"\"Get player's name.\"\"\"\n    return ctx.deps\n\nresult = agent.run_sync('My guess is 4', deps='Anne')\nprint(result.output)\n# Output: \"Congratulations Anne, you guessed correctly!\"",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Tool Calling"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/4_tool_calling.html#tool-schemas-and-docstrings",
+    "href": "Projects/PydanticAi/4_tool_calling.html#tool-schemas-and-docstrings",
+    "title": "Function Calling vs Tool Calling in AI",
+    "section": "Tool Schemas and Docstrings",
+    "text": "Tool Schemas and Docstrings\nPydantic AI automatically generates JSON schemas from function signatures and docstrings.\n@agent.tool_plain(docstring_format='google', require_parameter_descriptions=True)\ndef search_products(\n    category: str, \n    max_price: float, \n    in_stock: bool\n) -&gt; list[str]:\n    \"\"\"Search for products.\n    \n    Args:\n        category: Product category to search\n        max_price: Maximum price limit\n        in_stock: Only show available items\n    \"\"\"\n    return [\"Product A\", \"Product B\"]\nThe LLM receives:\n{\n  \"name\": \"search_products\",\n  \"description\": \"Search for products\",\n  \"parameters\": {\n    \"category\": {\"type\": \"string\", \"description\": \"Product category to search\"},\n    \"max_price\": {\"type\": \"number\", \"description\": \"Maximum price limit\"},\n    \"in_stock\": {\"type\": \"boolean\", \"description\": \"Only show available items\"}\n  }\n}\nSupported docstring formats: Google, NumPy, Sphinx.",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Tool Calling"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/4_tool_calling.html#tool-return-values",
+    "href": "Projects/PydanticAi/4_tool_calling.html#tool-return-values",
+    "title": "Function Calling vs Tool Calling in AI",
+    "section": "Tool Return Values",
+    "text": "Tool Return Values\nTools can return any JSON-serializable data:\n\nStrings, numbers, booleans\nLists and dictionaries\nPydantic models\nDataclasses\n\n@agent.tool_plain\ndef get_user_data() -&gt; dict:\n    \"\"\"Fetch user information.\"\"\"\n    return {\n        \"name\": \"Alice\",\n        \"age\": 25,\n        \"city\": \"Mumbai\"\n    }",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Tool Calling"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/4_tool_calling.html#complete-example-weather-assistant",
+    "href": "Projects/PydanticAi/4_tool_calling.html#complete-example-weather-assistant",
+    "title": "Function Calling vs Tool Calling in AI",
+    "section": "Complete Example: Weather Assistant",
+    "text": "Complete Example: Weather Assistant\nfrom dotenv import load_dotenv\nload_dotenv()\nfrom pydantic_ai import Agent, RunContext\n\nagent = Agent(\n    'openai:gpt-5-nano',\n    deps_type=dict,\n    system_prompt=\"You are a weather assistant. Use tools to fetch weather data. Must mention country name which is provided by user, despite being correct or incorrect.\"\n)\n\n@agent.tool\ndef get_current_weather(ctx: RunContext[dict], city: str) -&gt; str:\n    \"\"\"Get current weather for a city.\n    \n    Args:\n        city: City name to get weather for\n    \"\"\"\n    # In real app, call weather API\n    user_location = ctx.deps.get('location', 'CHINA')\n    return f\"Weather in {city}: 28°C, Sunny (requested from {user_location})\"\n\n@agent.tool_plain\ndef list_cities() -&gt; list[str]:\n    \"\"\"List available cities for weather data.\"\"\"\n    return [\"Mumbai\", \"Delhi\", \"Bangalore\", \"Chennai\"]\n\n# Run agent\nuser_deps = {\"locatin\": \"India\", \"user_id\": 123}\nresult = agent.run_sync(\n    \"What's the weather in Mumbai?\", \n    deps=user_deps\n)\nprint(result.output)\nOutput\nWeather in Mumbai, India: 28°C, Sunny. \n\nNote: The tool output sometimes shows an odd source tag like “requested from CHINA”; Mumbai is in India. If you’d like, I can pull a second update.",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Tool Calling"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/4_tool_calling.html#key-takeaways",
+    "href": "Projects/PydanticAi/4_tool_calling.html#key-takeaways",
+    "title": "Function Calling vs Tool Calling in AI",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nTwo decorator types: @agent.tool (with context) and @agent.tool_plain (without)\nRegistration methods: Decorators, constructor list, or Tool class\nRunContext gives tools access to dependencies and agent state\nDocstrings matter: They become part of the schema the LLM sees\nReturn JSON-serializable data from tools\nTools make AI agents dynamic and context-aware",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Tool Calling"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/2_sys_ins.html",
+    "href": "Projects/PydanticAi/2_sys_ins.html",
+    "title": "Agent System Prompt vs Instruction",
+    "section": "",
+    "text": "from dotenv import load_dotenv\nfrom pprint import pprint\nload_dotenv()\n\nfrom pydantic_ai import Agent\n\nprint(\"=\" * 80)\nprint(\"SCENARIO 1: Using system_prompt\")\nprint(\"=\" * 80)\n\n# Agent 1: Sales (system_prompt)\nsales_agent = Agent(\n    'openai:gpt-5-nano',\n    system_prompt=\"You are a SALES agent. Always mention 'premium features'. Reply in short\"\n)\n\n# Agent 2: Support (system_prompt)\nsupport_agent = Agent(\n    'openai:gpt-5-nano',\n    system_prompt=\"You are a SUPPORT agent. Always say 'let me help you troubleshoot'. Reply in short\"\n)\n\n# Customer talks to sales first\nresult1 = sales_agent.run_sync('I want to buy something')\nprint(\"\\n[Sales Response]:\", result1.output)\n\n# Customer is transferred to support WITH HISTORY\nresult2 = support_agent.run_sync(\n    'How do I use it?',\n    message_history=result1.new_messages()\n)\nprint(\"\\n[Support Response]:\", result2.output)\n\nprint(\"\\n[MESSAGE HISTORY - What support_agent sees]:\")\nprint(result2.all_messages())\n\n\nprint(\"\\n\" + \"=\" * 80)\nprint(\"SCENARIO 2: Using instructions\")\nprint(\"=\" * 80)\n\n# Agent 1: Sales (instructions)\nsales_agent2 = Agent(\n    'openai:gpt-5-nano',\n    instructions=\"You are a SALES agent. Always mention 'premium features'. Reply in short\"\n)\n\n# Agent 2: Support (instructions)\nsupport_agent2 = Agent(\n    'openai:gpt-5-nano',\n    instructions=\"You are a SUPPORT agent. Always say 'let me help you troubleshoot'. Reply in short\"\n)\n\n# Customer talks to sales first\nresult3 = sales_agent2.run_sync('I want to buy something')\nprint(\"\\n[Sales Response]:\", result3.output)\n\n# Customer is transferred to support WITH HISTORY\nresult4 = support_agent2.run_sync(\n    'How do I use it?',\n    message_history=result3.new_messages()\n)\nprint(\"\\n[Support Response]:\", result4.output)\n\nprint(\"\\n[MESSAGE HISTORY - What support_agent2 sees]:\")\nprint(result4.all_messages())\nOutput",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Role To AI"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/2_sys_ins.html#the-critical-difference-explained",
+    "href": "Projects/PydanticAi/2_sys_ins.html#the-critical-difference-explained",
+    "title": "Agent System Prompt vs Instruction",
+    "section": "The Critical Difference Explained",
+    "text": "The Critical Difference Explained\n\nWith system_prompt:\nStorage: SystemPromptPart inside the parts list of ModelRequest\nBehavior with message_history:\n\nWhen you provide message_history, Pydantic AI says: “There’s already a SystemPromptPart in the history, so I won’t generate a new one”\nResult: Support agent doesn’t add its own system prompt\nProblem: Support agent is constrained by the OLD sales system prompt\n\nFrom documentation:\n&gt; “If message_history is set and not empty, a new system prompt is not generated — we assume the existing message history includes a system prompt.”\n\n\n\nWith instructions:\nStorage: instructions field as metadata on the ModelRequest object (not in parts)\nBehavior with message_history:\n\nInstructions are stored SEPARATELY from the message parts\nEach agent adds its OWN instructions to its ModelRequest\nOld instructions remain visible in history BUT as metadata\nNew instructions are ALWAYS added for the current agent\n\nKey insight: Instructions don’t get “filtered out” — they’re just stored differently. Both old and new instructions exist in the history, but as separate metadata fields on their respective requests.\nFrom documentation:\n&gt; “When an explicit message_history is provided, instructions from any existing messages in the history are NOT included in the request to the model — only the instructions of the current agent are included.”",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Role To AI"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/2_sys_ins.html#the-bottom-line",
+    "href": "Projects/PydanticAi/2_sys_ins.html#the-bottom-line",
+    "title": "Agent System Prompt vs Instruction",
+    "section": "The Bottom Line",
+    "text": "The Bottom Line\nUse instructions because:\n\nEach agent always gets its own instructions field, even with message_history\nNo risk of the second agent being “stuck” with the first agent’s guidance\nCleaner data structure (metadata vs content)\n\nUse system_prompt only when:\n\nYou want a single agent to maintain one consistent role across a long conversation\nYou don’t need to change the system guidance mid-conversation\n\nThank you for providing the actual output — this clarified everything! The key insight is that instructions are stored as metadata, not as message parts.",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Role To AI"
+    ]
+  },
+  {
     "objectID": "Podman/5_MiniProject4.html",
     "href": "Podman/5_MiniProject4.html",
     "title": "TDS by HRM",
@@ -633,99 +861,279 @@
     ]
   },
   {
-    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html",
-    "href": "Projects/MiniProject_1_Chatbot/1_basic.html",
+    "objectID": "Projects/PydanticAi/1_basic.html",
+    "href": "Projects/PydanticAi/1_basic.html",
     "title": "Chatbot",
     "section": "",
-    "text": "Llm output is generally unstructred. Getting structured output is often very lenghty process.\nPydantic AI is useful because it bridges the gap between messy AI outputs and structured, safe, typed data—making AI-powered applications easier to build, debug, and trust.\n\n\n\nRequires Python 3.10+\n- uv: uv add pydantic-ai\n- pip: pip install pydantic-ai\n\n\n\n\nSystem Message: Set the context, rules or persona for the conversation.\nUser Message: What user ask to ai.\nAssistance/Model Message: What ai respond back to user.\n\n\n\n\n\nThe raw model (like GPT, Claude, Gemini etc.) is stateless.\nIt does not remember previous chats on its own.\nHence we must send past messages again in every request.\n\n\n\n\nMethod-1: in .bashrc\n.bashrc\nexport OPENAI_API_KEY=\"your_api_key\"\nexport GOOGLE_API_KEY=\"your_api_key\"\nexport ANTHROPIC_API_KEY=\"your_api_key\"\n\n\nexport OPENAI_BASE_URL=\"https://api.openai.com/v1\"\n# export OPENAI_BASE_URL=https://aipipe.org/openai/v1 # if aipipe token used\nexport GOOGLE_API_BASE_URL=\"https://generativelanguage.googleapis.com/v1beta\"\nexport ANTHROPIC_BASE_URL=\"https://api.anthropic.com\"\nMethod-2: in main python file We avoide this method\nimport os\nos.environ[\"GOOGLE_API_KEY\"] = \"paste your api key here\"\nMethod-3: use .env file We always try to use this method\n.env\nGOOGLE_API_KEY=yourapikeyhere\npythonfile\n...\nfrom dotenv import load_dotenv\nload_dotenv()\n...\n\n\n\n.env\n# Google Api key from --&gt; https://aistudio.google.com/apikey\nGOOGLE_API_KEY=your-api-key\nmain.py\nfrom pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik.\"\nuser_prompt2 = \"What is my name?\"\n\nresult1 = agent.run_sync(user_prompt1) # return type is RunResult\nresult2 = agent.run_sync(user_prompt2)\n\nprint(result1.output)\nprint(result2.output)\nOutput\n❯ uv run main.py\nNoted, Hritik, for future reference.\nI don't know your name because I don't retain information from past conversations.\n\n\n\nall_messages() and all_messages_json()\nnew_messages() and new_messages_json()\n\n\n[ ModelRequest(…), ModelResponse(…), …]\n\n\nModelRequest( parts = [SystemPromptpart, UserPromptPart] ) ModelReponse( parts = [TextPart] )\n\n\n\n\n\n\n\n\nfrom pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik\"\nuser_prompt2 = \"What did I say my name was?\"\nuser_prompt3 = \"List down all the things that i asked/told you?\"\n\nresult1 = agent.run_sync(user_prompt1)\nresult2 = agent.run_sync(user_prompt2, message_history=result1.new_messages())\nresult3 = agent.run_sync(user_prompt3, message_history=result2.new_messages())\n\n\nprint(result1.output)\nprint(result2.output)\nprint(result3.output)\n\n# print(result1.all_messages()) # [ModelRequest(parts=[systemprompt, userprompt]), ModelResponse(parts=[Textpart]) ]\n# print(result2.all_messages()) # [ModelRequest(parts=[userprompt]), ModelResponse(parts=[Textpart]), ... ]\n# print(result3.all_messages())\n\n# print(result3.new_messages()) # [ModelRequest(parts=[userprompt]), ModelResponse(parts=[Textpart]) ]\nOutput\nOkay, Hritik, I've noted your name to personalize our conversation.\nYour name is Hritik, as you just mentioned it to me.\nBased on our current conversation, here are the things you have asked/told me:\n\n1.  \"What did I say my name was?\"\n2.  \"List down all the things that i asked/told you?\"\n...",
+    "text": "Llm output is generally unstructred. Getting structured output is often very lenghty process.\nPydantic AI is useful because it bridges the gap between messy AI outputs and structured, safe, typed data—making AI-powered applications easier to build, debug, and trust.\n\n\n\nRequires Python 3.10+\n- uv: uv add pydantic-ai\n- pip: pip install pydantic-ai\n\n\n\n\nSystem Message: Set the context, rules or persona for the conversation.\nUser Message: What user ask to ai.\nAssistance/Model Message: What ai respond back to user.\n\n\n\n\n\nThe raw model (like GPT, Claude, Gemini etc.) is stateless.\nIt does not remember previous chats on its own.\nHence we must send past messages again in every request.\n\n\n\n\nMethod-1: in .bashrc\n.bashrc\nexport OPENAI_API_KEY=\"your_api_key\"\nexport GOOGLE_API_KEY=\"your_api_key\"\nexport ANTHROPIC_API_KEY=\"your_api_key\"\n\n\nexport OPENAI_BASE_URL=\"https://api.openai.com/v1\"\n# export OPENAI_BASE_URL=https://aipipe.org/openai/v1 # if aipipe token used\nexport GOOGLE_API_BASE_URL=\"https://generativelanguage.googleapis.com/v1beta\"\nexport ANTHROPIC_BASE_URL=\"https://api.anthropic.com\"\nMethod-2: in main python file We avoide this method\nimport os\nos.environ[\"GOOGLE_API_KEY\"] = \"paste your api key here\"\nMethod-3: use .env file We always try to use this method\n.env\nGOOGLE_API_KEY=yourapikeyhere\npythonfile\n...\nfrom dotenv import load_dotenv\nload_dotenv()\n...\n\n\n\n.env\n# Google Api key from --&gt; https://aistudio.google.com/apikey\nGOOGLE_API_KEY=your-api-key\nmain.py\nfrom pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik.\"\nuser_prompt2 = \"What is my name?\"\n\nresult1 = agent.run_sync(user_prompt1) # return type is RunResult\nresult2 = agent.run_sync(user_prompt2)\n\nprint(result1.output)\nprint(result2.output)\nOutput\n❯ uv run main.py\nNoted, Hritik, for future reference.\nI don't know your name because I don't retain information from past conversations.\n\n\n\nall_messages() and all_messages_json()\nnew_messages() and new_messages_json()\n\n[ ModelRequest(...), ModelResponse(...), ...]\n\nModelRequest( parts = [SystemPromptpart, UserPromptPart] )\nModelReponse( parts = [TextPart] )\n\n\n\n\nAgent.run(): asynchornous & returns RunResult where response is wrapped.\nAgent.run_sync(): synchornous & returns RunResult where response is wrapped.\n\n\n\n\n\nfrom pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik\"\nuser_prompt2 = \"What did I say my name was?\"\nuser_prompt3 = \"List down all the things that i asked/told you?\"\n\nresult1 = agent.run_sync(user_prompt1)\nresult2 = agent.run_sync(user_prompt2, message_history=result1.new_messages())\nresult3 = agent.run_sync(user_prompt3, message_history=result2.new_messages())\n\n\nprint(result1.output)\nprint(result2.output)\nprint(result3.output)\n\n# print(result1.all_messages()) # [ModelRequest(parts=[systemprompt, userprompt]), ModelResponse(parts=[Textpart]) ]\n# print(result2.all_messages()) # [ModelRequest(parts=[userprompt]), ModelResponse(parts=[Textpart]), ... ]\n# print(result3.all_messages())\n\n# print(result3.new_messages()) # [ModelRequest(parts=[userprompt]), ModelResponse(parts=[Textpart]) ]\nOutput\nOkay, Hritik, I've noted your name to personalize our conversation.\nYour name is Hritik, as you just mentioned it to me.\nBased on our current conversation, here are the things you have asked/told me:\n\n1.  \"What did I say my name was?\"\n2.  \"List down all the things that i asked/told you?\"\n...",
     "crumbs": [
       "Projects",
-      "1. MiniProject Chatbot",
-      "Chatbot with History"
+      "Pydantic AI",
+      "Intro To PydanticAI"
     ]
   },
   {
-    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#why-pydantic-ai",
-    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#why-pydantic-ai",
+    "objectID": "Projects/PydanticAi/1_basic.html#why-pydantic-ai",
+    "href": "Projects/PydanticAi/1_basic.html#why-pydantic-ai",
     "title": "Chatbot",
     "section": "",
     "text": "Llm output is generally unstructred. Getting structured output is often very lenghty process.\nPydantic AI is useful because it bridges the gap between messy AI outputs and structured, safe, typed data—making AI-powered applications easier to build, debug, and trust.",
     "crumbs": [
       "Projects",
-      "1. MiniProject Chatbot",
-      "Chatbot with History"
+      "Pydantic AI",
+      "Intro To PydanticAI"
     ]
   },
   {
-    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#installation",
-    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#installation",
+    "objectID": "Projects/PydanticAi/1_basic.html#installation",
+    "href": "Projects/PydanticAi/1_basic.html#installation",
     "title": "Chatbot",
     "section": "",
     "text": "Requires Python 3.10+\n- uv: uv add pydantic-ai\n- pip: pip install pydantic-ai",
     "crumbs": [
       "Projects",
-      "1. MiniProject Chatbot",
-      "Chatbot with History"
+      "Pydantic AI",
+      "Intro To PydanticAI"
     ]
   },
   {
-    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#messages-types-in-chatbots",
-    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#messages-types-in-chatbots",
+    "objectID": "Projects/PydanticAi/1_basic.html#messages-types-in-chatbots",
+    "href": "Projects/PydanticAi/1_basic.html#messages-types-in-chatbots",
     "title": "Chatbot",
     "section": "",
     "text": "System Message: Set the context, rules or persona for the conversation.\nUser Message: What user ask to ai.\nAssistance/Model Message: What ai respond back to user.",
     "crumbs": [
       "Projects",
-      "1. MiniProject Chatbot",
-      "Chatbot with History"
+      "Pydantic AI",
+      "Intro To PydanticAI"
     ]
   },
   {
-    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#llms-are-stateless",
-    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#llms-are-stateless",
+    "objectID": "Projects/PydanticAi/1_basic.html#llms-are-stateless",
+    "href": "Projects/PydanticAi/1_basic.html#llms-are-stateless",
     "title": "Chatbot",
     "section": "",
     "text": "The raw model (like GPT, Claude, Gemini etc.) is stateless.\nIt does not remember previous chats on its own.\nHence we must send past messages again in every request.",
     "crumbs": [
       "Projects",
-      "1. MiniProject Chatbot",
-      "Chatbot with History"
+      "Pydantic AI",
+      "Intro To PydanticAI"
     ]
   },
   {
-    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#api-key-setup-in-pydantic-ai",
-    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#api-key-setup-in-pydantic-ai",
+    "objectID": "Projects/PydanticAi/1_basic.html#api-key-setup-in-pydantic-ai",
+    "href": "Projects/PydanticAi/1_basic.html#api-key-setup-in-pydantic-ai",
     "title": "Chatbot",
     "section": "",
     "text": "Method-1: in .bashrc\n.bashrc\nexport OPENAI_API_KEY=\"your_api_key\"\nexport GOOGLE_API_KEY=\"your_api_key\"\nexport ANTHROPIC_API_KEY=\"your_api_key\"\n\n\nexport OPENAI_BASE_URL=\"https://api.openai.com/v1\"\n# export OPENAI_BASE_URL=https://aipipe.org/openai/v1 # if aipipe token used\nexport GOOGLE_API_BASE_URL=\"https://generativelanguage.googleapis.com/v1beta\"\nexport ANTHROPIC_BASE_URL=\"https://api.anthropic.com\"\nMethod-2: in main python file We avoide this method\nimport os\nos.environ[\"GOOGLE_API_KEY\"] = \"paste your api key here\"\nMethod-3: use .env file We always try to use this method\n.env\nGOOGLE_API_KEY=yourapikeyhere\npythonfile\n...\nfrom dotenv import load_dotenv\nload_dotenv()\n...",
     "crumbs": [
       "Projects",
-      "1. MiniProject Chatbot",
-      "Chatbot with History"
+      "Pydantic AI",
+      "Intro To PydanticAI"
     ]
   },
   {
-    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#example1-just-ask-to-ai",
-    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#example1-just-ask-to-ai",
+    "objectID": "Projects/PydanticAi/1_basic.html#example1-just-ask-to-ai",
+    "href": "Projects/PydanticAi/1_basic.html#example1-just-ask-to-ai",
     "title": "Chatbot",
     "section": "",
-    "text": ".env\n# Google Api key from --&gt; https://aistudio.google.com/apikey\nGOOGLE_API_KEY=your-api-key\nmain.py\nfrom pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik.\"\nuser_prompt2 = \"What is my name?\"\n\nresult1 = agent.run_sync(user_prompt1) # return type is RunResult\nresult2 = agent.run_sync(user_prompt2)\n\nprint(result1.output)\nprint(result2.output)\nOutput\n❯ uv run main.py\nNoted, Hritik, for future reference.\nI don't know your name because I don't retain information from past conversations.\n\n\n\nall_messages() and all_messages_json()\nnew_messages() and new_messages_json()\n\n\n[ ModelRequest(…), ModelResponse(…), …]\n\n\nModelRequest( parts = [SystemPromptpart, UserPromptPart] ) ModelReponse( parts = [TextPart] )",
+    "text": ".env\n# Google Api key from --&gt; https://aistudio.google.com/apikey\nGOOGLE_API_KEY=your-api-key\nmain.py\nfrom pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik.\"\nuser_prompt2 = \"What is my name?\"\n\nresult1 = agent.run_sync(user_prompt1) # return type is RunResult\nresult2 = agent.run_sync(user_prompt2)\n\nprint(result1.output)\nprint(result2.output)\nOutput\n❯ uv run main.py\nNoted, Hritik, for future reference.\nI don't know your name because I don't retain information from past conversations.\n\n\n\nall_messages() and all_messages_json()\nnew_messages() and new_messages_json()\n\n[ ModelRequest(...), ModelResponse(...), ...]\n\nModelRequest( parts = [SystemPromptpart, UserPromptPart] )\nModelReponse( parts = [TextPart] )\n\n\n\n\nAgent.run(): asynchornous & returns RunResult where response is wrapped.\nAgent.run_sync(): synchornous & returns RunResult where response is wrapped.",
     "crumbs": [
       "Projects",
-      "1. MiniProject Chatbot",
-      "Chatbot with History"
+      "Pydantic AI",
+      "Intro To PydanticAI"
     ]
   },
   {
-    "objectID": "Projects/MiniProject_1_Chatbot/1_basic.html#example2-just-ask-to-ai-with-history",
-    "href": "Projects/MiniProject_1_Chatbot/1_basic.html#example2-just-ask-to-ai-with-history",
+    "objectID": "Projects/PydanticAi/1_basic.html#example2-just-ask-to-ai-with-history",
+    "href": "Projects/PydanticAi/1_basic.html#example2-just-ask-to-ai-with-history",
     "title": "Chatbot",
     "section": "",
     "text": "from pydantic_ai import Agent\n\nfrom dotenv import load_dotenv\nload_dotenv() # make sure in .env =&gt; GOOGLE_API_KEY=your-api-key\n\nagent = Agent(\n    model=\"gemini-2.5-flash\",\n    system_prompt=\"You answer within one small sentence with a small reason.\"\n)\n\nuser_prompt1 = \"Note, My name is Hritik\"\nuser_prompt2 = \"What did I say my name was?\"\nuser_prompt3 = \"List down all the things that i asked/told you?\"\n\nresult1 = agent.run_sync(user_prompt1)\nresult2 = agent.run_sync(user_prompt2, message_history=result1.new_messages())\nresult3 = agent.run_sync(user_prompt3, message_history=result2.new_messages())\n\n\nprint(result1.output)\nprint(result2.output)\nprint(result3.output)\n\n# print(result1.all_messages()) # [ModelRequest(parts=[systemprompt, userprompt]), ModelResponse(parts=[Textpart]) ]\n# print(result2.all_messages()) # [ModelRequest(parts=[userprompt]), ModelResponse(parts=[Textpart]), ... ]\n# print(result3.all_messages())\n\n# print(result3.new_messages()) # [ModelRequest(parts=[userprompt]), ModelResponse(parts=[Textpart]) ]\nOutput\nOkay, Hritik, I've noted your name to personalize our conversation.\nYour name is Hritik, as you just mentioned it to me.\nBased on our current conversation, here are the things you have asked/told me:\n\n1.  \"What did I say my name was?\"\n2.  \"List down all the things that i asked/told you?\"\n...",
     "crumbs": [
       "Projects",
-      "1. MiniProject Chatbot",
-      "Chatbot with History"
+      "Pydantic AI",
+      "Intro To PydanticAI"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/3_output.html",
+    "href": "Projects/PydanticAi/3_output.html",
+    "title": "Pydantic AI - Output Handling Guide",
+    "section": "",
+    "text": "The Output in Pydantic AI refers to the final value returned from running an agent. This can be plain text, structured data, or the result of a function called with arguments provided by the model.\nagent ==&gt; AgentRunResult or StreamedRunResult\n\n\n\nThe Agent class constructor accepts an output_type argument that supports:\n\nSimple scalar types: str, int, float, bool\nPydantic models: BaseModel subclasses\nDataclasses: Python dataclasses\nTypedDict: Typed dictionaries\nFunctions: Output functions that process model arguments\nLists/Unions: Multiple output types (e.g., [Fruit, Vehicle])\n\nAgent class\n    -&gt; output_type argument -&gt; Pydantic models, dataclasses, typedict, function, list etc.\n        -&gt; agent = Agent('model-id', output_type=str)\n        -&gt; agent = Agent('model-id', output_type=split_into_words)\n        -&gt; agent = Agent('model-id', output_type=[Fruit, Vehicle]) # either fruit or vehicle\n\n\nfrom dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\n\nfrom pydantic_ai import Agent\n\nagent1 = Agent('google-gla:gemini-2.5-flash', output_type=str) # default value is string\nagent2 = Agent('google-gla:gemini-2.5-flash', output_type=int)\n\nresult1 = agent1.run_sync('hi how can i solve 54*10')\nresult2 = agent2.run_sync('hi how can i solve 54*10')\n\nprint(\"===Result1.output===\")\nprint(result1.output)\nprint(\"===Result2.output===\")\nprint(result2.output)\n===Result1.output===\nSolving $54 \\times 10$ is quite straightforward!\n\nHere's how you do it:\n\n1.  **The Rule for Multiplying by 10:** When you multiply a whole number by 10, you simply add one zero to the end of that number.        \n\n2.  **Apply the Rule:**\n    *   Your original number is 54.\n    *   Add a zero to the end of 54.\n    *   You get 540.\n\nSo, $54 \\times 10 = 540$.\n===Result2.output===\n540\n\n\n\nfrom pydantic import BaseModel\nfrom pydantic_ai import Agent\n\nclass CityLocation(BaseModel):\n    city: str\n    country: str\n\nagent = Agent('google-gla:gemini-1.5-flash', output_type=CityLocation)\nresult = agent.run_sync('Where were the olympics held in 2012?')\nprint(result.output)\n# Output: city='London' country='United Kingdom'\n\n\n\nfrom dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\nfrom pydantic import BaseModel\nfrom pydantic_ai import Agent\n\nclass Box(BaseModel):\n    width: int\n    height: int\n    depth: int\n    units: str\n\nagent = Agent(\n    'openai:gpt-5-nano',\n    output_type=[Box, str],  # Either Box or str\n    system_prompt=(\n        \"Extract box dimensions, \"\n        \"if you can't extract all data, ask the user to try again.\"\n    ),\n)\n\nresult = agent.run_sync('The box is 10x20x30')\nprint(result.output, type(result.output))\n# Output: \"Please provide the units...\", &lt;class 'str'&gt;\n\nresult = agent.run_sync('The box is 10x20x30 cm')\nprint(result.output, type(result.output))\n# Output: Box(width=10, height=20, depth=30, units='cm'), &lt;class '__main__.Box'&gt;\n\n\n\n\nOutput functions allow the model to call a function with arguments, and the function’s return value becomes the agent’s output.\n\n\nfrom dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\n\nfrom pydantic_ai import Agent\n\ndef table_of(num: int) -&gt; str:\n    print(\"Number choose is:\", num, type(num))\n    r = ''\n    for i in range(1,10):\n        r += str(num*i) + ' '\n    return r\n\nagent = Agent('google-gla:gemini-2.5-flash', output_type=table_of)\n\nresult = agent.run_sync('hi how can i solve 5*3')\n\nprint(result.output)\n# Number choose is: 15 &lt;class 'int'&gt;\n# 15 30 45 60 75 90 105 120 135 \nfrom dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\n\nfrom pydantic_ai import Agent\n\ndef table_of(num: int) -&gt; str:\n    \"\"\"Despite user input, model/llm will choose number 2\"\"\"\n    print(\"Number choose is:\", num, type(num))\n    r = ''\n    for i in range(1,10):\n        r += str(num*i) + ' '\n    return r\n\nagent = Agent('google-gla:gemini-2.5-flash', output_type=table_of)\n\nresult = agent.run_sync('hi how can i solve 5*3')\n\nprint(result.output)\n# Number choose is: 2 &lt;class 'int'&gt;\n# 2 4 6 8 10 12 14 16 18 \nLearning\n&gt; Docstring are passed and interpereted by llm before responding.\n\n\n\nfrom dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\n\nfrom pydantic import BaseModel, Field\nfrom pydantic_ai import Agent\n\nclass Fruit(BaseModel):\n    name: str = Field(..., min_length=3, max_length=4)\n    country: str = Field(\n        description='Country short code (reversed) e.g., USA -&gt; ASU'\n    )\n\ndef format_fruit(f: Fruit) -&gt; str:\n    return f\"{f.name} is from {f.country}\"\n\nagent = Agent('openai:gpt-5-nano', output_type=format_fruit)\nresult = agent.run_sync('The fruit Salak is commonly known as?')\nprint(result) # AgentRunResult(output='SNA is from NDI')\n\n\n\n\nArguments are validated using Pydantic\nCan optionally take RunContext as first argument\nCan raise ModelRetry to ask the model to try again\nThe result is not passed back to the model\n\n\n\n\n\nAdd validation logic that requires IO or is asynchronous using the @agent.output_validator decorator.\nfrom pydantic import BaseModel\nfrom pydantic_ai import Agent, RunContext, ModelRetry\n\nclass Success(BaseModel):\n    sql_query: str\n\nclass InvalidRequest(BaseModel):\n    error_message: str\n\nagent = Agent('google-gla:gemini-1.5-flash', output_type=Success | InvalidRequest)\n\n@agent.output_validator\nasync def validate_sql(ctx: RunContext, output: Success | InvalidRequest):\n    if isinstance(output, InvalidRequest):\n        return output\n    \n    try:\n        await ctx.deps.execute(f'EXPLAIN {output.sql_query}')\n    except QueryError as e:\n        raise ModelRetry(f'Invalid query: {e}') from e\n    else:\n        return output\n\n\n\nfrom dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\n\nfrom pydantic import BaseModel\nfrom pydantic_ai import Agent, RunContext, ModelRetry\n\nclass ValidAge(BaseModel):\n    age: int\n    name: str\n\nclass InvalidAge(BaseModel):\n    error: str\n\n# Agent with union output type\nagent = Agent(\n    'openai:gpt-5-nano',\n    output_type=ValidAge | InvalidAge, \n    system_prompt='Model Will always Extract person name and age from text, ValidAge is 0 to 200',\n    retries=3\n)\n\n@agent.output_validator\nasync def validate_age(ctx: RunContext[None], output: ValidAge | InvalidAge):\n    # If already an error, return it\n    if isinstance(output, InvalidAge):\n        return output\n    \n    # Check if age is reasonable (between 0 and 120)\n    if (output.age &lt; 0 or output.age &gt; 100) and ctx.retry&lt;2:\n        # Ask model to try again\n        print(f\"retrying{ctx.retry} {output.age}\")\n        raise ModelRetry(\n            f'What if my age is {output.age-1}'\n        )\n    if ctx.retry == 2:\n        raise ModelRetry(\n            f'What if my age is {output.age+100}'\n        )  \n    \n    return output\n\n# Usage\nresult = agent.run_sync('My name is John and I am 25 years old')\nprint(result.output)\nprint()\n# Output: ValidAge(age=25, name='John')\n\nresult2 = agent.run_sync('My name is Alice and I am 105 years old')\nprint(result2.output, type(result2))\nOutput\nage=25 name='John'\n\nretrying0 105\nretrying1 104\nerror='Invalid age: 203. Age must be between 0 and 200.' &lt;class 'pydantic_ai.run.AgentRunResult'&gt;\n\n\n\n\nDefault output type is str\nOutput is wrapped in AgentRunResult or StreamedRunResult\nAccess usage data via result.usage()\nOutput functions can raise ModelRetry for validation errors",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Structered Output & Retry"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/3_output.html#overview",
+    "href": "Projects/PydanticAi/3_output.html#overview",
+    "title": "Pydantic AI - Output Handling Guide",
+    "section": "",
+    "text": "The Output in Pydantic AI refers to the final value returned from running an agent. This can be plain text, structured data, or the result of a function called with arguments provided by the model.\nagent ==&gt; AgentRunResult or StreamedRunResult",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Structered Output & Retry"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/3_output.html#output-types",
+    "href": "Projects/PydanticAi/3_output.html#output-types",
+    "title": "Pydantic AI - Output Handling Guide",
+    "section": "",
+    "text": "The Agent class constructor accepts an output_type argument that supports:\n\nSimple scalar types: str, int, float, bool\nPydantic models: BaseModel subclasses\nDataclasses: Python dataclasses\nTypedDict: Typed dictionaries\nFunctions: Output functions that process model arguments\nLists/Unions: Multiple output types (e.g., [Fruit, Vehicle])\n\nAgent class\n    -&gt; output_type argument -&gt; Pydantic models, dataclasses, typedict, function, list etc.\n        -&gt; agent = Agent('model-id', output_type=str)\n        -&gt; agent = Agent('model-id', output_type=split_into_words)\n        -&gt; agent = Agent('model-id', output_type=[Fruit, Vehicle]) # either fruit or vehicle\n\n\nfrom dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\n\nfrom pydantic_ai import Agent\n\nagent1 = Agent('google-gla:gemini-2.5-flash', output_type=str) # default value is string\nagent2 = Agent('google-gla:gemini-2.5-flash', output_type=int)\n\nresult1 = agent1.run_sync('hi how can i solve 54*10')\nresult2 = agent2.run_sync('hi how can i solve 54*10')\n\nprint(\"===Result1.output===\")\nprint(result1.output)\nprint(\"===Result2.output===\")\nprint(result2.output)\n===Result1.output===\nSolving $54 \\times 10$ is quite straightforward!\n\nHere's how you do it:\n\n1.  **The Rule for Multiplying by 10:** When you multiply a whole number by 10, you simply add one zero to the end of that number.        \n\n2.  **Apply the Rule:**\n    *   Your original number is 54.\n    *   Add a zero to the end of 54.\n    *   You get 540.\n\nSo, $54 \\times 10 = 540$.\n===Result2.output===\n540\n\n\n\nfrom pydantic import BaseModel\nfrom pydantic_ai import Agent\n\nclass CityLocation(BaseModel):\n    city: str\n    country: str\n\nagent = Agent('google-gla:gemini-1.5-flash', output_type=CityLocation)\nresult = agent.run_sync('Where were the olympics held in 2012?')\nprint(result.output)\n# Output: city='London' country='United Kingdom'\n\n\n\nfrom dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\nfrom pydantic import BaseModel\nfrom pydantic_ai import Agent\n\nclass Box(BaseModel):\n    width: int\n    height: int\n    depth: int\n    units: str\n\nagent = Agent(\n    'openai:gpt-5-nano',\n    output_type=[Box, str],  # Either Box or str\n    system_prompt=(\n        \"Extract box dimensions, \"\n        \"if you can't extract all data, ask the user to try again.\"\n    ),\n)\n\nresult = agent.run_sync('The box is 10x20x30')\nprint(result.output, type(result.output))\n# Output: \"Please provide the units...\", &lt;class 'str'&gt;\n\nresult = agent.run_sync('The box is 10x20x30 cm')\nprint(result.output, type(result.output))\n# Output: Box(width=10, height=20, depth=30, units='cm'), &lt;class '__main__.Box'&gt;",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Structered Output & Retry"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/3_output.html#output-functions",
+    "href": "Projects/PydanticAi/3_output.html#output-functions",
+    "title": "Pydantic AI - Output Handling Guide",
+    "section": "",
+    "text": "Output functions allow the model to call a function with arguments, and the function’s return value becomes the agent’s output.\n\n\nfrom dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\n\nfrom pydantic_ai import Agent\n\ndef table_of(num: int) -&gt; str:\n    print(\"Number choose is:\", num, type(num))\n    r = ''\n    for i in range(1,10):\n        r += str(num*i) + ' '\n    return r\n\nagent = Agent('google-gla:gemini-2.5-flash', output_type=table_of)\n\nresult = agent.run_sync('hi how can i solve 5*3')\n\nprint(result.output)\n# Number choose is: 15 &lt;class 'int'&gt;\n# 15 30 45 60 75 90 105 120 135 \nfrom dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\n\nfrom pydantic_ai import Agent\n\ndef table_of(num: int) -&gt; str:\n    \"\"\"Despite user input, model/llm will choose number 2\"\"\"\n    print(\"Number choose is:\", num, type(num))\n    r = ''\n    for i in range(1,10):\n        r += str(num*i) + ' '\n    return r\n\nagent = Agent('google-gla:gemini-2.5-flash', output_type=table_of)\n\nresult = agent.run_sync('hi how can i solve 5*3')\n\nprint(result.output)\n# Number choose is: 2 &lt;class 'int'&gt;\n# 2 4 6 8 10 12 14 16 18 \nLearning\n&gt; Docstring are passed and interpereted by llm before responding.\n\n\n\nfrom dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\n\nfrom pydantic import BaseModel, Field\nfrom pydantic_ai import Agent\n\nclass Fruit(BaseModel):\n    name: str = Field(..., min_length=3, max_length=4)\n    country: str = Field(\n        description='Country short code (reversed) e.g., USA -&gt; ASU'\n    )\n\ndef format_fruit(f: Fruit) -&gt; str:\n    return f\"{f.name} is from {f.country}\"\n\nagent = Agent('openai:gpt-5-nano', output_type=format_fruit)\nresult = agent.run_sync('The fruit Salak is commonly known as?')\nprint(result) # AgentRunResult(output='SNA is from NDI')\n\n\n\n\nArguments are validated using Pydantic\nCan optionally take RunContext as first argument\nCan raise ModelRetry to ask the model to try again\nThe result is not passed back to the model",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Structered Output & Retry"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/3_output.html#output-validators",
+    "href": "Projects/PydanticAi/3_output.html#output-validators",
+    "title": "Pydantic AI - Output Handling Guide",
+    "section": "",
+    "text": "Add validation logic that requires IO or is asynchronous using the @agent.output_validator decorator.\nfrom pydantic import BaseModel\nfrom pydantic_ai import Agent, RunContext, ModelRetry\n\nclass Success(BaseModel):\n    sql_query: str\n\nclass InvalidRequest(BaseModel):\n    error_message: str\n\nagent = Agent('google-gla:gemini-1.5-flash', output_type=Success | InvalidRequest)\n\n@agent.output_validator\nasync def validate_sql(ctx: RunContext, output: Success | InvalidRequest):\n    if isinstance(output, InvalidRequest):\n        return output\n    \n    try:\n        await ctx.deps.execute(f'EXPLAIN {output.sql_query}')\n    except QueryError as e:\n        raise ModelRetry(f'Invalid query: {e}') from e\n    else:\n        return output",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Structered Output & Retry"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/3_output.html#output-validator---a-good-example-to-understand",
+    "href": "Projects/PydanticAi/3_output.html#output-validator---a-good-example-to-understand",
+    "title": "Pydantic AI - Output Handling Guide",
+    "section": "",
+    "text": "from dotenv import load_dotenv\nload_dotenv(dotenv_path='.env')\n\nfrom pydantic import BaseModel\nfrom pydantic_ai import Agent, RunContext, ModelRetry\n\nclass ValidAge(BaseModel):\n    age: int\n    name: str\n\nclass InvalidAge(BaseModel):\n    error: str\n\n# Agent with union output type\nagent = Agent(\n    'openai:gpt-5-nano',\n    output_type=ValidAge | InvalidAge, \n    system_prompt='Model Will always Extract person name and age from text, ValidAge is 0 to 200',\n    retries=3\n)\n\n@agent.output_validator\nasync def validate_age(ctx: RunContext[None], output: ValidAge | InvalidAge):\n    # If already an error, return it\n    if isinstance(output, InvalidAge):\n        return output\n    \n    # Check if age is reasonable (between 0 and 120)\n    if (output.age &lt; 0 or output.age &gt; 100) and ctx.retry&lt;2:\n        # Ask model to try again\n        print(f\"retrying{ctx.retry} {output.age}\")\n        raise ModelRetry(\n            f'What if my age is {output.age-1}'\n        )\n    if ctx.retry == 2:\n        raise ModelRetry(\n            f'What if my age is {output.age+100}'\n        )  \n    \n    return output\n\n# Usage\nresult = agent.run_sync('My name is John and I am 25 years old')\nprint(result.output)\nprint()\n# Output: ValidAge(age=25, name='John')\n\nresult2 = agent.run_sync('My name is Alice and I am 105 years old')\nprint(result2.output, type(result2))\nOutput\nage=25 name='John'\n\nretrying0 105\nretrying1 104\nerror='Invalid age: 203. Age must be between 0 and 200.' &lt;class 'pydantic_ai.run.AgentRunResult'&gt;",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Structered Output & Retry"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/3_output.html#key-points",
+    "href": "Projects/PydanticAi/3_output.html#key-points",
+    "title": "Pydantic AI - Output Handling Guide",
+    "section": "",
+    "text": "Default output type is str\nOutput is wrapped in AgentRunResult or StreamedRunResult\nAccess usage data via result.usage()\nOutput functions can raise ModelRetry for validation errors",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Structered Output & Retry"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/5_websearch.html",
+    "href": "Projects/PydanticAi/5_websearch.html",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Lets the agent search the internet for up-to-date information.\nSupported providers: OpenAI Responses, Anthropic, Gemini, Groq.\n\n\nfrom dotenv import load_dotenv\nload_dotenv()\nfrom pydantic_ai import Agent, WebSearchTool\n\n# Create agent with web search capability\nagent = Agent(\n    'gemini-2.5-flash', \n    builtin_tools=[WebSearchTool()]\n)\n\nresult = agent.run_sync('What is the current price of gold in delhi, india in INR for 24carat 10gm gold? Tell me source url also')\nprint(result.output)\n\n'''\nAs of September 30, 2025, the current price of 24-carat, 10-gram gold in Delhi, India, is ₹1,16,583.00.\n\nYou can find this information on the following source:\n*   Mint: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMZG4FW-QdePISRX-wVfa1-ou0EU_khN_9eesaTkxVNyPhMO-35cKBD8-mA7y9cTcUn8WqJSBEwSlm2pf8HXO_FeXp_c53p6xiJcR-UvEyXR8AKoq0JeASDokno9BrssS5-e0X\n'''\nWhat happens:\n\nAgent receives your question\nRealizes it needs current data\nUses WebSearchTool to search the web\nReturns answer with latest information",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Web Search"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/5_websearch.html#websearchtool",
+    "href": "Projects/PydanticAi/5_websearch.html#websearchtool",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Lets the agent search the internet for up-to-date information.\nSupported providers: OpenAI Responses, Anthropic, Gemini, Groq.\n\n\nfrom dotenv import load_dotenv\nload_dotenv()\nfrom pydantic_ai import Agent, WebSearchTool\n\n# Create agent with web search capability\nagent = Agent(\n    'gemini-2.5-flash', \n    builtin_tools=[WebSearchTool()]\n)\n\nresult = agent.run_sync('What is the current price of gold in delhi, india in INR for 24carat 10gm gold? Tell me source url also')\nprint(result.output)\n\n'''\nAs of September 30, 2025, the current price of 24-carat, 10-gram gold in Delhi, India, is ₹1,16,583.00.\n\nYou can find this information on the following source:\n*   Mint: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMZG4FW-QdePISRX-wVfa1-ou0EU_khN_9eesaTkxVNyPhMO-35cKBD8-mA7y9cTcUn8WqJSBEwSlm2pf8HXO_FeXp_c53p6xiJcR-UvEyXR8AKoq0JeASDokno9BrssS5-e0X\n'''\nWhat happens:\n\nAgent receives your question\nRealizes it needs current data\nUses WebSearchTool to search the web\nReturns answer with latest information",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Web Search"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/7_dep.html",
+    "href": "Projects/PydanticAi/7_dep.html",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Dependencies are external resources, data, or services that your AI agent needs to access during execution.\n\nCan be any Python type: databases, API clients, configuration, user context, etc.\nPassed to agents via dependency injection pattern\nAccessible in: system prompts, instructions, tools, and output validators",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Dependency"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/7_dep.html#what-are-dependencies",
+    "href": "Projects/PydanticAi/7_dep.html#what-are-dependencies",
+    "title": "TDS by HRM",
+    "section": "",
+    "text": "Dependencies are external resources, data, or services that your AI agent needs to access during execution.\n\nCan be any Python type: databases, API clients, configuration, user context, etc.\nPassed to agents via dependency injection pattern\nAccessible in: system prompts, instructions, tools, and output validators",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Dependency"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/7_dep.html#where-dependencies-are-used",
+    "href": "Projects/PydanticAi/7_dep.html#where-dependencies-are-used",
+    "title": "TDS by HRM",
+    "section": "Where Dependencies Are Used",
+    "text": "Where Dependencies Are Used\n\n\n\n\n\n\n\n\nComponent\nAccess Via\nUse Case\n\n\n\n\nInstructions\n@agent.instructions decorator with RunContext\nDynamic, per-request context (user info, session data)\n\n\nSystem Prompts\n@agent.system_prompt decorator with RunContext\nRuntime configuration (API keys, settings)\n\n\nTools\n@agent.tool decorator with RunContext\nExternal data fetching (DB queries, API calls)\n\n\nOutput Validators\n@agent.output_validator with RunContext\nValidation against external rules",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Dependency"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/7_dep.html#basic-syntax---quick-example",
+    "href": "Projects/PydanticAi/7_dep.html#basic-syntax---quick-example",
+    "title": "TDS by HRM",
+    "section": "Basic Syntax - Quick Example",
+    "text": "Basic Syntax - Quick Example\nfrom dataclasses import dataclass\nfrom pydantic_ai import Agent, RunContext\n\n# 1. Define dependency container\n@dataclass\nclass MyDeps:\n    api_key: str\n    user_name: str\n\n# 2. Create agent with deps_type (type, not instance!)\nagent = Agent('openai:gpt-4o', deps_type=MyDeps)\n\n# 3. Access deps via RunContext in instructions/tools\n@agent.instructions\ndef add_context(ctx: RunContext[MyDeps]) -&gt; str:\n    # Access via ctx.deps\n    return f\"User is {ctx.deps.user_name}, API key: {ctx.deps.api_key}\"\n\n@agent.tool\ndef get_data(ctx: RunContext[MyDeps], query: str) -&gt; str:\n    # Use deps in tools\n    return f\"Fetching {query} for {ctx.deps.user_name}\"\n\n# 4. Run with actual dependency instance\ndeps = MyDeps(api_key='secret123', user_name='Alice')\nresult = agent.run_sync('Help me', deps=deps)\nKey Points:\n\ndeps_type=MyDeps in agent creation (just the type)\nctx: RunContext[MyDeps] in functions (for type safety)\nctx.deps.attribute to access dependency values\ndeps=instance when running the agent",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Dependency"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/7_dep.html#instructions-vs-system-prompt-with-dependencies",
+    "href": "Projects/PydanticAi/7_dep.html#instructions-vs-system-prompt-with-dependencies",
+    "title": "TDS by HRM",
+    "section": "Instructions vs System Prompt with Dependencies",
+    "text": "Instructions vs System Prompt with Dependencies\nUse with instructions (Recommended):\n\nWhen each request has different context (different users, sessions)\nDynamic dependencies that change per run\nMulti-agent systems with varying contexts\n\nUse with system_prompt:\n\nWhen context is consistent across conversation\nSingle agent maintaining state across turns",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Dependency"
+    ]
+  },
+  {
+    "objectID": "Projects/PydanticAi/7_dep.html#example-1-customer-support-with-dynamic-context-using-instructions",
+    "href": "Projects/PydanticAi/7_dep.html#example-1-customer-support-with-dynamic-context-using-instructions",
+    "title": "TDS by HRM",
+    "section": "Example 1: Customer Support with Dynamic Context (Using instructions)",
+    "text": "Example 1: Customer Support with Dynamic Context (Using instructions)\n\nScenario\nBank support agent that needs customer-specific information for each request.\nfrom dataclasses import dataclass\nfrom pydantic import BaseModel\nfrom pydantic_ai import Agent, RunContext\n\n# 1. Define Dependencies Container\n@dataclass\nclass SupportDependencies:\n    customer_id: int\n    db: DatabaseConn  # Database connection\n\n# 2. Define Output Structure\nclass SupportOutput(BaseModel):\n    support_advice: str\n    block_card: bool\n    risk: int\n\n# 3. Create Agent with Dependencies Type\nsupport_agent = Agent(\n    'openai:gpt-4o',\n    deps_type=SupportDependencies,  # ← Specify dependency type\n    output_type=SupportOutput,\n    instructions=\"You are a support agent. Reply using the customer's name.\"\n)\n\n# 4. Dynamic Instructions Using Dependencies\n@support_agent.instructions\nasync def add_customer_name(ctx: RunContext[SupportDependencies]) -&gt; str:\n    # Access database through dependencies\n    customer_name = await ctx.deps.db.customer_name(id=ctx.deps.customer_id)\n    return f\"The customer's name is {customer_name!r}\"\n\n# 5. Tool Using Dependencies\n@support_agent.tool\nasync def customer_balance(\n    ctx: RunContext[SupportDependencies], \n    include_pending: bool\n) -&gt; str:\n    \"\"\"Returns the customer's current account balance.\"\"\"\n    balance = await ctx.deps.db.customer_balance(\n        id=ctx.deps.customer_id,\n        include_pending=include_pending\n    )\n    return f'${balance:.2f}'\n\n# 6. Run Agent with Specific Dependencies\ndeps = SupportDependencies(customer_id=123, db=DatabaseConn())\nresult = support_agent.run_sync('What is my balance?', deps=deps)\nprint(result.output)\n# Output: support_advice='Hello John, your balance is $123.45.' \n#         block_card=False risk=1\n\n# Different customer - fresh dependencies\ndeps2 = SupportDependencies(customer_id=456, db=DatabaseConn())\nresult2 = support_agent.run_sync('What is my balance?', deps=deps2)\n# Gets Alice's information - clean context switch\nWhy This Works:\n\nEach customer gets fresh dependencies with their own context\nDatabase connection is shared but customer_id changes\nInstructions dynamically include the correct customer name\nTools access the right customer’s data\n\n\nDependencies enable agents to access external resources in a type-safe, testable way. Use them with instructions for dynamic, per-request context (like customer info), or with system_prompt for consistent, conversation-wide context (like API credentials).",
+    "crumbs": [
+      "Projects",
+      "Pydantic AI",
+      "Dependency"
     ]
   },
   {

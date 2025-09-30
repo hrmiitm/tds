@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="HRM">
-<meta name="dcterms.date" content="2025-08-18">
 
-<title>TDS - Tools for Data Science – TDS by HRM</title>
+<title>dep – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,27 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-12b3df05fff64bd15c9bad32e15a2ea0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-12b3df05fff64bd15c9bad32e15a2ea0.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-12b3df05fff64bd15c9bad32e15a2ea0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e66dee9a4a7c3ce05efbcfbe8d0c7778.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-3f8641fed6fa226b8fa49b1456b2fc62.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-e66dee9a4a7c3ce05efbcfbe8d0c7778.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-182a450a2903da60728fbda61ec262e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-da5994bbb2b4802eec0289437108d8be.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-182a450a2903da60728fbda61ec262e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -61,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -233,9 +266,9 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">TDS by HRM</span>
     </a>
   </div>
@@ -251,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">About The Course</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Projects</li><li class="breadcrumb-item"><a href="../../Projects/PydanticAi/1_basic.html">Pydantic AI</a></li><li class="breadcrumb-item"><a href="../../Projects/PydanticAi/7_dep.html">Dependency</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -262,20 +295,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
+      <a href="../../index.html" class="sidebar-logo-link">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About The Course</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./W1/w1.html" class="sidebar-item-text sidebar-link">
+            <a href="../../W1/w1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week1</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -293,25 +326,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Computer Boot Process</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">WSL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">VM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/1_window_to_linux/w1_4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/1_window_to_linux/w1_4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dual Boot</span></a>
   </div>
 </li>
@@ -328,25 +361,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/1_git.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/1_git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GIT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/2_before_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/2_before_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Before Github</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/3_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/3_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Github</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/2_git_github/4_opensource_contributions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/2_git_github/4_opensource_contributions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contribute To Open Source</span></a>
   </div>
 </li>
@@ -363,19 +396,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/1_uv.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/1_uv.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">UV</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/2_conda.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/2_conda.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Miniconda</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/3_python_tools/3_pipx_uvx.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/3_python_tools/3_pipx_uvx.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LLM,UVX,PIPX</span></a>
   </div>
 </li>
@@ -392,13 +425,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/4_bash/1_bashrc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/4_bash/1_bashrc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Environment Variable</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W1/4_bash/2_bash_script.html" class="sidebar-item-text sidebar-link">
+  <a href="../../W1/4_bash/2_bash_script.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bash Script</span></a>
   </div>
 </li>
@@ -417,31 +450,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Podman/1_podman.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Podman/1_podman.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Image to Containers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Podman/2_MiniProject1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Podman/2_MiniProject1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project-1 <strong>OllamaTalkPod</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Podman/3_MiniProject2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Podman/3_MiniProject2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project-2 <strong>JupyLab</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Podman/4_MiniProject3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Podman/4_MiniProject3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project-3 <strong>FormaliAI</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Podman/5_MiniProject4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Podman/5_MiniProject4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project-4 <strong>FormaliAI Dockerfile</strong></span></a>
   </div>
 </li>
@@ -449,61 +482,61 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Projects</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
  <span class="menu-text">Pydantic AI</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Projects/PydanticAi/1_basic.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Projects/PydanticAi/1_basic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intro To PydanticAI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Projects/PydanticAi/2_sys_ins.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Projects/PydanticAi/2_sys_ins.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Role To AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Projects/PydanticAi/3_output.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Projects/PydanticAi/3_output.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Structered Output &amp; Retry</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Projects/PydanticAi/4_tool_calling.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Projects/PydanticAi/4_tool_calling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tool Calling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Projects/PydanticAi/5_websearch.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Projects/PydanticAi/5_websearch.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Web Search</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Projects/PydanticAi/6_media.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Projects/PydanticAi/6_media.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Media</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Projects/PydanticAi/7_dep.html" class="sidebar-item-text sidebar-link">
+  <a href="../../Projects/PydanticAi/7_dep.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Dependency</span></a>
   </div>
 </li>
@@ -516,49 +549,204 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-are-dependencies" id="toc-what-are-dependencies" class="nav-link active" data-scroll-target="#what-are-dependencies">What Are Dependencies?</a></li>
+  <li><a href="#where-dependencies-are-used" id="toc-where-dependencies-are-used" class="nav-link" data-scroll-target="#where-dependencies-are-used">Where Dependencies Are Used</a></li>
+  <li><a href="#basic-syntax---quick-example" id="toc-basic-syntax---quick-example" class="nav-link" data-scroll-target="#basic-syntax---quick-example">Basic Syntax - Quick Example</a></li>
+  <li><a href="#instructions-vs-system-prompt-with-dependencies" id="toc-instructions-vs-system-prompt-with-dependencies" class="nav-link" data-scroll-target="#instructions-vs-system-prompt-with-dependencies">Instructions vs System Prompt with Dependencies</a></li>
+  <li><a href="#example-1-customer-support-with-dynamic-context-using-instructions" id="toc-example-1-customer-support-with-dynamic-context-using-instructions" class="nav-link" data-scroll-target="#example-1-customer-support-with-dynamic-context-using-instructions">Example 1: Customer Support with Dynamic Context (Using <code>instructions</code>)</a>
+  <ul class="collapse">
+  <li><a href="#scenario" id="toc-scenario" class="nav-link" data-scroll-target="#scenario">Scenario</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">TDS - Tools for Data Science</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Projects</li><li class="breadcrumb-item"><a href="../../Projects/PydanticAi/1_basic.html">Pydantic AI</a></li><li class="breadcrumb-item"><a href="../../Projects/PydanticAi/7_dep.html">Dependency</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>HRM </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 18, 2025</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
 
 
-</header>
+<section id="what-are-dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-dependencies">What Are Dependencies?</h2>
+<p><strong>Dependencies</strong> are external resources, data, or services that your AI agent needs to access during execution.</p>
+<ul>
+<li>Can be <strong>any Python type</strong>: databases, API clients, configuration, user context, etc.</li>
+<li>Passed to agents via <strong>dependency injection</strong> pattern</li>
+<li>Accessible in: system prompts, instructions, tools, and output validators</li>
+</ul>
+<hr>
+</section>
+<section id="where-dependencies-are-used" class="level2">
+<h2 class="anchored" data-anchor-id="where-dependencies-are-used">Where Dependencies Are Used</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Access Via</th>
+<th style="text-align: left;">Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Instructions</strong></td>
+<td style="text-align: left;"><code>@agent.instructions</code> decorator with <code>RunContext</code></td>
+<td style="text-align: left;">Dynamic, per-request context (user info, session data)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>System Prompts</strong></td>
+<td style="text-align: left;"><code>@agent.system_prompt</code> decorator with <code>RunContext</code></td>
+<td style="text-align: left;">Runtime configuration (API keys, settings)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Tools</strong></td>
+<td style="text-align: left;"><code>@agent.tool</code> decorator with <code>RunContext</code></td>
+<td style="text-align: left;">External data fetching (DB queries, API calls)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Output Validators</strong></td>
+<td style="text-align: left;"><code>@agent.output_validator</code> with <code>RunContext</code></td>
+<td style="text-align: left;">Validation against external rules</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="basic-syntax---quick-example" class="level2">
+<h2 class="anchored" data-anchor-id="basic-syntax---quick-example">Basic Syntax - Quick Example</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic_ai <span class="im">import</span> Agent, RunContext</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Define dependency container</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyDeps:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    api_key: <span class="bu">str</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    user_name: <span class="bu">str</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Create agent with deps_type (type, not instance!)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>agent <span class="op">=</span> Agent(<span class="st">'openai:gpt-4o'</span>, deps_type<span class="op">=</span>MyDeps)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Access deps via RunContext in instructions/tools</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">@agent.instructions</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_context(ctx: RunContext[MyDeps]) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Access via ctx.deps</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"User is </span><span class="sc">{</span>ctx<span class="sc">.</span>deps<span class="sc">.</span>user_name<span class="sc">}</span><span class="ss">, API key: </span><span class="sc">{</span>ctx<span class="sc">.</span>deps<span class="sc">.</span>api_key<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">@agent.tool</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_data(ctx: RunContext[MyDeps], query: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use deps in tools</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"Fetching </span><span class="sc">{</span>query<span class="sc">}</span><span class="ss"> for </span><span class="sc">{</span>ctx<span class="sc">.</span>deps<span class="sc">.</span>user_name<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Run with actual dependency instance</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>deps <span class="op">=</span> MyDeps(api_key<span class="op">=</span><span class="st">'secret123'</span>, user_name<span class="op">=</span><span class="st">'Alice'</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> agent.run_sync(<span class="st">'Help me'</span>, deps<span class="op">=</span>deps)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Key Points:</strong></p>
+<ul>
+<li><code>deps_type=MyDeps</code> in agent creation (just the type)</li>
+<li><code>ctx: RunContext[MyDeps]</code> in functions (for type safety)</li>
+<li><code>ctx.deps.attribute</code> to access dependency values</li>
+<li><code>deps=instance</code> when running the agent</li>
+</ul>
+<hr>
+</section>
+<section id="instructions-vs-system-prompt-with-dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="instructions-vs-system-prompt-with-dependencies">Instructions vs System Prompt with Dependencies</h2>
+<p><strong>Use with <code>instructions</code> (Recommended):</strong></p>
+<ul>
+<li>When each request has different context (different users, sessions)</li>
+<li>Dynamic dependencies that change per run</li>
+<li>Multi-agent systems with varying contexts</li>
+</ul>
+<p><strong>Use with <code>system_prompt</code>:</strong></p>
+<ul>
+<li>When context is consistent across conversation</li>
+<li>Single agent maintaining state across turns</li>
+</ul>
+<hr>
+</section>
+<section id="example-1-customer-support-with-dynamic-context-using-instructions" class="level2">
+<h2 class="anchored" data-anchor-id="example-1-customer-support-with-dynamic-context-using-instructions">Example 1: Customer Support with Dynamic Context (Using <code>instructions</code>)</h2>
+<section id="scenario" class="level3">
+<h3 class="anchored" data-anchor-id="scenario">Scenario</h3>
+<p>Bank support agent that needs customer-specific information for each request.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic <span class="im">import</span> BaseModel</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic_ai <span class="im">import</span> Agent, RunContext</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Define Dependencies Container</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SupportDependencies:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    customer_id: <span class="bu">int</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    db: DatabaseConn  <span class="co"># Database connection</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Define Output Structure</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SupportOutput(BaseModel):</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    support_advice: <span class="bu">str</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    block_card: <span class="bu">bool</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    risk: <span class="bu">int</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Create Agent with Dependencies Type</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>support_agent <span class="op">=</span> Agent(</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">'openai:gpt-4o'</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    deps_type<span class="op">=</span>SupportDependencies,  <span class="co"># ← Specify dependency type</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    output_type<span class="op">=</span>SupportOutput,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    instructions<span class="op">=</span><span class="st">"You are a support agent. Reply using the customer's name."</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Dynamic Instructions Using Dependencies</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="at">@support_agent.instructions</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> add_customer_name(ctx: RunContext[SupportDependencies]) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Access database through dependencies</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    customer_name <span class="op">=</span> <span class="cf">await</span> ctx.deps.db.customer_name(<span class="bu">id</span><span class="op">=</span>ctx.deps.customer_id)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"The customer's name is </span><span class="sc">{</span>customer_name<span class="sc">!r}</span><span class="ss">"</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Tool Using Dependencies</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="at">@support_agent.tool</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> customer_balance(</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    ctx: RunContext[SupportDependencies], </span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    include_pending: <span class="bu">bool</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Returns the customer's current account balance."""</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    balance <span class="op">=</span> <span class="cf">await</span> ctx.deps.db.customer_balance(</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        <span class="bu">id</span><span class="op">=</span>ctx.deps.customer_id,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        include_pending<span class="op">=</span>include_pending</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f'$</span><span class="sc">{</span>balance<span class="sc">:.2f}</span><span class="ss">'</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Run Agent with Specific Dependencies</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>deps <span class="op">=</span> SupportDependencies(customer_id<span class="op">=</span><span class="dv">123</span>, db<span class="op">=</span>DatabaseConn())</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> support_agent.run_sync(<span class="st">'What is my balance?'</span>, deps<span class="op">=</span>deps)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result.output)</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: support_advice='Hello John, your balance is $123.45.' </span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="co">#         block_card=False risk=1</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Different customer - fresh dependencies</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>deps2 <span class="op">=</span> SupportDependencies(customer_id<span class="op">=</span><span class="dv">456</span>, db<span class="op">=</span>DatabaseConn())</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>result2 <span class="op">=</span> support_agent.run_sync(<span class="st">'What is my balance?'</span>, deps<span class="op">=</span>deps2)</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Gets Alice's information - clean context switch</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Why This Works:</strong></p>
+<ul>
+<li>Each customer gets <strong>fresh dependencies</strong> with their own context</li>
+<li>Database connection is shared but customer_id changes</li>
+<li>Instructions dynamically include the correct customer name</li>
+<li>Tools access the right customer’s data</li>
+</ul>
+<hr>
+<p><strong>Dependencies</strong> enable agents to access external resources in a type-safe, testable way. Use them with <code>instructions</code> for dynamic, per-request context (like customer info), or with <code>system_prompt</code> for consistent, conversation-wide context (like API credentials).</p>
 
 
-<!-- {{< include tds_syllabus.md >}} -->
-<!--email_off-->
-<p>22f3002460@ds.study.iitm.ac.in<!--/email_off--></p>
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -979,5 +1167,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

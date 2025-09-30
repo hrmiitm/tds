@@ -121,12 +121,17 @@ I don't know your name because I don't retain information from past conversation
 - `all_messages()` and `all_messages_json()`
 - `new_messages()` and `new_messages_json()`
 
-> [ ModelRequest(...), ModelResponse(...), ...]
+```text
+[ ModelRequest(...), ModelResponse(...), ...]
 
-> ModelRequest( parts = [SystemPromptpart, UserPromptPart] )
-> ModelReponse( parts = [TextPart] )
+ModelRequest( parts = [SystemPromptpart, UserPromptPart] )
+ModelReponse( parts = [TextPart] )
+```
 
-### `Agent.run` vs `Agent.run_sync` vs `Agent.run_stream`
+### `Agent.run` vs `Agent.run_sync`
+
+1. **Agent.run()**: asynchornous & returns `RunResult` where response is wrapped.
+2. **Agent.run_sync()**: synchornous & returns `RunResult` where response is wrapped.
 
 ## Example:2 Just ask to ai with history
 
