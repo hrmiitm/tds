@@ -71,7 +71,7 @@ website:
             href: ./Podman/4_MiniProject3.qmd
           - text: "Project-4 **FormaliAI Dockerfile**"
             href: ./Podman/5_MiniProject4.qmd
-      - section: "Projects"
+      - section: "Pydantic AI"
         contents:
           - text: "Intro To PydanticAI"
             href: "./PydanticAi/1_basic.qmd"
