@@ -73,22 +73,20 @@ website:
             href: ./Podman/5_MiniProject4.qmd
       - section: "Projects"
         contents:
-          - section: "Pydantic AI"
-            contents:
-              - text: "Intro To PydanticAI"
-                href: "./Projects/PydanticAi/1_basic.qmd"
-              - text: "Role To AI"
-                href: "./Projects/PydanticAi/2_sys_ins.qmd"
-              - text: "Structered Output & Retry"
-                href: "./Projects/PydanticAi/3_output.qmd"
-              - text: "Tool Calling"
-                href: "./Projects/PydanticAi/4_tool_calling.qmd"
-              - text: "Web Search"
-                href: "./Projects/PydanticAi/5_websearch.qmd"
-              - text: "Media"
-                href: "./Projects/PydanticAi/6_media.qmd"
-              - text: "Dependency"
-                href: "./Projects/PydanticAi/7_dep.qmd"
+          - text: "Intro To PydanticAI"
+            href: "./PydanticAi/1_basic.qmd"
+          - text: "Role To AI"
+            href: "./PydanticAi/2_sys_ins.qmd"
+          - text: "Structered Output & Retry"
+            href: "./PydanticAi/3_output.qmd"
+          - text: "Tool Calling"
+            href: "./PydanticAi/4_tool_calling.qmd"
+          - text: "Web Search"
+            href: "./PydanticAi/5_websearch.qmd"
+          - text: "Media"
+            href: "./PydanticAi/6_media.qmd"
+          - text: "Dependency"
+            href: "./PydanticAi/7_dep.qmd"
 
 format:
   html:
