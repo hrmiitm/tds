@@ -177,3 +177,26 @@ Based on our current conversation, here are the things you have asked/told me:
 2.  "List down all the things that i asked/told you?"
 ...
 ```
+
+
+
+# Python env setup
+
+```bash
+uv venv # first time venv creation 
+source .venv/bin/activate
+
+uv pip install "fastapi[standard]" pydantic-ai
+
+uv pip freeze > requirements.txt
+```
+
+```text
+https://<username>-<spacename>.hf.space/
+```
+
+```python
+import os
+
+print(os.getenv('OPENAI_BASE_URL'))
+```
