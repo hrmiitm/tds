@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8">
+<meta charset="utf-8"># Python env setup
+
+```bash
+uv venv # first time venv creation 
+source .venv/bin/activate
+
+uv pip install "fastapi[standard]" pydantic-ai
+
+uv pip freeze > requirements.txt
+```
+
+```text
+https://<username>-<spacename>.hf.space/
+```
+
+```python
+import os
+
+print(os.getenv('OPENAI_BASE_URL'))
+```
 <meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
@@ -732,6 +751,28 @@ Pydantic AI is useful because it bridges the gap between messy AI outputs and st
 
 
 </section>
+<textarea>
+  # Python env setup
+
+```bash
+uv venv # first time venv creation 
+source .venv/bin/activate
+
+uv pip install "fastapi[standard]" pydantic-ai
+
+uv pip freeze > requirements.txt
+```
+
+```text
+https://<username>-<spacename>.hf.space/
+```
+
+```python
+import os
+
+print(os.getenv('OPENAI_BASE_URL'))
+```
+</textarea>
 </section>
 
 </main> <!-- /main -->
