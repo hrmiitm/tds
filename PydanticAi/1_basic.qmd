@@ -180,13 +180,15 @@ Based on our current conversation, here are the things you have asked/told me:
 
 
 
-# Python env setup
+# Python venv setup (virtual environment)
 
 ```bash
 uv venv # first time venv creation 
 source .venv/bin/activate
 
 uv pip install "fastapi[standard]" pydantic-ai
+# or
+uv pip install -r requirements.txt
 
 uv pip freeze > requirements.txt
 ```
@@ -195,6 +197,7 @@ uv pip freeze > requirements.txt
 https://<username>-<spacename>.hf.space/
 ```
 
+## Check for environment/secret variables
 ```python
 import os
 

@@ -71,7 +71,15 @@ website:
             href: ./Podman/4_MiniProject3.qmd
           - text: "Project-4 **FormaliAI Dockerfile**"
             href: ./Podman/5_MiniProject4.qmd
-      - section: "Pydantic AI"
+      - section: "Pydantic"
+        contents:
+          - text: "Pydantic Need"
+            href: "./Pydantic/1_basic.qmd"
+          - text: "BaseModel"
+            href: "./Pydantic/2_data_validation.qmd"
+          - text: "Advance Data Validation"
+            href: "./Pydantic/3_data_validation.qmd"
+      - section: "Pydantic-AI"
         contents:
           - text: "Intro To PydanticAI"
             href: "./PydanticAi/1_basic.qmd"

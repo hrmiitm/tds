@@ -1,27 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<meta charset="utf-8"># Python env setup
-
-```bash
-uv venv # first time venv creation 
-source .venv/bin/activate
-
-uv pip install "fastapi[standard]" pydantic-ai
-
-uv pip freeze > requirements.txt
-```
-
-```text
-https://<username>-<spacename>.hf.space/
-```
-
-```python
-import os
-
-print(os.getenv('OPENAI_BASE_URL'))
-```
-<meta name="generator" content="quarto-1.8.24">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -88,14 +69,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a6e161b2431e1f94a14e0f5d32135a3c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4a17e18fdf56099d4f6da1e105f33a53.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a6e161b2431e1f94a14e0f5d32135a3c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-969ddfa49e00a70eb3423444dbc81f6c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b504e716672d4b680b4b68159ee882df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-3ba993a9e6c23a9a9e00b17dbe340337.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-b504e716672d4b680b4b68159ee882df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-53f4390f6eeffa87fc1f1a8fe1125931.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-6a2c24e76b7edc9b034b38bdb5ed2a4c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-53f4390f6eeffa87fc1f1a8fe1125931.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -304,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PydanticAi/1_basic.html">Pydantic AI</a></li><li class="breadcrumb-item"><a href="../PydanticAi/1_basic.html">Intro To PydanticAI</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PydanticAi/1_basic.html">Pydantic-AI</a></li><li class="breadcrumb-item"><a href="../PydanticAi/1_basic.html">Intro To PydanticAI</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -502,13 +483,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Pydantic AI</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Pydantic</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pydantic/1_basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pydantic Need</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pydantic/2_data_validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BaseModel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Pydantic/3_data_validation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advance Data Validation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pydantic-AI</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PydanticAi/1_basic.html" class="sidebar-item-text sidebar-link active">
@@ -577,6 +587,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#example2-just-ask-to-ai-with-history" id="toc-example2-just-ask-to-ai-with-history" class="nav-link" data-scroll-target="#example2-just-ask-to-ai-with-history">Example:2 Just ask to ai with history</a></li>
   </ul></li>
+  <li><a href="#python-venv-setup-virtual-environment" id="toc-python-venv-setup-virtual-environment" class="nav-link" data-scroll-target="#python-venv-setup-virtual-environment">Python venv setup (virtual environment)</a>
+  <ul class="collapse">
+  <li><a href="#check-for-environmentsecret-variables" id="toc-check-for-environmentsecret-variables" class="nav-link" data-scroll-target="#check-for-environmentsecret-variables">Check for environment/secret variables</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -584,7 +598,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PydanticAi/1_basic.html">Pydantic AI</a></li><li class="breadcrumb-item"><a href="../PydanticAi/1_basic.html">Intro To PydanticAI</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PydanticAi/1_basic.html">Pydantic-AI</a></li><li class="breadcrumb-item"><a href="../PydanticAi/1_basic.html">Intro To PydanticAI</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Chatbot</h1>
 </div>
@@ -748,31 +762,27 @@ Pydantic AI is useful because it bridges the gap between messy AI outputs and st
 <span id="cb10-5"><a href="#cb10-5"></a>1.  "What did I say my name was?"</span>
 <span id="cb10-6"><a href="#cb10-6"></a>2.  "List down all the things that i asked/told you?"</span>
 <span id="cb10-7"><a href="#cb10-7"></a>...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="python-venv-setup-virtual-environment" class="level1">
+<h1>Python venv setup (virtual environment)</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="ex">uv</span> venv <span class="co"># first time venv creation </span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="bu">source</span> .venv/bin/activate</span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="ex">uv</span> pip install <span class="st">"fastapi[standard]"</span> pydantic-ai</span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="co"># or</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="ex">uv</span> pip install <span class="at">-r</span> requirements.txt</span>
+<span id="cb11-7"><a href="#cb11-7"></a></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="ex">uv</span> pip freeze <span class="op">&gt;</span> requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href="#cb12-1"></a>https://&lt;username&gt;-&lt;spacename&gt;.hf.space/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="check-for-environmentsecret-variables" class="level2">
+<h2 class="anchored" data-anchor-id="check-for-environmentsecret-variables">Check for environment/secret variables</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="im">import</span> os</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="bu">print</span>(os.getenv(<span class="st">'OPENAI_BASE_URL'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
-<textarea>
-  # Python env setup
-
-```bash
-uv venv # first time venv creation 
-source .venv/bin/activate
-
-uv pip install "fastapi[standard]" pydantic-ai
-
-uv pip freeze > requirements.txt
-```
-
-```text
-https://<username>-<spacename>.hf.space/
-```
-
-```python
-import os
-
-print(os.getenv('OPENAI_BASE_URL'))
-```
-</textarea>
 </section>
 
 </main> <!-- /main -->
