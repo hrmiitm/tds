@@ -10,6 +10,21 @@ format:
 
 Windows Subsystem for Linux (WSL) allows you to run a Linux environment directly on Windows without the need for a traditional virtual machine or dual-boot setup.
 
+```text
+BIOS --> Turn On Virtulisation
+Search --> Turn Windows features on or off
+  Virtual Machine Platform, 
+  Windows Hypervisor Platform, 
+  Windows Subsytem for Linux
+	
+wsl --list --online           list the available linux os
+wsl --install -d <DistroName> insttall the particular linux os
+	
+wsl --list --verbose
+wsl --unregister <DistroName>
+```
+
+
 ---
 
 ## Pre-setup
