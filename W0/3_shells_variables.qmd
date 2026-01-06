@@ -1,0 +1,549 @@
+---
+title: "Shell & Environment Variables"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+# Shell & Environment Variables
+
+Understanding shells, configuration files, and environment variables in Linux.
+
+---
+
+## Quick Reference
+
+### 🧠 Memory Rules
+
+- **Login shell** → profile files (`.bash_profile`, `.zprofile`)  
+- **Interactive shell** → rc files (`.bashrc`, `.zshrc`)  
+- **Non-interactive shell** → no startup files (or `$BASH_ENV`)  
+- **export** = share variable with child processes  
+- **source** = run commands in current shell  
+- **Shell variable** = local to current shell  
+- **Environment variable** = inherited by child processes  
+
+### Essential Commands
+
+```bash
+# Shell information
+echo $SHELL                 # Default shell
+echo $0                     # Current shell
+cat /etc/shells             # Available shells
+
+# Change shell
+chsh -s /usr/bin/zsh        # Change default shell
+
+# Variables
+VAR=value                   # Shell variable
+export VAR=value            # Environment variable
+printenv                    # List all environment variables
+echo $VAR                   # Print variable value
+
+# Configuration
+source ~/.bashrc            # Reload configuration
+. ~/.bashrc                 # Same as source
+nano ~/.bashrc              # Edit configuration
+
+# Check shell type
+echo $-                     # Look for 'i' (interactive)
+```
+
+---
+
+## What is a Shell?
+
+A **shell** is a command-line interface that interprets and executes commands. It acts as an intermediary between you and the operating system kernel.
+
+**Common Shells:**
+- **Bash** (Bourne Again Shell) - Default on most Linux distributions  
+- **Zsh** (Z Shell) - Feature-rich, popular with developers  
+- **Fish** (Friendly Interactive Shell) - User-friendly with auto-suggestions  
+- **Sh** (Bourne Shell) - Original Unix shell, minimal features  
+
+---
+
+## Working with Shells
+
+### Check Current Shell
+
+```bash
+# Show current default shell
+echo $SHELL
+
+# Show currently running shell
+echo $0
+
+# List all available shells on the system
+cat /etc/shells
+```
+
+### Install a New Shell
+
+```bash
+# Install Zsh
+sudo apt install zsh -y
+
+# Install Fish
+sudo apt install fish -y
+```
+
+### Run a Shell Temporarily
+
+```bash
+# Start Zsh (without changing default)
+zsh
+
+# Start Fish
+fish
+
+# Exit back to previous shell
+exit
+```
+
+### Change Default Shell
+
+```bash
+# Change default shell to Zsh
+chsh -s /usr/bin/zsh
+
+# Change default shell to Bash
+chsh -s /usr/bin/bash
+
+# Verify the change (requires logout/login)
+echo $SHELL
+```
+
+::: {.callout-warning}
+**Important:** You must **logout and login** (or restart) for the default shell change to take effect.
+:::
+
+---
+
+## Shell Types
+
+### 1. Login Shell
+Started when you log in to the system (SSH, TTY, or initial terminal).
+
+**Characteristics:**
+- Reads **profile** configuration files  
+- Sets up the initial environment  
+- Runs once per login session  
+
+### 2. Interactive Shell
+A shell where you can type commands and get immediate responses.
+
+**Characteristics:**
+- Reads **rc** (run commands) files  
+- Has command history  
+- Supports job control  
+
+### 3. Non-Interactive Shell
+A shell running scripts without user interaction.
+
+**Characteristics:**
+- **BASH_ENV** files runs 
+- No command history  
+- Exits after script completion  
+
+### Check Shell Type
+
+```bash
+# Check if interactive (look for 'i' in output)
+echo $-
+
+# Check shell name
+echo $0
+# Output starting with '-' indicates login shell (e.g., -bash)
+# Output without '-' indicates non-login shell (e.g., bash)
+```
+
+---
+
+## Bash Startup Flow
+
+```text
+bash starts
+│
+├─ Is this a LOGIN shell?
+│   ├─ YES
+│   │   ├─ Read /etc/profile
+│   │   ├─ ~/.bash_profile (if exists) → STOP
+│   │   ├─ ~/.bash_login   (else if exists) → STOP
+│   │   └─ ~/.profile      (fallback) → STOP
+│   └─ NO
+│
+├─ Is this an INTERACTIVE shell?
+│   ├─ YES
+│   │   ├─ --norc used?
+│   │   │   ├─ YES → Skip ~/.bashrc
+│   │   │   └─ NO  → Read ~/.bashrc
+│   └─ NO
+│
+└─ Is this NON-INTERACTIVE (script)?
+    ├─ YES
+    │   ├─ $BASH_ENV set?
+    │   │   ├─ YES → Read file in $BASH_ENV
+    │   │   └─ NO  → Read nothing
+    └─ END
+```
+
+## Command Execution Flow
+
+```text
+python3 app.py
+Interactive bash already running
+        ↓
+Command entered
+        ↓
+bash finds python3 using $PATH
+        ↓
+bash forks
+        ↓
+execve(python3, app.py, env)
+        ↓
+Python starts and runs app.py
+
+```
+
+```text
+.bashrc
+  ↓
+export VAR=value
+  ↓
+bash environment
+  ↓
+python inherits environment
+  ↓
+app.py accesses VAR
+
+```
+
+---
+
+## Variables
+
+### Shell Variables (Local)
+
+Variables that exist **only in the current shell** and are not passed to child processes.
+
+```bash
+# Create a shell variable
+MY_VAR="Hello"
+
+# Access the variable
+echo $MY_VAR
+
+# This variable is NOT available to child processes
+bash -c 'echo $MY_VAR'  # Output: (empty)
+```
+
+### Environment Variables (Global)
+
+Variables that are **exported** and available to all child processes.
+
+```bash
+# Create and export an environment variable
+export MY_VAR="Hello"
+
+# Or in two steps
+MY_VAR="Hello"
+export MY_VAR
+
+# This variable IS available to child processes
+bash -c 'echo $MY_VAR'  # Output: Hello
+```
+
+### Common Environment Variables
+
+```bash
+# View all environment variables
+printenv
+env
+
+# Important environment variables
+echo $HOME          # User's home directory
+echo $USER          # Current username
+echo $PATH          # Executable search paths
+echo $SHELL         # Default shell
+echo $PWD           # Current directory
+echo $LANG          # System language
+echo $EDITOR        # Default text editor
+```
+
+### Setting Environment Variables
+
+```bash
+# Temporary (current session only)
+export JAVA_HOME="/usr/lib/jvm/default-java"
+
+# Permanent (add to ~/.bashrc or ~/.zshrc)
+echo 'export JAVA_HOME="/usr/lib/jvm/default-java"' >> ~/.bashrc
+
+# Apply changes immediately
+source ~/.bashrc
+```
+
+---
+
+## Source vs Export
+
+### `source` Command
+
+Executes commands from a file **in the current shell** (not in a subshell).
+
+```bash
+# Run commands in current shell
+source ~/.bashrc
+
+# Shorthand notation
+. ~/.bashrc
+
+# Use case: Apply configuration changes without restarting shell
+```
+
+**Visual Flow:**
+```text
+Current Shell
+    ↓
+source ~/.bashrc
+    ↓
+Commands executed in SAME shell
+    ↓
+Variables and functions available immediately
+```
+
+### `export` Command
+
+Makes a variable available to **child processes** (subshells and programs).
+
+```bash
+# Export a variable
+export MY_VAR="value"
+
+# Child process can access it
+python3 -c "import os; print(os.environ.get('MY_VAR'))"
+```
+
+**Visual Flow:**
+```text
+Parent Shell
+    ↓
+export VAR=value
+    ↓
+VAR added to environment
+    ↓
+Child Process (python, bash, etc.)
+    ↓
+VAR is accessible
+```
+
+---
+
+## How Programs Inherit Environment
+
+### Example: Running Python Script
+
+```text
+Interactive bash already running
+        ↓
+User types: python3 app.py
+        ↓
+bash searches for python3 in $PATH
+        ↓
+bash forks (creates child process)
+        ↓
+execve(python3, ["app.py"], environment)
+        ↓
+Python starts with inherited environment
+        ↓
+app.py can access environment variables
+```
+
+### Environment Inheritance Example
+
+**In Shell:**
+```bash
+# Set environment variable in ~/.bashrc
+export DATABASE_URL="postgresql://localhost/mydb"
+export API_KEY="secret123"
+
+# Reload configuration
+source ~/.bashrc
+```
+
+**In Python (app.py):**
+```python
+import os
+
+# Access environment variables
+db_url = os.environ.get('DATABASE_URL')
+api_key = os.environ.get('API_KEY')
+
+print(f"Database: {db_url}")
+print(f"API Key: {api_key}")
+```
+
+**Run:**
+```bash
+python3 app.py
+# Output:
+# Database: postgresql://localhost/mydb
+# API Key: secret123
+```
+
+---
+
+## Practical Examples
+
+### Example 1: Setting Up Java Environment
+
+```bash
+# Add to ~/.bashrc
+export JAVA_HOME="/usr/lib/jvm/default-java"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+# Apply changes
+source ~/.bashrc
+
+# Verify
+echo $JAVA_HOME
+java -version
+```
+
+### Example 2: Creating Aliases
+
+```bash
+# Add to ~/.bashrc
+alias ll='ls -lah'
+alias gs='git status'
+alias gp='git push'
+alias update='sudo apt update && sudo apt upgrade -y'
+
+# Apply changes
+source ~/.bashrc
+
+# Use aliases
+ll
+gs
+```
+
+### Example 3: Custom Prompt
+
+```bash
+# Add to ~/.bashrc
+export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+# Apply changes
+source ~/.bashrc
+```
+
+### Example 4: Adding to PATH
+
+```bash
+# Add custom bin directory to PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# Add multiple directories
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+# Verify
+echo $PATH
+```
+
+---
+
+## Common Questions & Answers
+
+### Q1: What's the difference between .bashrc and .bash_profile?
+
+**Answer:**  
+- **`.bashrc`** is loaded for **interactive non-login shells** (new terminal windows)  
+- **`.bash_profile`** is loaded for **login shells** (SSH, initial login)  
+- **Best practice:** Put environment variables in `.bash_profile` and source `.bashrc` from it  
+- **Common pattern:** Add `source ~/.bashrc` to `.bash_profile` to ensure consistency  
+
+### Q2: Why do I need to run `source ~/.bashrc` after editing it?
+
+**Answer:**  
+- Configuration files are only read when the shell **starts**  
+- Editing the file doesn't automatically apply changes to running shells  
+- `source ~/.bashrc` re-reads the file in the **current shell** without restarting  
+- Alternative: Close and reopen the terminal (starts a new shell)  
+
+### Q3: What's the difference between `export VAR=value` and `VAR=value`?
+
+**Answer:**  
+- **`VAR=value`** creates a **shell variable** (local to current shell only)  
+- **`export VAR=value`** creates an **environment variable** (inherited by child processes)  
+- **Use export when:** You need the variable in scripts, programs, or subshells  
+- **Use without export when:** The variable is only needed in the current shell  
+
+### Q4: Should I use Bash or Zsh?
+
+**Answer:**  
+- **Bash** is the default, widely compatible, and simpler  
+- **Zsh** has better auto-completion, plugins (Oh My Zsh), and themes  
+- **Zsh** is more customizable and feature-rich  
+- **Bash** is better for scripting compatibility  
+- **Recommendation:** Try Zsh with Oh My Zsh for development, keep Bash knowledge for servers  
+
+### Q5: How do I make environment variables permanent?
+
+**Answer:**  
+Add them to your shell configuration file:
+
+**For current user only:**
+```bash
+# Add to ~/.bashrc (or ~/.zshrc)
+export MY_VAR="value"
+source ~/.bashrc
+```
+
+**For all users (system-wide):**
+```bash
+# Add to /etc/environment (no export needed)
+sudo nano /etc/environment
+# Add: MY_VAR="value"
+# Logout/login required
+```
+
+### Q6: What's the difference between `source` and `./script.sh`?
+
+**Answer:**  
+- **`source script.sh`** runs the script in the **current shell** (changes affect current shell)  
+- **`./script.sh`** runs the script in a **new subshell** (changes don't affect current shell)  
+- **Use source for:** Configuration files, setting variables in current shell  
+- **Use ./ for:** Regular scripts that shouldn't modify your current environment  
+
+### Q7: Why doesn't my PATH change persist after reboot?
+
+**Answer:**  
+- You likely set it temporarily in the terminal  
+- **Solution:** Add the export statement to `~/.bashrc` or `~/.bash_profile`  
+- **Example:** `echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc`  
+- **Verify:** Check if the line exists in the file with `cat ~/.bashrc | grep PATH`  
+
+### Q8: What's the difference between login and non-login shells?
+
+**Answer:**  
+- **Login shell:** First shell when you log in (SSH, TTY, initial terminal)  
+- **Non-login shell:** Additional shells opened after login (new terminal tabs)  
+- **Login shell reads:** `.bash_profile`, `.bash_login`, or `.profile`  
+- **Non-login shell reads:** `.bashrc`  
+- **Practical tip:** Put everything in `.bashrc` and source it from `.bash_profile`  
+
+---
+
+::: {.callout-tip}
+## Next Steps
+- Customize your shell with aliases and functions  
+- Try Zsh with Oh My Zsh for enhanced features  
+- Learn shell scripting for automation  
+- Explore advanced prompt customization (Starship, Powerlevel10k)  
+:::
+
+---
+
+**Happy Shell Scripting! 🐚**
