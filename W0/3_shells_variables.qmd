@@ -10,6 +10,8 @@ format:
 
 Understanding shells, configuration files, and environment variables in Linux.
 
+{{< video https://youtu.be/JFE0pDwe7YM >}}
+
 ---
 
 ## Quick Reference

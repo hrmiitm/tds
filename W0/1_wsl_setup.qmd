@@ -24,6 +24,7 @@ wsl --list --verbose
 wsl --unregister <DistroName>
 ```
 
+{{< video https://youtu.be/K1bkKbCrZYA >}}
 
 ---
 
