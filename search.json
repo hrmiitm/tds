@@ -74,5 +74,93 @@
     "crumbs": [
       "**About The Course**"
     ]
+  },
+  {
+    "objectID": "W0/2_linux_tools.html",
+    "href": "W0/2_linux_tools.html",
+    "title": "Developer Common Tools Installation",
+    "section": "",
+    "text": "Essential tools and setup for Linux development environment.\nsudo apt update\nsudo apt upgrade -y\n\nsudo apt install curl\nsudo apt install git\n\nsudo apt install default-jdk\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc\n\n# UV -&gt; https://docs.astral.sh/uv/#installation\n# Node -&gt; https://nodejs.org/en/download\n# Podman -&gt; https://podman.io/docs/installation\n## Inside podmand install: OLLAMA, POSTGRES, PGADMIN    \n\n# VM(KVM/QEMU type-1 in Full Linux OS) : Follow Below Instructions\nsudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager\nsudo systemctl enable libvirtd\nsudo systemctl start libvirtd\nsudo usermod -aG libvirt,kvm $USER\n\n# Restart \nsudo reboot\n\n\n\nAlways start by updating your system:\nsudo apt update\nsudo apt upgrade -y\n\n\n\n\n\n\nsudo apt install git -y\n\n# Configure Git\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\ngit config --global init.defaultBranch main\n\n# Verify installation\ngit --version\n\n\n\n# Install default JDK\nsudo apt install default-jdk -y\n\n# Set JAVA_HOME environment variable\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\n\n# Verify installation\njava -version\njavac -version\n\n\n\n\n\nUV is a fast Python package installer and resolver written in Rust.\n\n\nUse Official Link: https://docs.astral.sh/uv/\n# Install UV using the official installer\ncurl -LsSf https://astral.sh/uv/install.sh | sh\n\n# Verify installation\nuv --version\n\n\n\n# Old Venv style, in my-project1 folder\nuv init\nsource .venv/bin/activate\nuv pip install requests pandas\nuv run python script.py\n\n# Create a new Python project with modern structures\nuv init my-project2\ncd my-project2\n\nuv add requests pandas # Install packages\nuv run python script.py # Run Python scripts\nScript Execution without creating venv\nuv add --script script.py requests pandas\nuv run script.py\n\n\n\n\n\n\n\nOfficial Download: https://nodejs.org/en/download\n\n\n\n\n\nPodman is a daemonless container engine for developing, managing, and running OCI containers.\n\n\nDocumentation: https://podman.io/docs/installation\n# Install Podman\nsudo apt install podman -y\n\n# Verify installation\npodman --version\n\n\n\n\n\n# Pull and run Ollama container\npodman run -d \\\n  --name ollama \\\n  -p 11434:11434 \\\n  -v ollama_data:/root/.ollama \\\n  docker.io/ollama/ollama:latest\n\n# Verify Ollama is running\npodman ps\n\n# Pull a model (e.g., llama2)\npodman exec -it ollama ollama pull llama2\n\n# Test Ollama\ncurl http://localhost:11434/api/generate -d '{\n  \"model\": \"llama2\",\n  \"prompt\": \"Why is the sky blue?\"\n}'\n\n\n\n# Pull and run PostgreSQL container\npodman run -d \\\n  --name postgres \\\n  -e POSTGRES_PASSWORD=mysecretpassword \\\n  -e POSTGRES_USER=admin \\\n  -e POSTGRES_DB=mydb \\\n  -p 5432:5432 \\\n  -v postgres_data:/var/lib/postgresql/data \\\n  docker.io/library/postgres:16\n\n# Verify PostgreSQL is running\npodman ps\n\n# Connect to PostgreSQL\npodman exec -it postgres psql -U admin -d mydb\n\n\n\n# Pull and run pgAdmin container\npodman run -d \\\n  --name pgadmin \\\n  -e PGADMIN_DEFAULT_EMAIL=admin@example.com \\\n  -e PGADMIN_DEFAULT_PASSWORD=admin \\\n  -p 5050:80 \\\n  -v pgadmin_data:/var/lib/pgadmin \\\n  docker.io/dpage/pgadmin4:latest\n\n# Access pgAdmin at: http://localhost:5050\n# Login with: admin@example.com / admin\n\n\n\n\n\n\nTip\n\n\n\nConnect pgAdmin to PostgreSQL:\n- Host: host.containers.internal (or your machine’s IP)\n- Port: 5432\n- Username: admin\n- Password: mysecretpassword\n\n\n\n\n\n\n\n\nKVM (Kernel-based Virtual Machine) is a Type-1 hypervisor for Linux that allows you to run virtual machines.\n\n\n# Install KVM and related tools\nsudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager -y\n\n# Enable and start libvirt service\nsudo systemctl enable libvirtd\nsudo systemctl start libvirtd\n\n# Add your user to libvirt and kvm groups\nsudo usermod -aG libvirt,kvm $USER\n\n# Apply group changes (logout/login or restart)\nnewgrp libvirt\n\n\n\n\n\n\nWarning\n\n\n\nImportant: You need to logout and login (or restart) for group changes to take effect.\n\n\n\n\n\n# Check if KVM is available\nkvm-ok\n\n# Check libvirt status\nsudo systemctl status libvirtd\n\n# Verify your user is in the correct groups\ngroups\n\n\n\n# Launch Virtual Machine Manager\nvirt-manager\n\n\n\nCommon Use Cases:\n\nTest different Linux distributions\n\nTest software on different OS versions\n\nCreate isolated development environments\n\nTest network configurations\n\nSimulate production environments\n\nSecurity testing and sandboxing\n\n\n\n\n\n\n\n\nAnswer:\n- Podman is daemonless (no background service required), while Docker uses a daemon\n- Podman runs containers as regular users (rootless), Docker typically requires root\n- Podman is more secure by default with better isolation\n- Podman commands are compatible with Docker (alias docker=podman works)\n- Podman can generate Kubernetes YAML files directly\n\n\n\nAnswer:\n- UV is 10-100x faster than pip\n- Better dependency resolution\n- Built-in virtual environment management\n- Lockfile support for reproducible builds\n- Written in Rust for performance\n- Modern alternative to pip, pip-tools, and virtualenv combined\n\n\n\nAnswer:\nYes, but it’s not recommended. They use different container storage backends. If you need Docker compatibility, you can alias Podman:\nalias docker=podman\n\n\n\nAnswer:\n- KVM is a Type-1 hypervisor (runs directly on hardware), VirtualBox is Type-2 (runs on host OS)\n- KVM has better performance (near-native speed)\n- KVM is built into the Linux kernel\n- VirtualBox is easier to use with a better GUI\n- KVM is better for production/server use\n- VirtualBox is better for desktop/development use on multiple OS\n\n\n\nAnswer:\n- Containers share the host OS kernel, VMs have their own complete OS\n- Containers are lightweight (MBs), VMs are heavy (GBs)\n- Containers start in seconds, VMs take minutes\n- Containers have lower overhead and better performance\n- VMs provide stronger isolation and can run different OS types\n- Containers are ideal for microservices, VMs for running different operating systems\n\n\n\nAnswer:\n- Isolation - Each tool runs in its own container, no conflicts\n- Portability - Same environment across different machines\n- Easy cleanup - Remove containers without affecting your system\n- Version management - Run multiple versions of the same tool\n- No system pollution - Keep your host system clean\n- Reproducibility - Share exact configurations with team members\n\n\n\n\n\n\n\nTipNext Steps\n\n\n\n\nSet up your development environment with these tools\n\nPractice creating and managing containers with Podman\n\nCreate test VMs with KVM for different scenarios\n\nExplore container orchestration with Podman Compose or Kubernetes\n\n\n\n\n\nHappy Developing! 🚀",
+    "crumbs": [
+      "**Week 0**",
+      "Installations"
+    ]
+  },
+  {
+    "objectID": "W0/2_linux_tools.html#system-update",
+    "href": "W0/2_linux_tools.html#system-update",
+    "title": "Developer Common Tools Installation",
+    "section": "",
+    "text": "Always start by updating your system:\nsudo apt update\nsudo apt upgrade -y",
+    "crumbs": [
+      "**Week 0**",
+      "Installations"
+    ]
+  },
+  {
+    "objectID": "W0/2_linux_tools.html#essential-development-tools",
+    "href": "W0/2_linux_tools.html#essential-development-tools",
+    "title": "Developer Common Tools Installation",
+    "section": "",
+    "text": "sudo apt install git -y\n\n# Configure Git\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\ngit config --global init.defaultBranch main\n\n# Verify installation\ngit --version\n\n\n\n# Install default JDK\nsudo apt install default-jdk -y\n\n# Set JAVA_HOME environment variable\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\n\n# Verify installation\njava -version\njavac -version",
+    "crumbs": [
+      "**Week 0**",
+      "Installations"
+    ]
+  },
+  {
+    "objectID": "W0/2_linux_tools.html#python-package-manager---uv",
+    "href": "W0/2_linux_tools.html#python-package-manager---uv",
+    "title": "Developer Common Tools Installation",
+    "section": "",
+    "text": "UV is a fast Python package installer and resolver written in Rust.\n\n\nUse Official Link: https://docs.astral.sh/uv/\n# Install UV using the official installer\ncurl -LsSf https://astral.sh/uv/install.sh | sh\n\n# Verify installation\nuv --version\n\n\n\n# Old Venv style, in my-project1 folder\nuv init\nsource .venv/bin/activate\nuv pip install requests pandas\nuv run python script.py\n\n# Create a new Python project with modern structures\nuv init my-project2\ncd my-project2\n\nuv add requests pandas # Install packages\nuv run python script.py # Run Python scripts\nScript Execution without creating venv\nuv add --script script.py requests pandas\nuv run script.py",
+    "crumbs": [
+      "**Week 0**",
+      "Installations"
+    ]
+  },
+  {
+    "objectID": "W0/2_linux_tools.html#node.js---javascript-runtime",
+    "href": "W0/2_linux_tools.html#node.js---javascript-runtime",
+    "title": "Developer Common Tools Installation",
+    "section": "",
+    "text": "Official Download: https://nodejs.org/en/download",
+    "crumbs": [
+      "**Week 0**",
+      "Installations"
+    ]
+  },
+  {
+    "objectID": "W0/2_linux_tools.html#podman---container-management",
+    "href": "W0/2_linux_tools.html#podman---container-management",
+    "title": "Developer Common Tools Installation",
+    "section": "",
+    "text": "Podman is a daemonless container engine for developing, managing, and running OCI containers.\n\n\nDocumentation: https://podman.io/docs/installation\n# Install Podman\nsudo apt install podman -y\n\n# Verify installation\npodman --version\n\n\n\n\n\n# Pull and run Ollama container\npodman run -d \\\n  --name ollama \\\n  -p 11434:11434 \\\n  -v ollama_data:/root/.ollama \\\n  docker.io/ollama/ollama:latest\n\n# Verify Ollama is running\npodman ps\n\n# Pull a model (e.g., llama2)\npodman exec -it ollama ollama pull llama2\n\n# Test Ollama\ncurl http://localhost:11434/api/generate -d '{\n  \"model\": \"llama2\",\n  \"prompt\": \"Why is the sky blue?\"\n}'\n\n\n\n# Pull and run PostgreSQL container\npodman run -d \\\n  --name postgres \\\n  -e POSTGRES_PASSWORD=mysecretpassword \\\n  -e POSTGRES_USER=admin \\\n  -e POSTGRES_DB=mydb \\\n  -p 5432:5432 \\\n  -v postgres_data:/var/lib/postgresql/data \\\n  docker.io/library/postgres:16\n\n# Verify PostgreSQL is running\npodman ps\n\n# Connect to PostgreSQL\npodman exec -it postgres psql -U admin -d mydb\n\n\n\n# Pull and run pgAdmin container\npodman run -d \\\n  --name pgadmin \\\n  -e PGADMIN_DEFAULT_EMAIL=admin@example.com \\\n  -e PGADMIN_DEFAULT_PASSWORD=admin \\\n  -p 5050:80 \\\n  -v pgadmin_data:/var/lib/pgadmin \\\n  docker.io/dpage/pgadmin4:latest\n\n# Access pgAdmin at: http://localhost:5050\n# Login with: admin@example.com / admin\n\n\n\n\n\n\nTip\n\n\n\nConnect pgAdmin to PostgreSQL:\n- Host: host.containers.internal (or your machine’s IP)\n- Port: 5432\n- Username: admin\n- Password: mysecretpassword",
+    "crumbs": [
+      "**Week 0**",
+      "Installations"
+    ]
+  },
+  {
+    "objectID": "W0/2_linux_tools.html#kvmqemu---virtual-machine-manager",
+    "href": "W0/2_linux_tools.html#kvmqemu---virtual-machine-manager",
+    "title": "Developer Common Tools Installation",
+    "section": "",
+    "text": "KVM (Kernel-based Virtual Machine) is a Type-1 hypervisor for Linux that allows you to run virtual machines.\n\n\n# Install KVM and related tools\nsudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager -y\n\n# Enable and start libvirt service\nsudo systemctl enable libvirtd\nsudo systemctl start libvirtd\n\n# Add your user to libvirt and kvm groups\nsudo usermod -aG libvirt,kvm $USER\n\n# Apply group changes (logout/login or restart)\nnewgrp libvirt\n\n\n\n\n\n\nWarning\n\n\n\nImportant: You need to logout and login (or restart) for group changes to take effect.\n\n\n\n\n\n# Check if KVM is available\nkvm-ok\n\n# Check libvirt status\nsudo systemctl status libvirtd\n\n# Verify your user is in the correct groups\ngroups\n\n\n\n# Launch Virtual Machine Manager\nvirt-manager\n\n\n\nCommon Use Cases:\n\nTest different Linux distributions\n\nTest software on different OS versions\n\nCreate isolated development environments\n\nTest network configurations\n\nSimulate production environments\n\nSecurity testing and sandboxing",
+    "crumbs": [
+      "**Week 0**",
+      "Installations"
+    ]
+  },
+  {
+    "objectID": "W0/2_linux_tools.html#common-questions-answers",
+    "href": "W0/2_linux_tools.html#common-questions-answers",
+    "title": "Developer Common Tools Installation",
+    "section": "",
+    "text": "Answer:\n- Podman is daemonless (no background service required), while Docker uses a daemon\n- Podman runs containers as regular users (rootless), Docker typically requires root\n- Podman is more secure by default with better isolation\n- Podman commands are compatible with Docker (alias docker=podman works)\n- Podman can generate Kubernetes YAML files directly\n\n\n\nAnswer:\n- UV is 10-100x faster than pip\n- Better dependency resolution\n- Built-in virtual environment management\n- Lockfile support for reproducible builds\n- Written in Rust for performance\n- Modern alternative to pip, pip-tools, and virtualenv combined\n\n\n\nAnswer:\nYes, but it’s not recommended. They use different container storage backends. If you need Docker compatibility, you can alias Podman:\nalias docker=podman\n\n\n\nAnswer:\n- KVM is a Type-1 hypervisor (runs directly on hardware), VirtualBox is Type-2 (runs on host OS)\n- KVM has better performance (near-native speed)\n- KVM is built into the Linux kernel\n- VirtualBox is easier to use with a better GUI\n- KVM is better for production/server use\n- VirtualBox is better for desktop/development use on multiple OS\n\n\n\nAnswer:\n- Containers share the host OS kernel, VMs have their own complete OS\n- Containers are lightweight (MBs), VMs are heavy (GBs)\n- Containers start in seconds, VMs take minutes\n- Containers have lower overhead and better performance\n- VMs provide stronger isolation and can run different OS types\n- Containers are ideal for microservices, VMs for running different operating systems\n\n\n\nAnswer:\n- Isolation - Each tool runs in its own container, no conflicts\n- Portability - Same environment across different machines\n- Easy cleanup - Remove containers without affecting your system\n- Version management - Run multiple versions of the same tool\n- No system pollution - Keep your host system clean\n- Reproducibility - Share exact configurations with team members\n\n\n\n\n\n\n\nTipNext Steps\n\n\n\n\nSet up your development environment with these tools\n\nPractice creating and managing containers with Podman\n\nCreate test VMs with KVM for different scenarios\n\nExplore container orchestration with Podman Compose or Kubernetes\n\n\n\n\n\nHappy Developing! 🚀",
+    "crumbs": [
+      "**Week 0**",
+      "Installations"
+    ]
   }
 ]
