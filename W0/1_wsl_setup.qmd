@@ -1,0 +1,10 @@
+---
+title: "WSL - Windows Subsytem for Linux"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+# WSL - Setup for Windows Users
+

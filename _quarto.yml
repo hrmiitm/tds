@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "TDS by HRM"
+  search: true
+  bread-crumbs: false
+  page-navigation: true
+  reader-mode: false
+  page-footer: "Copyright 2026 Hritik Roshan Maurya. All rights reserved." 
+  navbar:
+    style: "floating"
+    pinned: false
+    tools:
+      - icon: youtube
+        href: https://youtube.com/playlist?list=PLn_Nuy1c1Oj_Vc_UD8aCZOE_UoURk1S6F&si=D1b0tRL25mGvlm2t
+        target: _blank
+      - icon: house
+        href: https://hrmiitm.github.io
+        target: _blank
+
+  sidebar:
+      style: "docked"
+      search: false
+      # background: "light"
+      collapse-level: 1
+      contents:
+        - text: "**About The Course**"
+          href: index.qmd
+        - text: "---"
+        - section: "**Week 0**"
+          contents:
+            - text: "WSL"
+              href: "./W0/1_wsl_setup.qmd"
+            
+
+format:
+  html:
+    theme:
+      light: zephyr
+      dark: quartz
+    css: styles.css
+    toc: false
+    smooth-scroll: true
+      # light: morph
+      # dark: flatly
+    # Code formatting
+    code-copy: true
+    code-fold: show
+    code-line-numbers: true
+    # code-overflow: wrap
+    highlight-style: github
+    
