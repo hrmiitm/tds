@@ -2,14 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hrmiitm.github.io/tds/W0/1_wsl_setup.html</loc>
-    <lastmod>2026-01-06T16:54:22.668Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hrmiitm.github.io/tds/index.html</loc>
-    <lastmod>2026-01-06T16:54:22.668Z</lastmod>
+    <lastmod>2026-01-06T17:14:12.419Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/W0/2_linux_tools.html</loc>
-    <lastmod>2026-01-06T16:54:22.668Z</lastmod>
+    <lastmod>2026-01-06T17:14:12.419Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hrmiitm.github.io/tds/index.html</loc>
+    <lastmod>2026-01-06T17:14:12.420Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hrmiitm.github.io/tds/W0/3_shells_variables.html</loc>
+    <lastmod>2026-01-06T17:14:12.420Z</lastmod>
   </url>
 </urlset>

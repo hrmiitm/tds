@@ -340,6 +340,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Installations</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../W0/3_shells_variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Shells &amp; Environment Variables</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -374,6 +380,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="wsl---setup-for-windows-users" class="level1">
 <h1>WSL - Setup for Windows Users</h1>
 <p>Windows Subsystem for Linux (WSL) allows you to run a Linux environment directly on Windows without the need for a traditional virtual machine or dual-boot setup.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>BIOS --&gt; Turn On Virtulisation</span>
+<span id="cb1-2"><a href="#cb1-2"></a>Search --&gt; Turn Windows features on or off</span>
+<span id="cb1-3"><a href="#cb1-3"></a>  Virtual Machine Platform, </span>
+<span id="cb1-4"><a href="#cb1-4"></a>  Windows Hypervisor Platform, </span>
+<span id="cb1-5"><a href="#cb1-5"></a>  Windows Subsytem for Linux</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    </span>
+<span id="cb1-7"><a href="#cb1-7"></a>wsl --list --online           list the available linux os</span>
+<span id="cb1-8"><a href="#cb1-8"></a>wsl --install -d &lt;DistroName&gt; insttall the particular linux os</span>
+<span id="cb1-9"><a href="#cb1-9"></a>    </span>
+<span id="cb1-10"><a href="#cb1-10"></a>wsl --list --verbose</span>
+<span id="cb1-11"><a href="#cb1-11"></a>wsl --unregister &lt;DistroName&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 <section id="pre-setup" class="level2">
 <h2 class="anchored" data-anchor-id="pre-setup">Pre-setup</h2>
@@ -408,10 +425,10 @@ Tip
 - ✅ Windows Subsystem for Linux<br>
 - Restart when prompted</p>
 <p><strong>Option B - PowerShell (Admin):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>Microsoft-Windows-Subsystem-Linux <span class="op">/</span>all <span class="op">/</span>norestart</span>
-<span id="cb1-2"><a href="#cb1-2"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>VirtualMachinePlatform <span class="op">/</span>all <span class="op">/</span>norestart</span>
-<span id="cb1-3"><a href="#cb1-3"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>HypervisorPlatform <span class="op">/</span>all <span class="op">/</span>norestart</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">Restart-Computer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>Microsoft-Windows-Subsystem-Linux <span class="op">/</span>all <span class="op">/</span>norestart</span>
+<span id="cb2-2"><a href="#cb2-2"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>VirtualMachinePlatform <span class="op">/</span>all <span class="op">/</span>norestart</span>
+<span id="cb2-3"><a href="#cb2-3"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>HypervisorPlatform <span class="op">/</span>all <span class="op">/</span>norestart</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">Restart-Computer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
@@ -419,19 +436,19 @@ Tip
 <h2 class="anchored" data-anchor-id="install">Install</h2>
 <section id="set-wsl-2-as-default" class="level3">
 <h3 class="anchored" data-anchor-id="set-wsl-2-as-default">Set WSL 2 as Default</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">wsl</span> <span class="at">--set-default-version</span> 2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">wsl</span> <span class="at">--set-default-version</span> 2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="list-available-distributions" class="level3">
 <h3 class="anchored" data-anchor-id="list-available-distributions">List Available Distributions</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--online</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--online</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="install-a-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="install-a-distribution">Install a Distribution</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Install default Ubuntu</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">wsl</span> <span class="at">--install</span> <span class="at">-d</span> Ubuntu</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Or specific version</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="ex">wsl</span> <span class="at">--install</span> <span class="at">-d</span> Ubuntu-22.04</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Install default Ubuntu</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="ex">wsl</span> <span class="at">--install</span> <span class="at">-d</span> Ubuntu</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Or specific version</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="ex">wsl</span> <span class="at">--install</span> <span class="at">-d</span> Ubuntu-22.04</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -448,7 +465,7 @@ Note
 </section>
 <section id="verify-installation" class="level3">
 <h3 class="anchored" data-anchor-id="verify-installation">Verify Installation</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--verbose</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--verbose</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
@@ -456,25 +473,25 @@ Note
 <h2 class="anchored" data-anchor-id="uninstall">Uninstall</h2>
 <section id="remove-a-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="remove-a-distribution">Remove a Distribution</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># View installed distributions</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--verbose</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Unregister/uninstall (deletes all data!)</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="ex">wsl</span> <span class="at">--unregister</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># View installed distributions</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--verbose</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># Unregister/uninstall (deletes all data!)</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="ex">wsl</span> <span class="at">--unregister</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="common-commands" class="level3">
 <h3 class="anchored" data-anchor-id="common-commands">Common Commands</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Launch WSL</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="ex">wsl</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># Shutdown all distributions</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="ex">wsl</span> <span class="at">--shutdown</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="co"># Terminate specific distribution</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="ex">wsl</span> <span class="at">--terminate</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a></span>
-<span id="cb7-10"><a href="#cb7-10"></a><span class="co"># Update WSL</span></span>
-<span id="cb7-11"><a href="#cb7-11"></a><span class="ex">wsl</span> <span class="at">--update</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Launch WSL</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="ex">wsl</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># Shutdown all distributions</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="ex">wsl</span> <span class="at">--shutdown</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="co"># Terminate specific distribution</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="ex">wsl</span> <span class="at">--terminate</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="co"># Update WSL</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="ex">wsl</span> <span class="at">--update</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
