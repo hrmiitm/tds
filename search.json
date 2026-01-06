@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "TDS - Tools for Data Science",
+    "section": "",
+    "text": "📘 Tools in Data Science (TDS)\n(Python • Data Science • APIs • Automation • Systems)\nThis website documents my learning, teaching experience, and practical notes for the Tools in Data Science (TDS) subject. The content is inspired by the official TDS material and enriched with my own explanations, examples, and insights gained while teaching and practicing.\nI have been a Teaching Assistant (TA) for TDS since May 2025, and this platform is my way of consolidating concepts in a clear, practical, and student-friendly manner.\nYou can find the official TDS course content here: 🔗 https://tds.s-anand.net/#/\n\n\n🔹 What This Website Covers\n\n🐍 Fastapi\n🌐 Agentic Frameworks\n🗄️ Databases & SQL\n⚙️ Basics Linux & Setups\n🧪 Practical Experiments, Mini Tasks & Notes\n\n\n\n🎯 Goal\nBuild strong practical foundations in tools commonly used in real-world data science workflows — not just theory, but how things actually work.\n\n\n\n📚 Who Should Use This Website\n\nStudents enrolled in or preparing for TDS\nLearners with basic knowledge of:\n\nPython\nProgramming fundamentals\nLinux\n\nAnyone who prefers practical, example-driven explanations",
+    "crumbs": [
+      "**About The Course**"
+    ]
+  },
+  {
+    "objectID": "W0/1_wsl_setup.html",
+    "href": "W0/1_wsl_setup.html",
+    "title": "WSL - Windows Subsytem for Linux",
+    "section": "",
+    "text": "WSL - Setup for Windows Users",
+    "crumbs": [
+      "**Week 0**",
+      "WSL"
+    ]
+  }
+]
