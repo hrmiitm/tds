@@ -18,7 +18,7 @@ You can find the official TDS course content here:
 * 🌐 **Agentic Frameworks**
 * 🗄️ **Databases & SQL**
 * ⚙️ **Basics Linux & Setups**
-* 🧪 **Practical Experiments, Mini Tasks & Notes**
+* 🧪 **Projects Using Agentic Frameworks**
 
 ---
 
