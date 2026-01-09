@@ -36,5 +36,6 @@ Build **strong practical foundations** in tools commonly used in real-world data
   * Python
   * Programming fundamentals
   * Linux
+  
 * Anyone who prefers **practical, example-driven explanations**
 
