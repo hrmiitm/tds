@@ -43,10 +43,9 @@ Build **strong practical foundations** in tools commonly used in real-world data
 ##### 📚 **Who Should Use This Website**
 
 * Students enrolled in or preparing for **TDS**
-* Learners with **basic knowledge** of:
-
-  * Python
-  * Programming fundamentals
-  * Linux
+* Learners with **basic knowledge** of:  
+  * Python  
+  * Programming fundamentals  
+  * Linux  
 * Anyone who prefers **practical, example-driven explanations**
 
