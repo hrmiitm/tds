@@ -29,14 +29,18 @@ website:
         - text: "**About The Course**"
           href: index.qmd
         - text: "---"
-        - section: "**Week 0**"
+        - section: "**Week-0 Foundation**"
           contents:
             - text: "WSL"
               href: "./W0/1_wsl_setup.qmd"
             - text: "Installations"
               href: "./W0/2_linux_tools.qmd"
-            - text: "Shells & Environment Variables"
-              href: "./W0/3_shells_variables.qmd"
+            - text: "File Navigation"
+              href: "./W0/3_navigation.qmd"
+            - text: "Shell Config"
+              href: "./W0/4_shells.qmd"
+            - text: "Running Scripts"
+              href: "./W0/5_run.qmd"
             
 
 format:
