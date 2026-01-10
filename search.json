@@ -6,7 +6,7 @@
     "section": "",
     "text": "Windows Subsystem for Linux (WSL) enables you to run a Linux environment directly on Windows—no virtual machine or dual-boot required.",
     "crumbs": [
-      "**Week 0**",
+      "**Week-0 Foundation**",
       "WSL"
     ]
   },
@@ -17,7 +17,7 @@
     "section": "",
     "text": "Windows Subsystem for Linux (WSL) enables you to run a Linux environment directly on Windows—no virtual machine or dual-boot required.",
     "crumbs": [
-      "**Week 0**",
+      "**Week-0 Foundation**",
       "WSL"
     ]
   },
@@ -28,7 +28,7 @@
     "section": "Setup Steps",
     "text": "Setup Steps\n\nStep 1: Enable Virtualization in BIOS\nAccess your BIOS settings and enable Virtualization Technology (VT-x/AMD-V).\n\n\nStep 2: Enable Windows Features\n\nSearch for “Turn Windows features on or off”\nEnable the following features:\n\n✅ Virtual Machine Platform\n✅ Windows Hypervisor Platform\n✅ Windows Subsystem for Linux\n\nRestart your computer\n\n\n\nStep 3: Install WSL Distribution\nOpen PowerShell or Command Prompt as Administrator:\n# List available Linux distributions\nwsl --list --online\n\n# Install your preferred distribution (e.g., Ubuntu)\nwsl --install -d &lt;DistroName&gt;\n\n\nStep 4: Verify Installation\n# Check installed distributions and their status\nwsl --list --verbose",
     "crumbs": [
-      "**Week 0**",
+      "**Week-0 Foundation**",
       "WSL"
     ]
   },
@@ -39,7 +39,7 @@
     "section": "Useful Commands",
     "text": "Useful Commands\n# Uninstall a distribution\nwsl --unregister &lt;DistroName&gt;\n\n# Set default WSL version\nwsl --set-default-version 2\n\n# Update WSL\nwsl --update",
     "crumbs": [
-      "**Week 0**",
+      "**Week-0 Foundation**",
       "WSL"
     ]
   },
@@ -50,52 +50,184 @@
     "section": "Video Tutorial",
     "text": "Video Tutorial",
     "crumbs": [
-      "**Week 0**",
+      "**Week-0 Foundation**",
       "WSL"
     ]
   },
   {
-    "objectID": "W0/2_linux_tools.html",
-    "href": "W0/2_linux_tools.html",
-    "title": "Developer Common Tools Installation",
+    "objectID": "W0/5_run.html",
+    "href": "W0/5_run.html",
+    "title": "Running Commands & Scripts",
     "section": "",
-    "text": "Essential tools and setup for a complete Linux development environment.",
+    "text": "How Linux shell interprets and executes commands.",
     "crumbs": [
-      "**Week 0**",
-      "Installations"
+      "**Week-0 Foundation**",
+      "Running Scripts"
     ]
   },
   {
-    "objectID": "W0/2_linux_tools.html#overview",
-    "href": "W0/2_linux_tools.html#overview",
-    "title": "Developer Common Tools Installation",
+    "objectID": "W0/5_run.html#overview",
+    "href": "W0/5_run.html#overview",
+    "title": "Running Commands & Scripts",
     "section": "",
-    "text": "Essential tools and setup for a complete Linux development environment.",
+    "text": "How Linux shell interprets and executes commands.",
     "crumbs": [
-      "**Week 0**",
-      "Installations"
+      "**Week-0 Foundation**",
+      "Running Scripts"
     ]
   },
   {
-    "objectID": "W0/2_linux_tools.html#quick-setup-script",
-    "href": "W0/2_linux_tools.html#quick-setup-script",
-    "title": "Developer Common Tools Installation",
-    "section": "Quick Setup Script",
-    "text": "Quick Setup Script\n# System update\nsudo apt update && sudo apt upgrade -y\n\n# Essential tools\nsudo apt install curl git -y\n\n# C/C++ Development Tools\nsudo apt install build-essential -y\n\n# Java Development Kit\nsudo apt install default-jdk -y\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc\n\n# Python (UV), Node.js, Podman - See installation links below\n# UV → https://docs.astral.sh/uv/#installation\n# Node → https://nodejs.org/en/download\n# Podman → https://podman.io/docs/installation\n\n# Virtual Machine (KVM/QEMU)\nsudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager -y\nsudo systemctl enable libvirtd && sudo systemctl start libvirtd\nsudo usermod -aG libvirt,kvm $USER\n\n# Restart to apply changes\nsudo reboot",
+    "objectID": "W0/5_run.html#how-shell-executes-commands",
+    "href": "W0/5_run.html#how-shell-executes-commands",
+    "title": "Running Commands & Scripts",
+    "section": "How Shell Executes Commands",
+    "text": "How Shell Executes Commands\nWhen you type a command, shell parses it into parts:\ncommand arg1 arg2 -flag --option\n   ↓      ↓    ↓    ↓      ↓\nprogram  arguments  options/flags\n\nExamples\nls -l /home              # command: ls, flag: -l, arg: /home\ncp file1.txt file2.txt   # command: cp, args: file1.txt, file2.txt\npython3 script.py -v     # command: python3, arg: script.py, flag: -v\ngit commit -m \"message\"  # command: git, subcommand: commit, option: -m with value\n\n\nCommand Resolution\nUser types: xyz\n     ↓\nShell searches $PATH directories\n     ↓\nFound? → Execute it\nNot found? → \"command not found\"",
     "crumbs": [
-      "**Week 0**",
-      "Installations"
+      "**Week-0 Foundation**",
+      "Running Scripts"
     ]
   },
   {
-    "objectID": "W0/2_linux_tools.html#individual-tool-setup",
-    "href": "W0/2_linux_tools.html#individual-tool-setup",
-    "title": "Developer Common Tools Installation",
-    "section": "Individual Tool Setup",
-    "text": "Individual Tool Setup\n\nGit - Version Control\n# Install Git\nsudo apt install git -y\n\n# Configure Git\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\ngit config --global init.defaultBranch main\n\n# Verify installation\ngit --version\n\n\nJava Development Kit (JDK)\n# Install default JDK\nsudo apt install default-jdk -y\n\n# Set JAVA_HOME environment variable\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\n\n# Verify installation\njava -version\njavac -version",
+    "objectID": "W0/5_run.html#running-a-script",
+    "href": "W0/5_run.html#running-a-script",
+    "title": "Running Commands & Scripts",
+    "section": "Running a Script",
+    "text": "Running a Script\n\nCreate & Run\n# 1. Create script\ntouch myscript.sh\n\n# 2. Add content (with shebang)\nnano myscript.sh # write the `echo \"hello\"`\n\n# 3. Make executable\nchmod +x myscript.sh\n\n# 4. Run it\n./myscript.sh\n\n\nchmod Reference\nchmod +x file       # Add execute permission\nchmod -x file       # Remove execute permission\nchmod 755 file      # rwx for owner, rx for others",
     "crumbs": [
-      "**Week 0**",
-      "Installations"
+      "**Week-0 Foundation**",
+      "Running Scripts"
+    ]
+  },
+  {
+    "objectID": "W0/5_run.html#path-vs-provided-path",
+    "href": "W0/5_run.html#path-vs-provided-path",
+    "title": "Running Commands & Scripts",
+    "section": "PATH vs Provided Path",
+    "text": "PATH vs Provided Path\nHow Linux decides where to look for the command:\n\n\n\nCommand\nContains / or ./?\nAction\n\n\n\n\nxyz\nNo\nSearch in $PATH\n\n\n./xyz\nYes (.)\nLook in current directory\n\n\n/usr/bin/xyz\nYes (/)\nLook at exact path\n\n\n\npython3          # No slash → Search $PATH\n./myscript.sh    # Has ./ → Run from current dir\n/bin/ls          # Absolute path → Run exactly this",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Running Scripts"
+    ]
+  },
+  {
+    "objectID": "W0/4_shells.html",
+    "href": "W0/4_shells.html",
+    "title": "Shell & Environment Variables",
+    "section": "",
+    "text": "Understanding shells, configuration files, and environment variables in Linux—essential knowledge for any developer.",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Shell Config"
+    ]
+  },
+  {
+    "objectID": "W0/4_shells.html#overview",
+    "href": "W0/4_shells.html#overview",
+    "title": "Shell & Environment Variables",
+    "section": "",
+    "text": "Understanding shells, configuration files, and environment variables in Linux—essential knowledge for any developer.",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Shell Config"
+    ]
+  },
+  {
+    "objectID": "W0/4_shells.html#what-is-a-shell",
+    "href": "W0/4_shells.html#what-is-a-shell",
+    "title": "Shell & Environment Variables",
+    "section": "What is a Shell?",
+    "text": "What is a Shell?\nA shell is a command-line interface that interprets your commands and communicates with the operating system.\nCommon Shells:\n\nBash (Bourne Again Shell) - Default on most Linux systems\nZsh (Z Shell) - Feature-rich with better auto-completion\nFish - User-friendly with helpful suggestions\n\n# Check your current shell\necho $SHELL\n\n# List all available shells\ncat /etc/shells\n\n# Change default shell to Zsh\nchsh -s /usr/bin/zsh",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Shell Config"
+    ]
+  },
+  {
+    "objectID": "W0/4_shells.html#shell-types",
+    "href": "W0/4_shells.html#shell-types",
+    "title": "Shell & Environment Variables",
+    "section": "Shell Types",
+    "text": "Shell Types\n\n1. Login Shell\nStarted when you log in (SSH, initial terminal).\n\nReads profile files (.bash_profile, .profile)\nSets up initial environment\n\n\n\n2. Interactive Shell\nA shell where you type commands and get responses.\n\nReads rc files (.bashrc, .zshrc)\nHas command history and tab completion\n\n\n\n3. Non-Interactive Shell\nRuns scripts without user interaction.\n\nUses $BASH_ENV variable (if set)\nNo command history\n\n# Check if shell is interactive (look for 'i')\necho $-\n\n# Check if login shell (output starts with '-')\necho $0",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Shell Config"
+    ]
+  },
+  {
+    "objectID": "W0/4_shells.html#configuration-files",
+    "href": "W0/4_shells.html#configuration-files",
+    "title": "Shell & Environment Variables",
+    "section": "Configuration Files",
+    "text": "Configuration Files\n\nBash Configuration Files\n\n\n\nFile\nWhen Used\nPurpose\n\n\n\n\n.bash_profile\nLogin shell\nInitial environment setup\n\n\n.bashrc\nInteractive shell\nAliases, functions, prompt\n\n\n$BASH_ENV\nNon-interactive\nScript environment",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Shell Config"
+    ]
+  },
+  {
+    "objectID": "W0/4_shells.html#bash-startup-flow",
+    "href": "W0/4_shells.html#bash-startup-flow",
+    "title": "Shell & Environment Variables",
+    "section": "Bash Startup Flow",
+    "text": "Bash Startup Flow\nbash starts\n│\n├─ LOGIN shell?\n│   ├─ YES → Read /etc/profile\n│   │        Read ~/.bash_profile (or ~/.bash_login or ~/.profile)\n│   └─ NO\n│\n├─ INTERACTIVE shell?\n│   ├─ YES → Read ~/.bashrc\n│   └─ NO\n│\n└─ NON-INTERACTIVE (script)?\n    └─ YES → Read file in $BASH_ENV (if set)",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Shell Config"
+    ]
+  },
+  {
+    "objectID": "W0/4_shells.html#variables-shell-vs-environment",
+    "href": "W0/4_shells.html#variables-shell-vs-environment",
+    "title": "Shell & Environment Variables",
+    "section": "Variables: Shell vs Environment",
+    "text": "Variables: Shell vs Environment\n\nShell Variables (Local)\nVariables that exist only in the current shell.\n# Create a shell variable\nMY_VAR=\"Hello\"\n\n# Access it\necho $MY_VAR\n\n# NOT available to child processes\nbash -c 'echo $MY_VAR'  # Output: (empty)\n\n\nEnvironment Variables (Global)\nVariables exported to child processes.\n# Create and export\nexport MY_VAR=\"Hello\"\n\n# Available to child processes\nbash -c 'echo $MY_VAR'  # Output: Hello\n\n# Python can access it too\npython3 -c \"import os; print(os.environ.get('MY_VAR'))\"\n\n\nWhy Export?\nWithout export:\nParent Shell: MY_VAR=\"value\"\n       ↓\nChild Process: MY_VAR not available ❌\nWith export:\nParent Shell: export MY_VAR=\"value\"\n       ↓\nChild Process: MY_VAR=\"value\" ✅",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Shell Config"
+    ]
+  },
+  {
+    "objectID": "W0/4_shells.html#common-environment-variables",
+    "href": "W0/4_shells.html#common-environment-variables",
+    "title": "Shell & Environment Variables",
+    "section": "Common Environment Variables",
+    "text": "Common Environment Variables\n# View all environment variables\nprintenv\n\n# Important variables\necho $HOME          # Home directory\necho $USER          # Username\necho $PATH          # Executable search paths\necho $SHELL         # Default shell\necho $PWD           # Current directory\n\nSetting Environment Variables\n# Temporary (current session only)\nexport JAVA_HOME=\"/usr/lib/jvm/default-java\"\n\n# Permanent (add to ~/.bashrc)\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc\nsource ~/.bashrc",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Shell Config"
+    ]
+  },
+  {
+    "objectID": "W0/4_shells.html#source-vs-export",
+    "href": "W0/4_shells.html#source-vs-export",
+    "title": "Shell & Environment Variables",
+    "section": "Source vs Export",
+    "text": "Source vs Export\n\nsource Command\nExecutes commands in the current shell (not a new shell).\n# Reload configuration\nsource ~/.bashrc\n\n# Shorthand\n. ~/.bashrc\nFlow:\nCurrent Shell\n    ↓\nsource ~/.bashrc\n    ↓\nCommands run in SAME shell\n    ↓\nChanges apply immediately\n\n\nexport Command\nMakes variables available to child processes.\n# Export variable\nexport API_KEY=\"secret123\"\n\n# Child processes can access it\npython3 script.py  # Can read API_KEY\nFlow:\nParent Shell\n    ↓\nexport VAR=value\n    ↓\nChild Process starts\n    ↓\nVAR is accessible in child",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Shell Config"
+    ]
+  },
+  {
+    "objectID": "W0/4_shells.html#how-programs-inherit-environment",
+    "href": "W0/4_shells.html#how-programs-inherit-environment",
+    "title": "Shell & Environment Variables",
+    "section": "How Programs Inherit Environment",
+    "text": "How Programs Inherit Environment\nWhen you run a program, it inherits environment variables from the shell:\nInteractive bash running\n        ↓\nUser types: python3 app.py\n        ↓\nbash searches for python3 in $PATH\n        ↓\nbash creates child process (fork)\n        ↓\nexecve(python3, [\"app.py\"], environment)\n        ↓\nPython starts with inherited environment\n        ↓\napp.py can access environment variables\n\nPractical Example\nIn Shell:\n# Set environment variable in ~/.bashrc\nexport DATABASE_URL=\"postgresql://localhost/mydb\"\nsource ~/.bashrc\nIn Python (app.py):\nimport os\n\n# Access environment variable\ndb_url = os.environ.get('DATABASE_URL')\nprint(f\"Database: {db_url}\")\nRun:\npython3 app.py\n# Output: Database: postgresql://localhost/mydb",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Shell Config"
+    ]
+  },
+  {
+    "objectID": "W0/4_shells.html#quick-reference",
+    "href": "W0/4_shells.html#quick-reference",
+    "title": "Shell & Environment Variables",
+    "section": "Quick Reference",
+    "text": "Quick Reference\n# Shell information\necho $SHELL                 # Default shell\necho $0                     # Current shell\ncat /etc/shells             # Available shells\n\n# Variables\nVAR=value                   # Shell variable (local)\nexport VAR=value            # Environment variable (global)\nprintenv                    # List all environment variables\necho $VAR                   # Print variable value\n\n# Configuration\nsource ~/.bashrc            # Reload configuration\nnano ~/.bashrc              # Edit configuration\n\nKey Concepts\n\nLogin shell → Reads profile files (.bash_profile, .zprofile)\nInteractive shell → Reads rc files (.bashrc, .zshrc)\nNon-interactive shell → Uses $BASH_ENV (if set)\nexport → Share variable with child processes\nsource → Run commands in current shell\nShell variable → Local to current shell only\nEnvironment variable → Inherited by child processes",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Shell Config"
     ]
   },
   {
@@ -109,124 +241,234 @@
     ]
   },
   {
+    "objectID": "W0/2_linux_tools.html",
+    "href": "W0/2_linux_tools.html",
+    "title": "Developer Common Tools Installation",
+    "section": "",
+    "text": "Essential tools and setup for a complete Linux development environment.",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Installations"
+    ]
+  },
+  {
+    "objectID": "W0/2_linux_tools.html#overview",
+    "href": "W0/2_linux_tools.html#overview",
+    "title": "Developer Common Tools Installation",
+    "section": "",
+    "text": "Essential tools and setup for a complete Linux development environment.",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Installations"
+    ]
+  },
+  {
+    "objectID": "W0/2_linux_tools.html#quick-setup-script",
+    "href": "W0/2_linux_tools.html#quick-setup-script",
+    "title": "Developer Common Tools Installation",
+    "section": "Quick Setup Script",
+    "text": "Quick Setup Script\n# System update\nsudo apt update && sudo apt upgrade -y\n\n# Essential tools\nsudo apt install curl git -y\n\n# C/C++ Development Tools\nsudo apt install build-essential -y\n\n# Java Development Kit\nsudo apt install default-jdk -y\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc\n\n# Python (UV), Node.js, Podman - See installation links below\n# UV → https://docs.astral.sh/uv/#installation\n# Node → https://nodejs.org/en/download\n# Podman → https://podman.io/docs/installation\n\n# Virtual Machine (KVM/QEMU)\nsudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager -y\nsudo systemctl enable libvirtd && sudo systemctl start libvirtd\nsudo usermod -aG libvirt,kvm $USER\n\n# Restart to apply changes\nsudo reboot",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Installations"
+    ]
+  },
+  {
+    "objectID": "W0/2_linux_tools.html#individual-tool-setup",
+    "href": "W0/2_linux_tools.html#individual-tool-setup",
+    "title": "Developer Common Tools Installation",
+    "section": "Individual Tool Setup",
+    "text": "Individual Tool Setup\n\nGit - Version Control\n# Install Git\nsudo apt install git -y\n\n# Configure Git\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\ngit config --global init.defaultBranch main\n\n# Verify installation\ngit --version\n\n\nJava Development Kit (JDK)\n# Install default JDK\nsudo apt install default-jdk -y\n\n# Set JAVA_HOME environment variable\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc\nsource ~/.bashrc\n\n# Verify installation\njava -version\njavac -version",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "Installations"
+    ]
+  },
+  {
+    "objectID": "W0/3_navigation.html",
+    "href": "W0/3_navigation.html",
+    "title": "Linux Navigation & File System",
+    "section": "",
+    "text": "Linux file system hierarchy, path navigation, and basic file/folder operations.",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "File Navigation"
+    ]
+  },
+  {
+    "objectID": "W0/3_navigation.html#overview",
+    "href": "W0/3_navigation.html#overview",
+    "title": "Linux Navigation & File System",
+    "section": "",
+    "text": "Linux file system hierarchy, path navigation, and basic file/folder operations.",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "File Navigation"
+    ]
+  },
+  {
+    "objectID": "W0/3_navigation.html#everything-is-a-file",
+    "href": "W0/3_navigation.html#everything-is-a-file",
+    "title": "Linux Navigation & File System",
+    "section": "Everything is a File",
+    "text": "Everything is a File\nIn Linux, everything is treated as a file—even hardware devices!\n\n\n\nType\nExample\nDescription\n\n\n\n\nRegular files\nscript.py, data.txt\nDocuments, code, images\n\n\nDirectories\n/home, /etc\nFolders containing files\n\n\nDevices\n/dev/sda\nHard drives, USB\n\n\nMemory\n/dev/mem, /proc\nRAM, system info",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "File Navigation"
+    ]
+  },
+  {
+    "objectID": "W0/3_navigation.html#linux-file-hierarchy",
+    "href": "W0/3_navigation.html#linux-file-hierarchy",
+    "title": "Linux Navigation & File System",
+    "section": "Linux File Hierarchy",
+    "text": "Linux File Hierarchy\n/                     ← Root (top-level directory)\n├── home/             ← User home directories\n│   └── username/     ← Your personal files/folders (Documents, Downloads)\n├── bin/              ← Essential binaries (ls, cp, mv)\n├── mnt/              ← Mount point for external drives\n├── dev/              ← Device files\n├── etc/              ← Configuration files\n├── tmp/              ← Temporary files\n└── usr/              ← User programs and utilities\n\nImportant Directories\n\n\n\nDirectory\nPurpose\nCommon Use\n\n\n\n\n/home/username\nYour personal space\nProjects, dotfiles, configs\n\n\n/mnt\nMount external drives\nWindows drives in WSL → /mnt/c/\n\n\n/bin\nSystem binaries\nEssential commands like ls, cp",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "File Navigation"
+    ]
+  },
+  {
+    "objectID": "W0/3_navigation.html#path-notation",
+    "href": "W0/3_navigation.html#path-notation",
+    "title": "Linux Navigation & File System",
+    "section": "Path Notation",
+    "text": "Path Notation\n\nSpecial Symbols\n\n\n\nSymbol\nMeaning\nExample\n\n\n\n\n/\nRoot directory\ncd /\n\n\n~\nHome directory\ncd ~ → /home/username\n\n\n.\nCurrent directory\n./script.sh\n\n\n..\nParent directory\ncd ..",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "File Navigation"
+    ]
+  },
+  {
+    "objectID": "W0/3_navigation.html#navigation-commands",
+    "href": "W0/3_navigation.html#navigation-commands",
+    "title": "Linux Navigation & File System",
+    "section": "Navigation Commands",
+    "text": "Navigation Commands\npwd     # Print present working directory\nls      # List files/folders (excludes hidden)\nls -a   # List all files/folders (includes hidden)\n\ncd - Change Directory\n# Absolute path (starts from root /)\ncd /home/username/projects\n\n# Relative path (from current location)\ncd projects       # current → projects folder\ncd ./projects     # same as above\ncd ../documents   # current → parent → documents folder\ncd ../            # current → parent folder\ncd ../../         # current → grandparent folder\n\n# Shortcuts\ncd ~              # Go to user home directory, /home/username\ncd                # Same as cd ~\ncd -              # Go to OLDPWD",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "File Navigation"
+    ]
+  },
+  {
+    "objectID": "W0/3_navigation.html#hidden-files-.xyz-vs-.xyz",
+    "href": "W0/3_navigation.html#hidden-files-.xyz-vs-.xyz",
+    "title": "Linux Navigation & File System",
+    "section": "Hidden Files: .xyz vs ./xyz",
+    "text": "Hidden Files: .xyz vs ./xyz\n\n\n\nNotation\nMeaning\n\n\n\n\ncd .xyz\ncd to folder with name .xyz in current directory\n\n\ncd ./xyz\ncd to folder with name xyz in current directory\n\n\n\nls -a          # Show hidden files\n./script.sh    # Execute script in current folder",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "File Navigation"
+    ]
+  },
+  {
+    "objectID": "W0/3_navigation.html#creating-files-folders",
+    "href": "W0/3_navigation.html#creating-files-folders",
+    "title": "Linux Navigation & File System",
+    "section": "Creating Files & Folders",
+    "text": "Creating Files & Folders\n\ntouch - Create Empty File\ntouch file.txt                      # Create single file\ntouch file1.txt file2.txt           # Create multiple files\ntouch ~/projects/newfile.py         # Create in specific path\n\n\nmkdir - Make Directory\nmkdir myfolder                      # Create folder\nmkdir -p projects/python/app        # Create nested folders\nmkdir folder1 folder2               # Create multiple folders",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "File Navigation"
+    ]
+  },
+  {
+    "objectID": "W0/3_navigation.html#removing-files-folders",
+    "href": "W0/3_navigation.html#removing-files-folders",
+    "title": "Linux Navigation & File System",
+    "section": "Removing Files & Folders",
+    "text": "Removing Files & Folders\n\nrm - Remove Files\nrm file.txt             # Remove file\nrm -i file.txt          # Remove with confirmation\nrm -f file.txt          # Force remove (no confirmation)\n\n\nrmdir - Remove Empty Directory\nrmdir emptyfolder       # Remove empty folder only (fails if not empty)\n\n\nrm -r - Remove Directory Recursively\nrm -r myfolder          # Remove folder and all contents\nrm -rf myfolder         # Force remove without confirmation\n\n⚠️ Warning: rm -rf is dangerous! Double-check before using.",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "File Navigation"
+    ]
+  },
+  {
+    "objectID": "W0/3_navigation.html#quick-reference",
+    "href": "W0/3_navigation.html#quick-reference",
+    "title": "Linux Navigation & File System",
+    "section": "Quick Reference",
+    "text": "Quick Reference\n# Navigation\npwd                     # Print current path\ncd /path/to/dir         # Go to directory\ncd ~                    # Go to home\ncd ..                   # Go up one level\ncd -                    # Go to previous directory\n\n# Viewing\nls                      # List files\nls -la                  # List all with details\n\n# Creating\ntouch file.txt          # Create file\nmkdir folder            # Create folder\nmkdir -p a/b/c          # Create nested folders\n\n# Removing\nrm file.txt             # Remove file\nrmdir folder            # Remove empty folder\nrm -r folder            # Remove folder with contents\n\nPath Symbols Summary\n\n\n\nSymbol\nMeaning\n\n\n\n\n/\nRoot directory\n\n\n~\nHome directory\n\n\n.\nCurrent directory\n\n\n..\nParent directory\n\n\n-\nPrevious directory (with cd)",
+    "crumbs": [
+      "**Week-0 Foundation**",
+      "File Navigation"
+    ]
+  },
+  {
     "objectID": "W0/3_shells_variables.html",
     "href": "W0/3_shells_variables.html",
     "title": "Shell & Environment Variables",
     "section": "",
-    "text": "Understanding shells, configuration files, and environment variables in Linux—essential knowledge for any developer.",
-    "crumbs": [
-      "**Week 0**",
-      "Shells & Environment Variables"
-    ]
+    "text": "Understanding shells, configuration files, and environment variables in Linux—essential knowledge for any developer."
   },
   {
     "objectID": "W0/3_shells_variables.html#overview",
     "href": "W0/3_shells_variables.html#overview",
     "title": "Shell & Environment Variables",
     "section": "",
-    "text": "Understanding shells, configuration files, and environment variables in Linux—essential knowledge for any developer.",
-    "crumbs": [
-      "**Week 0**",
-      "Shells & Environment Variables"
-    ]
+    "text": "Understanding shells, configuration files, and environment variables in Linux—essential knowledge for any developer."
   },
   {
     "objectID": "W0/3_shells_variables.html#what-is-a-shell",
     "href": "W0/3_shells_variables.html#what-is-a-shell",
     "title": "Shell & Environment Variables",
     "section": "What is a Shell?",
-    "text": "What is a Shell?\nA shell is a command-line interface that interprets your commands and communicates with the operating system.\nCommon Shells:\n\nBash (Bourne Again Shell) - Default on most Linux systems\nZsh (Z Shell) - Feature-rich with better auto-completion\nFish - User-friendly with helpful suggestions\n\n# Check your current shell\necho $SHELL\n\n# List all available shells\ncat /etc/shells\n\n# Change default shell to Zsh\nchsh -s /usr/bin/zsh",
-    "crumbs": [
-      "**Week 0**",
-      "Shells & Environment Variables"
-    ]
+    "text": "What is a Shell?\nA shell is a command-line interface that interprets your commands and communicates with the operating system.\nCommon Shells:\n\nBash (Bourne Again Shell) - Default on most Linux systems\nZsh (Z Shell) - Feature-rich with better auto-completion\nFish - User-friendly with helpful suggestions\n\n# Check your current shell\necho $SHELL\n\n# List all available shells\ncat /etc/shells\n\n# Change default shell to Zsh\nchsh -s /usr/bin/zsh"
   },
   {
     "objectID": "W0/3_shells_variables.html#shell-types",
     "href": "W0/3_shells_variables.html#shell-types",
     "title": "Shell & Environment Variables",
     "section": "Shell Types",
-    "text": "Shell Types\n\n1. Login Shell\nStarted when you log in (SSH, initial terminal).\n\nReads profile files (.bash_profile, .profile)\nSets up initial environment\n\n\n\n2. Interactive Shell\nA shell where you type commands and get responses.\n\nReads rc files (.bashrc, .zshrc)\nHas command history and tab completion\n\n\n\n3. Non-Interactive Shell\nRuns scripts without user interaction.\n\nUses $BASH_ENV variable (if set)\nNo command history\n\n# Check if shell is interactive (look for 'i')\necho $-\n\n# Check if login shell (output starts with '-')\necho $0",
-    "crumbs": [
-      "**Week 0**",
-      "Shells & Environment Variables"
-    ]
+    "text": "Shell Types\n\n1. Login Shell\nStarted when you log in (SSH, initial terminal).\n\nReads profile files (.bash_profile, .profile)\nSets up initial environment\n\n\n\n2. Interactive Shell\nA shell where you type commands and get responses.\n\nReads rc files (.bashrc, .zshrc)\nHas command history and tab completion\n\n\n\n3. Non-Interactive Shell\nRuns scripts without user interaction.\n\nUses $BASH_ENV variable (if set)\nNo command history\n\n# Check if shell is interactive (look for 'i')\necho $-\n\n# Check if login shell (output starts with '-')\necho $0"
   },
   {
     "objectID": "W0/3_shells_variables.html#configuration-files",
     "href": "W0/3_shells_variables.html#configuration-files",
     "title": "Shell & Environment Variables",
     "section": "Configuration Files",
-    "text": "Configuration Files\n\nBash Configuration Files\n\n\n\nFile\nWhen Used\nPurpose\n\n\n\n\n.bash_profile\nLogin shell\nInitial environment setup\n\n\n.bashrc\nInteractive shell\nAliases, functions, prompt\n\n\n$BASH_ENV\nNon-interactive\nScript environment",
-    "crumbs": [
-      "**Week 0**",
-      "Shells & Environment Variables"
-    ]
+    "text": "Configuration Files\n\nBash Configuration Files\n\n\n\nFile\nWhen Used\nPurpose\n\n\n\n\n.bash_profile\nLogin shell\nInitial environment setup\n\n\n.bashrc\nInteractive shell\nAliases, functions, prompt\n\n\n$BASH_ENV\nNon-interactive\nScript environment"
   },
   {
     "objectID": "W0/3_shells_variables.html#bash-startup-flow",
     "href": "W0/3_shells_variables.html#bash-startup-flow",
     "title": "Shell & Environment Variables",
     "section": "Bash Startup Flow",
-    "text": "Bash Startup Flow\nbash starts\n│\n├─ LOGIN shell?\n│   ├─ YES → Read /etc/profile\n│   │        Read ~/.bash_profile (or ~/.bash_login or ~/.profile)\n│   └─ NO\n│\n├─ INTERACTIVE shell?\n│   ├─ YES → Read ~/.bashrc\n│   └─ NO\n│\n└─ NON-INTERACTIVE (script)?\n    └─ YES → Read file in $BASH_ENV (if set)",
-    "crumbs": [
-      "**Week 0**",
-      "Shells & Environment Variables"
-    ]
+    "text": "Bash Startup Flow\nbash starts\n│\n├─ LOGIN shell?\n│   ├─ YES → Read /etc/profile\n│   │        Read ~/.bash_profile (or ~/.bash_login or ~/.profile)\n│   └─ NO\n│\n├─ INTERACTIVE shell?\n│   ├─ YES → Read ~/.bashrc\n│   └─ NO\n│\n└─ NON-INTERACTIVE (script)?\n    └─ YES → Read file in $BASH_ENV (if set)"
   },
   {
     "objectID": "W0/3_shells_variables.html#variables-shell-vs-environment",
     "href": "W0/3_shells_variables.html#variables-shell-vs-environment",
     "title": "Shell & Environment Variables",
     "section": "Variables: Shell vs Environment",
-    "text": "Variables: Shell vs Environment\n\nShell Variables (Local)\nVariables that exist only in the current shell.\n# Create a shell variable\nMY_VAR=\"Hello\"\n\n# Access it\necho $MY_VAR\n\n# NOT available to child processes\nbash -c 'echo $MY_VAR'  # Output: (empty)\n\n\nEnvironment Variables (Global)\nVariables exported to child processes.\n# Create and export\nexport MY_VAR=\"Hello\"\n\n# Available to child processes\nbash -c 'echo $MY_VAR'  # Output: Hello\n\n# Python can access it too\npython3 -c \"import os; print(os.environ.get('MY_VAR'))\"\n\n\nWhy Export?\nWithout export:\nParent Shell: MY_VAR=\"value\"\n       ↓\nChild Process: MY_VAR not available ❌\nWith export:\nParent Shell: export MY_VAR=\"value\"\n       ↓\nChild Process: MY_VAR=\"value\" ✅",
-    "crumbs": [
-      "**Week 0**",
-      "Shells & Environment Variables"
-    ]
+    "text": "Variables: Shell vs Environment\n\nShell Variables (Local)\nVariables that exist only in the current shell.\n# Create a shell variable\nMY_VAR=\"Hello\"\n\n# Access it\necho $MY_VAR\n\n# NOT available to child processes\nbash -c 'echo $MY_VAR'  # Output: (empty)\n\n\nEnvironment Variables (Global)\nVariables exported to child processes.\n# Create and export\nexport MY_VAR=\"Hello\"\n\n# Available to child processes\nbash -c 'echo $MY_VAR'  # Output: Hello\n\n# Python can access it too\npython3 -c \"import os; print(os.environ.get('MY_VAR'))\"\n\n\nWhy Export?\nWithout export:\nParent Shell: MY_VAR=\"value\"\n       ↓\nChild Process: MY_VAR not available ❌\nWith export:\nParent Shell: export MY_VAR=\"value\"\n       ↓\nChild Process: MY_VAR=\"value\" ✅"
   },
   {
     "objectID": "W0/3_shells_variables.html#common-environment-variables",
     "href": "W0/3_shells_variables.html#common-environment-variables",
     "title": "Shell & Environment Variables",
     "section": "Common Environment Variables",
-    "text": "Common Environment Variables\n# View all environment variables\nprintenv\n\n# Important variables\necho $HOME          # Home directory\necho $USER          # Username\necho $PATH          # Executable search paths\necho $SHELL         # Default shell\necho $PWD           # Current directory\n\nSetting Environment Variables\n# Temporary (current session only)\nexport JAVA_HOME=\"/usr/lib/jvm/default-java\"\n\n# Permanent (add to ~/.bashrc)\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc\nsource ~/.bashrc",
-    "crumbs": [
-      "**Week 0**",
-      "Shells & Environment Variables"
-    ]
+    "text": "Common Environment Variables\n# View all environment variables\nprintenv\n\n# Important variables\necho $HOME          # Home directory\necho $USER          # Username\necho $PATH          # Executable search paths\necho $SHELL         # Default shell\necho $PWD           # Current directory\n\nSetting Environment Variables\n# Temporary (current session only)\nexport JAVA_HOME=\"/usr/lib/jvm/default-java\"\n\n# Permanent (add to ~/.bashrc)\necho 'export JAVA_HOME=\"/usr/lib/jvm/default-java\"' &gt;&gt; ~/.bashrc\nsource ~/.bashrc"
   },
   {
     "objectID": "W0/3_shells_variables.html#source-vs-export",
     "href": "W0/3_shells_variables.html#source-vs-export",
     "title": "Shell & Environment Variables",
     "section": "Source vs Export",
-    "text": "Source vs Export\n\nsource Command\nExecutes commands in the current shell (not a new shell).\n# Reload configuration\nsource ~/.bashrc\n\n# Shorthand\n. ~/.bashrc\nFlow:\nCurrent Shell\n    ↓\nsource ~/.bashrc\n    ↓\nCommands run in SAME shell\n    ↓\nChanges apply immediately\n\n\nexport Command\nMakes variables available to child processes.\n# Export variable\nexport API_KEY=\"secret123\"\n\n# Child processes can access it\npython3 script.py  # Can read API_KEY\nFlow:\nParent Shell\n    ↓\nexport VAR=value\n    ↓\nChild Process starts\n    ↓\nVAR is accessible in child",
-    "crumbs": [
-      "**Week 0**",
-      "Shells & Environment Variables"
-    ]
+    "text": "Source vs Export\n\nsource Command\nExecutes commands in the current shell (not a new shell).\n# Reload configuration\nsource ~/.bashrc\n\n# Shorthand\n. ~/.bashrc\nFlow:\nCurrent Shell\n    ↓\nsource ~/.bashrc\n    ↓\nCommands run in SAME shell\n    ↓\nChanges apply immediately\n\n\nexport Command\nMakes variables available to child processes.\n# Export variable\nexport API_KEY=\"secret123\"\n\n# Child processes can access it\npython3 script.py  # Can read API_KEY\nFlow:\nParent Shell\n    ↓\nexport VAR=value\n    ↓\nChild Process starts\n    ↓\nVAR is accessible in child"
   },
   {
     "objectID": "W0/3_shells_variables.html#how-programs-inherit-environment",
     "href": "W0/3_shells_variables.html#how-programs-inherit-environment",
     "title": "Shell & Environment Variables",
     "section": "How Programs Inherit Environment",
-    "text": "How Programs Inherit Environment\nWhen you run a program, it inherits environment variables from the shell:\nInteractive bash running\n        ↓\nUser types: python3 app.py\n        ↓\nbash searches for python3 in $PATH\n        ↓\nbash creates child process (fork)\n        ↓\nexecve(python3, [\"app.py\"], environment)\n        ↓\nPython starts with inherited environment\n        ↓\napp.py can access environment variables\n\nPractical Example\nIn Shell:\n# Set environment variable in ~/.bashrc\nexport DATABASE_URL=\"postgresql://localhost/mydb\"\nsource ~/.bashrc\nIn Python (app.py):\nimport os\n\n# Access environment variable\ndb_url = os.environ.get('DATABASE_URL')\nprint(f\"Database: {db_url}\")\nRun:\npython3 app.py\n# Output: Database: postgresql://localhost/mydb",
-    "crumbs": [
-      "**Week 0**",
-      "Shells & Environment Variables"
-    ]
+    "text": "How Programs Inherit Environment\nWhen you run a program, it inherits environment variables from the shell:\nInteractive bash running\n        ↓\nUser types: python3 app.py\n        ↓\nbash searches for python3 in $PATH\n        ↓\nbash creates child process (fork)\n        ↓\nexecve(python3, [\"app.py\"], environment)\n        ↓\nPython starts with inherited environment\n        ↓\napp.py can access environment variables\n\nPractical Example\nIn Shell:\n# Set environment variable in ~/.bashrc\nexport DATABASE_URL=\"postgresql://localhost/mydb\"\nsource ~/.bashrc\nIn Python (app.py):\nimport os\n\n# Access environment variable\ndb_url = os.environ.get('DATABASE_URL')\nprint(f\"Database: {db_url}\")\nRun:\npython3 app.py\n# Output: Database: postgresql://localhost/mydb"
   },
   {
     "objectID": "W0/3_shells_variables.html#quick-reference",
     "href": "W0/3_shells_variables.html#quick-reference",
     "title": "Shell & Environment Variables",
     "section": "Quick Reference",
-    "text": "Quick Reference\n# Shell information\necho $SHELL                 # Default shell\necho $0                     # Current shell\ncat /etc/shells             # Available shells\n\n# Variables\nVAR=value                   # Shell variable (local)\nexport VAR=value            # Environment variable (global)\nprintenv                    # List all environment variables\necho $VAR                   # Print variable value\n\n# Configuration\nsource ~/.bashrc            # Reload configuration\nnano ~/.bashrc              # Edit configuration\n\nKey Concepts\n\nLogin shell → Reads profile files (.bash_profile, .zprofile)\nInteractive shell → Reads rc files (.bashrc, .zshrc)\nNon-interactive shell → Uses $BASH_ENV (if set)\nexport → Share variable with child processes\nsource → Run commands in current shell\nShell variable → Local to current shell only\nEnvironment variable → Inherited by child processes",
-    "crumbs": [
-      "**Week 0**",
-      "Shells & Environment Variables"
-    ]
+    "text": "Quick Reference\n# Shell information\necho $SHELL                 # Default shell\necho $0                     # Current shell\ncat /etc/shells             # Available shells\n\n# Variables\nVAR=value                   # Shell variable (local)\nexport VAR=value            # Environment variable (global)\nprintenv                    # List all environment variables\necho $VAR                   # Print variable value\n\n# Configuration\nsource ~/.bashrc            # Reload configuration\nnano ~/.bashrc              # Edit configuration\n\nKey Concepts\n\nLogin shell → Reads profile files (.bash_profile, .zprofile)\nInteractive shell → Reads rc files (.bashrc, .zshrc)\nNon-interactive shell → Uses $BASH_ENV (if set)\nexport → Share variable with child processes\nsource → Run commands in current shell\nShell variable → Local to current shell only\nEnvironment variable → Inherited by child processes"
   }
 ]

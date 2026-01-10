@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="HRM">
-<meta name="dcterms.date" content="2025-08-18">
 
-<title>TDS - Tools for Data Science – TDS by HRM</title>
+<title>Linux Navigation &amp; File System – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,31 +20,68 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c2cb7e0b3076a20157071e492cb50f0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-0c5b58de5cf64f3542caacbc690827f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-c2cb7e0b3076a20157071e492cb50f0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../W0/4_shells.html" rel="next">
+<link href="../W0/2_linux_tools.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c2cb7e0b3076a20157071e492cb50f0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-0c5b58de5cf64f3542caacbc690827f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c2cb7e0b3076a20157071e492cb50f0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -249,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">TDS by HRM</span>
     </a>
   </div>
@@ -267,7 +302,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">TDS - Tools for Data Science</h1>
+          <h1 class="quarto-secondary-nav-title">Linux Navigation &amp; File System</h1>
         </a>     
     </div>
   </nav>
@@ -280,47 +315,47 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>About The Course</strong></span></a>
   </div>
 </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Week-0 Foundation</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W0/1_wsl_setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../W0/1_wsl_setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">WSL</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W0/2_linux_tools.html" class="sidebar-item-text sidebar-link">
+  <a href="../W0/2_linux_tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Installations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W0/3_navigation.html" class="sidebar-item-text sidebar-link">
+  <a href="../W0/3_navigation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">File Navigation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W0/4_shells.html" class="sidebar-item-text sidebar-link">
+  <a href="../W0/4_shells.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shell Config</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./W0/5_run.html" class="sidebar-item-text sidebar-link">
+  <a href="../W0/5_run.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Running Scripts</span></a>
   </div>
 </li>
@@ -338,26 +373,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">TDS - Tools for Data Science</h1>
+<h1 class="title d-none d-lg-block">Linux Navigation &amp; File System</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>HRM </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Since</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 18, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -367,43 +390,270 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="tools-in-data-science-tds" class="level3">
-<h3 class="anchored" data-anchor-id="tools-in-data-science-tds">📘 Tools in Data Science (TDS)</h3>
-<p><strong>(Python • Data Science • APIs • Automation • Systems)</strong></p>
-<p>This website documents my learning, teaching experience, and practical notes for the <strong>Tools in Data Science (TDS)</strong> subject. The content is inspired by the official TDS material and enriched with my <strong>own explanations, examples, and insights</strong> gained while teaching and practicing.</p>
-<p>I have been a <strong>Teaching Assistant (TA) for TDS since May 2025</strong>, and this platform is my way of consolidating concepts in a <strong>clear, practical, and student-friendly manner</strong>.</p>
-<p>You can find the official TDS course content here: 🔗 <a href="https://tds.s-anand.net/#/" target="_blank">https://tds.s-anand.net/#/</a></p>
-<hr>
-<section id="what-this-website-covers" class="level4">
-<h4 class="anchored" data-anchor-id="what-this-website-covers">🔹 What This Website Covers</h4>
-<ul>
-<li>🐍 <strong>Fastapi</strong></li>
-<li>🌐 <strong>Agentic Frameworks</strong></li>
-<li>🗄️ <strong>Databases &amp; SQL</strong></li>
-<li>⚙️ <strong>Basics Linux &amp; Setups</strong></li>
-<li>🧪 <strong>Practical Experiments, Mini Tasks &amp; Notes</strong></li>
-</ul>
-<hr>
-<section id="goal" class="level5">
-<h5 class="anchored" data-anchor-id="goal">🎯 <strong>Goal</strong></h5>
-<p>Build <strong>strong practical foundations</strong> in tools commonly used in real-world data science workflows — not just theory, but <em>how things actually work</em>.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Linux file system hierarchy, path navigation, and basic file/folder operations.</p>
 <hr>
 </section>
-<section id="who-should-use-this-website" class="level5">
-<h5 class="anchored" data-anchor-id="who-should-use-this-website">📚 <strong>Who Should Use This Website</strong></h5>
-<ul>
-<li><p>Students enrolled in or preparing for <strong>TDS</strong></p></li>
-<li><p>Learners with <strong>basic knowledge</strong> of:</p>
-<ul>
-<li>Python</li>
-<li>Programming fundamentals</li>
-<li>Linux</li>
-</ul></li>
-<li><p>Anyone who prefers <strong>practical, example-driven explanations</strong></p></li>
-</ul>
-
-
+<section id="everything-is-a-file" class="level2">
+<h2 class="anchored" data-anchor-id="everything-is-a-file">Everything is a File</h2>
+<p>In Linux, <strong>everything is treated as a file</strong>—even hardware devices!</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Regular files</td>
+<td><code>script.py</code>, <code>data.txt</code></td>
+<td>Documents, code, images</td>
+</tr>
+<tr class="even">
+<td>Directories</td>
+<td><code>/home</code>, <code>/etc</code></td>
+<td>Folders containing files</td>
+</tr>
+<tr class="odd">
+<td>Devices</td>
+<td><code>/dev/sda</code></td>
+<td>Hard drives, USB</td>
+</tr>
+<tr class="even">
+<td>Memory</td>
+<td><code>/dev/mem</code>, <code>/proc</code></td>
+<td>RAM, system info</td>
+</tr>
+</tbody>
+</table>
+<hr>
 </section>
+<section id="linux-file-hierarchy" class="level2">
+<h2 class="anchored" data-anchor-id="linux-file-hierarchy">Linux File Hierarchy</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>/                     ← Root (top-level directory)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>├── home/             ← User home directories</span>
+<span id="cb1-3"><a href="#cb1-3"></a>│   └── username/     ← Your personal files/folders (Documents, Downloads)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>├── bin/              ← Essential binaries (ls, cp, mv)</span>
+<span id="cb1-5"><a href="#cb1-5"></a>├── mnt/              ← Mount point for external drives</span>
+<span id="cb1-6"><a href="#cb1-6"></a>├── dev/              ← Device files</span>
+<span id="cb1-7"><a href="#cb1-7"></a>├── etc/              ← Configuration files</span>
+<span id="cb1-8"><a href="#cb1-8"></a>├── tmp/              ← Temporary files</span>
+<span id="cb1-9"><a href="#cb1-9"></a>└── usr/              ← User programs and utilities</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="important-directories" class="level3">
+<h3 class="anchored" data-anchor-id="important-directories">Important Directories</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Directory</th>
+<th>Purpose</th>
+<th>Common Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>/home/username</code></td>
+<td>Your personal space</td>
+<td>Projects, dotfiles, configs</td>
+</tr>
+<tr class="even">
+<td><code>/mnt</code></td>
+<td>Mount external drives</td>
+<td>Windows drives in WSL → <code>/mnt/c/</code></td>
+</tr>
+<tr class="odd">
+<td><code>/bin</code></td>
+<td>System binaries</td>
+<td>Essential commands like <code>ls</code>, <code>cp</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="path-notation" class="level2">
+<h2 class="anchored" data-anchor-id="path-notation">Path Notation</h2>
+<section id="special-symbols" class="level3">
+<h3 class="anchored" data-anchor-id="special-symbols">Special Symbols</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>/</code></td>
+<td>Root directory</td>
+<td><code>cd /</code></td>
+</tr>
+<tr class="even">
+<td><code>~</code></td>
+<td>Home directory</td>
+<td><code>cd ~</code> → <code>/home/username</code></td>
+</tr>
+<tr class="odd">
+<td><code>.</code></td>
+<td>Current directory</td>
+<td><code>./script.sh</code></td>
+</tr>
+<tr class="even">
+<td><code>..</code></td>
+<td>Parent directory</td>
+<td><code>cd ..</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="navigation-commands" class="level2">
+<h2 class="anchored" data-anchor-id="navigation-commands">Navigation Commands</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">pwd</span>     <span class="co"># Print present working directory</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">ls</span>      <span class="co"># List files/folders (excludes hidden)</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">ls</span> <span class="at">-a</span>   <span class="co"># List all files/folders (includes hidden)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="cd---change-directory" class="level3">
+<h3 class="anchored" data-anchor-id="cd---change-directory"><code>cd</code> - Change Directory</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Absolute path (starts from root /)</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="bu">cd</span> /home/username/projects</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Relative path (from current location)</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">cd</span> projects       <span class="co"># current → projects folder</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="bu">cd</span> ./projects     <span class="co"># same as above</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="bu">cd</span> ../documents   <span class="co"># current → parent → documents folder</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="bu">cd</span> ../            <span class="co"># current → parent folder</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="bu">cd</span> ../../         <span class="co"># current → grandparent folder</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co"># Shortcuts</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="bu">cd</span> ~              <span class="co"># Go to user home directory, /home/username</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="bu">cd</span>                <span class="co"># Same as cd ~</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="bu">cd</span> <span class="at">-</span>              <span class="co"># Go to OLDPWD</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="hidden-files-.xyz-vs-.xyz" class="level2">
+<h2 class="anchored" data-anchor-id="hidden-files-.xyz-vs-.xyz">Hidden Files: <code>.xyz</code> vs <code>./xyz</code></h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Notation</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>cd .xyz</code></td>
+<td><code>cd</code> to folder with name <code>.xyz</code> in current directory</td>
+</tr>
+<tr class="even">
+<td><code>cd ./xyz</code></td>
+<td><code>cd</code> to folder with name <code>xyz</code> in current directory</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ls</span> <span class="at">-a</span>          <span class="co"># Show hidden files</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">./script.sh</span>    <span class="co"># Execute script in current folder</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="creating-files-folders" class="level2">
+<h2 class="anchored" data-anchor-id="creating-files-folders">Creating Files &amp; Folders</h2>
+<section id="touch---create-empty-file" class="level3">
+<h3 class="anchored" data-anchor-id="touch---create-empty-file"><code>touch</code> - Create Empty File</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">touch</span> file.txt                      <span class="co"># Create single file</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">touch</span> file1.txt file2.txt           <span class="co"># Create multiple files</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">touch</span> ~/projects/newfile.py         <span class="co"># Create in specific path</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="mkdir---make-directory" class="level3">
+<h3 class="anchored" data-anchor-id="mkdir---make-directory"><code>mkdir</code> - Make Directory</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">mkdir</span> myfolder                      <span class="co"># Create folder</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">mkdir</span> <span class="at">-p</span> projects/python/app        <span class="co"># Create nested folders</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">mkdir</span> folder1 folder2               <span class="co"># Create multiple folders</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="removing-files-folders" class="level2">
+<h2 class="anchored" data-anchor-id="removing-files-folders">Removing Files &amp; Folders</h2>
+<section id="rm---remove-files" class="level3">
+<h3 class="anchored" data-anchor-id="rm---remove-files"><code>rm</code> - Remove Files</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">rm</span> file.txt             <span class="co"># Remove file</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">rm</span> <span class="at">-i</span> file.txt          <span class="co"># Remove with confirmation</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="fu">rm</span> <span class="at">-f</span> file.txt          <span class="co"># Force remove (no confirmation)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="rmdir---remove-empty-directory" class="level3">
+<h3 class="anchored" data-anchor-id="rmdir---remove-empty-directory"><code>rmdir</code> - Remove Empty Directory</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">rmdir</span> emptyfolder       <span class="co"># Remove empty folder only (fails if not empty)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="rm--r---remove-directory-recursively" class="level3">
+<h3 class="anchored" data-anchor-id="rm--r---remove-directory-recursively"><code>rm -r</code> - Remove Directory Recursively</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">rm</span> <span class="at">-r</span> myfolder          <span class="co"># Remove folder and all contents</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">rm</span> <span class="at">-rf</span> myfolder         <span class="co"># Force remove without confirmation</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>⚠️ <strong>Warning:</strong> <code>rm -rf</code> is dangerous! Double-check before using.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Navigation</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="bu">pwd</span>                     <span class="co"># Print current path</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="bu">cd</span> /path/to/dir         <span class="co"># Go to directory</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="bu">cd</span> ~                    <span class="co"># Go to home</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="bu">cd</span> ..                   <span class="co"># Go up one level</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="bu">cd</span> <span class="at">-</span>                    <span class="co"># Go to previous directory</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="co"># Viewing</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="fu">ls</span>                      <span class="co"># List files</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="fu">ls</span> <span class="at">-la</span>                  <span class="co"># List all with details</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a></span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="co"># Creating</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="fu">touch</span> file.txt          <span class="co"># Create file</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="fu">mkdir</span> folder            <span class="co"># Create folder</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="fu">mkdir</span> <span class="at">-p</span> a/b/c          <span class="co"># Create nested folders</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a></span>
+<span id="cb10-17"><a href="#cb10-17"></a><span class="co"># Removing</span></span>
+<span id="cb10-18"><a href="#cb10-18"></a><span class="fu">rm</span> file.txt             <span class="co"># Remove file</span></span>
+<span id="cb10-19"><a href="#cb10-19"></a><span class="fu">rmdir</span> folder            <span class="co"># Remove empty folder</span></span>
+<span id="cb10-20"><a href="#cb10-20"></a><span class="fu">rm</span> <span class="at">-r</span> folder            <span class="co"># Remove folder with contents</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="path-symbols-summary" class="level3">
+<h3 class="anchored" data-anchor-id="path-symbols-summary">Path Symbols Summary</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>/</code></td>
+<td>Root directory</td>
+</tr>
+<tr class="even">
+<td><code>~</code></td>
+<td>Home directory</td>
+</tr>
+<tr class="odd">
+<td><code>.</code></td>
+<td>Current directory</td>
+</tr>
+<tr class="even">
+<td><code>..</code></td>
+<td>Parent directory</td>
+</tr>
+<tr class="odd">
+<td><code>-</code></td>
+<td>Previous directory (with <code>cd</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+
 </section>
 </section>
 
@@ -821,6 +1071,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../W0/2_linux_tools.html" class="pagination-link" aria-label="Installations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Installations</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../W0/4_shells.html" class="pagination-link" aria-label="Shell Config">
+        <span class="nav-page-text">Shell Config</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -839,5 +1101,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
