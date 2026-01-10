@@ -6,53 +6,50 @@ format:
     highlight-style: github
 ---
 
-# Developer Common Tools Installation
+## Overview
 
-Essential tools and setup for Linux development environment.
+Essential tools and setup for a complete Linux development environment.
+
+---
+
+## Quick Setup Script
 
 ```bash
-sudo apt update
-sudo apt upgrade -y
+# System update
+sudo apt update && sudo apt upgrade -y
 
-sudo apt install curl
-sudo apt install git
+# Essential tools
+sudo apt install curl git -y
 
-sudo apt install default-jdk
+# C/C++ Development Tools
+sudo apt install build-essential -y
+
+# Java Development Kit
+sudo apt install default-jdk -y
 echo 'export JAVA_HOME="/usr/lib/jvm/default-java"' >> ~/.bashrc
 
-# UV -> https://docs.astral.sh/uv/#installation
-# Node -> https://nodejs.org/en/download
-# Podman -> https://podman.io/docs/installation
-## Inside podmand install: OLLAMA, POSTGRES, PGADMIN	
+# Python (UV), Node.js, Podman - See installation links below
+# UV → https://docs.astral.sh/uv/#installation
+# Node → https://nodejs.org/en/download
+# Podman → https://podman.io/docs/installation
 
-# VM(KVM/QEMU type-1 in Full Linux OS) : Follow Below Instructions
-sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager
-sudo systemctl enable libvirtd
-sudo systemctl start libvirtd
+# Virtual Machine (KVM/QEMU)
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager -y
+sudo systemctl enable libvirtd && sudo systemctl start libvirtd
 sudo usermod -aG libvirt,kvm $USER
 
-# Restart 
+# Restart to apply changes
 sudo reboot
 ```
 
 ---
 
-## System Update
-
-Always start by updating your system:
-
-```bash
-sudo apt update
-sudo apt upgrade -y
-```
-
----
-
-## Essential Development Tools
+## Individual Tool Setup
 
 ### Git - Version Control
 
 ```bash
+# Install Git
 sudo apt install git -y
 
 # Configure Git
@@ -80,272 +77,3 @@ javac -version
 ```
 
 ---
-
-## Python Package Manager - UV
-
-**UV** is a fast Python package installer and resolver written in Rust.
-
-### Installation
-
-**Use Official Link:** [https://docs.astral.sh/uv/](https://docs.astral.sh/uv/)
-
-```bash
-# Install UV using the official installer
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Verify installation
-uv --version
-```
-
-
-### Basic Usage
-
-```bash
-# Old Venv style, in my-project1 folder
-uv init
-source .venv/bin/activate
-uv pip install requests pandas
-uv run python script.py
-
-# Create a new Python project with modern structures
-uv init my-project2
-cd my-project2
-
-uv add requests pandas # Install packages
-uv run python script.py # Run Python scripts
-```
-
-`Script Execution without creating venv`
-```bash
-uv add --script script.py requests pandas
-uv run script.py
-```
----
-
-## Node.js - JavaScript Runtime
-
-### Installation (Using NodeSource)
-
-**Official Download:** [https://nodejs.org/en/download](https://nodejs.org/en/download)
-
----
-
-## Podman - Container Management
-
-**Podman** is a daemonless container engine for developing, managing, and running OCI containers.
-
-### Installation
-
-**Documentation:** [https://podman.io/docs/installation](https://podman.io/docs/installation)
-
-```bash
-# Install Podman
-sudo apt install podman -y
-
-# Verify installation
-podman --version
-```
-
-### Using Podman to Install Common Tools
-
-#### 1. Ollama - Local LLM Runtime
-
-```bash
-# Pull and run Ollama container
-podman run -d \
-  --name ollama \
-  -p 11434:11434 \
-  -v ollama_data:/root/.ollama \
-  docker.io/ollama/ollama:latest
-
-# Verify Ollama is running
-podman ps
-
-# Pull a model (e.g., llama2)
-podman exec -it ollama ollama pull llama2
-
-# Test Ollama
-curl http://localhost:11434/api/generate -d '{
-  "model": "llama2",
-  "prompt": "Why is the sky blue?"
-}'
-```
-
-#### 2. PostgreSQL Database
-
-```bash
-# Pull and run PostgreSQL container
-podman run -d \
-  --name postgres \
-  -e POSTGRES_PASSWORD=mysecretpassword \
-  -e POSTGRES_USER=admin \
-  -e POSTGRES_DB=mydb \
-  -p 5432:5432 \
-  -v postgres_data:/var/lib/postgresql/data \
-  docker.io/library/postgres:16
-
-# Verify PostgreSQL is running
-podman ps
-
-# Connect to PostgreSQL
-podman exec -it postgres psql -U admin -d mydb
-```
-
-#### 3. pgAdmin - PostgreSQL Management Tool
-
-```bash
-# Pull and run pgAdmin container
-podman run -d \
-  --name pgadmin \
-  -e PGADMIN_DEFAULT_EMAIL=admin@example.com \
-  -e PGADMIN_DEFAULT_PASSWORD=admin \
-  -p 5050:80 \
-  -v pgadmin_data:/var/lib/pgadmin \
-  docker.io/dpage/pgadmin4:latest
-
-# Access pgAdmin at: http://localhost:5050
-# Login with: admin@example.com / admin
-```
-
-::: {.callout-tip}
-**Connect pgAdmin to PostgreSQL:**  
-- Host: `host.containers.internal` (or your machine's IP)  
-- Port: `5432`  
-- Username: `admin`  
-- Password: `mysecretpassword`  
-:::
-
-
----
-
-## KVM/QEMU - Virtual Machine Manager
-
-**KVM (Kernel-based Virtual Machine)** is a Type-1 hypervisor for Linux that allows you to run virtual machines.
-
-### Installation
-
-```bash
-# Install KVM and related tools
-sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager -y
-
-# Enable and start libvirt service
-sudo systemctl enable libvirtd
-sudo systemctl start libvirtd
-
-# Add your user to libvirt and kvm groups
-sudo usermod -aG libvirt,kvm $USER
-
-# Apply group changes (logout/login or restart)
-newgrp libvirt
-```
-
-::: {.callout-warning}
-**Important:** You need to **logout and login** (or restart) for group changes to take effect.
-:::
-
-### Verify KVM Installation
-
-```bash
-# Check if KVM is available
-kvm-ok
-
-# Check libvirt status
-sudo systemctl status libvirtd
-
-# Verify your user is in the correct groups
-groups
-```
-
-### Using Virtual Machine Manager (GUI)
-
-```bash
-# Launch Virtual Machine Manager
-virt-manager
-```
-
-### Using KVM for Testing
-
-**Common Use Cases:**
-
-- Test different Linux distributions  
-- Test software on different OS versions  
-- Create isolated development environments  
-- Test network configurations  
-- Simulate production environments  
-- Security testing and sandboxing  
-
----
-
-## Common Questions & Answers
-
-### Q1: What's the difference between Podman and Docker?
-
-**Answer:**  
-- **Podman** is daemonless (no background service required), while Docker uses a daemon  
-- **Podman** runs containers as regular users (rootless), Docker typically requires root  
-- **Podman** is more secure by default with better isolation  
-- **Podman** commands are compatible with Docker (alias `docker=podman` works)  
-- **Podman** can generate Kubernetes YAML files directly  
-
-### Q2: Why use UV instead of pip?
-
-**Answer:**  
-- **UV** is 10-100x faster than pip  
-- Better dependency resolution  
-- Built-in virtual environment management  
-- Lockfile support for reproducible builds  
-- Written in Rust for performance  
-- Modern alternative to pip, pip-tools, and virtualenv combined  
-
-### Q3: Can I use Podman and Docker together?
-
-**Answer:**  
-Yes, but it's not recommended. They use different container storage backends. If you need Docker compatibility, you can alias Podman:
-```bash
-alias docker=podman
-```
-
-### Q4: What's the difference between KVM and VirtualBox?
-
-**Answer:**  
-- **KVM** is a Type-1 hypervisor (runs directly on hardware), VirtualBox is Type-2 (runs on host OS)  
-- **KVM** has better performance (near-native speed)  
-- **KVM** is built into the Linux kernel  
-- **VirtualBox** is easier to use with a better GUI  
-- **KVM** is better for production/server use  
-- **VirtualBox** is better for desktop/development use on multiple OS  
-
-### Q5: What's the difference between containers and virtual machines?
-
-**Answer:**  
-- **Containers** share the host OS kernel, VMs have their own complete OS  
-- **Containers** are lightweight (MBs), VMs are heavy (GBs)  
-- **Containers** start in seconds, VMs take minutes  
-- **Containers** have lower overhead and better performance  
-- **VMs** provide stronger isolation and can run different OS types  
-- **Containers** are ideal for microservices, VMs for running different operating systems  
-
-### Q6: Why use Podman for development instead of installing tools directly?
-
-**Answer:**  
-- **Isolation** - Each tool runs in its own container, no conflicts  
-- **Portability** - Same environment across different machines  
-- **Easy cleanup** - Remove containers without affecting your system  
-- **Version management** - Run multiple versions of the same tool  
-- **No system pollution** - Keep your host system clean  
-- **Reproducibility** - Share exact configurations with team members  
-
-
----
-
-::: {.callout-tip}
-## Next Steps
-- Set up your development environment with these tools  
-- Practice creating and managing containers with Podman  
-- Create test VMs with KVM for different scenarios  
-- Explore container orchestration with Podman Compose or Kubernetes  
-:::
-
----
-
-**Happy Developing! 🚀**
