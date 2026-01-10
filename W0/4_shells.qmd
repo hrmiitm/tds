@@ -1,0 +1,304 @@
+---
+title: "Shell & Environment Variables"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+## Overview
+
+Understanding shells, configuration files, and environment variables in Linux—essential knowledge for any developer.
+
+{{< video https://youtu.be/JFE0pDwe7YM >}}
+
+---
+
+## What is a Shell?
+
+A **shell** is a command-line interface that interprets your commands and communicates with the operating system.
+
+**Common Shells:**
+
+- **Bash** (Bourne Again Shell) - Default on most Linux systems
+- **Zsh** (Z Shell) - Feature-rich with better auto-completion
+- **Fish** - User-friendly with helpful suggestions
+
+```bash
+# Check your current shell
+echo $SHELL
+
+# List all available shells
+cat /etc/shells
+
+# Change default shell to Zsh
+chsh -s /usr/bin/zsh
+```
+
+---
+
+## Shell Types
+
+### 1. Login Shell
+Started when you **log in** (SSH, initial terminal).
+
+- Reads **profile** files (`.bash_profile`, `.profile`)
+- Sets up initial environment
+
+### 2. Interactive Shell
+A shell where you **type commands** and get responses.
+
+- Reads **rc** files (`.bashrc`, `.zshrc`)
+- Has command history and tab completion
+
+### 3. Non-Interactive Shell
+Runs **scripts** without user interaction.
+
+- Uses **`$BASH_ENV`** variable (if set)
+- No command history
+
+```bash
+# Check if shell is interactive (look for 'i')
+echo $-
+
+# Check if login shell (output starts with '-')
+echo $0
+```
+
+---
+
+## Configuration Files
+
+### Bash Configuration Files
+
+| File | When Used | Purpose |
+|------|-----------|---------|
+| `.bash_profile` | Login shell | Initial environment setup |
+| `.bashrc` | Interactive shell | Aliases, functions, prompt |
+| `$BASH_ENV` | Non-interactive | Script environment |
+
+---
+
+## Bash Startup Flow
+
+```text
+bash starts
+│
+├─ LOGIN shell?
+│   ├─ YES → Read /etc/profile
+│   │        Read ~/.bash_profile (or ~/.bash_login or ~/.profile)
+│   └─ NO
+│
+├─ INTERACTIVE shell?
+│   ├─ YES → Read ~/.bashrc
+│   └─ NO
+│
+└─ NON-INTERACTIVE (script)?
+    └─ YES → Read file in $BASH_ENV (if set)
+```
+
+---
+
+## Variables: Shell vs Environment
+
+### Shell Variables (Local)
+
+Variables that exist **only in the current shell**.
+
+```bash
+# Create a shell variable
+MY_VAR="Hello"
+
+# Access it
+echo $MY_VAR
+
+# NOT available to child processes
+bash -c 'echo $MY_VAR'  # Output: (empty)
+```
+
+### Environment Variables (Global)
+
+Variables **exported** to child processes.
+
+```bash
+# Create and export
+export MY_VAR="Hello"
+
+# Available to child processes
+bash -c 'echo $MY_VAR'  # Output: Hello
+
+# Python can access it too
+python3 -c "import os; print(os.environ.get('MY_VAR'))"
+```
+
+### Why Export?
+
+**Without export:**
+```text
+Parent Shell: MY_VAR="value"
+       ↓
+Child Process: MY_VAR not available ❌
+```
+
+**With export:**
+```text
+Parent Shell: export MY_VAR="value"
+       ↓
+Child Process: MY_VAR="value" ✅
+```
+
+---
+
+## Common Environment Variables
+
+```bash
+# View all environment variables
+printenv
+
+# Important variables
+echo $HOME          # Home directory
+echo $USER          # Username
+echo $PATH          # Executable search paths
+echo $SHELL         # Default shell
+echo $PWD           # Current directory
+```
+
+### Setting Environment Variables
+
+```bash
+# Temporary (current session only)
+export JAVA_HOME="/usr/lib/jvm/default-java"
+
+# Permanent (add to ~/.bashrc)
+echo 'export JAVA_HOME="/usr/lib/jvm/default-java"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+---
+
+## Source vs Export
+
+### `source` Command
+
+Executes commands **in the current shell** (not a new shell).
+
+```bash
+# Reload configuration
+source ~/.bashrc
+
+# Shorthand
+. ~/.bashrc
+```
+
+**Flow:**
+```text
+Current Shell
+    ↓
+source ~/.bashrc
+    ↓
+Commands run in SAME shell
+    ↓
+Changes apply immediately
+```
+
+### `export` Command
+
+Makes variables available to **child processes**.
+
+```bash
+# Export variable
+export API_KEY="secret123"
+
+# Child processes can access it
+python3 script.py  # Can read API_KEY
+```
+
+**Flow:**
+```text
+Parent Shell
+    ↓
+export VAR=value
+    ↓
+Child Process starts
+    ↓
+VAR is accessible in child
+```
+
+---
+
+## How Programs Inherit Environment
+
+When you run a program, it inherits environment variables from the shell:
+
+```text
+Interactive bash running
+        ↓
+User types: python3 app.py
+        ↓
+bash searches for python3 in $PATH
+        ↓
+bash creates child process (fork)
+        ↓
+execve(python3, ["app.py"], environment)
+        ↓
+Python starts with inherited environment
+        ↓
+app.py can access environment variables
+```
+
+### Practical Example
+
+**In Shell:**
+```bash
+# Set environment variable in ~/.bashrc
+export DATABASE_URL="postgresql://localhost/mydb"
+source ~/.bashrc
+```
+
+**In Python (app.py):**
+```python
+import os
+
+# Access environment variable
+db_url = os.environ.get('DATABASE_URL')
+print(f"Database: {db_url}")
+```
+
+**Run:**
+```bash
+python3 app.py
+# Output: Database: postgresql://localhost/mydb
+```
+
+---
+
+## Quick Reference
+
+```bash
+# Shell information
+echo $SHELL                 # Default shell
+echo $0                     # Current shell
+cat /etc/shells             # Available shells
+
+# Variables
+VAR=value                   # Shell variable (local)
+export VAR=value            # Environment variable (global)
+printenv                    # List all environment variables
+echo $VAR                   # Print variable value
+
+# Configuration
+source ~/.bashrc            # Reload configuration
+nano ~/.bashrc              # Edit configuration
+```
+
+### Key Concepts
+
+- **Login shell** → Reads profile files (`.bash_profile`, `.zprofile`)
+- **Interactive shell** → Reads rc files (`.bashrc`, `.zshrc`)
+- **Non-interactive shell** → Uses `$BASH_ENV` (if set)
+- **`export`** → Share variable with child processes
+- **`source`** → Run commands in current shell
+- **Shell variable** → Local to current shell only
+- **Environment variable** → Inherited by child processes
+
+---
