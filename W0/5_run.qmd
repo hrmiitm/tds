@@ -1,0 +1,91 @@
+---
+title: "Running Commands & Scripts"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+## Overview
+
+How Linux shell interprets and executes commands.
+
+---
+
+## How Shell Executes Commands
+
+When you type a command, shell parses it into parts:
+
+```text
+command arg1 arg2 -flag --option
+   ↓      ↓    ↓    ↓      ↓
+program  arguments  options/flags
+```
+
+### Examples
+
+```bash
+ls -l /home              # command: ls, flag: -l, arg: /home
+cp file1.txt file2.txt   # command: cp, args: file1.txt, file2.txt
+python3 script.py -v     # command: python3, arg: script.py, flag: -v
+git commit -m "message"  # command: git, subcommand: commit, option: -m with value
+```
+
+### Command Resolution
+
+```text
+User types: xyz
+     ↓
+Shell searches $PATH directories
+     ↓
+Found? → Execute it
+Not found? → "command not found"
+```
+
+---
+
+## Running a Script
+
+### Create & Run
+
+```bash
+# 1. Create script
+touch myscript.sh
+
+# 2. Add content (with shebang)
+nano myscript.sh # write the `echo "hello"`
+
+# 3. Make executable
+chmod +x myscript.sh
+
+# 4. Run it
+./myscript.sh
+```
+
+### `chmod` Reference
+
+```bash
+chmod +x file       # Add execute permission
+chmod -x file       # Remove execute permission
+chmod 755 file      # rwx for owner, rx for others
+```
+
+---
+
+## PATH vs Provided Path
+
+How Linux decides where to look for the command:
+
+| Command | Contains `/` or `./`? | Action |
+|---------|----------------------|--------|
+| `xyz` | No | Search in `$PATH` |
+| `./xyz` | Yes (`.`) | Look in current directory |
+| `/usr/bin/xyz` | Yes (`/`) | Look at exact path |
+
+```bash
+python3          # No slash → Search $PATH
+./myscript.sh    # Has ./ → Run from current dir
+/bin/ls          # Absolute path → Run exactly this
+```
+
+---
