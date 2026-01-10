@@ -1,0 +1,190 @@
+---
+title: "Linux Navigation & File System"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+## Overview
+
+Linux file system hierarchy, path navigation, and basic file/folder operations.
+
+---
+
+## Everything is a File
+
+In Linux, **everything is treated as a file**—even hardware devices!
+
+| Type | Example | Description |
+|------|---------|-------------|
+| Regular files | `script.py`, `data.txt` | Documents, code, images |
+| Directories | `/home`, `/etc` | Folders containing files |
+| Devices | `/dev/sda` | Hard drives, USB |
+| Memory | `/dev/mem`, `/proc` | RAM, system info |
+
+---
+
+## Linux File Hierarchy
+
+```text
+/                     ← Root (top-level directory)
+├── home/             ← User home directories
+│   └── username/     ← Your personal files/folders (Documents, Downloads)
+├── bin/              ← Essential binaries (ls, cp, mv)
+├── mnt/              ← Mount point for external drives
+├── dev/              ← Device files
+├── etc/              ← Configuration files
+├── tmp/              ← Temporary files
+└── usr/              ← User programs and utilities
+```
+
+### Important Directories
+
+| Directory | Purpose | Common Use |
+|-----------|---------|------------|
+| `/home/username` | Your personal space | Projects, dotfiles, configs |
+| `/mnt` | Mount external drives | Windows drives in WSL → `/mnt/c/` |
+| `/bin` | System binaries | Essential commands like `ls`, `cp` |
+
+---
+
+## Path Notation
+
+### Special Symbols
+
+| Symbol | Meaning | Example |
+|--------|---------|---------|
+| `/` | Root directory | `cd /` |
+| `~` | Home directory | `cd ~` → `/home/username` |
+| `.` | Current directory | `./script.sh` |
+| `..` | Parent directory | `cd ..` |
+
+---
+
+## Navigation Commands
+
+```bash
+pwd     # Print present working directory
+ls      # List files/folders (excludes hidden)
+ls -a   # List all files/folders (includes hidden)
+```
+
+### `cd` - Change Directory
+
+```bash
+# Absolute path (starts from root /)
+cd /home/username/projects
+
+# Relative path (from current location)
+cd projects       # current → projects folder
+cd ./projects     # same as above
+cd ../documents   # current → parent → documents folder
+cd ../            # current → parent folder
+cd ../../         # current → grandparent folder
+
+# Shortcuts
+cd ~              # Go to user home directory, /home/username
+cd                # Same as cd ~
+cd -              # Go to OLDPWD
+```
+
+---
+
+## Hidden Files: `.xyz` vs `./xyz`
+
+| Notation | Meaning |
+|----------|---------|
+| `cd .xyz` | `cd` to folder with name `.xyz` in current directory |
+| `cd ./xyz` | `cd` to folder with name `xyz` in current directory |
+
+```bash
+ls -a          # Show hidden files
+./script.sh    # Execute script in current folder
+```
+
+---
+
+## Creating Files & Folders
+
+### `touch` - Create Empty File
+
+```bash
+touch file.txt                      # Create single file
+touch file1.txt file2.txt           # Create multiple files
+touch ~/projects/newfile.py         # Create in specific path
+```
+
+### `mkdir` - Make Directory
+
+```bash
+mkdir myfolder                      # Create folder
+mkdir -p projects/python/app        # Create nested folders
+mkdir folder1 folder2               # Create multiple folders
+```
+
+---
+
+## Removing Files & Folders
+
+### `rm` - Remove Files
+
+```bash
+rm file.txt             # Remove file
+rm -i file.txt          # Remove with confirmation
+rm -f file.txt          # Force remove (no confirmation)
+```
+
+### `rmdir` - Remove Empty Directory
+
+```bash
+rmdir emptyfolder       # Remove empty folder only (fails if not empty)
+```
+
+### `rm -r` - Remove Directory Recursively
+
+```bash
+rm -r myfolder          # Remove folder and all contents
+rm -rf myfolder         # Force remove without confirmation
+```
+
+> ⚠️ **Warning:** `rm -rf` is dangerous! Double-check before using.
+
+---
+
+## Quick Reference
+
+```bash
+# Navigation
+pwd                     # Print current path
+cd /path/to/dir         # Go to directory
+cd ~                    # Go to home
+cd ..                   # Go up one level
+cd -                    # Go to previous directory
+
+# Viewing
+ls                      # List files
+ls -la                  # List all with details
+
+# Creating
+touch file.txt          # Create file
+mkdir folder            # Create folder
+mkdir -p a/b/c          # Create nested folders
+
+# Removing
+rm file.txt             # Remove file
+rmdir folder            # Remove empty folder
+rm -r folder            # Remove folder with contents
+```
+
+### Path Symbols Summary
+
+| Symbol | Meaning |
+|--------|---------|
+| `/` | Root directory |
+| `~` | Home directory |
+| `.` | Current directory |
+| `..` | Parent directory |
+| `-` | Previous directory (with `cd`) |
+
+---
