@@ -6,356 +6,67 @@ format:
     highlight-style: github
 ---
 
-# WSL - Setup for Windows Users
+## Overview
 
-Windows Subsystem for Linux (WSL) allows you to run a Linux environment directly on Windows without the need for a traditional virtual machine or dual-boot setup.
-
-```text
-BIOS --> Turn On Virtulisation
-Search --> Turn Windows features on or off
-  Virtual Machine Platform, 
-  Windows Hypervisor Platform, 
-  Windows Subsytem for Linux
-	
-wsl --list --online           list the available linux os
-wsl --install -d <DistroName> insttall the particular linux os
-	
-wsl --list --verbose
-wsl --unregister <DistroName>
-```
-
-{{< video https://youtu.be/K1bkKbCrZYA >}}
+Windows Subsystem for Linux (WSL) enables you to run a Linux environment directly on Windows—no virtual machine or dual-boot required.
 
 ---
 
-## Pre-setup
+## Setup Steps
 
-### 1. Enable Virtualization in BIOS
+### Step 1: Enable Virtualization in BIOS
 
-1. **Restart** and enter BIOS/UEFI (press `F2`, `F10`, `F12`, `Del`, or `Esc` during boot)
-2. Navigate to **CPU/Processor settings**
-3. Enable **Intel VT-x** (Intel) or **AMD-V** (AMD)
-4. **Save and Exit** (usually `F10`)
+Access your BIOS settings and **enable Virtualization Technology** (VT-x/AMD-V).
 
-::: {.callout-tip}
-**Verify:** Open Task Manager → Performance → CPU → Check "Virtualization" is **Enabled**
-:::
+### Step 2: Enable Windows Features
 
-### 2. Enable Windows Features
+1. Search for **"Turn Windows features on or off"**
+2. Enable the following features:
+   - ✅ Virtual Machine Platform
+   - ✅ Windows Hypervisor Platform
+   - ✅ Windows Subsystem for Linux
 
-**Option A - GUI:**  
-- Press `Win + R` → Type `optionalfeatures` → Enable:  
-  - ✅ Virtual Machine Platform  
-  - ✅ Windows Hypervisor Platform  
-  - ✅ Windows Subsystem for Linux  
-- Restart when prompted  
+3. **Restart** your computer
 
-**Option B - PowerShell (Admin):**
-```powershell
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-dism.exe /online /enable-feature /featurename:HypervisorPlatform /all /norestart
-Restart-Computer
-```
+### Step 3: Install WSL Distribution
 
----
+Open **PowerShell** or **Command Prompt** as Administrator:
 
-## Install
-
-### Set WSL 2 as Default
 ```bash
-wsl --set-default-version 2
-```
-
-### List Available Distributions
-```bash
+# List available Linux distributions
 wsl --list --online
+
+# Install your preferred distribution (e.g., Ubuntu)
+wsl --install -d <DistroName>
 ```
 
-### Install a Distribution
+### Step 4: Verify Installation
+
 ```bash
-# Install default Ubuntu
-wsl --install -d Ubuntu
-
-# Or specific version
-wsl --install -d Ubuntu-22.04
-```
-
-::: {.callout-note}
-On first launch, create a UNIX username and password (needed for `sudo` commands)
-:::
-
-### Verify Installation
-```bash
+# Check installed distributions and their status
 wsl --list --verbose
 ```
 
 ---
 
-## Uninstall
+## Useful Commands
 
-### Remove a Distribution
 ```bash
-# View installed distributions
-wsl --list --verbose
-
-# Unregister/uninstall (deletes all data!)
+# Uninstall a distribution
 wsl --unregister <DistroName>
-```
 
-### Common Commands
-```bash
-# Launch WSL
-wsl
-
-# Shutdown all distributions
-wsl --shutdown
-
-# Terminate specific distribution
-wsl --terminate <DistroName>
+# Set default WSL version
+wsl --set-default-version 2
 
 # Update WSL
 wsl --update
 ```
 
-::: {.callout-tip}
-**Access Linux files from Windows:** Type `\\wsl$` in File Explorer  
-**Access Windows from Linux:** Windows drives are at `/mnt/c/`, `/mnt/d/`, etc.
-:::
+---
+
+## Video Tutorial
+
+{{< video https://youtu.be/K1bkKbCrZYA >}}
 
 ---
 
-## Conceptual Notes
-
-### What is WSL?
-
-**Windows Subsystem for Linux (WSL)** is a compatibility layer developed by Microsoft that enables users to run a Linux environment directly on Windows without the overhead of a traditional virtual machine or dual-boot configuration.
-
-#### Key Features:
-- **Native Linux binaries** run directly on Windows
-- **Seamless integration** between Windows and Linux filesystems
-- **Low resource overhead** compared to traditional VMs
-- **Full Linux kernel** (in WSL 2) for complete system call compatibility
-- **Multiple distributions** can be installed simultaneously
-
-#### WSL 1 vs WSL 2
-
-| Feature | WSL 1 | WSL 2 |
-|---------|-------|-------|
-| **Architecture** | Translation layer | Full Linux kernel |
-| **System Call Compatibility** | Partial | 100% |
-| **Performance (Linux filesystem)** | Good | Excellent |
-| **Performance (Windows filesystem)** | Excellent | Good |
-| **Boot Time** | Fast | Very Fast |
-| **Memory Usage** | Lower | Higher (but managed) |
-| **Docker Support** | Limited | Full |
-
-**Recommendation:** Use **WSL 2** for most use cases, especially for development work.
-
----
-
-### What is a Hypervisor?
-
-A **hypervisor** (also called a Virtual Machine Monitor or VMM) is software, firmware, or hardware that creates and manages virtual machines (VMs). It allows multiple operating systems to share a single hardware host by abstracting the physical hardware.
-
-#### Key Functions:
-1. **Resource Allocation** - Distributes CPU, memory, storage, and network resources to VMs
-2. **Isolation** - Ensures VMs are isolated from each other for security and stability
-3. **Hardware Abstraction** - Presents virtual hardware to guest operating systems
-4. **Management** - Controls VM lifecycle (creation, execution, termination)
-
----
-
-### Types of Hypervisors
-
-#### Type 1: Bare-Metal Hypervisor (Native)
-
-Runs **directly on the host's hardware** without an underlying operating system.
-
-**Characteristics:**  
-- ✅ Better performance (direct hardware access)  
-- ✅ Lower latency  
-- ✅ More secure (smaller attack surface)  
-- ✅ Used in enterprise/production environments  
-
-**Examples:**
-- **VMware ESXi**  
-- **Microsoft Hyper-V** (when installed as a server role)  
-- **Xen**  
-- **KVM** (Kernel-based Virtual Machine)  
-- **Proxmox VE**  
-
-**Use Cases:**  
-- Data centers  
-- Cloud infrastructure (AWS, Azure, Google Cloud)  
-- Enterprise server virtualization  
-
-```
-┌─────────────────────────────────────┐
-│  VM 1    │  VM 2    │  VM 3         │
-│  (Guest) │  (Guest) │  (Guest)      │
-├──────────┴──────────┴───────────────┤
-│      Type 1 Hypervisor              │
-├─────────────────────────────────────┤
-│      Physical Hardware              │
-└─────────────────────────────────────┘
-```
-
-#### Type 2: Hosted Hypervisor
-
-Runs **on top of a conventional operating system** (host OS).
-
-**Characteristics:**  
-- ✅ Easier to set up and use  
-- ✅ Better for desktop/development use  
-- ⚠️ Lower performance (extra OS layer)  
-- ⚠️ More overhead  
-
-**Examples:**  
-- **VMware Workstation**  
-- **Oracle VirtualBox**  
-- **Parallels Desktop** (macOS)  
-- **QEMU** (when used without KVM)  
-
-**Use Cases:**  
-- Development and testing  
-- Personal use  
-- Running multiple OS on a desktop  
-
-```
-┌─────────────────────────────────────┐
-│  VM 1    │  VM 2    │  VM 3         │
-│  (Guest) │  (Guest) │  (Guest)      │
-├──────────┴──────────┴───────────────┤
-│      Type 2 Hypervisor              │
-├─────────────────────────────────────┤
-│      Host Operating System          │
-├─────────────────────────────────────┤
-│      Physical Hardware              │
-└─────────────────────────────────────┘
-```
-
-#### Hybrid: Microsoft Hyper-V
-
-**Microsoft Hyper-V** is unique - it can function as both:  
-- **Type 1** when installed as a Windows Server role  
-- **Hybrid** when enabled on Windows 10/11 (the host OS becomes a special privileged VM)  
-
-When Hyper-V is enabled on Windows:
-```
-┌──────────────────────────────────────┐
-│ Windows │  WSL 2   │  Other VMs      │
-│ (Parent)│  (Guest) │  (Guests)       │
-├─────────┴──────────┴─────────────────┤
-│      Hyper-V Hypervisor              │
-├──────────────────────────────────────┤
-│      Physical Hardware               │
-└──────────────────────────────────────┘
-```
-
----
-
-### How WSL 2 Uses Virtualization
-
-**WSL 2** uses a lightweight virtual machine powered by **Hyper-V** technology:
-
-1. **Hyper-V Hypervisor** creates a minimal VM  
-2. **Full Linux kernel** runs inside this VM  
-3. **Optimized integration** with Windows for seamless experience  
-4. **Shared memory and resources** for efficiency  
-
-**Key Differences from Traditional VMs:**  
-- ⚡ **Fast boot** (under 1 second)  
-- 💾 **Dynamic memory** allocation (uses only what's needed)  
-- 🔄 **Automatic resource management**
-- 🪟 **Deep Windows integration** (filesystem, networking, etc.)  
-
----
-
-### Virtualization vs Containerization
-
-| Aspect | Virtualization (VMs) | Containerization (Docker) |
-|--------|---------------------|---------------------------|
-| **Isolation Level** | Full OS isolation | Process-level isolation |
-| **Overhead** | High (full OS per VM) | Low (shared kernel) |
-| **Boot Time** | Minutes | Seconds |
-| **Size** | GBs | MBs |
-| **Performance** | Good | Excellent |
-| **Use Case** | Different OS, strong isolation | Same OS, microservices |
-
-**WSL 2 bridges both worlds:**
-- Uses virtualization (lightweight VM)
-- Supports containerization (Docker Desktop)
-- Provides the best of both approaches
-
----
-
-### Hardware Virtualization Extensions
-
-Modern CPUs include hardware support for virtualization:
-
-#### Intel VT-x (Intel Virtualization Technology)  
-- Hardware-assisted virtualization for Intel processors  
-- Enables efficient VM execution  
-- Required for WSL 2, Hyper-V, and most modern hypervisors  
-
-#### AMD-V (AMD Virtualization)  
-- AMD's equivalent to Intel VT-x  
-- Also called SVM (Secure Virtual Machine)  
-- Provides same functionality for AMD processors  
-
-**Why Hardware Virtualization Matters:**  
-- 🚀 **Performance** - VMs run at near-native speed  
-- 🔒 **Security** - Better isolation between VMs  
-- ⚡ **Efficiency** - Lower CPU overhead  
-- 🎯 **Compatibility** - Required by modern hypervisors  
-
----
-
-### Additional Concepts
-
-#### Paravirtualization
-A virtualization technique where the guest OS is **aware** it's running in a virtual environment and cooperates with the hypervisor for better performance.
-
-**Examples:** Xen (paravirtualization mode), VMware Guest Tools
-
-#### Full Virtualization
-The guest OS is **unaware** it's virtualized. The hypervisor emulates complete hardware.
-
-**Examples:** VMware, VirtualBox, KVM with hardware extensions
-
-#### Nested Virtualization
-Running a hypervisor **inside a virtual machine** (VM within a VM).
-
-**Use Cases:**
-- Testing hypervisor software
-- Cloud development environments
-- Training and education
-
----
-
-## Summary
-
-WSL 2 provides a powerful, efficient way to run Linux on Windows by leveraging:
-
-1. ✅ **Hyper-V hypervisor** for lightweight virtualization
-2. ✅ **Hardware virtualization** (Intel VT-x / AMD-V) for performance
-3. ✅ **Full Linux kernel** for complete compatibility
-4. ✅ **Seamless integration** with Windows for productivity
-
-This makes it an ideal solution for developers who need Linux tools while working primarily on Windows.
-
----
-
-::: {.callout-tip}
-## Next Steps
-After setting up WSL, you can:  
-- Install development tools (`git`, `python`, `node`, etc.)  
-- Set up Docker Desktop with WSL 2 backend  
-- Configure your favorite terminal (Windows Terminal recommended)  
-- Install VS Code with WSL extension for seamless development  
-:::
-
----
-
-**Happy Linux-ing on Windows! 🐧🪟**
