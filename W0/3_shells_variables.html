@@ -377,261 +377,172 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="shell-environment-variables" class="level1">
-<h1>Shell &amp; Environment Variables</h1>
-<p>Understanding shells, configuration files, and environment variables in Linux.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Understanding shells, configuration files, and environment variables in Linux—essential knowledge for any developer.</p>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/JFE0pDwe7YM" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <hr>
-<section id="quick-reference" class="level2">
-<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
-<section id="memory-rules" class="level3">
-<h3 class="anchored" data-anchor-id="memory-rules">🧠 Memory Rules</h3>
-<ul>
-<li><strong>Login shell</strong> → profile files (<code>.bash_profile</code>, <code>.zprofile</code>)<br>
-</li>
-<li><strong>Interactive shell</strong> → rc files (<code>.bashrc</code>, <code>.zshrc</code>)<br>
-</li>
-<li><strong>Non-interactive shell</strong> → no startup files (or <code>$BASH_ENV</code>)<br>
-</li>
-<li><strong>export</strong> = share variable with child processes<br>
-</li>
-<li><strong>source</strong> = run commands in current shell<br>
-</li>
-<li><strong>Shell variable</strong> = local to current shell<br>
-</li>
-<li><strong>Environment variable</strong> = inherited by child processes</li>
-</ul>
-</section>
-<section id="essential-commands" class="level3">
-<h3 class="anchored" data-anchor-id="essential-commands">Essential Commands</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Shell information</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">echo</span> <span class="va">$SHELL</span>                 <span class="co"># Default shell</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="bu">echo</span> <span class="va">$0</span>                     <span class="co"># Current shell</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">cat</span> /etc/shells             <span class="co"># Available shells</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co"># Change shell</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">chsh</span> <span class="at">-s</span> /usr/bin/zsh        <span class="co"># Change default shell</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># Variables</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="va">VAR</span><span class="op">=</span>value                   <span class="co"># Shell variable</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="bu">export</span> <span class="va">VAR</span><span class="op">=</span>value            <span class="co"># Environment variable</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="fu">printenv</span>                    <span class="co"># List all environment variables</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="bu">echo</span> <span class="va">$VAR</span>                   <span class="co"># Print variable value</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># Configuration</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="bu">source</span> ~/.bashrc            <span class="co"># Reload configuration</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="bu">.</span> ~/.bashrc                 <span class="co"># Same as source</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="fu">nano</span> ~/.bashrc              <span class="co"># Edit configuration</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># Check shell type</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="bu">echo</span> <span class="va">$-</span>                     <span class="co"># Look for 'i' (interactive)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
 </section>
 <section id="what-is-a-shell" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-a-shell">What is a Shell?</h2>
-<p>A <strong>shell</strong> is a command-line interface that interprets and executes commands. It acts as an intermediary between you and the operating system kernel.</p>
-<p><strong>Common Shells:</strong> - <strong>Bash</strong> (Bourne Again Shell) - Default on most Linux distributions<br>
-- <strong>Zsh</strong> (Z Shell) - Feature-rich, popular with developers<br>
-- <strong>Fish</strong> (Friendly Interactive Shell) - User-friendly with auto-suggestions<br>
-- <strong>Sh</strong> (Bourne Shell) - Original Unix shell, minimal features</p>
+<p>A <strong>shell</strong> is a command-line interface that interprets your commands and communicates with the operating system.</p>
+<p><strong>Common Shells:</strong></p>
+<ul>
+<li><strong>Bash</strong> (Bourne Again Shell) - Default on most Linux systems</li>
+<li><strong>Zsh</strong> (Z Shell) - Feature-rich with better auto-completion</li>
+<li><strong>Fish</strong> - User-friendly with helpful suggestions</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Check your current shell</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># List all available shells</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">cat</span> /etc/shells</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># Change default shell to Zsh</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">chsh</span> <span class="at">-s</span> /usr/bin/zsh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
-</section>
-<section id="working-with-shells" class="level2">
-<h2 class="anchored" data-anchor-id="working-with-shells">Working with Shells</h2>
-<section id="check-current-shell" class="level3">
-<h3 class="anchored" data-anchor-id="check-current-shell">Check Current Shell</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Show current default shell</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Show currently running shell</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="bu">echo</span> <span class="va">$0</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co"># List all available shells on the system</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">cat</span> /etc/shells</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="install-a-new-shell" class="level3">
-<h3 class="anchored" data-anchor-id="install-a-new-shell">Install a New Shell</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Install Zsh</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">sudo</span> apt install zsh <span class="at">-y</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Install Fish</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">sudo</span> apt install fish <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="run-a-shell-temporarily" class="level3">
-<h3 class="anchored" data-anchor-id="run-a-shell-temporarily">Run a Shell Temporarily</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Start Zsh (without changing default)</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">zsh</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Start Fish</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="ex">fish</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="co"># Exit back to previous shell</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="bu">exit</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="change-default-shell" class="level3">
-<h3 class="anchored" data-anchor-id="change-default-shell">Change Default Shell</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Change default shell to Zsh</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">chsh</span> <span class="at">-s</span> /usr/bin/zsh</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Change default shell to Bash</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">chsh</span> <span class="at">-s</span> /usr/bin/bash</span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Verify the change (requires logout/login)</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Important:</strong> You must <strong>logout and login</strong> (or restart) for the default shell change to take effect.</p>
-</div>
-</div>
-<hr>
-</section>
 </section>
 <section id="shell-types" class="level2">
 <h2 class="anchored" data-anchor-id="shell-types">Shell Types</h2>
 <section id="login-shell" class="level3">
 <h3 class="anchored" data-anchor-id="login-shell">1. Login Shell</h3>
-<p>Started when you log in to the system (SSH, TTY, or initial terminal).</p>
-<p><strong>Characteristics:</strong> - Reads <strong>profile</strong> configuration files<br>
-- Sets up the initial environment<br>
-- Runs once per login session</p>
+<p>Started when you <strong>log in</strong> (SSH, initial terminal).</p>
+<ul>
+<li>Reads <strong>profile</strong> files (<code>.bash_profile</code>, <code>.profile</code>)</li>
+<li>Sets up initial environment</li>
+</ul>
 </section>
 <section id="interactive-shell" class="level3">
 <h3 class="anchored" data-anchor-id="interactive-shell">2. Interactive Shell</h3>
-<p>A shell where you can type commands and get immediate responses.</p>
-<p><strong>Characteristics:</strong> - Reads <strong>rc</strong> (run commands) files<br>
-- Has command history<br>
-- Supports job control</p>
+<p>A shell where you <strong>type commands</strong> and get responses.</p>
+<ul>
+<li>Reads <strong>rc</strong> files (<code>.bashrc</code>, <code>.zshrc</code>)</li>
+<li>Has command history and tab completion</li>
+</ul>
 </section>
 <section id="non-interactive-shell" class="level3">
 <h3 class="anchored" data-anchor-id="non-interactive-shell">3. Non-Interactive Shell</h3>
-<p>A shell running scripts without user interaction.</p>
-<p><strong>Characteristics:</strong> - <strong>BASH_ENV</strong> files runs - No command history<br>
-- Exits after script completion</p>
+<p>Runs <strong>scripts</strong> without user interaction.</p>
+<ul>
+<li>Uses <strong><code>$BASH_ENV</code></strong> variable (if set)</li>
+<li>No command history</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Check if shell is interactive (look for 'i')</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="bu">echo</span> <span class="va">$-</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Check if login shell (output starts with '-')</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="bu">echo</span> <span class="va">$0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
 </section>
-<section id="check-shell-type" class="level3">
-<h3 class="anchored" data-anchor-id="check-shell-type">Check Shell Type</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Check if interactive (look for 'i' in output)</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="bu">echo</span> <span class="va">$-</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># Check shell name</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="bu">echo</span> <span class="va">$0</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="co"># Output starting with '-' indicates login shell (e.g., -bash)</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="co"># Output without '-' indicates non-login shell (e.g., bash)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="configuration-files" class="level2">
+<h2 class="anchored" data-anchor-id="configuration-files">Configuration Files</h2>
+<section id="bash-configuration-files" class="level3">
+<h3 class="anchored" data-anchor-id="bash-configuration-files">Bash Configuration Files</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>File</th>
+<th>When Used</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>.bash_profile</code></td>
+<td>Login shell</td>
+<td>Initial environment setup</td>
+</tr>
+<tr class="even">
+<td><code>.bashrc</code></td>
+<td>Interactive shell</td>
+<td>Aliases, functions, prompt</td>
+</tr>
+<tr class="odd">
+<td><code>$BASH_ENV</code></td>
+<td>Non-interactive</td>
+<td>Script environment</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
 </section>
 <section id="bash-startup-flow" class="level2">
 <h2 class="anchored" data-anchor-id="bash-startup-flow">Bash Startup Flow</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>bash starts</span>
-<span id="cb7-2"><a href="#cb7-2"></a>│</span>
-<span id="cb7-3"><a href="#cb7-3"></a>├─ Is this a LOGIN shell?</span>
-<span id="cb7-4"><a href="#cb7-4"></a>│   ├─ YES</span>
-<span id="cb7-5"><a href="#cb7-5"></a>│   │   ├─ Read /etc/profile</span>
-<span id="cb7-6"><a href="#cb7-6"></a>│   │   ├─ ~/.bash_profile (if exists) → STOP</span>
-<span id="cb7-7"><a href="#cb7-7"></a>│   │   ├─ ~/.bash_login   (else if exists) → STOP</span>
-<span id="cb7-8"><a href="#cb7-8"></a>│   │   └─ ~/.profile      (fallback) → STOP</span>
-<span id="cb7-9"><a href="#cb7-9"></a>│   └─ NO</span>
-<span id="cb7-10"><a href="#cb7-10"></a>│</span>
-<span id="cb7-11"><a href="#cb7-11"></a>├─ Is this an INTERACTIVE shell?</span>
-<span id="cb7-12"><a href="#cb7-12"></a>│   ├─ YES</span>
-<span id="cb7-13"><a href="#cb7-13"></a>│   │   ├─ --norc used?</span>
-<span id="cb7-14"><a href="#cb7-14"></a>│   │   │   ├─ YES → Skip ~/.bashrc</span>
-<span id="cb7-15"><a href="#cb7-15"></a>│   │   │   └─ NO  → Read ~/.bashrc</span>
-<span id="cb7-16"><a href="#cb7-16"></a>│   └─ NO</span>
-<span id="cb7-17"><a href="#cb7-17"></a>│</span>
-<span id="cb7-18"><a href="#cb7-18"></a>└─ Is this NON-INTERACTIVE (script)?</span>
-<span id="cb7-19"><a href="#cb7-19"></a>    ├─ YES</span>
-<span id="cb7-20"><a href="#cb7-20"></a>    │   ├─ $BASH_ENV set?</span>
-<span id="cb7-21"><a href="#cb7-21"></a>    │   │   ├─ YES → Read file in $BASH_ENV</span>
-<span id="cb7-22"><a href="#cb7-22"></a>    │   │   └─ NO  → Read nothing</span>
-<span id="cb7-23"><a href="#cb7-23"></a>    └─ END</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="command-execution-flow" class="level2">
-<h2 class="anchored" data-anchor-id="command-execution-flow">Command Execution Flow</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>python3 app.py</span>
-<span id="cb8-2"><a href="#cb8-2"></a>Interactive bash already running</span>
-<span id="cb8-3"><a href="#cb8-3"></a>        ↓</span>
-<span id="cb8-4"><a href="#cb8-4"></a>Command entered</span>
-<span id="cb8-5"><a href="#cb8-5"></a>        ↓</span>
-<span id="cb8-6"><a href="#cb8-6"></a>bash finds python3 using $PATH</span>
-<span id="cb8-7"><a href="#cb8-7"></a>        ↓</span>
-<span id="cb8-8"><a href="#cb8-8"></a>bash forks</span>
-<span id="cb8-9"><a href="#cb8-9"></a>        ↓</span>
-<span id="cb8-10"><a href="#cb8-10"></a>execve(python3, app.py, env)</span>
-<span id="cb8-11"><a href="#cb8-11"></a>        ↓</span>
-<span id="cb8-12"><a href="#cb8-12"></a>Python starts and runs app.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>.bashrc</span>
-<span id="cb9-2"><a href="#cb9-2"></a>  ↓</span>
-<span id="cb9-3"><a href="#cb9-3"></a>export VAR=value</span>
-<span id="cb9-4"><a href="#cb9-4"></a>  ↓</span>
-<span id="cb9-5"><a href="#cb9-5"></a>bash environment</span>
-<span id="cb9-6"><a href="#cb9-6"></a>  ↓</span>
-<span id="cb9-7"><a href="#cb9-7"></a>python inherits environment</span>
-<span id="cb9-8"><a href="#cb9-8"></a>  ↓</span>
-<span id="cb9-9"><a href="#cb9-9"></a>app.py accesses VAR</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>bash starts</span>
+<span id="cb3-2"><a href="#cb3-2"></a>│</span>
+<span id="cb3-3"><a href="#cb3-3"></a>├─ LOGIN shell?</span>
+<span id="cb3-4"><a href="#cb3-4"></a>│   ├─ YES → Read /etc/profile</span>
+<span id="cb3-5"><a href="#cb3-5"></a>│   │        Read ~/.bash_profile (or ~/.bash_login or ~/.profile)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>│   └─ NO</span>
+<span id="cb3-7"><a href="#cb3-7"></a>│</span>
+<span id="cb3-8"><a href="#cb3-8"></a>├─ INTERACTIVE shell?</span>
+<span id="cb3-9"><a href="#cb3-9"></a>│   ├─ YES → Read ~/.bashrc</span>
+<span id="cb3-10"><a href="#cb3-10"></a>│   └─ NO</span>
+<span id="cb3-11"><a href="#cb3-11"></a>│</span>
+<span id="cb3-12"><a href="#cb3-12"></a>└─ NON-INTERACTIVE (script)?</span>
+<span id="cb3-13"><a href="#cb3-13"></a>    └─ YES → Read file in $BASH_ENV (if set)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
-<section id="variables" class="level2">
-<h2 class="anchored" data-anchor-id="variables">Variables</h2>
+<section id="variables-shell-vs-environment" class="level2">
+<h2 class="anchored" data-anchor-id="variables-shell-vs-environment">Variables: Shell vs Environment</h2>
 <section id="shell-variables-local" class="level3">
 <h3 class="anchored" data-anchor-id="shell-variables-local">Shell Variables (Local)</h3>
-<p>Variables that exist <strong>only in the current shell</strong> and are not passed to child processes.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Create a shell variable</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="va">MY_VAR</span><span class="op">=</span><span class="st">"Hello"</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># Access the variable</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="bu">echo</span> <span class="va">$MY_VAR</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a></span>
-<span id="cb10-7"><a href="#cb10-7"></a><span class="co"># This variable is NOT available to child processes</span></span>
-<span id="cb10-8"><a href="#cb10-8"></a><span class="fu">bash</span> <span class="at">-c</span> <span class="st">'echo $MY_VAR'</span>  <span class="co"># Output: (empty)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Variables that exist <strong>only in the current shell</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Create a shell variable</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="va">MY_VAR</span><span class="op">=</span><span class="st">"Hello"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Access it</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">echo</span> <span class="va">$MY_VAR</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co"># NOT available to child processes</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="fu">bash</span> <span class="at">-c</span> <span class="st">'echo $MY_VAR'</span>  <span class="co"># Output: (empty)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="environment-variables-global" class="level3">
 <h3 class="anchored" data-anchor-id="environment-variables-global">Environment Variables (Global)</h3>
-<p>Variables that are <strong>exported</strong> and available to all child processes.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Create and export an environment variable</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="bu">export</span> <span class="va">MY_VAR</span><span class="op">=</span><span class="st">"Hello"</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="co"># Or in two steps</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="va">MY_VAR</span><span class="op">=</span><span class="st">"Hello"</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a><span class="bu">export</span> <span class="va">MY_VAR</span></span>
-<span id="cb11-7"><a href="#cb11-7"></a></span>
-<span id="cb11-8"><a href="#cb11-8"></a><span class="co"># This variable IS available to child processes</span></span>
-<span id="cb11-9"><a href="#cb11-9"></a><span class="fu">bash</span> <span class="at">-c</span> <span class="st">'echo $MY_VAR'</span>  <span class="co"># Output: Hello</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Variables <strong>exported</strong> to child processes.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Create and export</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="bu">export</span> <span class="va">MY_VAR</span><span class="op">=</span><span class="st">"Hello"</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Available to child processes</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">bash</span> <span class="at">-c</span> <span class="st">'echo $MY_VAR'</span>  <span class="co"># Output: Hello</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># Python can access it too</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="ex">python3</span> <span class="at">-c</span> <span class="st">"import os; print(os.environ.get('MY_VAR'))"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="common-environment-variables" class="level3">
-<h3 class="anchored" data-anchor-id="common-environment-variables">Common Environment Variables</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># View all environment variables</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">printenv</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">env</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="co"># Important environment variables</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="bu">echo</span> <span class="va">$HOME</span>          <span class="co"># User's home directory</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="bu">echo</span> <span class="va">$USER</span>          <span class="co"># Current username</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="bu">echo</span> <span class="va">$PATH</span>          <span class="co"># Executable search paths</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="bu">echo</span> <span class="va">$SHELL</span>         <span class="co"># Default shell</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="bu">echo</span> <span class="va">$PWD</span>           <span class="co"># Current directory</span></span>
-<span id="cb12-11"><a href="#cb12-11"></a><span class="bu">echo</span> <span class="va">$LANG</span>          <span class="co"># System language</span></span>
-<span id="cb12-12"><a href="#cb12-12"></a><span class="bu">echo</span> <span class="va">$EDITOR</span>        <span class="co"># Default text editor</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="why-export" class="level3">
+<h3 class="anchored" data-anchor-id="why-export">Why Export?</h3>
+<p><strong>Without export:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>Parent Shell: MY_VAR="value"</span>
+<span id="cb6-2"><a href="#cb6-2"></a>       ↓</span>
+<span id="cb6-3"><a href="#cb6-3"></a>Child Process: MY_VAR not available ❌</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>With export:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>Parent Shell: export MY_VAR="value"</span>
+<span id="cb7-2"><a href="#cb7-2"></a>       ↓</span>
+<span id="cb7-3"><a href="#cb7-3"></a>Child Process: MY_VAR="value" ✅</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
 </section>
+</section>
+<section id="common-environment-variables" class="level2">
+<h2 class="anchored" data-anchor-id="common-environment-variables">Common Environment Variables</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># View all environment variables</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">printenv</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># Important variables</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="bu">echo</span> <span class="va">$HOME</span>          <span class="co"># Home directory</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="bu">echo</span> <span class="va">$USER</span>          <span class="co"># Username</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="bu">echo</span> <span class="va">$PATH</span>          <span class="co"># Executable search paths</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="bu">echo</span> <span class="va">$SHELL</span>         <span class="co"># Default shell</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="bu">echo</span> <span class="va">$PWD</span>           <span class="co"># Current directory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="setting-environment-variables" class="level3">
 <h3 class="anchored" data-anchor-id="setting-environment-variables">Setting Environment Variables</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Temporary (current session only)</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="bu">export</span> <span class="va">JAVA_HOME</span><span class="op">=</span><span class="st">"/usr/lib/jvm/default-java"</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="co"># Permanent (add to ~/.bashrc or ~/.zshrc)</span></span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="bu">echo</span> <span class="st">'export JAVA_HOME="/usr/lib/jvm/default-java"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
-<span id="cb13-6"><a href="#cb13-6"></a></span>
-<span id="cb13-7"><a href="#cb13-7"></a><span class="co"># Apply changes immediately</span></span>
-<span id="cb13-8"><a href="#cb13-8"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Temporary (current session only)</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">export</span> <span class="va">JAVA_HOME</span><span class="op">=</span><span class="st">"/usr/lib/jvm/default-java"</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># Permanent (add to ~/.bashrc)</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="bu">echo</span> <span class="st">'export JAVA_HOME="/usr/lib/jvm/default-java"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
@@ -639,240 +550,104 @@ Warning
 <h2 class="anchored" data-anchor-id="source-vs-export">Source vs Export</h2>
 <section id="source-command" class="level3">
 <h3 class="anchored" data-anchor-id="source-command"><code>source</code> Command</h3>
-<p>Executes commands from a file <strong>in the current shell</strong> (not in a subshell).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Run commands in current shell</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="bu">source</span> ~/.bashrc</span>
-<span id="cb14-3"><a href="#cb14-3"></a></span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="co"># Shorthand notation</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a><span class="bu">.</span> ~/.bashrc</span>
-<span id="cb14-6"><a href="#cb14-6"></a></span>
-<span id="cb14-7"><a href="#cb14-7"></a><span class="co"># Use case: Apply configuration changes without restarting shell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Visual Flow:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a href="#cb15-1"></a>Current Shell</span>
-<span id="cb15-2"><a href="#cb15-2"></a>    ↓</span>
-<span id="cb15-3"><a href="#cb15-3"></a>source ~/.bashrc</span>
-<span id="cb15-4"><a href="#cb15-4"></a>    ↓</span>
-<span id="cb15-5"><a href="#cb15-5"></a>Commands executed in SAME shell</span>
-<span id="cb15-6"><a href="#cb15-6"></a>    ↓</span>
-<span id="cb15-7"><a href="#cb15-7"></a>Variables and functions available immediately</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Executes commands <strong>in the current shell</strong> (not a new shell).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Reload configuration</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="bu">source</span> ~/.bashrc</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># Shorthand</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="bu">.</span> ~/.bashrc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Flow:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>Current Shell</span>
+<span id="cb11-2"><a href="#cb11-2"></a>    ↓</span>
+<span id="cb11-3"><a href="#cb11-3"></a>source ~/.bashrc</span>
+<span id="cb11-4"><a href="#cb11-4"></a>    ↓</span>
+<span id="cb11-5"><a href="#cb11-5"></a>Commands run in SAME shell</span>
+<span id="cb11-6"><a href="#cb11-6"></a>    ↓</span>
+<span id="cb11-7"><a href="#cb11-7"></a>Changes apply immediately</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="export-command" class="level3">
 <h3 class="anchored" data-anchor-id="export-command"><code>export</code> Command</h3>
-<p>Makes a variable available to <strong>child processes</strong> (subshells and programs).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Export a variable</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="bu">export</span> <span class="va">MY_VAR</span><span class="op">=</span><span class="st">"value"</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a></span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># Child process can access it</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a><span class="ex">python3</span> <span class="at">-c</span> <span class="st">"import os; print(os.environ.get('MY_VAR'))"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Visual Flow:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1"><a href="#cb17-1"></a>Parent Shell</span>
-<span id="cb17-2"><a href="#cb17-2"></a>    ↓</span>
-<span id="cb17-3"><a href="#cb17-3"></a>export VAR=value</span>
-<span id="cb17-4"><a href="#cb17-4"></a>    ↓</span>
-<span id="cb17-5"><a href="#cb17-5"></a>VAR added to environment</span>
-<span id="cb17-6"><a href="#cb17-6"></a>    ↓</span>
-<span id="cb17-7"><a href="#cb17-7"></a>Child Process (python, bash, etc.)</span>
-<span id="cb17-8"><a href="#cb17-8"></a>    ↓</span>
-<span id="cb17-9"><a href="#cb17-9"></a>VAR is accessible</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Makes variables available to <strong>child processes</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Export variable</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="bu">export</span> <span class="va">API_KEY</span><span class="op">=</span><span class="st">"secret123"</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># Child processes can access it</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="ex">python3</span> script.py  <span class="co"># Can read API_KEY</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Flow:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href="#cb13-1"></a>Parent Shell</span>
+<span id="cb13-2"><a href="#cb13-2"></a>    ↓</span>
+<span id="cb13-3"><a href="#cb13-3"></a>export VAR=value</span>
+<span id="cb13-4"><a href="#cb13-4"></a>    ↓</span>
+<span id="cb13-5"><a href="#cb13-5"></a>Child Process starts</span>
+<span id="cb13-6"><a href="#cb13-6"></a>    ↓</span>
+<span id="cb13-7"><a href="#cb13-7"></a>VAR is accessible in child</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
 <section id="how-programs-inherit-environment" class="level2">
 <h2 class="anchored" data-anchor-id="how-programs-inherit-environment">How Programs Inherit Environment</h2>
-<section id="example-running-python-script" class="level3">
-<h3 class="anchored" data-anchor-id="example-running-python-script">Example: Running Python Script</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a href="#cb18-1"></a>Interactive bash already running</span>
-<span id="cb18-2"><a href="#cb18-2"></a>        ↓</span>
-<span id="cb18-3"><a href="#cb18-3"></a>User types: python3 app.py</span>
-<span id="cb18-4"><a href="#cb18-4"></a>        ↓</span>
-<span id="cb18-5"><a href="#cb18-5"></a>bash searches for python3 in $PATH</span>
-<span id="cb18-6"><a href="#cb18-6"></a>        ↓</span>
-<span id="cb18-7"><a href="#cb18-7"></a>bash forks (creates child process)</span>
-<span id="cb18-8"><a href="#cb18-8"></a>        ↓</span>
-<span id="cb18-9"><a href="#cb18-9"></a>execve(python3, ["app.py"], environment)</span>
-<span id="cb18-10"><a href="#cb18-10"></a>        ↓</span>
-<span id="cb18-11"><a href="#cb18-11"></a>Python starts with inherited environment</span>
-<span id="cb18-12"><a href="#cb18-12"></a>        ↓</span>
-<span id="cb18-13"><a href="#cb18-13"></a>app.py can access environment variables</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="environment-inheritance-example" class="level3">
-<h3 class="anchored" data-anchor-id="environment-inheritance-example">Environment Inheritance Example</h3>
+<p>When you run a program, it inherits environment variables from the shell:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href="#cb14-1"></a>Interactive bash running</span>
+<span id="cb14-2"><a href="#cb14-2"></a>        ↓</span>
+<span id="cb14-3"><a href="#cb14-3"></a>User types: python3 app.py</span>
+<span id="cb14-4"><a href="#cb14-4"></a>        ↓</span>
+<span id="cb14-5"><a href="#cb14-5"></a>bash searches for python3 in $PATH</span>
+<span id="cb14-6"><a href="#cb14-6"></a>        ↓</span>
+<span id="cb14-7"><a href="#cb14-7"></a>bash creates child process (fork)</span>
+<span id="cb14-8"><a href="#cb14-8"></a>        ↓</span>
+<span id="cb14-9"><a href="#cb14-9"></a>execve(python3, ["app.py"], environment)</span>
+<span id="cb14-10"><a href="#cb14-10"></a>        ↓</span>
+<span id="cb14-11"><a href="#cb14-11"></a>Python starts with inherited environment</span>
+<span id="cb14-12"><a href="#cb14-12"></a>        ↓</span>
+<span id="cb14-13"><a href="#cb14-13"></a>app.py can access environment variables</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="practical-example" class="level3">
+<h3 class="anchored" data-anchor-id="practical-example">Practical Example</h3>
 <p><strong>In Shell:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Set environment variable in ~/.bashrc</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="bu">export</span> <span class="va">DATABASE_URL</span><span class="op">=</span><span class="st">"postgresql://localhost/mydb"</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="bu">export</span> <span class="va">API_KEY</span><span class="op">=</span><span class="st">"secret123"</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="co"># Reload configuration</span></span>
-<span id="cb19-6"><a href="#cb19-6"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Set environment variable in ~/.bashrc</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="bu">export</span> <span class="va">DATABASE_URL</span><span class="op">=</span><span class="st">"postgresql://localhost/mydb"</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>In Python (app.py):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="im">import</span> os</span>
-<span id="cb20-2"><a href="#cb20-2"></a></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="co"># Access environment variables</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a>db_url <span class="op">=</span> os.environ.get(<span class="st">'DATABASE_URL'</span>)</span>
-<span id="cb20-5"><a href="#cb20-5"></a>api_key <span class="op">=</span> os.environ.get(<span class="st">'API_KEY'</span>)</span>
-<span id="cb20-6"><a href="#cb20-6"></a></span>
-<span id="cb20-7"><a href="#cb20-7"></a><span class="bu">print</span>(<span class="ss">f"Database: </span><span class="sc">{</span>db_url<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb20-8"><a href="#cb20-8"></a><span class="bu">print</span>(<span class="ss">f"API Key: </span><span class="sc">{</span>api_key<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">import</span> os</span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="co"># Access environment variable</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>db_url <span class="op">=</span> os.environ.get(<span class="st">'DATABASE_URL'</span>)</span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="bu">print</span>(<span class="ss">f"Database: </span><span class="sc">{</span>db_url<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Run:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="ex">python3</span> app.py</span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="co"># Output:</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a><span class="co"># Database: postgresql://localhost/mydb</span></span>
-<span id="cb21-4"><a href="#cb21-4"></a><span class="co"># API Key: secret123</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="ex">python3</span> app.py</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="co"># Output: Database: postgresql://localhost/mydb</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
-<section id="practical-examples" class="level2">
-<h2 class="anchored" data-anchor-id="practical-examples">Practical Examples</h2>
-<section id="example-1-setting-up-java-environment" class="level3">
-<h3 class="anchored" data-anchor-id="example-1-setting-up-java-environment">Example 1: Setting Up Java Environment</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Add to ~/.bashrc</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="bu">export</span> <span class="va">JAVA_HOME</span><span class="op">=</span><span class="st">"/usr/lib/jvm/default-java"</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$JAVA_HOME</span><span class="st">/bin:</span><span class="va">$PATH</span><span class="st">"</span></span>
-<span id="cb22-4"><a href="#cb22-4"></a></span>
-<span id="cb22-5"><a href="#cb22-5"></a><span class="co"># Apply changes</span></span>
-<span id="cb22-6"><a href="#cb22-6"></a><span class="bu">source</span> ~/.bashrc</span>
-<span id="cb22-7"><a href="#cb22-7"></a></span>
-<span id="cb22-8"><a href="#cb22-8"></a><span class="co"># Verify</span></span>
-<span id="cb22-9"><a href="#cb22-9"></a><span class="bu">echo</span> <span class="va">$JAVA_HOME</span></span>
-<span id="cb22-10"><a href="#cb22-10"></a><span class="ex">java</span> <span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="example-2-creating-aliases" class="level3">
-<h3 class="anchored" data-anchor-id="example-2-creating-aliases">Example 2: Creating Aliases</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Add to ~/.bashrc</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="bu">alias</span> ll=<span class="st">'ls -lah'</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a><span class="bu">alias</span> gs=<span class="st">'git status'</span></span>
-<span id="cb23-4"><a href="#cb23-4"></a><span class="bu">alias</span> gp=<span class="st">'git push'</span></span>
-<span id="cb23-5"><a href="#cb23-5"></a><span class="bu">alias</span> update=<span class="st">'sudo apt update &amp;&amp; sudo apt upgrade -y'</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a></span>
-<span id="cb23-7"><a href="#cb23-7"></a><span class="co"># Apply changes</span></span>
-<span id="cb23-8"><a href="#cb23-8"></a><span class="bu">source</span> ~/.bashrc</span>
-<span id="cb23-9"><a href="#cb23-9"></a></span>
-<span id="cb23-10"><a href="#cb23-10"></a><span class="co"># Use aliases</span></span>
-<span id="cb23-11"><a href="#cb23-11"></a><span class="ex">ll</span></span>
-<span id="cb23-12"><a href="#cb23-12"></a><span class="fu">gs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="example-3-custom-prompt" class="level3">
-<h3 class="anchored" data-anchor-id="example-3-custom-prompt">Example 3: Custom Prompt</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Add to ~/.bashrc</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="bu">export</span> <span class="va">PS1</span><span class="op">=</span><span class="st">'\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a></span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="co"># Apply changes</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="example-4-adding-to-path" class="level3">
-<h3 class="anchored" data-anchor-id="example-4-adding-to-path">Example 4: Adding to PATH</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Add custom bin directory to PATH</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$HOME</span><span class="st">/.local/bin:</span><span class="va">$PATH</span><span class="st">"</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a></span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="co"># Add multiple directories</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$HOME</span><span class="st">/bin:</span><span class="va">$HOME</span><span class="st">/.local/bin:</span><span class="va">$PATH</span><span class="st">"</span></span>
-<span id="cb25-6"><a href="#cb25-6"></a></span>
-<span id="cb25-7"><a href="#cb25-7"></a><span class="co"># Verify</span></span>
-<span id="cb25-8"><a href="#cb25-8"></a><span class="bu">echo</span> <span class="va">$PATH</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-</section>
-<section id="common-questions-answers" class="level2">
-<h2 class="anchored" data-anchor-id="common-questions-answers">Common Questions &amp; Answers</h2>
-<section id="q1-whats-the-difference-between-.bashrc-and-.bash_profile" class="level3">
-<h3 class="anchored" data-anchor-id="q1-whats-the-difference-between-.bashrc-and-.bash_profile">Q1: What’s the difference between .bashrc and .bash_profile?</h3>
-<p><strong>Answer:</strong><br>
-- <strong><code>.bashrc</code></strong> is loaded for <strong>interactive non-login shells</strong> (new terminal windows)<br>
-- <strong><code>.bash_profile</code></strong> is loaded for <strong>login shells</strong> (SSH, initial login)<br>
-- <strong>Best practice:</strong> Put environment variables in <code>.bash_profile</code> and source <code>.bashrc</code> from it<br>
-- <strong>Common pattern:</strong> Add <code>source ~/.bashrc</code> to <code>.bash_profile</code> to ensure consistency</p>
-</section>
-<section id="q2-why-do-i-need-to-run-source-.bashrc-after-editing-it" class="level3">
-<h3 class="anchored" data-anchor-id="q2-why-do-i-need-to-run-source-.bashrc-after-editing-it">Q2: Why do I need to run <code>source ~/.bashrc</code> after editing it?</h3>
-<p><strong>Answer:</strong><br>
-- Configuration files are only read when the shell <strong>starts</strong><br>
-- Editing the file doesn’t automatically apply changes to running shells<br>
-- <code>source ~/.bashrc</code> re-reads the file in the <strong>current shell</strong> without restarting<br>
-- Alternative: Close and reopen the terminal (starts a new shell)</p>
-</section>
-<section id="q3-whats-the-difference-between-export-varvalue-and-varvalue" class="level3">
-<h3 class="anchored" data-anchor-id="q3-whats-the-difference-between-export-varvalue-and-varvalue">Q3: What’s the difference between <code>export VAR=value</code> and <code>VAR=value</code>?</h3>
-<p><strong>Answer:</strong><br>
-- <strong><code>VAR=value</code></strong> creates a <strong>shell variable</strong> (local to current shell only)<br>
-- <strong><code>export VAR=value</code></strong> creates an <strong>environment variable</strong> (inherited by child processes)<br>
-- <strong>Use export when:</strong> You need the variable in scripts, programs, or subshells<br>
-- <strong>Use without export when:</strong> The variable is only needed in the current shell</p>
-</section>
-<section id="q4-should-i-use-bash-or-zsh" class="level3">
-<h3 class="anchored" data-anchor-id="q4-should-i-use-bash-or-zsh">Q4: Should I use Bash or Zsh?</h3>
-<p><strong>Answer:</strong><br>
-- <strong>Bash</strong> is the default, widely compatible, and simpler<br>
-- <strong>Zsh</strong> has better auto-completion, plugins (Oh My Zsh), and themes<br>
-- <strong>Zsh</strong> is more customizable and feature-rich<br>
-- <strong>Bash</strong> is better for scripting compatibility<br>
-- <strong>Recommendation:</strong> Try Zsh with Oh My Zsh for development, keep Bash knowledge for servers</p>
-</section>
-<section id="q5-how-do-i-make-environment-variables-permanent" class="level3">
-<h3 class="anchored" data-anchor-id="q5-how-do-i-make-environment-variables-permanent">Q5: How do I make environment variables permanent?</h3>
-<p><strong>Answer:</strong><br>
-Add them to your shell configuration file:</p>
-<p><strong>For current user only:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># Add to ~/.bashrc (or ~/.zshrc)</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="bu">export</span> <span class="va">MY_VAR</span><span class="op">=</span><span class="st">"value"</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>For all users (system-wide):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># Add to /etc/environment (no export needed)</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">sudo</span> nano /etc/environment</span>
-<span id="cb27-3"><a href="#cb27-3"></a><span class="co"># Add: MY_VAR="value"</span></span>
-<span id="cb27-4"><a href="#cb27-4"></a><span class="co"># Logout/login required</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="q6-whats-the-difference-between-source-and-.script.sh" class="level3">
-<h3 class="anchored" data-anchor-id="q6-whats-the-difference-between-source-and-.script.sh">Q6: What’s the difference between <code>source</code> and <code>./script.sh</code>?</h3>
-<p><strong>Answer:</strong><br>
-- <strong><code>source script.sh</code></strong> runs the script in the <strong>current shell</strong> (changes affect current shell)<br>
-- <strong><code>./script.sh</code></strong> runs the script in a <strong>new subshell</strong> (changes don’t affect current shell)<br>
-- <strong>Use source for:</strong> Configuration files, setting variables in current shell<br>
-- <strong>Use ./ for:</strong> Regular scripts that shouldn’t modify your current environment</p>
-</section>
-<section id="q7-why-doesnt-my-path-change-persist-after-reboot" class="level3">
-<h3 class="anchored" data-anchor-id="q7-why-doesnt-my-path-change-persist-after-reboot">Q7: Why doesn’t my PATH change persist after reboot?</h3>
-<p><strong>Answer:</strong><br>
-- You likely set it temporarily in the terminal<br>
-- <strong>Solution:</strong> Add the export statement to <code>~/.bashrc</code> or <code>~/.bash_profile</code><br>
-- <strong>Example:</strong> <code>echo 'export PATH="$HOME/bin:$PATH"' &gt;&gt; ~/.bashrc</code><br>
-- <strong>Verify:</strong> Check if the line exists in the file with <code>cat ~/.bashrc | grep PATH</code></p>
-</section>
-<section id="q8-whats-the-difference-between-login-and-non-login-shells" class="level3">
-<h3 class="anchored" data-anchor-id="q8-whats-the-difference-between-login-and-non-login-shells">Q8: What’s the difference between login and non-login shells?</h3>
-<p><strong>Answer:</strong><br>
-- <strong>Login shell:</strong> First shell when you log in (SSH, TTY, initial terminal)<br>
-- <strong>Non-login shell:</strong> Additional shells opened after login (new terminal tabs)<br>
-- <strong>Login shell reads:</strong> <code>.bash_profile</code>, <code>.bash_login</code>, or <code>.profile</code><br>
-- <strong>Non-login shell reads:</strong> <code>.bashrc</code><br>
-- <strong>Practical tip:</strong> Put everything in <code>.bashrc</code> and source it from <code>.bash_profile</code></p>
-<hr>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Next Steps
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<section id="quick-reference" class="level2">
+<h2 class="anchored" data-anchor-id="quick-reference">Quick Reference</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Shell information</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="bu">echo</span> <span class="va">$SHELL</span>                 <span class="co"># Default shell</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="bu">echo</span> <span class="va">$0</span>                     <span class="co"># Current shell</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="fu">cat</span> /etc/shells             <span class="co"># Available shells</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="co"># Variables</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a><span class="va">VAR</span><span class="op">=</span>value                   <span class="co"># Shell variable (local)</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a><span class="bu">export</span> <span class="va">VAR</span><span class="op">=</span>value            <span class="co"># Environment variable (global)</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a><span class="fu">printenv</span>                    <span class="co"># List all environment variables</span></span>
+<span id="cb18-10"><a href="#cb18-10"></a><span class="bu">echo</span> <span class="va">$VAR</span>                   <span class="co"># Print variable value</span></span>
+<span id="cb18-11"><a href="#cb18-11"></a></span>
+<span id="cb18-12"><a href="#cb18-12"></a><span class="co"># Configuration</span></span>
+<span id="cb18-13"><a href="#cb18-13"></a><span class="bu">source</span> ~/.bashrc            <span class="co"># Reload configuration</span></span>
+<span id="cb18-14"><a href="#cb18-14"></a><span class="fu">nano</span> ~/.bashrc              <span class="co"># Edit configuration</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="key-concepts" class="level3">
+<h3 class="anchored" data-anchor-id="key-concepts">Key Concepts</h3>
 <ul>
-<li>Customize your shell with aliases and functions<br>
-</li>
-<li>Try Zsh with Oh My Zsh for enhanced features<br>
-</li>
-<li>Learn shell scripting for automation<br>
-</li>
-<li>Explore advanced prompt customization (Starship, Powerlevel10k)<br>
-</li>
+<li><strong>Login shell</strong> → Reads profile files (<code>.bash_profile</code>, <code>.zprofile</code>)</li>
+<li><strong>Interactive shell</strong> → Reads rc files (<code>.bashrc</code>, <code>.zshrc</code>)</li>
+<li><strong>Non-interactive shell</strong> → Uses <code>$BASH_ENV</code> (if set)</li>
+<li><strong><code>export</code></strong> → Share variable with child processes</li>
+<li><strong><code>source</code></strong> → Run commands in current shell</li>
+<li><strong>Shell variable</strong> → Local to current shell only</li>
+<li><strong>Environment variable</strong> → Inherited by child processes</li>
 </ul>
-</div>
-</div>
 <hr>
-<p><strong>Happy Shell Scripting! 🐚</strong></p>
 
 
-</section>
 </section>
 </section>
 

@@ -377,445 +377,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="wsl---setup-for-windows-users" class="level1">
-<h1>WSL - Setup for Windows Users</h1>
-<p>Windows Subsystem for Linux (WSL) allows you to run a Linux environment directly on Windows without the need for a traditional virtual machine or dual-boot setup.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>BIOS --&gt; Turn On Virtulisation</span>
-<span id="cb1-2"><a href="#cb1-2"></a>Search --&gt; Turn Windows features on or off</span>
-<span id="cb1-3"><a href="#cb1-3"></a>  Virtual Machine Platform, </span>
-<span id="cb1-4"><a href="#cb1-4"></a>  Windows Hypervisor Platform, </span>
-<span id="cb1-5"><a href="#cb1-5"></a>  Windows Subsytem for Linux</span>
-<span id="cb1-6"><a href="#cb1-6"></a>    </span>
-<span id="cb1-7"><a href="#cb1-7"></a>wsl --list --online           list the available linux os</span>
-<span id="cb1-8"><a href="#cb1-8"></a>wsl --install -d &lt;DistroName&gt; insttall the particular linux os</span>
-<span id="cb1-9"><a href="#cb1-9"></a>    </span>
-<span id="cb1-10"><a href="#cb1-10"></a>wsl --list --verbose</span>
-<span id="cb1-11"><a href="#cb1-11"></a>wsl --unregister &lt;DistroName&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Windows Subsystem for Linux (WSL) enables you to run a Linux environment directly on Windows—no virtual machine or dual-boot required.</p>
+<hr>
+</section>
+<section id="setup-steps" class="level2">
+<h2 class="anchored" data-anchor-id="setup-steps">Setup Steps</h2>
+<section id="step-1-enable-virtualization-in-bios" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-enable-virtualization-in-bios">Step 1: Enable Virtualization in BIOS</h3>
+<p>Access your BIOS settings and <strong>enable Virtualization Technology</strong> (VT-x/AMD-V).</p>
+</section>
+<section id="step-2-enable-windows-features" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-enable-windows-features">Step 2: Enable Windows Features</h3>
+<ol type="1">
+<li>Search for <strong>“Turn Windows features on or off”</strong></li>
+<li>Enable the following features:
+<ul>
+<li>✅ Virtual Machine Platform</li>
+<li>✅ Windows Hypervisor Platform</li>
+<li>✅ Windows Subsystem for Linux</li>
+</ul></li>
+<li><strong>Restart</strong> your computer</li>
+</ol>
+</section>
+<section id="step-3-install-wsl-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-install-wsl-distribution">Step 3: Install WSL Distribution</h3>
+<p>Open <strong>PowerShell</strong> or <strong>Command Prompt</strong> as Administrator:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># List available Linux distributions</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--online</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Install your preferred distribution (e.g., Ubuntu)</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="ex">wsl</span> <span class="at">--install</span> <span class="at">-d</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-4-verify-installation" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-verify-installation">Step 4: Verify Installation</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Check installed distributions and their status</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--verbose</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="useful-commands" class="level2">
+<h2 class="anchored" data-anchor-id="useful-commands">Useful Commands</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Uninstall a distribution</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">wsl</span> <span class="at">--unregister</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Set default WSL version</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="ex">wsl</span> <span class="at">--set-default-version</span> 2</span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># Update WSL</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="ex">wsl</span> <span class="at">--update</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="video-tutorial" class="level2">
+<h2 class="anchored" data-anchor-id="video-tutorial">Video Tutorial</h2>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/K1bkKbCrZYA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <hr>
-<section id="pre-setup" class="level2">
-<h2 class="anchored" data-anchor-id="pre-setup">Pre-setup</h2>
-<section id="enable-virtualization-in-bios" class="level3">
-<h3 class="anchored" data-anchor-id="enable-virtualization-in-bios">1. Enable Virtualization in BIOS</h3>
-<ol type="1">
-<li><strong>Restart</strong> and enter BIOS/UEFI (press <code>F2</code>, <code>F10</code>, <code>F12</code>, <code>Del</code>, or <code>Esc</code> during boot)</li>
-<li>Navigate to <strong>CPU/Processor settings</strong></li>
-<li>Enable <strong>Intel VT-x</strong> (Intel) or <strong>AMD-V</strong> (AMD)</li>
-<li><strong>Save and Exit</strong> (usually <code>F10</code>)</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Verify:</strong> Open Task Manager → Performance → CPU → Check “Virtualization” is <strong>Enabled</strong></p>
-</div>
-</div>
-</section>
-<section id="enable-windows-features" class="level3">
-<h3 class="anchored" data-anchor-id="enable-windows-features">2. Enable Windows Features</h3>
-<p><strong>Option A - GUI:</strong><br>
-- Press <code>Win + R</code> → Type <code>optionalfeatures</code> → Enable:<br>
-- ✅ Virtual Machine Platform<br>
-- ✅ Windows Hypervisor Platform<br>
-- ✅ Windows Subsystem for Linux<br>
-- Restart when prompted</p>
-<p><strong>Option B - PowerShell (Admin):</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>Microsoft-Windows-Subsystem-Linux <span class="op">/</span>all <span class="op">/</span>norestart</span>
-<span id="cb2-2"><a href="#cb2-2"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>VirtualMachinePlatform <span class="op">/</span>all <span class="op">/</span>norestart</span>
-<span id="cb2-3"><a href="#cb2-3"></a>dism<span class="op">.</span><span class="fu">exe</span> <span class="op">/</span>online <span class="op">/</span>enable-feature <span class="op">/</span>featurename<span class="op">:</span>HypervisorPlatform <span class="op">/</span>all <span class="op">/</span>norestart</span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">Restart-Computer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-</section>
-<section id="install" class="level2">
-<h2 class="anchored" data-anchor-id="install">Install</h2>
-<section id="set-wsl-2-as-default" class="level3">
-<h3 class="anchored" data-anchor-id="set-wsl-2-as-default">Set WSL 2 as Default</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">wsl</span> <span class="at">--set-default-version</span> 2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="list-available-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="list-available-distributions">List Available Distributions</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--online</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="install-a-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="install-a-distribution">Install a Distribution</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Install default Ubuntu</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="ex">wsl</span> <span class="at">--install</span> <span class="at">-d</span> Ubuntu</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Or specific version</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="ex">wsl</span> <span class="at">--install</span> <span class="at">-d</span> Ubuntu-22.04</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>On first launch, create a UNIX username and password (needed for <code>sudo</code> commands)</p>
-</div>
-</div>
-</section>
-<section id="verify-installation" class="level3">
-<h3 class="anchored" data-anchor-id="verify-installation">Verify Installation</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--verbose</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-</section>
-<section id="uninstall" class="level2">
-<h2 class="anchored" data-anchor-id="uninstall">Uninstall</h2>
-<section id="remove-a-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="remove-a-distribution">Remove a Distribution</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># View installed distributions</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--verbose</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># Unregister/uninstall (deletes all data!)</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="ex">wsl</span> <span class="at">--unregister</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="common-commands" class="level3">
-<h3 class="anchored" data-anchor-id="common-commands">Common Commands</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Launch WSL</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="ex">wsl</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># Shutdown all distributions</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="ex">wsl</span> <span class="at">--shutdown</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="co"># Terminate specific distribution</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="ex">wsl</span> <span class="at">--terminate</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="co"># Update WSL</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="ex">wsl</span> <span class="at">--update</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Access Linux files from Windows:</strong> Type <code>\\wsl$</code> in File Explorer<br>
-<strong>Access Windows from Linux:</strong> Windows drives are at <code>/mnt/c/</code>, <code>/mnt/d/</code>, etc.</p>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="conceptual-notes" class="level2">
-<h2 class="anchored" data-anchor-id="conceptual-notes">Conceptual Notes</h2>
-<section id="what-is-wsl" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-wsl">What is WSL?</h3>
-<p><strong>Windows Subsystem for Linux (WSL)</strong> is a compatibility layer developed by Microsoft that enables users to run a Linux environment directly on Windows without the overhead of a traditional virtual machine or dual-boot configuration.</p>
-<section id="key-features" class="level4">
-<h4 class="anchored" data-anchor-id="key-features">Key Features:</h4>
-<ul>
-<li><strong>Native Linux binaries</strong> run directly on Windows</li>
-<li><strong>Seamless integration</strong> between Windows and Linux filesystems</li>
-<li><strong>Low resource overhead</strong> compared to traditional VMs</li>
-<li><strong>Full Linux kernel</strong> (in WSL 2) for complete system call compatibility</li>
-<li><strong>Multiple distributions</strong> can be installed simultaneously</li>
-</ul>
-</section>
-<section id="wsl-1-vs-wsl-2" class="level4">
-<h4 class="anchored" data-anchor-id="wsl-1-vs-wsl-2">WSL 1 vs WSL 2</h4>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>WSL 1</th>
-<th>WSL 2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Architecture</strong></td>
-<td>Translation layer</td>
-<td>Full Linux kernel</td>
-</tr>
-<tr class="even">
-<td><strong>System Call Compatibility</strong></td>
-<td>Partial</td>
-<td>100%</td>
-</tr>
-<tr class="odd">
-<td><strong>Performance (Linux filesystem)</strong></td>
-<td>Good</td>
-<td>Excellent</td>
-</tr>
-<tr class="even">
-<td><strong>Performance (Windows filesystem)</strong></td>
-<td>Excellent</td>
-<td>Good</td>
-</tr>
-<tr class="odd">
-<td><strong>Boot Time</strong></td>
-<td>Fast</td>
-<td>Very Fast</td>
-</tr>
-<tr class="even">
-<td><strong>Memory Usage</strong></td>
-<td>Lower</td>
-<td>Higher (but managed)</td>
-</tr>
-<tr class="odd">
-<td><strong>Docker Support</strong></td>
-<td>Limited</td>
-<td>Full</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Recommendation:</strong> Use <strong>WSL 2</strong> for most use cases, especially for development work.</p>
-<hr>
-</section>
-</section>
-<section id="what-is-a-hypervisor" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-a-hypervisor">What is a Hypervisor?</h3>
-<p>A <strong>hypervisor</strong> (also called a Virtual Machine Monitor or VMM) is software, firmware, or hardware that creates and manages virtual machines (VMs). It allows multiple operating systems to share a single hardware host by abstracting the physical hardware.</p>
-<section id="key-functions" class="level4">
-<h4 class="anchored" data-anchor-id="key-functions">Key Functions:</h4>
-<ol type="1">
-<li><strong>Resource Allocation</strong> - Distributes CPU, memory, storage, and network resources to VMs</li>
-<li><strong>Isolation</strong> - Ensures VMs are isolated from each other for security and stability</li>
-<li><strong>Hardware Abstraction</strong> - Presents virtual hardware to guest operating systems</li>
-<li><strong>Management</strong> - Controls VM lifecycle (creation, execution, termination)</li>
-</ol>
-<hr>
-</section>
-</section>
-<section id="types-of-hypervisors" class="level3">
-<h3 class="anchored" data-anchor-id="types-of-hypervisors">Types of Hypervisors</h3>
-<section id="type-1-bare-metal-hypervisor-native" class="level4">
-<h4 class="anchored" data-anchor-id="type-1-bare-metal-hypervisor-native">Type 1: Bare-Metal Hypervisor (Native)</h4>
-<p>Runs <strong>directly on the host’s hardware</strong> without an underlying operating system.</p>
-<p><strong>Characteristics:</strong><br>
-- ✅ Better performance (direct hardware access)<br>
-- ✅ Lower latency<br>
-- ✅ More secure (smaller attack surface)<br>
-- ✅ Used in enterprise/production environments</p>
-<p><strong>Examples:</strong> - <strong>VMware ESXi</strong><br>
-- <strong>Microsoft Hyper-V</strong> (when installed as a server role)<br>
-- <strong>Xen</strong><br>
-- <strong>KVM</strong> (Kernel-based Virtual Machine)<br>
-- <strong>Proxmox VE</strong></p>
-<p><strong>Use Cases:</strong><br>
-- Data centers<br>
-- Cloud infrastructure (AWS, Azure, Google Cloud)<br>
-- Enterprise server virtualization</p>
-<pre><code>┌─────────────────────────────────────┐
-│  VM 1    │  VM 2    │  VM 3         │
-│  (Guest) │  (Guest) │  (Guest)      │
-├──────────┴──────────┴───────────────┤
-│      Type 1 Hypervisor              │
-├─────────────────────────────────────┤
-│      Physical Hardware              │
-└─────────────────────────────────────┘</code></pre>
-</section>
-<section id="type-2-hosted-hypervisor" class="level4">
-<h4 class="anchored" data-anchor-id="type-2-hosted-hypervisor">Type 2: Hosted Hypervisor</h4>
-<p>Runs <strong>on top of a conventional operating system</strong> (host OS).</p>
-<p><strong>Characteristics:</strong><br>
-- ✅ Easier to set up and use<br>
-- ✅ Better for desktop/development use<br>
-- ⚠️ Lower performance (extra OS layer)<br>
-- ⚠️ More overhead</p>
-<p><strong>Examples:</strong><br>
-- <strong>VMware Workstation</strong><br>
-- <strong>Oracle VirtualBox</strong><br>
-- <strong>Parallels Desktop</strong> (macOS)<br>
-- <strong>QEMU</strong> (when used without KVM)</p>
-<p><strong>Use Cases:</strong><br>
-- Development and testing<br>
-- Personal use<br>
-- Running multiple OS on a desktop</p>
-<pre><code>┌─────────────────────────────────────┐
-│  VM 1    │  VM 2    │  VM 3         │
-│  (Guest) │  (Guest) │  (Guest)      │
-├──────────┴──────────┴───────────────┤
-│      Type 2 Hypervisor              │
-├─────────────────────────────────────┤
-│      Host Operating System          │
-├─────────────────────────────────────┤
-│      Physical Hardware              │
-└─────────────────────────────────────┘</code></pre>
-</section>
-<section id="hybrid-microsoft-hyper-v" class="level4">
-<h4 class="anchored" data-anchor-id="hybrid-microsoft-hyper-v">Hybrid: Microsoft Hyper-V</h4>
-<p><strong>Microsoft Hyper-V</strong> is unique - it can function as both:<br>
-- <strong>Type 1</strong> when installed as a Windows Server role<br>
-- <strong>Hybrid</strong> when enabled on Windows 10/11 (the host OS becomes a special privileged VM)</p>
-<p>When Hyper-V is enabled on Windows:</p>
-<pre><code>┌──────────────────────────────────────┐
-│ Windows │  WSL 2   │  Other VMs      │
-│ (Parent)│  (Guest) │  (Guests)       │
-├─────────┴──────────┴─────────────────┤
-│      Hyper-V Hypervisor              │
-├──────────────────────────────────────┤
-│      Physical Hardware               │
-└──────────────────────────────────────┘</code></pre>
-<hr>
-</section>
-</section>
-<section id="how-wsl-2-uses-virtualization" class="level3">
-<h3 class="anchored" data-anchor-id="how-wsl-2-uses-virtualization">How WSL 2 Uses Virtualization</h3>
-<p><strong>WSL 2</strong> uses a lightweight virtual machine powered by <strong>Hyper-V</strong> technology:</p>
-<ol type="1">
-<li><strong>Hyper-V Hypervisor</strong> creates a minimal VM<br>
-</li>
-<li><strong>Full Linux kernel</strong> runs inside this VM<br>
-</li>
-<li><strong>Optimized integration</strong> with Windows for seamless experience<br>
-</li>
-<li><strong>Shared memory and resources</strong> for efficiency</li>
-</ol>
-<p><strong>Key Differences from Traditional VMs:</strong><br>
-- ⚡ <strong>Fast boot</strong> (under 1 second)<br>
-- 💾 <strong>Dynamic memory</strong> allocation (uses only what’s needed)<br>
-- 🔄 <strong>Automatic resource management</strong> - 🪟 <strong>Deep Windows integration</strong> (filesystem, networking, etc.)</p>
-<hr>
-</section>
-<section id="virtualization-vs-containerization" class="level3">
-<h3 class="anchored" data-anchor-id="virtualization-vs-containerization">Virtualization vs Containerization</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 37%">
-<col style="width: 48%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Aspect</th>
-<th>Virtualization (VMs)</th>
-<th>Containerization (Docker)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Isolation Level</strong></td>
-<td>Full OS isolation</td>
-<td>Process-level isolation</td>
-</tr>
-<tr class="even">
-<td><strong>Overhead</strong></td>
-<td>High (full OS per VM)</td>
-<td>Low (shared kernel)</td>
-</tr>
-<tr class="odd">
-<td><strong>Boot Time</strong></td>
-<td>Minutes</td>
-<td>Seconds</td>
-</tr>
-<tr class="even">
-<td><strong>Size</strong></td>
-<td>GBs</td>
-<td>MBs</td>
-</tr>
-<tr class="odd">
-<td><strong>Performance</strong></td>
-<td>Good</td>
-<td>Excellent</td>
-</tr>
-<tr class="even">
-<td><strong>Use Case</strong></td>
-<td>Different OS, strong isolation</td>
-<td>Same OS, microservices</td>
-</tr>
-</tbody>
-</table>
-<p><strong>WSL 2 bridges both worlds:</strong> - Uses virtualization (lightweight VM) - Supports containerization (Docker Desktop) - Provides the best of both approaches</p>
-<hr>
-</section>
-<section id="hardware-virtualization-extensions" class="level3">
-<h3 class="anchored" data-anchor-id="hardware-virtualization-extensions">Hardware Virtualization Extensions</h3>
-<p>Modern CPUs include hardware support for virtualization:</p>
-<section id="intel-vt-x-intel-virtualization-technology" class="level4">
-<h4 class="anchored" data-anchor-id="intel-vt-x-intel-virtualization-technology">Intel VT-x (Intel Virtualization Technology)</h4>
-<ul>
-<li>Hardware-assisted virtualization for Intel processors<br>
-</li>
-<li>Enables efficient VM execution<br>
-</li>
-<li>Required for WSL 2, Hyper-V, and most modern hypervisors</li>
-</ul>
-</section>
-<section id="amd-v-amd-virtualization" class="level4">
-<h4 class="anchored" data-anchor-id="amd-v-amd-virtualization">AMD-V (AMD Virtualization)</h4>
-<ul>
-<li>AMD’s equivalent to Intel VT-x<br>
-</li>
-<li>Also called SVM (Secure Virtual Machine)<br>
-</li>
-<li>Provides same functionality for AMD processors</li>
-</ul>
-<p><strong>Why Hardware Virtualization Matters:</strong><br>
-- 🚀 <strong>Performance</strong> - VMs run at near-native speed<br>
-- 🔒 <strong>Security</strong> - Better isolation between VMs<br>
-- ⚡ <strong>Efficiency</strong> - Lower CPU overhead<br>
-- 🎯 <strong>Compatibility</strong> - Required by modern hypervisors</p>
-<hr>
-</section>
-</section>
-<section id="additional-concepts" class="level3">
-<h3 class="anchored" data-anchor-id="additional-concepts">Additional Concepts</h3>
-<section id="paravirtualization" class="level4">
-<h4 class="anchored" data-anchor-id="paravirtualization">Paravirtualization</h4>
-<p>A virtualization technique where the guest OS is <strong>aware</strong> it’s running in a virtual environment and cooperates with the hypervisor for better performance.</p>
-<p><strong>Examples:</strong> Xen (paravirtualization mode), VMware Guest Tools</p>
-</section>
-<section id="full-virtualization" class="level4">
-<h4 class="anchored" data-anchor-id="full-virtualization">Full Virtualization</h4>
-<p>The guest OS is <strong>unaware</strong> it’s virtualized. The hypervisor emulates complete hardware.</p>
-<p><strong>Examples:</strong> VMware, VirtualBox, KVM with hardware extensions</p>
-</section>
-<section id="nested-virtualization" class="level4">
-<h4 class="anchored" data-anchor-id="nested-virtualization">Nested Virtualization</h4>
-<p>Running a hypervisor <strong>inside a virtual machine</strong> (VM within a VM).</p>
-<p><strong>Use Cases:</strong> - Testing hypervisor software - Cloud development environments - Training and education</p>
-<hr>
-</section>
-</section>
-</section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>WSL 2 provides a powerful, efficient way to run Linux on Windows by leveraging:</p>
-<ol type="1">
-<li>✅ <strong>Hyper-V hypervisor</strong> for lightweight virtualization</li>
-<li>✅ <strong>Hardware virtualization</strong> (Intel VT-x / AMD-V) for performance</li>
-<li>✅ <strong>Full Linux kernel</strong> for complete compatibility</li>
-<li>✅ <strong>Seamless integration</strong> with Windows for productivity</li>
-</ol>
-<p>This makes it an ideal solution for developers who need Linux tools while working primarily on Windows.</p>
-<hr>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Next Steps
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>After setting up WSL, you can:<br>
-- Install development tools (<code>git</code>, <code>python</code>, <code>node</code>, etc.)<br>
-- Set up Docker Desktop with WSL 2 backend<br>
-- Configure your favorite terminal (Windows Terminal recommended)<br>
-- Install VS Code with WSL extension for seamless development</p>
-</div>
-</div>
-<hr>
-<p><strong>Happy Linux-ing on Windows! 🐧🪟</strong></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

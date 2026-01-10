@@ -378,345 +378,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="developer-common-tools-installation" class="level1">
-<h1>Developer Common Tools Installation</h1>
-<p>Essential tools and setup for Linux development environment.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">sudo</span> apt update</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">sudo</span> apt upgrade <span class="at">-y</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">sudo</span> apt install curl</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">sudo</span> apt install git</span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">sudo</span> apt install default-jdk</span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="bu">echo</span> <span class="st">'export JAVA_HOME="/usr/lib/jvm/default-java"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># UV -&gt; https://docs.astral.sh/uv/#installation</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co"># Node -&gt; https://nodejs.org/en/download</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="co"># Podman -&gt; https://podman.io/docs/installation</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="co">## Inside podmand install: OLLAMA, POSTGRES, PGADMIN    </span></span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># VM(KVM/QEMU type-1 in Full Linux OS) : Follow Below Instructions</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="fu">sudo</span> apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager</span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="fu">sudo</span> systemctl enable libvirtd</span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="fu">sudo</span> systemctl start libvirtd</span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="fu">sudo</span> usermod <span class="at">-aG</span> libvirt,kvm <span class="va">$USER</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="co"># Restart </span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="fu">sudo</span> reboot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-<section id="system-update" class="level2">
-<h2 class="anchored" data-anchor-id="system-update">System Update</h2>
-<p>Always start by updating your system:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">sudo</span> apt update</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">sudo</span> apt upgrade <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Essential tools and setup for a complete Linux development environment.</p>
 <hr>
 </section>
-<section id="essential-development-tools" class="level2">
-<h2 class="anchored" data-anchor-id="essential-development-tools">Essential Development Tools</h2>
+<section id="quick-setup-script" class="level2">
+<h2 class="anchored" data-anchor-id="quick-setup-script">Quick Setup Script</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># System update</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">sudo</span> apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt upgrade <span class="at">-y</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Essential tools</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">sudo</span> apt install curl git <span class="at">-y</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># C/C++ Development Tools</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">sudo</span> apt install build-essential <span class="at">-y</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co"># Java Development Kit</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="fu">sudo</span> apt install default-jdk <span class="at">-y</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="bu">echo</span> <span class="st">'export JAVA_HOME="/usr/lib/jvm/default-java"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># Python (UV), Node.js, Podman - See installation links below</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="co"># UV → https://docs.astral.sh/uv/#installation</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># Node → https://nodejs.org/en/download</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co"># Podman → https://podman.io/docs/installation</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># Virtual Machine (KVM/QEMU)</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="fu">sudo</span> apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager <span class="at">-y</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="fu">sudo</span> systemctl enable libvirtd <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> systemctl start libvirtd</span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="fu">sudo</span> usermod <span class="at">-aG</span> libvirt,kvm <span class="va">$USER</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="co"># Restart to apply changes</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="fu">sudo</span> reboot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="individual-tool-setup" class="level2">
+<h2 class="anchored" data-anchor-id="individual-tool-setup">Individual Tool Setup</h2>
 <section id="git---version-control" class="level3">
 <h3 class="anchored" data-anchor-id="git---version-control">Git - Version Control</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">sudo</span> apt install git <span class="at">-y</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># Configure Git</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your.email@example.com"</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># Verify installation</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Install Git</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">sudo</span> apt install git <span class="at">-y</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Configure Git</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your.email@example.com"</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="co"># Verify installation</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="java-development-kit-jdk" class="level3">
 <h3 class="anchored" data-anchor-id="java-development-kit-jdk">Java Development Kit (JDK)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Install default JDK</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">sudo</span> apt install default-jdk <span class="at">-y</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Set JAVA_HOME environment variable</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">echo</span> <span class="st">'export JAVA_HOME="/usr/lib/jvm/default-java"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="bu">source</span> ~/.bashrc</span>
-<span id="cb4-7"><a href="#cb4-7"></a></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="co"># Verify installation</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="ex">java</span> <span class="at">-version</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="ex">javac</span> <span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Install default JDK</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">sudo</span> apt install default-jdk <span class="at">-y</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Set JAVA_HOME environment variable</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">echo</span> <span class="st">'export JAVA_HOME="/usr/lib/jvm/default-java"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="bu">source</span> ~/.bashrc</span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># Verify installation</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="ex">java</span> <span class="at">-version</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="ex">javac</span> <span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
-</section>
-</section>
-<section id="python-package-manager---uv" class="level2">
-<h2 class="anchored" data-anchor-id="python-package-manager---uv">Python Package Manager - UV</h2>
-<p><strong>UV</strong> is a fast Python package installer and resolver written in Rust.</p>
-<section id="installation" class="level3">
-<h3 class="anchored" data-anchor-id="installation">Installation</h3>
-<p><strong>Use Official Link:</strong> <a href="https://docs.astral.sh/uv/">https://docs.astral.sh/uv/</a></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Install UV using the official installer</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">sh</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Verify installation</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="ex">uv</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="basic-usage" class="level3">
-<h3 class="anchored" data-anchor-id="basic-usage">Basic Usage</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Old Venv style, in my-project1 folder</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">uv</span> init</span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="bu">source</span> .venv/bin/activate</span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="ex">uv</span> pip install requests pandas</span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="ex">uv</span> run python script.py</span>
-<span id="cb6-6"><a href="#cb6-6"></a></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="co"># Create a new Python project with modern structures</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="ex">uv</span> init my-project2</span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="bu">cd</span> my-project2</span>
-<span id="cb6-10"><a href="#cb6-10"></a></span>
-<span id="cb6-11"><a href="#cb6-11"></a><span class="ex">uv</span> add requests pandas <span class="co"># Install packages</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="ex">uv</span> run python script.py <span class="co"># Run Python scripts</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>Script Execution without creating venv</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">uv</span> add <span class="at">--script</span> script.py requests pandas</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="ex">uv</span> run script.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-</section>
-<section id="node.js---javascript-runtime" class="level2">
-<h2 class="anchored" data-anchor-id="node.js---javascript-runtime">Node.js - JavaScript Runtime</h2>
-<section id="installation-using-nodesource" class="level3">
-<h3 class="anchored" data-anchor-id="installation-using-nodesource">Installation (Using NodeSource)</h3>
-<p><strong>Official Download:</strong> <a href="https://nodejs.org/en/download">https://nodejs.org/en/download</a></p>
-<hr>
-</section>
-</section>
-<section id="podman---container-management" class="level2">
-<h2 class="anchored" data-anchor-id="podman---container-management">Podman - Container Management</h2>
-<p><strong>Podman</strong> is a daemonless container engine for developing, managing, and running OCI containers.</p>
-<section id="installation-1" class="level3">
-<h3 class="anchored" data-anchor-id="installation-1">Installation</h3>
-<p><strong>Documentation:</strong> <a href="https://podman.io/docs/installation">https://podman.io/docs/installation</a></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Install Podman</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">sudo</span> apt install podman <span class="at">-y</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># Verify installation</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="ex">podman</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="using-podman-to-install-common-tools" class="level3">
-<h3 class="anchored" data-anchor-id="using-podman-to-install-common-tools">Using Podman to Install Common Tools</h3>
-<section id="ollama---local-llm-runtime" class="level4">
-<h4 class="anchored" data-anchor-id="ollama---local-llm-runtime">1. Ollama - Local LLM Runtime</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Pull and run Ollama container</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="ex">podman</span> run <span class="at">-d</span> <span class="dt">\</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="at">--name</span> ollama <span class="dt">\</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a>  <span class="at">-p</span> 11434:11434 <span class="dt">\</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a>  <span class="at">-v</span> ollama_data:/root/.ollama <span class="dt">\</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a>  docker.io/ollama/ollama:latest</span>
-<span id="cb9-7"><a href="#cb9-7"></a></span>
-<span id="cb9-8"><a href="#cb9-8"></a><span class="co"># Verify Ollama is running</span></span>
-<span id="cb9-9"><a href="#cb9-9"></a><span class="ex">podman</span> ps</span>
-<span id="cb9-10"><a href="#cb9-10"></a></span>
-<span id="cb9-11"><a href="#cb9-11"></a><span class="co"># Pull a model (e.g., llama2)</span></span>
-<span id="cb9-12"><a href="#cb9-12"></a><span class="ex">podman</span> exec <span class="at">-it</span> ollama ollama pull llama2</span>
-<span id="cb9-13"><a href="#cb9-13"></a></span>
-<span id="cb9-14"><a href="#cb9-14"></a><span class="co"># Test Ollama</span></span>
-<span id="cb9-15"><a href="#cb9-15"></a><span class="ex">curl</span> http://localhost:11434/api/generate <span class="at">-d</span> <span class="st">'{</span></span>
-<span id="cb9-16"><a href="#cb9-16"></a><span class="st">  "model": "llama2",</span></span>
-<span id="cb9-17"><a href="#cb9-17"></a><span class="st">  "prompt": "Why is the sky blue?"</span></span>
-<span id="cb9-18"><a href="#cb9-18"></a><span class="st">}'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="postgresql-database" class="level4">
-<h4 class="anchored" data-anchor-id="postgresql-database">2. PostgreSQL Database</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Pull and run PostgreSQL container</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="ex">podman</span> run <span class="at">-d</span> <span class="dt">\</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="at">--name</span> postgres <span class="dt">\</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a>  <span class="at">-e</span> POSTGRES_PASSWORD=mysecretpassword <span class="dt">\</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="at">-e</span> POSTGRES_USER=admin <span class="dt">\</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a>  <span class="at">-e</span> POSTGRES_DB=mydb <span class="dt">\</span></span>
-<span id="cb10-7"><a href="#cb10-7"></a>  <span class="at">-p</span> 5432:5432 <span class="dt">\</span></span>
-<span id="cb10-8"><a href="#cb10-8"></a>  <span class="at">-v</span> postgres_data:/var/lib/postgresql/data <span class="dt">\</span></span>
-<span id="cb10-9"><a href="#cb10-9"></a>  docker.io/library/postgres:16</span>
-<span id="cb10-10"><a href="#cb10-10"></a></span>
-<span id="cb10-11"><a href="#cb10-11"></a><span class="co"># Verify PostgreSQL is running</span></span>
-<span id="cb10-12"><a href="#cb10-12"></a><span class="ex">podman</span> ps</span>
-<span id="cb10-13"><a href="#cb10-13"></a></span>
-<span id="cb10-14"><a href="#cb10-14"></a><span class="co"># Connect to PostgreSQL</span></span>
-<span id="cb10-15"><a href="#cb10-15"></a><span class="ex">podman</span> exec <span class="at">-it</span> postgres psql <span class="at">-U</span> admin <span class="at">-d</span> mydb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="pgadmin---postgresql-management-tool" class="level4">
-<h4 class="anchored" data-anchor-id="pgadmin---postgresql-management-tool">3. pgAdmin - PostgreSQL Management Tool</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Pull and run pgAdmin container</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="ex">podman</span> run <span class="at">-d</span> <span class="dt">\</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="at">--name</span> pgadmin <span class="dt">\</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>  <span class="at">-e</span> PGADMIN_DEFAULT_EMAIL=admin@example.com <span class="dt">\</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>  <span class="at">-e</span> PGADMIN_DEFAULT_PASSWORD=admin <span class="dt">\</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a>  <span class="at">-p</span> 5050:80 <span class="dt">\</span></span>
-<span id="cb11-7"><a href="#cb11-7"></a>  <span class="at">-v</span> pgadmin_data:/var/lib/pgadmin <span class="dt">\</span></span>
-<span id="cb11-8"><a href="#cb11-8"></a>  docker.io/dpage/pgadmin4:latest</span>
-<span id="cb11-9"><a href="#cb11-9"></a></span>
-<span id="cb11-10"><a href="#cb11-10"></a><span class="co"># Access pgAdmin at: http://localhost:5050</span></span>
-<span id="cb11-11"><a href="#cb11-11"></a><span class="co"># Login with: admin@example.com / admin</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Connect pgAdmin to PostgreSQL:</strong><br>
-- Host: <code>host.containers.internal</code> (or your machine’s IP)<br>
-- Port: <code>5432</code><br>
-- Username: <code>admin</code><br>
-- Password: <code>mysecretpassword</code></p>
-</div>
-</div>
-<hr>
-</section>
-</section>
-</section>
-<section id="kvmqemu---virtual-machine-manager" class="level2">
-<h2 class="anchored" data-anchor-id="kvmqemu---virtual-machine-manager">KVM/QEMU - Virtual Machine Manager</h2>
-<p><strong>KVM (Kernel-based Virtual Machine)</strong> is a Type-1 hypervisor for Linux that allows you to run virtual machines.</p>
-<section id="installation-2" class="level3">
-<h3 class="anchored" data-anchor-id="installation-2">Installation</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Install KVM and related tools</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">sudo</span> apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager <span class="at">-y</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># Enable and start libvirt service</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="fu">sudo</span> systemctl enable libvirtd</span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="fu">sudo</span> systemctl start libvirtd</span>
-<span id="cb12-7"><a href="#cb12-7"></a></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="co"># Add your user to libvirt and kvm groups</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="fu">sudo</span> usermod <span class="at">-aG</span> libvirt,kvm <span class="va">$USER</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a></span>
-<span id="cb12-11"><a href="#cb12-11"></a><span class="co"># Apply group changes (logout/login or restart)</span></span>
-<span id="cb12-12"><a href="#cb12-12"></a><span class="ex">newgrp</span> libvirt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Important:</strong> You need to <strong>logout and login</strong> (or restart) for group changes to take effect.</p>
-</div>
-</div>
-</section>
-<section id="verify-kvm-installation" class="level3">
-<h3 class="anchored" data-anchor-id="verify-kvm-installation">Verify KVM Installation</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Check if KVM is available</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="ex">kvm-ok</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="co"># Check libvirt status</span></span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="fu">sudo</span> systemctl status libvirtd</span>
-<span id="cb13-6"><a href="#cb13-6"></a></span>
-<span id="cb13-7"><a href="#cb13-7"></a><span class="co"># Verify your user is in the correct groups</span></span>
-<span id="cb13-8"><a href="#cb13-8"></a><span class="fu">groups</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="using-virtual-machine-manager-gui" class="level3">
-<h3 class="anchored" data-anchor-id="using-virtual-machine-manager-gui">Using Virtual Machine Manager (GUI)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Launch Virtual Machine Manager</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="ex">virt-manager</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="using-kvm-for-testing" class="level3">
-<h3 class="anchored" data-anchor-id="using-kvm-for-testing">Using KVM for Testing</h3>
-<p><strong>Common Use Cases:</strong></p>
-<ul>
-<li>Test different Linux distributions<br>
-</li>
-<li>Test software on different OS versions<br>
-</li>
-<li>Create isolated development environments<br>
-</li>
-<li>Test network configurations<br>
-</li>
-<li>Simulate production environments<br>
-</li>
-<li>Security testing and sandboxing</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="common-questions-answers" class="level2">
-<h2 class="anchored" data-anchor-id="common-questions-answers">Common Questions &amp; Answers</h2>
-<section id="q1-whats-the-difference-between-podman-and-docker" class="level3">
-<h3 class="anchored" data-anchor-id="q1-whats-the-difference-between-podman-and-docker">Q1: What’s the difference between Podman and Docker?</h3>
-<p><strong>Answer:</strong><br>
-- <strong>Podman</strong> is daemonless (no background service required), while Docker uses a daemon<br>
-- <strong>Podman</strong> runs containers as regular users (rootless), Docker typically requires root<br>
-- <strong>Podman</strong> is more secure by default with better isolation<br>
-- <strong>Podman</strong> commands are compatible with Docker (alias <code>docker=podman</code> works)<br>
-- <strong>Podman</strong> can generate Kubernetes YAML files directly</p>
-</section>
-<section id="q2-why-use-uv-instead-of-pip" class="level3">
-<h3 class="anchored" data-anchor-id="q2-why-use-uv-instead-of-pip">Q2: Why use UV instead of pip?</h3>
-<p><strong>Answer:</strong><br>
-- <strong>UV</strong> is 10-100x faster than pip<br>
-- Better dependency resolution<br>
-- Built-in virtual environment management<br>
-- Lockfile support for reproducible builds<br>
-- Written in Rust for performance<br>
-- Modern alternative to pip, pip-tools, and virtualenv combined</p>
-</section>
-<section id="q3-can-i-use-podman-and-docker-together" class="level3">
-<h3 class="anchored" data-anchor-id="q3-can-i-use-podman-and-docker-together">Q3: Can I use Podman and Docker together?</h3>
-<p><strong>Answer:</strong><br>
-Yes, but it’s not recommended. They use different container storage backends. If you need Docker compatibility, you can alias Podman:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="bu">alias</span> docker=podman</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="q4-whats-the-difference-between-kvm-and-virtualbox" class="level3">
-<h3 class="anchored" data-anchor-id="q4-whats-the-difference-between-kvm-and-virtualbox">Q4: What’s the difference between KVM and VirtualBox?</h3>
-<p><strong>Answer:</strong><br>
-- <strong>KVM</strong> is a Type-1 hypervisor (runs directly on hardware), VirtualBox is Type-2 (runs on host OS)<br>
-- <strong>KVM</strong> has better performance (near-native speed)<br>
-- <strong>KVM</strong> is built into the Linux kernel<br>
-- <strong>VirtualBox</strong> is easier to use with a better GUI<br>
-- <strong>KVM</strong> is better for production/server use<br>
-- <strong>VirtualBox</strong> is better for desktop/development use on multiple OS</p>
-</section>
-<section id="q5-whats-the-difference-between-containers-and-virtual-machines" class="level3">
-<h3 class="anchored" data-anchor-id="q5-whats-the-difference-between-containers-and-virtual-machines">Q5: What’s the difference between containers and virtual machines?</h3>
-<p><strong>Answer:</strong><br>
-- <strong>Containers</strong> share the host OS kernel, VMs have their own complete OS<br>
-- <strong>Containers</strong> are lightweight (MBs), VMs are heavy (GBs)<br>
-- <strong>Containers</strong> start in seconds, VMs take minutes<br>
-- <strong>Containers</strong> have lower overhead and better performance<br>
-- <strong>VMs</strong> provide stronger isolation and can run different OS types<br>
-- <strong>Containers</strong> are ideal for microservices, VMs for running different operating systems</p>
-</section>
-<section id="q6-why-use-podman-for-development-instead-of-installing-tools-directly" class="level3">
-<h3 class="anchored" data-anchor-id="q6-why-use-podman-for-development-instead-of-installing-tools-directly">Q6: Why use Podman for development instead of installing tools directly?</h3>
-<p><strong>Answer:</strong><br>
-- <strong>Isolation</strong> - Each tool runs in its own container, no conflicts<br>
-- <strong>Portability</strong> - Same environment across different machines<br>
-- <strong>Easy cleanup</strong> - Remove containers without affecting your system<br>
-- <strong>Version management</strong> - Run multiple versions of the same tool<br>
-- <strong>No system pollution</strong> - Keep your host system clean<br>
-- <strong>Reproducibility</strong> - Share exact configurations with team members</p>
-<hr>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Next Steps
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Set up your development environment with these tools<br>
-</li>
-<li>Practice creating and managing containers with Podman<br>
-</li>
-<li>Create test VMs with KVM for different scenarios<br>
-</li>
-<li>Explore container orchestration with Podman Compose or Kubernetes<br>
-</li>
-</ul>
-</div>
-</div>
-<hr>
-<p><strong>Happy Developing! 🚀</strong></p>
 
 
-</section>
 </section>
 </section>
 
