@@ -438,19 +438,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8"></a></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="co"># Verify installation</span></span>
 <span id="cb2-10"><a href="#cb2-10"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>local --- github</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">ubuvm@ubuvm:~$</span> ssh-keygen</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">Generating</span> public/private ed25519 key pair.</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="ex">Enter</span> file in which to save the key <span class="er">(</span><span class="ex">/home/ubuvm/.ssh/id_ed25519</span><span class="kw">)</span><span class="bu">:</span> </span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="ex">Enter</span> passphrase <span class="er">(</span><span class="ex">empty</span> for no passphrase<span class="kw">)</span><span class="bu">:</span> </span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="ex">Enter</span> same passphrase again: </span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="ex">Your</span> identification has been saved in /home/ubuvm/.ssh/id_ed25519</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="ex">Your</span> public key has been saved in /home/ubuvm/.ssh/id_ed25519.pub</span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="ex">The</span> key fingerprint is:</span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="ex">SHA256:s3wgzGSdalNKGeiiIakodlwuqZ/j3VTIuK85LIjO8/Y</span> ubuvm@ubuvm</span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="ex">The</span> key<span class="st">'s randomart image is:</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="st">+--[ED25519 256]--+</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="st">|     ..          |</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="st">|    .  + .       |</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="st">| . .  = +        |</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="st">|+ . .Bo+.        |</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="st">|+o..+.OoS.       |</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="st">|=. = o.+.+       |</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="st">|+ + o. .o .      |</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="st">|o+ +oo=  .       |</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="st">|.o*=+Eoo         |</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="st">+----[SHA256]-----+</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="st">ubuvm@ubuvm:~$</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="st">ubuvm@ubuvm:~$ cat /home/ubuvm/.ssh/id_ed25519.pub</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="st">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKGqJX/4p3B8Ftki2fIHusJr/1m8SU00vcQJTD3lchyO ubuvm@ubuvm</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a><span class="st">ubuvm@ubuvm:~$ </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>Question: How will i know where public key stored?<br>
+Ans: After running <code>ssh-keygen</code> you will see the public key location mentioned like<br>
+<strong>Your public key has been saved in <code>&lt;path&gt;</code></strong><br>
+Just copy the path and run <code>cat &lt;path&gt;</code></p>
+</blockquote>
+<ul>
+<li>Copy the public key, and paste it to your github account ssh</li>
+<li><code>Settings -&gt; (Access) SSH and GPG keys -&gt; New SSH key</code></li>
+<li>Note: <code>Key Type</code> should be <code>Authentication Type</code></li>
+<li>Note: <code>Key</code> <strong>should not have any extra spaces or new lines</strong></li>
+</ul>
 </section>
 <section id="java-development-kit-jdk" class="level3">
 <h3 class="anchored" data-anchor-id="java-development-kit-jdk">Java Development Kit (JDK)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Install default JDK</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">sudo</span> apt install default-jdk <span class="at">-y</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Set JAVA_HOME environment variable</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">echo</span> <span class="st">'export JAVA_HOME="/usr/lib/jvm/default-java"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="bu">source</span> ~/.bashrc</span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># Verify installation</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="ex">java</span> <span class="at">-version</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="ex">javac</span> <span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Install default JDK</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">sudo</span> apt install default-jdk <span class="at">-y</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># Set JAVA_HOME environment variable</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">echo</span> <span class="st">'export JAVA_HOME="/usr/lib/jvm/default-java"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="bu">source</span> ~/.bashrc</span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co"># Verify installation</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="ex">java</span> <span class="at">-version</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="ex">javac</span> <span class="at">-version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 
 
