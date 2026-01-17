@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WSL - Windows Subsystem for Linux – TDS by HRM</title>
+<title>Program &amp; Path – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../W0/2_linux_tools.html" rel="next">
+<link href="../W0/5_run.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -301,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">WSL - Windows Subsystem for Linux</h1>
+          <h1 class="quarto-secondary-nav-title">Program &amp; Path</h1>
         </a>     
     </div>
   </nav>
@@ -321,16 +321,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text"><strong>Week-0 Foundation</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../W0/1_wsl_setup.html" class="sidebar-item-text sidebar-link active">
+  <a href="../W0/1_wsl_setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">WSL</span></a>
   </div>
 </li>
@@ -362,16 +362,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Week-1 Linux Understanding</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../W1/1_program_path.html" class="sidebar-item-text sidebar-link">
+  <a href="../W1/1_program_path.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Program &amp; Path</span></a>
   </div>
 </li>
@@ -389,7 +389,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">WSL - Windows Subsystem for Linux</h1>
+<h1 class="title d-none d-lg-block">Program &amp; Path</h1>
 </div>
 
 
@@ -406,64 +406,134 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Windows Subsystem for Linux (WSL) enables you to run a Linux environment directly on Windows—no virtual machine or dual-boot required.</p>
+<section id="two-things-to-understand" class="level1">
+<h1>Two things to understand</h1>
+<ul>
+<li><code>$PATH</code> variable</li>
+<li><code>.bashrc</code> file</li>
+</ul>
+</section>
+<section id="everything-is-a-file-then-is-uv-or-ls-also-a-file" class="level1">
+<h1>Everything Is a File — Then Is <code>uv</code> or <code>ls</code> Also a File?</h1>
+<p>Yes ✅ In Linux, <strong>almost everything is treated as a file</strong>.</p>
+<ul>
+<li><code>ls</code>, <code>uv</code>, <code>cat</code>, <code>echo</code> → <strong>files</strong></li>
+<li>Directories → files</li>
+<li>Devices → files</li>
+</ul>
+<p>You can verify this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">which</span> ls</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">file</span> <span class="va">$(</span><span class="fu">which</span> ls<span class="va">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+<section id="question-1-how-does-a-program-get-installed" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-how-does-a-program-get-installed">Question 1: How Does a Program Get Installed?</h2>
+<section id="what-is-a-program" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-program">What is a program?</h3>
+<ul>
+<li>Text File</li>
+</ul>
+</section>
+<section id="what-does-installed-mean" class="level3">
+<h3 class="anchored" data-anchor-id="what-does-installed-mean">What does “installed” mean?</h3>
+<ul>
+<li><p>The file is:</p>
+<ul>
+<li>Placed in a <strong>standard directory</strong> (like <code>/usr/bin</code>)</li>
+<li>Given <strong>execute permission</strong></li>
+<li>Located in a directory listed in <code>$PATH</code></li>
+</ul></li>
+</ul>
+<p>Example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">ls</span> <span class="at">-l</span> /usr/bin/ls</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
-<section id="setup-steps" class="level2">
-<h2 class="anchored" data-anchor-id="setup-steps">Setup Steps</h2>
-<section id="step-1-enable-virtualization-in-bios" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-enable-virtualization-in-bios">Step 1: Enable Virtualization in BIOS</h3>
-<p>Access your BIOS settings and <strong>enable Virtualization Technology</strong> (VT-x/AMD-V).</p>
 </section>
-<section id="step-2-enable-windows-features" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-enable-windows-features">Step 2: Enable Windows Features</h3>
+<section id="question-2-how-does-ls-or-ls--la-work-when-i-type-it" class="level2">
+<h2 class="anchored" data-anchor-id="question-2-how-does-ls-or-ls--la-work-when-i-type-it">Question 2: How Does <code>ls</code> or <code>ls -la</code> Work When I Type It?</h2>
+<section id="step-by-step-explanation" class="level3">
+<h3 class="anchored" data-anchor-id="step-by-step-explanation">Step-by-step explanation</h3>
 <ol type="1">
-<li>Search for <strong>“Turn Windows features on or off”</strong></li>
-<li>Enable the following features:
+<li><p>You type:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ls</span> <span class="at">-la</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>The shell:</p>
 <ul>
-<li>✅ Virtual Machine Platform</li>
-<li>✅ Windows Hypervisor Platform</li>
-<li>✅ Windows Subsystem for Linux</li>
+<li>Looks for a file named <code>ls</code></li>
+<li>Searches directories listed in the <code>$PATH</code> variable</li>
 </ul></li>
-<li><strong>Restart</strong> your computer</li>
+<li><p>Once found:</p>
+<ul>
+<li>The shell <strong>executes that file</strong></li>
+<li>Passes <code>-la</code> as arguments</li>
+</ul></li>
 </ol>
 </section>
-<section id="step-3-install-wsl-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-install-wsl-distribution">Step 3: Install WSL Distribution</h3>
-<p>Open <strong>PowerShell</strong> or <strong>Command Prompt</strong> as Administrator:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># List available Linux distributions</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--online</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Install your preferred distribution (e.g., Ubuntu)</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="ex">wsl</span> <span class="at">--install</span> <span class="at">-d</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="where-is-the-ls-file" class="level3">
+<h3 class="anchored" data-anchor-id="where-is-the-ls-file">Where is the <code>ls</code> file?</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">which</span> ls</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="step-4-verify-installation" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-verify-installation">Step 4: Verify Installation</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Check installed distributions and their status</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--verbose</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="how-does-the-shell-know-where-to-look" class="level3">
+<h3 class="anchored" data-anchor-id="how-does-the-shell-know-where-to-look">How does the shell know where to look?</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="bu">echo</span> <span class="va">$PATH</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
-<section id="useful-commands" class="level2">
-<h2 class="anchored" data-anchor-id="useful-commands">Useful Commands</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Uninstall a distribution</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">wsl</span> <span class="at">--unregister</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Set default WSL version</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="ex">wsl</span> <span class="at">--set-default-version</span> 2</span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># Update WSL</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="ex">wsl</span> <span class="at">--update</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="question-3-what-does-echo-path-mean-and-where-is-it-set" class="level2">
+<h2 class="anchored" data-anchor-id="question-3-what-does-echo-path-mean-and-where-is-it-set">Question 3: What Does <code>echo $PATH</code> Mean, and Where Is It Set?</h2>
+<section id="meaning-of-echo-path" class="level3">
+<h3 class="anchored" data-anchor-id="meaning-of-echo-path">Meaning of <code>echo $PATH</code></h3>
+<ul>
+<li><code>PATH</code> is an <strong>environment variable</strong></li>
+<li>It contains a <strong>colon-separated list of directories</strong></li>
+<li>The shell searches these directories to find commands</li>
+</ul>
+<p>Example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">/usr/local/bin:/usr/bin:/bin</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
-<section id="video-tutorial" class="level2">
-<h2 class="anchored" data-anchor-id="video-tutorial">Video Tutorial</h2>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/K1bkKbCrZYA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="where-does-path-come-from" class="level2">
+<h2 class="anchored" data-anchor-id="where-does-path-come-from">Where Does <code>$PATH</code> Come From?</h2>
+<section id="os-and-shell-design" class="level3">
+<h3 class="anchored" data-anchor-id="os-and-shell-design">1️⃣ OS and Shell Design</h3>
+<p>Linux and shells (like Bash) are designed to:</p>
+<ul>
+<li>Look at the <code>$PATH</code> variable</li>
+<li>Search directories <strong>from left to right</strong></li>
+<li>Execute the first matching executable file</li>
+</ul>
 <hr>
+</section>
+<section id="shell-startup-files" class="level3">
+<h3 class="anchored" data-anchor-id="shell-startup-files">2️⃣ Shell Startup Files</h3>
+<section id="bashrc" class="level4">
+<h4 class="anchored" data-anchor-id="bashrc"><code>.bashrc</code></h4>
+<ul>
+<li>Runs <strong>every time you open a new terminal</strong></li>
+<li>Common place to modify <code>$PATH</code></li>
+</ul>
+<p>Example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$PATH</span><span class="st">:</span><span class="va">$HOME</span><span class="st">/bin"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This means:</p>
+<ul>
+<li>The change applies to <strong>every new terminal</strong></li>
+<li>Not to already-open terminals</li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>✔ Commands like <code>ls</code> and <code>uv</code> are <strong>files</strong></li>
+<li>✔ Programs work because they exist in a directory listed in <code>$PATH</code></li>
+<li>✔ <code>$PATH</code> is a variable containing directory paths</li>
+<li>✔ The shell uses <code>$PATH</code> to find and run commands</li>
+<li>✔ <code>.bashrc</code> is executed every time a new terminal opens</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -882,11 +952,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../W0/5_run.html" class="pagination-link" aria-label="Running Scripts">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Running Scripts</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../W0/2_linux_tools.html" class="pagination-link" aria-label="Installations">
-        <span class="nav-page-text">Installations</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

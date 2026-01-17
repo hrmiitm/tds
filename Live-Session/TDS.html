@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>WSL - Windows Subsystem for Linux – TDS by HRM</title>
+<title>tds – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,7 +30,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../W0/2_linux_tools.html" rel="next">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -301,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">WSL - Windows Subsystem for Linux</h1>
+          <h1 class="quarto-secondary-nav-title"></h1>
         </a>     
     </div>
   </nav>
@@ -321,16 +285,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text"><strong>Week-0 Foundation</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../W0/1_wsl_setup.html" class="sidebar-item-text sidebar-link active">
+  <a href="../W0/1_wsl_setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">WSL</span></a>
   </div>
 </li>
@@ -384,84 +348,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block">WSL - Windows Subsystem for Linux</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>Windows Subsystem for Linux (WSL) enables you to run a Linux environment directly on Windows—no virtual machine or dual-boot required.</p>
-<hr>
-</section>
-<section id="setup-steps" class="level2">
-<h2 class="anchored" data-anchor-id="setup-steps">Setup Steps</h2>
-<section id="step-1-enable-virtualization-in-bios" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-enable-virtualization-in-bios">Step 1: Enable Virtualization in BIOS</h3>
-<p>Access your BIOS settings and <strong>enable Virtualization Technology</strong> (VT-x/AMD-V).</p>
-</section>
-<section id="step-2-enable-windows-features" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-enable-windows-features">Step 2: Enable Windows Features</h3>
-<ol type="1">
-<li>Search for <strong>“Turn Windows features on or off”</strong></li>
-<li>Enable the following features:
+<section id="marks" class="level1">
+<h1>Marks</h1>
 <ul>
-<li>✅ Virtual Machine Platform</li>
-<li>✅ Windows Hypervisor Platform</li>
-<li>✅ Windows Subsystem for Linux</li>
+<li>GA</li>
+<li>ROE</li>
+<li>Projects</li>
+<li>Bonus</li>
+</ul>
+</section>
+<section id="official-tds-course-content" class="level1">
+<h1>Official TDS Course Content</h1>
+<ul>
+<li><p>https://tds.s-anand.net/ # Course Content</p>
+<ul>
+<li>Project Details</li>
+<li>GA Links</li>
 </ul></li>
-<li><strong>Restart</strong> your computer</li>
-</ol>
+<li><p>https://exam.sanand.workers.dev/tds-2026-01-ee # Graded Assignment, ROE</p>
+<ul>
+<li><code>Latest</code> Score Visible in <code>Recent Save</code> is considered</li>
+<li><code>Check</code> never saves</li>
+<li><code>Save</code> save your results</li>
+</ul></li>
+<li><p>Discourse<br>
+-&gt; New Ga Annoucement<br>
+-&gt; Ask in that thread</p></li>
+<li><p>Project</p>
+<ul>
+<li>Free To Use any framework or tool</li>
+<li>Any tool you use, and if any issue comes, you are responsible for that.</li>
+<li>We provide aipipe token for chatgpt api</li>
+<li>https://github.com/sanand0/aipipe</li>
+</ul></li>
+</ul>
 </section>
-<section id="step-3-install-wsl-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-install-wsl-distribution">Step 3: Install WSL Distribution</h3>
-<p>Open <strong>PowerShell</strong> or <strong>Command Prompt</strong> as Administrator:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># List available Linux distributions</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--online</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Install your preferred distribution (e.g., Ubuntu)</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="ex">wsl</span> <span class="at">--install</span> <span class="at">-d</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="step-4-verify-installation" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-verify-installation">Step 4: Verify Installation</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Check installed distributions and their status</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">wsl</span> <span class="at">--list</span> <span class="at">--verbose</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-</section>
-<section id="useful-commands" class="level2">
-<h2 class="anchored" data-anchor-id="useful-commands">Useful Commands</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Uninstall a distribution</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">wsl</span> <span class="at">--unregister</span> <span class="op">&lt;</span>DistroName<span class="op">&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># Set default WSL version</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="ex">wsl</span> <span class="at">--set-default-version</span> 2</span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># Update WSL</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="ex">wsl</span> <span class="at">--update</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-<section id="video-tutorial" class="level2">
-<h2 class="anchored" data-anchor-id="video-tutorial">Video Tutorial</h2>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/K1bkKbCrZYA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<hr>
+<section id="where-to-find-live-session-recording" class="level1">
+<h1>Where to find live session recording?</h1>
+<ul>
+<li>Calendar description (2-3 hours after the recording ended) (automatically it happens so)</li>
+<li>https://www.youtube.com/<span class="citation" data-cites="se-lr5ff">@se-lr5ff</span> (may take 1 or 2 days or more to get uploaded here) (since manual upload required)</li>
+</ul>
 
 
 </section>
@@ -880,15 +813,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../W0/2_linux_tools.html" class="pagination-link" aria-label="Installations">
-        <span class="nav-page-text">Installations</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

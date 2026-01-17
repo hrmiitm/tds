@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>linux-basics-qa – TDS by HRM</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-8b4baf804e461d9b72633f0de59a0cac.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f1aadacce99040138bbb613f9330654f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-8b4baf804e461d9b72633f0de59a0cac.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c2cb7e0b3076a20157071e492cb50f0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-0c5b58de5cf64f3542caacbc690827f7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c2cb7e0b3076a20157071e492cb50f0b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">TDS by HRM</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-wide tools-end">
+    <a href="https://youtube.com/playlist?list=PLn_Nuy1c1Oj_Vc_UD8aCZOE_UoURk1S6F&amp;si=D1b0tRL25mGvlm2t" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-youtube"></i></a>
+    <a href="https://hrmiitm.github.io" title="" class="quarto-navigation-tool px-1" aria-label="" target="_blank"><i class="bi bi-house"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title"></h1>
+        </a>     
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>About The Course</strong></span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text"><strong>Week-0 Foundation</strong></span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../W0/1_wsl_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">WSL</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../W0/2_linux_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../W0/3_navigation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">File Navigation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../W0/4_shells.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Shell Config</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../W0/5_run.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Running Scripts</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text"><strong>Week-1 Linux Understanding</strong></span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../W1/1_program_path.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Program &amp; Path</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+
+<section id="session-1-environment-setup" class="level1">
+<h1>Session 1: Environment Setup</h1>
+<section id="part-3-linux-basics-conceptual-qa" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-linux-basics-conceptual-qa">Part 3: Linux Basics &amp; Conceptual Q&amp;A</h2>
+<hr>
+</section>
+<section id="linux-environment-basics" class="level2">
+<h2 class="anchored" data-anchor-id="linux-environment-basics">1. Linux Environment Basics</h2>
+<section id="the-shell" class="level3">
+<h3 class="anchored" data-anchor-id="the-shell">The Shell</h3>
+<p>The <strong>shell</strong> is your command-line interface to Linux.</p>
+<pre><code>┌────────────────────────────────────────────────────────┐
+│                       TERMINAL                          │
+│  ┌──────────────────────────────────────────────────┐  │
+│  │  user@hostname:~$  ← This is your PROMPT         │  │
+│  │                                                   │  │
+│  │  user     = your username                        │  │
+│  │  hostname = computer name                        │  │
+│  │  ~        = current directory (home)             │  │
+│  │  $        = regular user (# for root)            │  │
+│  └──────────────────────────────────────────────────┘  │
+└────────────────────────────────────────────────────────┘</code></pre>
+</section>
+<section id="common-shells" class="level3">
+<h3 class="anchored" data-anchor-id="common-shells">Common Shells</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Shell</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>bash</strong></td>
+<td>Bourne Again Shell - most common default</td>
+</tr>
+<tr class="even">
+<td><strong>zsh</strong></td>
+<td>Z Shell - default on macOS, more features</td>
+</tr>
+<tr class="odd">
+<td><strong>fish</strong></td>
+<td>Friendly Interactive Shell - user-friendly</td>
+</tr>
+<tr class="even">
+<td><strong>sh</strong></td>
+<td>Original Bourne Shell - basic, portable</td>
+</tr>
+</tbody>
+</table>
+<p>Check your current shell:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">echo</span> <span class="va">$SHELL</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="linux-file-system-structure" class="level3">
+<h3 class="anchored" data-anchor-id="linux-file-system-structure">Linux File System Structure</h3>
+<pre><code>/                       ← Root (top of everything)
+├── home/               ← User home directories
+│   └── username/       ← Your files (~)
+├── etc/                ← System configuration files
+├── bin/                ← Essential user binaries
+├── usr/                ← User programs
+│   ├── bin/            ← User binaries
+│   └── local/          ← Locally installed software
+├── var/                ← Variable files (logs, etc.)
+├── tmp/                ← Temporary files
+└── opt/                ← Optional/third-party software</code></pre>
+</section>
+<section id="essential-commands" class="level3">
+<h3 class="anchored" data-anchor-id="essential-commands">Essential Commands</h3>
+<section id="navigation" class="level4">
+<h4 class="anchored" data-anchor-id="navigation">Navigation</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="bu">pwd</span>                 <span class="co"># Print Working Directory (where am I?)</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">ls</span>                  <span class="co"># List files</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">ls</span> <span class="at">-la</span>              <span class="co"># List ALL files with details</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="bu">cd</span> /path/to/dir     <span class="co"># Change Directory</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="bu">cd</span> ~                <span class="co"># Go to home directory</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="bu">cd</span> ..               <span class="co"># Go up one level</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="bu">cd</span> <span class="at">-</span>                <span class="co"># Go to previous directory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="file-operations" class="level4">
+<h4 class="anchored" data-anchor-id="file-operations">File Operations</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">touch</span> file.txt      <span class="co"># Create empty file</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">mkdir</span> dirname       <span class="co"># Create directory</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">mkdir</span> <span class="at">-p</span> a/b/c      <span class="co"># Create nested directories</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">cp</span> source dest      <span class="co"># Copy file</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">cp</span> <span class="at">-r</span> dir1 dir2     <span class="co"># Copy directory recursively</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="fu">mv</span> old new          <span class="co"># Move/rename</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">rm</span> file             <span class="co"># Remove file</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">rm</span> <span class="at">-rf</span> dir          <span class="co"># Remove directory (CAREFUL!)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="viewing-files" class="level4">
+<h4 class="anchored" data-anchor-id="viewing-files">Viewing Files</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">cat</span> file.txt        <span class="co"># Display entire file</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">less</span> file.txt       <span class="co"># Paginated view (q to quit)</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">head</span> <span class="at">-n</span> 10 file     <span class="co"># First 10 lines</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">tail</span> <span class="at">-n</span> 10 file     <span class="co"># Last 10 lines</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">tail</span> <span class="at">-f</span> file        <span class="co"># Follow file (live updates)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="finding-things" class="level4">
+<h4 class="anchored" data-anchor-id="finding-things">Finding Things</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">find</span> . <span class="at">-name</span> <span class="st">"*.py"</span>           <span class="co"># Find files by name</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">grep</span> <span class="st">"pattern"</span> file.txt       <span class="co"># Search in file</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="fu">grep</span> <span class="at">-r</span> <span class="st">"pattern"</span> directory/  <span class="co"># Search recursively</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">which</span> python                  <span class="co"># Find command location</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="environment-variables" class="level3">
+<h3 class="anchored" data-anchor-id="environment-variables">Environment Variables</h3>
+<p>Environment variables store system-wide settings.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># View all environment variables</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">env</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co"># View specific variable</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="bu">echo</span> <span class="va">$PATH</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="bu">echo</span> <span class="va">$HOME</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="bu">echo</span> <span class="va">$USER</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="co"># Set a variable (current session)</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="bu">export</span> <span class="va">MY_VAR</span><span class="op">=</span><span class="st">"hello"</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="co"># Set permanently (add to ~/.bashrc or ~/.zshrc)</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="bu">echo</span> <span class="st">'export MY_VAR="hello"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="bu">source</span> ~/.bashrc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="the-path-variable" class="level3">
+<h3 class="anchored" data-anchor-id="the-path-variable">The PATH Variable</h3>
+<p><strong>PATH</strong> tells the system where to find executable programs.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="bu">echo</span> <span class="va">$PATH</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="co"># Output: /usr/local/bin:/usr/bin:/bin:/home/user/.local/bin</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># When you type "python", system searches these directories in order</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To add a new path:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"</span><span class="va">$PATH</span><span class="st">:/new/path/here"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="file-permissions" class="level3">
+<h3 class="anchored" data-anchor-id="file-permissions">File Permissions</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ls</span> <span class="at">-l</span> file.txt</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="co"># -rw-r--r-- 1 user group 1234 Jan 17 10:00 file.txt</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="co">#  └┬┘└┬┘└┬┘</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co">#   │  │  └── Others: read only</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="co">#   │  └───── Group: read only  </span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="co">#   └──────── Owner: read + write</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Permission</th>
+<th>Number</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>r</td>
+<td>4</td>
+<td>Read</td>
+</tr>
+<tr class="even">
+<td>w</td>
+<td>2</td>
+<td>Write</td>
+</tr>
+<tr class="odd">
+<td>x</td>
+<td>1</td>
+<td>Execute</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">chmod</span> 755 script.sh   <span class="co"># rwxr-xr-x (owner: all, others: read+execute)</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">chmod</span> +x script.sh    <span class="co"># Add execute permission</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="package-management" class="level3">
+<h3 class="anchored" data-anchor-id="package-management">Package Management</h3>
+<section id="ubuntudebian-apt" class="level4">
+<h4 class="anchored" data-anchor-id="ubuntudebian-apt">Ubuntu/Debian (apt)</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">sudo</span> apt update              <span class="co"># Update package list</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">sudo</span> apt upgrade             <span class="co"># Upgrade installed packages</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="fu">sudo</span> apt install package     <span class="co"># Install a package</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="fu">sudo</span> apt remove package      <span class="co"># Remove a package</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="ex">apt</span> search keyword           <span class="co"># Search for packages</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="macos-homebrew" class="level4">
+<h4 class="anchored" data-anchor-id="macos-homebrew">macOS (Homebrew)</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="ex">brew</span> update                  <span class="co"># Update Homebrew</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="ex">brew</span> upgrade                 <span class="co"># Upgrade packages</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="ex">brew</span> install package         <span class="co"># Install a package</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="ex">brew</span> uninstall package       <span class="co"># Remove a package</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="ex">brew</span> search keyword          <span class="co"># Search for packages</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+</section>
+<section id="conceptual-qa" class="level2">
+<h2 class="anchored" data-anchor-id="conceptual-qa">2. Conceptual Q&amp;A</h2>
+<section id="q1-why-cant-i-just-use-windows-for-development" class="level3">
+<h3 class="anchored" data-anchor-id="q1-why-cant-i-just-use-windows-for-development">Q1: Why can’t I just use Windows for development?</h3>
+<p><strong>Answer:</strong> You <em>can</em>, but you’ll face challenges:</p>
+<ol type="1">
+<li><p><strong>Environment Mismatch</strong>: Production servers run Linux. Developing on Windows means your code might behave differently when deployed.</p></li>
+<li><p><strong>Tool Compatibility</strong>: Many development tools, Docker containers, and scripts are designed for Unix-like systems.</p></li>
+<li><p><strong>Path Differences</strong>: Windows uses <code>C:\path\to\file</code>, Unix uses <code>/path/to/file</code>. This causes bugs.</p></li>
+<li><p><strong>Line Endings</strong>: Windows uses CRLF (<code>\r\n</code>), Unix uses LF (<code>\n</code>). This breaks scripts and causes git conflicts.</p></li>
+</ol>
+<p><strong>Best Practice</strong>: Use WSL2 on Windows to get a real Linux environment.</p>
+<hr>
+</section>
+<section id="q2-whats-the-difference-between-terminal-shell-and-console" class="level3">
+<h3 class="anchored" data-anchor-id="q2-whats-the-difference-between-terminal-shell-and-console">Q2: What’s the difference between Terminal, Shell, and Console?</h3>
+<p><strong>Answer:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Terminal</strong></td>
+<td>The application/window where you type commands</td>
+</tr>
+<tr class="even">
+<td><strong>Shell</strong></td>
+<td>The program that interprets your commands (bash, zsh)</td>
+</tr>
+<tr class="odd">
+<td><strong>Console</strong></td>
+<td>Originally physical hardware; now used interchangeably with terminal</td>
+</tr>
+</tbody>
+</table>
+<p>Think of it like: - <strong>Terminal</strong> = The browser window - <strong>Shell</strong> = The website/application running inside</p>
+<hr>
+</section>
+<section id="q3-why-is-sudo-needed-for-some-commands" class="level3">
+<h3 class="anchored" data-anchor-id="q3-why-is-sudo-needed-for-some-commands">Q3: Why is <code>sudo</code> needed for some commands?</h3>
+<p><strong>Answer:</strong> <code>sudo</code> stands for “<strong>S</strong>uper<strong>U</strong>ser <strong>DO</strong>”. It grants temporary <strong>root</strong> (administrator) privileges.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Regular user - can't modify system files</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="ex">apt</span> install git         <span class="co"># ❌ Permission denied</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="co"># With sudo - runs as root</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="fu">sudo</span> apt install git    <span class="co"># ✅ Works</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Why This Exists:</strong> - Security: Prevents accidental system damage - Audit: Logs who ran privileged commands - Multi-user: Limits what each user can do</p>
+<hr>
+</section>
+<section id="q4-whats-the-difference-between-a-vm-container-and-wsl" class="level3">
+<h3 class="anchored" data-anchor-id="q4-whats-the-difference-between-a-vm-container-and-wsl">Q4: What’s the difference between a VM, Container, and WSL?</h3>
+<p><strong>Answer:</strong></p>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                      COMPARISON                              │
+├───────────────┬─────────────────┬─────────────┬─────────────┤
+│               │ Virtual Machine │ Container   │ WSL2        │
+├───────────────┼─────────────────┼─────────────┼─────────────┤
+│ Isolation     │ Complete        │ Process     │ OS-level    │
+│ Has Own OS?   │ Yes (full)      │ No (shared) │ Yes (Linux) │
+│ Startup       │ Minutes         │ Seconds     │ Seconds     │
+│ Resources     │ Heavy           │ Light       │ Light       │
+│ Use Case      │ Full isolation  │ App deploy  │ Dev environ │
+└───────────────┴─────────────────┴─────────────┴─────────────┘</code></pre>
+<ul>
+<li><strong>VM</strong>: Like a separate computer running inside yours</li>
+<li><strong>Container</strong>: Like a lightweight, isolated app package</li>
+<li><strong>WSL2</strong>: Linux running alongside Windows, sharing resources</li>
+</ul>
+<hr>
+</section>
+<section id="q5-what-is-posix-and-why-does-it-matter" class="level3">
+<h3 class="anchored" data-anchor-id="q5-what-is-posix-and-why-does-it-matter">Q5: What is POSIX and why does it matter?</h3>
+<p><strong>Answer:</strong> <strong>POSIX</strong> (Portable Operating System Interface) is a standard that defines how Unix-like operating systems should behave.</p>
+<p><strong>Why It Matters:</strong> - Code written for one POSIX system works on others - macOS, Linux, BSD are all POSIX-compliant - Windows is NOT POSIX-compliant (hence the differences)</p>
+<p><strong>Example</strong>: A shell script written on macOS will work on Linux because both follow POSIX standards.</p>
+<hr>
+</section>
+<section id="q6-why-do-we-use-apt-instead-of-downloading-from-websites" class="level3">
+<h3 class="anchored" data-anchor-id="q6-why-do-we-use-apt-instead-of-downloading-from-websites">Q6: Why do we use <code>apt</code> instead of downloading from websites?</h3>
+<p><strong>Answer:</strong> Package managers like <code>apt</code> provide:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Benefit</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Security</strong></td>
+<td>Packages are verified and signed</td>
+</tr>
+<tr class="even">
+<td><strong>Dependencies</strong></td>
+<td>Automatically installs required libraries</td>
+</tr>
+<tr class="odd">
+<td><strong>Updates</strong></td>
+<td>One command updates everything</td>
+</tr>
+<tr class="even">
+<td><strong>Consistency</strong></td>
+<td>Everyone gets the same version</td>
+</tr>
+<tr class="odd">
+<td><strong>Cleanup</strong></td>
+<td>Easy to remove with all components</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Instead of downloading Python from website:</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">sudo</span> apt install python3</span>
+<span id="cb17-3"><a href="#cb17-3"></a></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="co"># Update ALL software at once:</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="fu">sudo</span> apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt upgrade</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="q7-whats-the-difference-between-.bashrc-and-.bash_profile" class="level3">
+<h3 class="anchored" data-anchor-id="q7-whats-the-difference-between-.bashrc-and-.bash_profile">Q7: What’s the difference between <code>.bashrc</code> and <code>.bash_profile</code>?</h3>
+<p><strong>Answer:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>File</th>
+<th>When It Runs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>.bash_profile</code></td>
+<td>Login shells (when you first log in)</td>
+</tr>
+<tr class="even">
+<td><code>.bashrc</code></td>
+<td>Non-login shells (new terminal windows)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Best Practice</strong>: Put your configurations in <code>.bashrc</code> and source it from <code>.bash_profile</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># In .bash_profile</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-f</span> ~/.bashrc <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>    <span class="bu">source</span> ~/.bashrc</span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="cf">fi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For <strong>zsh</strong> users: Use <code>.zshrc</code> (it’s simpler - one file for everything).</p>
+<hr>
+</section>
+<section id="q8-how-do-i-know-if-a-command-is-safe-to-run" class="level3">
+<h3 class="anchored" data-anchor-id="q8-how-do-i-know-if-a-command-is-safe-to-run">Q8: How do I know if a command is safe to run?</h3>
+<p><strong>Answer:</strong> Follow these guidelines:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Safety Level</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ls</code>, <code>pwd</code>, <code>cat</code></td>
+<td>🟢 Safe</td>
+<td>Read-only commands</td>
+</tr>
+<tr class="even">
+<td><code>mkdir</code>, <code>touch</code></td>
+<td>🟢 Safe</td>
+<td>Creates files/dirs</td>
+</tr>
+<tr class="odd">
+<td><code>cp</code>, <code>mv</code></td>
+<td>🟡 Caution</td>
+<td>Can overwrite files</td>
+</tr>
+<tr class="even">
+<td><code>rm</code></td>
+<td>🔴 Dangerous</td>
+<td>Deletes permanently</td>
+</tr>
+<tr class="odd">
+<td><code>rm -rf</code></td>
+<td>⛔ Very Dangerous</td>
+<td>No confirmation, recursive</td>
+</tr>
+<tr class="even">
+<td><code>sudo rm -rf /</code></td>
+<td>☠️ NEVER</td>
+<td>Destroys your system</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tips:</strong> 1. Use <code>ls</code> before <code>rm</code> to see what you’re deleting 2. Use <code>rm -i</code> for confirmation prompts 3. Never run commands you don’t understand 4. Be extra careful with <code>sudo</code></p>
+<hr>
+</section>
+<section id="q9-why-doesnt-my-command-work-when-i-open-a-new-terminal" class="level3">
+<h3 class="anchored" data-anchor-id="q9-why-doesnt-my-command-work-when-i-open-a-new-terminal">Q9: Why doesn’t my command work when I open a new terminal?</h3>
+<p><strong>Answer:</strong> You probably set a variable in the current session but didn’t save it.</p>
+<p><strong>Session vs Permanent:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># This ONLY works in current session</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="bu">export</span> <span class="va">MY_VAR</span><span class="op">=</span><span class="st">"hello"</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="co"># To make it permanent, add to your shell config</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="bu">echo</span> <span class="st">'export MY_VAR="hello"'</span> <span class="op">&gt;&gt;</span> ~/.bashrc</span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="bu">source</span> ~/.bashrc  <span class="co"># Apply immediately</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="q10-whats-the-difference-between-and-paths" class="level3">
+<h3 class="anchored" data-anchor-id="q10-whats-the-difference-between-and-paths">Q10: What’s the difference between <code>/</code> and <code>~</code> paths?</h3>
+<p><strong>Answer:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 34%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>/</code></td>
+<td>Root of entire filesystem</td>
+<td><code>/etc/hosts</code></td>
+</tr>
+<tr class="even">
+<td><code>~</code></td>
+<td>Your home directory</td>
+<td><code>~/Documents</code> = <code>/home/username/Documents</code></td>
+</tr>
+<tr class="odd">
+<td><code>.</code></td>
+<td>Current directory</td>
+<td><code>./script.sh</code></td>
+</tr>
+<tr class="even">
+<td><code>..</code></td>
+<td>Parent directory</td>
+<td><code>cd ..</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="practice-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="practice-exercises">3. Practice Exercises</h2>
+<section id="exercise-1-navigation-challenge" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-navigation-challenge">Exercise 1: Navigation Challenge</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># 1. Go to your home directory</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="co"># 2. Create a folder called "tds-practice"</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="co"># 3. Inside it, create three files: file1.txt, file2.txt, file3.txt</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="co"># 4. List all files with details</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="co"># 5. Go back to home directory in one command</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="exercise-2-environment-variables" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-environment-variables">Exercise 2: Environment Variables</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># 1. Display your current PATH</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="co"># 2. Create an environment variable called "MY_NAME" with your name</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="co"># 3. Print it</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="co"># 4. Make it permanent by adding to ~/.bashrc</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="exercise-3-file-permissions" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3-file-permissions">Exercise 3: File Permissions</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># 1. Create a file called "secret.txt"</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="co"># 2. Check its current permissions</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="co"># 3. Make it readable only by you (owner)</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="co"># 4. Verify the change</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="session-summary-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="session-summary-checklist">📋 Session Summary Checklist</h2>
+<p>By now, you should understand:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Why TDS uses Linux/Unix</label></li>
+<li><label><input type="checkbox">Key differences between Windows and Unix</label></li>
+<li><label><input type="checkbox">What VMs and WSL are</label></li>
+<li><label><input type="checkbox">How to set up macOS (Terminal + Homebrew)</label></li>
+<li><label><input type="checkbox">How to set up WSL2 on Windows</label></li>
+<li><label><input type="checkbox">Why emulators are problematic</label></li>
+<li><label><input type="checkbox">Basic Linux commands and concepts</label></li>
+</ul>
+<hr>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">📚 Additional Resources</h2>
+<ul>
+<li><a href="https://ubuntu.com/wsl">Ubuntu WSL Documentation</a></li>
+<li><a href="https://docs.brew.sh">Homebrew Documentation</a></li>
+<li><a href="https://ubuntu.com/tutorials/command-line-for-beginners">Linux Command Line Basics</a></li>
+<li><a href="https://missing.csail.mit.edu/">The Missing Semester (MIT)</a></li>
+</ul>
+<hr>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">❓ Questions?</h2>
+<p>Feel free to ask any questions about: - Environment setup issues - Linux commands - WSL configuration - macOS Terminal usage</p>
+<hr>
+<p><em>End of Session 1: Environment Setup</em></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/hrmiitm\.github\.io\/tds\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2026 Hritik Roshan Maurya. All rights reserved.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
