@@ -41,6 +41,11 @@ website:
               href: "./W0/4_shells.qmd"
             - text: "Running Scripts"
               href: "./W0/5_run.qmd"
+        - section: "**Week-1 Linux Understanding**"
+          contents:
+            - text: "Program & Path"
+              href: "./W1/1_program_path.qmd"
+            
             
 
 format:

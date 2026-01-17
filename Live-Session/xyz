@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# If no arguments are passed
+if [ $# -eq 0 ]; then
+    echo "what can i do"
+    exit 0
+fi
+
+for arg in "$@"; do
+    case "$arg" in
+        -a)
+            echo "----what ALL can i do---"
+            ;;
+        --say)
+            echo "what to say"
+            ;;
+        hi)
+            echo "i want to say hi"
+            ;;
+        *)
+            echo "unknown option: $arg"
+            ;;
+    esac
+done
