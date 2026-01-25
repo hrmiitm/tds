@@ -45,6 +45,8 @@ website:
           contents:
             - text: "Program & Path"
               href: "./W1/1_program_path.qmd"
+            - text: "Virtual Environment"
+              href: "./W1/2_venv.qmd"
             
             
 

@@ -1,0 +1,87 @@
+---
+title: "Virtual Environments & Package Management"
+format:
+  html:
+    smooth-scroll: true
+    highlight-style: github
+---
+
+## Summary
+
+```bash
+uv venv venv                          # Create virtual environment
+source venv/bin/activate              # Activate (Linux/macOS)
+uv pip install -r requirements.txt    # Install dependencies
+```
+
+| Concept             | Purpose                                      |
+|---------------------|----------------------------------------------|
+| **Package Manager** | Install, update, and manage Python libraries |
+| **Virtual Env**     | Isolated environment to avoid conflicts      |
+
+---
+
+## 🪟 Windows Commands
+
+| Task                     | `pip` (Standard)                  | `uv` (Fast)                          |
+|--------------------------|-----------------------------------|--------------------------------------|
+| Create venv              | `python -m venv venv`             | `uv venv venv`                       |
+| Activate venv            | `venv\Scripts\activate`           | `venv\Scripts\activate`              |
+| Install package          | `pip install numpy`               | `uv pip install numpy`               |
+| Install from file        | `pip install -r requirements.txt` | `uv pip install -r requirements.txt` |
+| Export dependencies      | `pip freeze > requirements.txt`   | `uv pip freeze > requirements.txt`   |
+| Run code                 | `python app.py`                   | `python app.py`                      |
+
+---
+
+## 🐧 Linux / macOS Commands
+
+| Task                     | `pip` (Standard)                  | `uv` (Fast)                          |
+|--------------------------|-----------------------------------|--------------------------------------|
+| Create venv              | `python3 -m venv venv`            | `uv venv venv`                       |
+| Activate venv            | `source venv/bin/activate`        | `source venv/bin/activate`           |
+| Install package          | `pip install numpy`               | `uv pip install numpy`               |
+| Install from file        | `pip install -r requirements.txt` | `uv pip install -r requirements.txt` |
+| Export dependencies      | `pip freeze > requirements.txt`   | `uv pip freeze > requirements.txt`   |
+| Run code                 | `python app.py`                   | `python app.py`                      |
+
+---
+
+## What is a Package Manager?
+
+A **package manager** installs, updates, and removes Python libraries.
+
+| Manager   | Description                        |
+|-----------|------------------------------------|
+| `pip`     | Default Python package manager     |
+| `uv`      | Fast, modern alternative to pip    |
+| `conda`   | Environment + package manager      |
+| `poetry`  | Dependency management + packaging  |
+
+**How it works**: Downloads packages from **PyPI** (Python Package Index) and installs them into your environment.
+
+---
+
+## What is a Virtual Environment?
+
+A **virtual environment** is an isolated Python setup with its own interpreter and packages—separate from system Python.
+
+### Why Use It?
+
+| Scenario                                  | Without venv | With venv |
+|-------------------------------------------|:------------:|:---------:|
+| Project A needs `numpy==1.21`             | ❌ Conflict  | ✅ Works  |
+| Project B needs `numpy==2.0`              | ❌ Conflict  | ✅ Works  |
+| Clean system, no polluted global packages | ❌ No        | ✅ Yes    |
+
+---
+
+## How They Work Together
+
+| Tool                | Role                            |
+|---------------------|---------------------------------|
+| **pip / uv**        | *What* gets installed           |
+| **venv**            | *Where* it gets installed       |
+| **requirements.txt**| *Reproducibility* across setups |
+
+> � `pip` installs packages. `venv` isolates them. They work **together**.
