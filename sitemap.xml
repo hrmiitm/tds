@@ -2,54 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hrmiitm.github.io/tds/Live-Session/03-linux-basics-qa.html</loc>
-    <lastmod>2026-01-17T09:48:31.106Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.950Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/Live-Session/01-why-linux-unix.html</loc>
-    <lastmod>2026-01-17T09:48:31.106Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.950Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/Live-Session/02-setup-guides.html</loc>
-    <lastmod>2026-01-17T09:48:31.106Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.950Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/W0/1_wsl_setup.html</loc>
-    <lastmod>2026-01-17T09:48:31.107Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.951Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/W0/3_navigation.html</loc>
-    <lastmod>2026-01-17T09:48:31.107Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.951Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/W0/2_linux_tools.html</loc>
-    <lastmod>2026-01-17T09:48:31.107Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.951Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/W1/1_program_path.html</loc>
-    <lastmod>2026-01-17T09:48:31.108Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.951Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hrmiitm.github.io/tds/W1/2_venv.html</loc>
+    <lastmod>2026-01-25T16:06:09.951Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/index.html</loc>
-    <lastmod>2026-01-17T09:48:31.108Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.951Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/W0/4_shells.html</loc>
-    <lastmod>2026-01-17T09:48:31.107Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.951Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/W0/5_run.html</loc>
-    <lastmod>2026-01-17T09:48:31.107Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.951Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/Live-Session/Notes2.html</loc>
-    <lastmod>2026-01-17T09:48:31.107Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.950Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/Live-Session/session2-networking-web.html</loc>
-    <lastmod>2026-01-17T09:48:31.107Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.950Z</lastmod>
   </url>
   <url>
     <loc>https://hrmiitm.github.io/tds/Live-Session/TDS.html</loc>
-    <lastmod>2026-01-17T09:48:31.107Z</lastmod>
+    <lastmod>2026-01-25T16:06:09.950Z</lastmod>
   </url>
 </urlset>

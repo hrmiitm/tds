@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>setup-guides – TDS by HRM</title>
+<title>Virtual Environments &amp; Package Management – TDS by HRM</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../W1/1_program_path.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -300,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"></h1>
+          <h1 class="quarto-secondary-nav-title">Virtual Environments &amp; Package Management</h1>
         </a>     
     </div>
   </nav>
@@ -361,13 +362,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Week-1 Linux Understanding</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../W1/1_program_path.html" class="sidebar-item-text sidebar-link">
@@ -376,7 +377,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../W1/2_venv.html" class="sidebar-item-text sidebar-link">
+  <a href="../W1/2_venv.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Virtual Environment</span></a>
   </div>
 </li>
@@ -389,345 +390,248 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Virtual Environments &amp; Package Management</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="session-1-environment-setup" class="level1">
-<h1>Session 1: Environment Setup</h1>
-<section id="part-2-setup-guides" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-setup-guides">Part 2: Setup Guides</h2>
-<hr>
-</section>
-<section id="virtual-machines-and-wsl-what-are-they" class="level2">
-<h2 class="anchored" data-anchor-id="virtual-machines-and-wsl-what-are-they">1. Virtual Machines and WSL: What Are They?</h2>
-<section id="virtual-machines-vms" class="level3">
-<h3 class="anchored" data-anchor-id="virtual-machines-vms">Virtual Machines (VMs)</h3>
-<p>A <strong>Virtual Machine</strong> is a complete computer simulated in software.</p>
-<pre><code>┌──────────────────────────────────────────────────────┐
-│                    HOST MACHINE                       │
-│  ┌─────────────────────────────────────────────────┐ │
-│  │              HYPERVISOR (VMware, VirtualBox)    │ │
-│  │  ┌─────────────┐  ┌─────────────┐               │ │
-│  │  │   VM 1      │  │   VM 2      │               │ │
-│  │  │  Ubuntu     │  │  Windows    │               │ │
-│  │  │  [Full OS]  │  │  [Full OS]  │               │ │
-│  │  └─────────────┘  └─────────────┘               │ │
-│  └─────────────────────────────────────────────────┘ │
-└──────────────────────────────────────────────────────┘</code></pre>
-<p><strong>Characteristics:</strong> - ✅ Complete isolation - ✅ Can run any OS - ❌ Heavy on resources (RAM, CPU, Storage) - ❌ Slower startup - ❌ File sharing can be complex</p>
-</section>
-<section id="wsl-windows-subsystem-for-linux" class="level3">
-<h3 class="anchored" data-anchor-id="wsl-windows-subsystem-for-linux">WSL (Windows Subsystem for Linux)</h3>
-<p><strong>WSL2</strong> is Microsoft’s solution to run Linux <strong>natively</strong> on Windows.</p>
-<pre><code>┌──────────────────────────────────────────────────────┐
-│                    WINDOWS 10/11                      │
-│  ┌─────────────────────────────────────────────────┐ │
-│  │           LIGHTWEIGHT HYPER-V VM                │ │
-│  │  ┌─────────────────────────────────────────┐    │ │
-│  │  │         REAL LINUX KERNEL               │    │ │
-│  │  │    Ubuntu / Debian / Other Distros      │    │ │
-│  │  └─────────────────────────────────────────┘    │ │
-│  └─────────────────────────────────────────────────┘ │
-│                                                      │
-│  📁 Windows Files ←→ Linux Files (seamless access)  │
-└──────────────────────────────────────────────────────┘</code></pre>
-<p><strong>Why WSL2 is Better:</strong> - ✅ Real Linux kernel (not emulation!) - ✅ Fast startup (seconds) - ✅ Low resource usage - ✅ Seamless file access between Windows &amp; Linux - ✅ Runs Docker natively - ✅ Integrated with VS Code</p>
-</section>
-<section id="vm-vs-wsl2-comparison" class="level3">
-<h3 class="anchored" data-anchor-id="vm-vs-wsl2-comparison">VM vs WSL2 Comparison</h3>
+</header>
+
+
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">uv</span> venv venv                          <span class="co"># Create virtual environment</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">source</span> venv/bin/activate              <span class="co"># Activate (Linux/macOS)</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="ex">uv</span> pip install <span class="at">-r</span> requirements.txt    <span class="co"># Install dependencies</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Feature</th>
-<th>Traditional VM</th>
-<th>WSL2</th>
+<th>Concept</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Startup Time</strong></td>
-<td>Minutes</td>
-<td>Seconds</td>
+<td><strong>Package Manager</strong></td>
+<td>Install, update, and manage Python libraries</td>
 </tr>
 <tr class="even">
-<td><strong>RAM Usage</strong></td>
-<td>2-8 GB fixed</td>
-<td>Dynamic (as needed)</td>
+<td><strong>Virtual Env</strong></td>
+<td>Isolated environment to avoid conflicts</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="windows-commands" class="level2">
+<h2 class="anchored" data-anchor-id="windows-commands">🪟 Windows Commands</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 35%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th><code>pip</code> (Standard)</th>
+<th><code>uv</code> (Fast)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create venv</td>
+<td><code>python -m venv venv</code></td>
+<td><code>uv venv venv</code></td>
+</tr>
+<tr class="even">
+<td>Activate venv</td>
+<td><code>venv\Scripts\activate</code></td>
+<td><code>venv\Scripts\activate</code></td>
 </tr>
 <tr class="odd">
-<td><strong>Disk Usage</strong></td>
-<td>20+ GB</td>
-<td>Minimal</td>
+<td>Install package</td>
+<td><code>pip install numpy</code></td>
+<td><code>uv pip install numpy</code></td>
 </tr>
 <tr class="even">
-<td><strong>File Sharing</strong></td>
-<td>Network folders</td>
-<td>Native access</td>
+<td>Install from file</td>
+<td><code>pip install -r requirements.txt</code></td>
+<td><code>uv pip install -r requirements.txt</code></td>
 </tr>
 <tr class="odd">
-<td><strong>Performance</strong></td>
-<td>70-80%</td>
-<td>95%+</td>
+<td>Export dependencies</td>
+<td><code>pip freeze &gt; requirements.txt</code></td>
+<td><code>uv pip freeze &gt; requirements.txt</code></td>
 </tr>
 <tr class="even">
-<td><strong>GUI Support</strong></td>
-<td>Full desktop</td>
-<td>WSLg (Windows 11)</td>
+<td>Run code</td>
+<td><code>python app.py</code></td>
+<td><code>python app.py</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="linux-macos-commands" class="level2">
+<h2 class="anchored" data-anchor-id="linux-macos-commands">🐧 Linux / macOS Commands</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 35%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th><code>pip</code> (Standard)</th>
+<th><code>uv</code> (Fast)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create venv</td>
+<td><code>python3 -m venv venv</code></td>
+<td><code>uv venv venv</code></td>
+</tr>
+<tr class="even">
+<td>Activate venv</td>
+<td><code>source venv/bin/activate</code></td>
+<td><code>source venv/bin/activate</code></td>
+</tr>
+<tr class="odd">
+<td>Install package</td>
+<td><code>pip install numpy</code></td>
+<td><code>uv pip install numpy</code></td>
+</tr>
+<tr class="even">
+<td>Install from file</td>
+<td><code>pip install -r requirements.txt</code></td>
+<td><code>uv pip install -r requirements.txt</code></td>
+</tr>
+<tr class="odd">
+<td>Export dependencies</td>
+<td><code>pip freeze &gt; requirements.txt</code></td>
+<td><code>uv pip freeze &gt; requirements.txt</code></td>
+</tr>
+<tr class="even">
+<td>Run code</td>
+<td><code>python app.py</code></td>
+<td><code>python app.py</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="what-is-a-package-manager" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-package-manager">What is a Package Manager?</h2>
+<p>A <strong>package manager</strong> installs, updates, and removes Python libraries.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Manager</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pip</code></td>
+<td>Default Python package manager</td>
+</tr>
+<tr class="even">
+<td><code>uv</code></td>
+<td>Fast, modern alternative to pip</td>
+</tr>
+<tr class="odd">
+<td><code>conda</code></td>
+<td>Environment + package manager</td>
+</tr>
+<tr class="even">
+<td><code>poetry</code></td>
+<td>Dependency management + packaging</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How it works</strong>: Downloads packages from <strong>PyPI</strong> (Python Package Index) and installs them into your environment.</p>
+<hr>
+</section>
+<section id="what-is-a-virtual-environment" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-virtual-environment">What is a Virtual Environment?</h2>
+<p>A <strong>virtual environment</strong> is an isolated Python setup with its own interpreter and packages—separate from system Python.</p>
+<section id="why-use-it" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-it">Why Use It?</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Scenario</th>
+<th style="text-align: center;">Without venv</th>
+<th style="text-align: center;">With venv</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Project A needs <code>numpy==1.21</code></td>
+<td style="text-align: center;">❌ Conflict</td>
+<td style="text-align: center;">✅ Works</td>
+</tr>
+<tr class="even">
+<td>Project B needs <code>numpy==2.0</code></td>
+<td style="text-align: center;">❌ Conflict</td>
+<td style="text-align: center;">✅ Works</td>
+</tr>
+<tr class="odd">
+<td>Clean system, no polluted global packages</td>
+<td style="text-align: center;">❌ No</td>
+<td style="text-align: center;">✅ Yes</td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
 </section>
-<section id="macos-setup-terminal-homebrew" class="level2">
-<h2 class="anchored" data-anchor-id="macos-setup-terminal-homebrew">2. macOS Setup (Terminal + Homebrew)</h2>
-<section id="why-macos-is-developer-friendly" class="level3">
-<h3 class="anchored" data-anchor-id="why-macos-is-developer-friendly">Why macOS is Developer-Friendly</h3>
-<p>macOS is built on <strong>Darwin</strong>, a Unix-based system. This means: - ✅ Native Terminal with Bash/Zsh - ✅ POSIX compliant - ✅ Most Linux commands work directly</p>
-</section>
-<section id="step-1-open-terminal" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-open-terminal">Step 1: Open Terminal</h3>
-<pre><code>🔍 Spotlight Search (Cmd + Space) → Type "Terminal" → Enter</code></pre>
-<p>Or navigate to: <code>Applications → Utilities → Terminal</code></p>
-</section>
-<section id="step-2-install-xcode-command-line-tools" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-install-xcode-command-line-tools">Step 2: Install Xcode Command Line Tools</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This installs essential tools like <code>git</code>, <code>make</code>, <code>gcc</code>.</p>
-</section>
-<section id="step-3-install-homebrew" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-install-homebrew">Step 3: Install Homebrew</h3>
-<p><strong>Homebrew</strong> is the package manager for macOS (like apt for Ubuntu).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va">)</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>After installation, add to your PATH:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># For Apple Silicon (M1/M2/M3)</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="bu">echo</span> <span class="st">'eval "$(/opt/homebrew/bin/brew shellenv)"'</span> <span class="op">&gt;&gt;</span> ~/.zprofile</span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="ex">/opt/homebrew/bin/brew</span> shellenv<span class="va">)</span><span class="st">"</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="co"># For Intel Macs</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="bu">echo</span> <span class="st">'eval "$(/usr/local/bin/brew shellenv)"'</span> <span class="op">&gt;&gt;</span> ~/.zprofile</span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="ex">/usr/local/bin/brew</span> shellenv<span class="va">)</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="step-4-install-essential-tools" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-install-essential-tools">Step 4: Install Essential Tools</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Verify Homebrew installation</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="ex">brew</span> <span class="at">--version</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># Install common development tools</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="ex">brew</span> install git</span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="ex">brew</span> install python</span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="ex">brew</span> install node</span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="ex">brew</span> install wget</span>
-<span id="cb7-9"><a href="#cb7-9"></a><span class="ex">brew</span> install tree</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="step-5-verify-your-setup" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-verify-your-setup">Step 5: Verify Your Setup</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Check installations</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">git</span> <span class="at">--version</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="ex">python3</span> <span class="at">--version</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="ex">node</span> <span class="at">--version</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="co"># Check you're in a Unix environment</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="bu">echo</span> <span class="va">$SHELL</span>    <span class="co"># Should show /bin/zsh or /bin/bash</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="fu">uname</span> <span class="at">-a</span>       <span class="co"># Shows Darwin (macOS kernel)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-</section>
-<section id="windows-set-up-linux-with-wsl2" class="level2">
-<h2 class="anchored" data-anchor-id="windows-set-up-linux-with-wsl2">3. Windows: Set Up Linux with WSL2</h2>
-<section id="prerequisites" class="level3">
-<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
-<ul>
-<li>Windows 10 version 2004+ (Build 19041+) OR Windows 11</li>
-<li>64-bit processor with virtualization support</li>
-<li>At least 4GB RAM (8GB+ recommended)</li>
-</ul>
-</section>
-<section id="step-1-enable-wsl" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-enable-wsl">Step 1: Enable WSL</h3>
-<p>Open <strong>PowerShell as Administrator</strong> and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1"></a>wsl <span class="op">--</span>install</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This single command: - ✅ Enables WSL feature - ✅ Enables Virtual Machine Platform - ✅ Downloads Linux kernel - ✅ Installs Ubuntu (default)</p>
-<p><strong>Restart your computer</strong> when prompted.</p>
-</section>
-<section id="step-2-complete-ubuntu-setup" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-complete-ubuntu-setup">Step 2: Complete Ubuntu Setup</h3>
-<p>After restart, Ubuntu will launch automatically:</p>
-<pre><code>Installing, this may take a few minutes...
-Please create a default UNIX user account...
-Enter new UNIX username: yourname
-New password: ********</code></pre>
+<section id="how-they-work-together" class="level2">
+<h2 class="anchored" data-anchor-id="how-they-work-together">How They Work Together</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>pip / uv</strong></td>
+<td><em>What</em> gets installed</td>
+</tr>
+<tr class="even">
+<td><strong>venv</strong></td>
+<td><em>Where</em> it gets installed</td>
+</tr>
+<tr class="odd">
+<td><strong>requirements.txt</strong></td>
+<td><em>Reproducibility</em> across setups</td>
+</tr>
+</tbody>
+</table>
 <blockquote class="blockquote">
-<p>⚠️ <strong>Note:</strong> Password won’t show as you type - this is normal!</p>
+<p>� <code>pip</code> installs packages. <code>venv</code> isolates them. They work <strong>together</strong>.</p>
 </blockquote>
-</section>
-<section id="step-3-update-your-system" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-update-your-system">Step 3: Update Your System</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">sudo</span> apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt upgrade <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="step-4-install-essential-tools-1" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-install-essential-tools-1">Step 4: Install Essential Tools</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Install development essentials</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> git curl wget build-essential</span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># Install Python</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> python3 python3-pip python3-venv</span>
-<span id="cb12-6"><a href="#cb12-6"></a></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="co"># Install Node.js (using nvm - recommended)</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="ex">curl</span> <span class="at">-o-</span> https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh <span class="kw">|</span> <span class="fu">bash</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="bu">source</span> ~/.bashrc</span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="ex">nvm</span> install <span class="at">--lts</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="step-5-verify-installation" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-verify-installation">Step 5: Verify Installation</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Check versions</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">git</span> <span class="at">--version</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="ex">python3</span> <span class="at">--version</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="ex">node</span> <span class="at">--version</span></span>
-<span id="cb13-5"><a href="#cb13-5"></a></span>
-<span id="cb13-6"><a href="#cb13-6"></a><span class="co"># Confirm you're in Linux</span></span>
-<span id="cb13-7"><a href="#cb13-7"></a><span class="fu">uname</span> <span class="at">-a</span>    <span class="co"># Should show "Linux"</span></span>
-<span id="cb13-8"><a href="#cb13-8"></a><span class="fu">cat</span> /etc/os-release    <span class="co"># Shows Ubuntu details</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="accessing-files-between-windows-and-wsl" class="level3">
-<h3 class="anchored" data-anchor-id="accessing-files-between-windows-and-wsl">Accessing Files Between Windows and WSL</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># From WSL, access Windows files:</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="bu">cd</span> /mnt/c/Users/YourName/Documents</span>
-<span id="cb14-3"><a href="#cb14-3"></a></span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="co"># From Windows Explorer, access WSL files:</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a><span class="co"># Type in address bar: \\wsl$\Ubuntu\home\yourname</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="recommended-vs-code-integration" class="level3">
-<h3 class="anchored" data-anchor-id="recommended-vs-code-integration">Recommended: VS Code Integration</h3>
-<ol type="1">
-<li>Install VS Code on Windows</li>
-<li>Install “Remote - WSL” extension</li>
-<li>In WSL terminal, type: <code>code .</code></li>
-<li>VS Code opens with full Linux support!</li>
-</ol>
-<hr>
-</section>
-</section>
-<section id="why-to-avoid-emulators" class="level2">
-<h2 class="anchored" data-anchor-id="why-to-avoid-emulators">4. Why To Avoid Emulators</h2>
-<section id="what-are-emulators" class="level3">
-<h3 class="anchored" data-anchor-id="what-are-emulators">What Are Emulators?</h3>
-<p>Emulators <strong>simulate</strong> an entire different system, translating every instruction.</p>
-<p>Examples: - Git Bash (simulates Unix on Windows) - Cygwin (Unix environment for Windows) - MinGW/MSYS2</p>
-</section>
-<section id="why-emulators-are-problematic" class="level3">
-<h3 class="anchored" data-anchor-id="why-emulators-are-problematic">Why Emulators Are Problematic</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────┐
-│                    EMULATOR PROBLEMS                        │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│   1. TRANSLATION OVERHEAD                                   │
-│      Unix Command → Translation Layer → Windows Call        │
-│      (Slower and sometimes inaccurate)                      │
-│                                                             │
-│   2. INCOMPLETE COMPATIBILITY                               │
-│      - Not all Unix features work                           │
-│      - System calls may behave differently                  │
-│      - Some tools simply don't work                         │
-│                                                             │
-│   3. PATH &amp; ENVIRONMENT ISSUES                              │
-│      - Mixed path formats cause confusion                   │
-│      - Environment variables behave differently             │
-│                                                             │
-│   4. PACKAGE MANAGEMENT                                     │
-│      - Limited packages available                           │
-│      - Different from real Linux repos                      │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘</code></pre>
-</section>
-<section id="real-example-git-bash-limitations" class="level3">
-<h3 class="anchored" data-anchor-id="real-example-git-bash-limitations">Real Example: Git Bash Limitations</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># This works in real Linux/WSL</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="ex">systemctl</span> status nginx</span>
-<span id="cb16-3"><a href="#cb16-3"></a></span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># In Git Bash:</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a><span class="co"># ❌ systemctl: command not found</span></span>
-<span id="cb16-6"><a href="#cb16-6"></a><span class="co"># (Because there's no real Linux kernel!)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="comparison-emulation-vs-wsl2" class="level3">
-<h3 class="anchored" data-anchor-id="comparison-emulation-vs-wsl2">Comparison: Emulation vs WSL2</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Aspect</th>
-<th>Git Bash/Cygwin</th>
-<th>WSL2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Kernel</strong></td>
-<td>Windows NT (translated)</td>
-<td>Real Linux Kernel</td>
-</tr>
-<tr class="even">
-<td><strong>System Calls</strong></td>
-<td>Emulated</td>
-<td>Native</td>
-</tr>
-<tr class="odd">
-<td><strong>Docker</strong></td>
-<td>Via Docker Desktop</td>
-<td>Native support</td>
-</tr>
-<tr class="even">
-<td><strong>Performance</strong></td>
-<td>Slower</td>
-<td>Near-native</td>
-</tr>
-<tr class="odd">
-<td><strong>Compatibility</strong></td>
-<td>~70%</td>
-<td>~99%</td>
-</tr>
-<tr class="even">
-<td><strong>systemd</strong></td>
-<td>❌ Not available</td>
-<td>✅ Available</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="when-emulators-are-okay" class="level3">
-<h3 class="anchored" data-anchor-id="when-emulators-are-okay">When Emulators Are “Okay”</h3>
-<ul>
-<li>Quick git commands on Windows</li>
-<li>Simple file operations</li>
-<li>Learning basic commands</li>
-</ul>
-</section>
-<section id="when-you-must-use-real-linux-wsl2" class="level3">
-<h3 class="anchored" data-anchor-id="when-you-must-use-real-linux-wsl2">When You MUST Use Real Linux (WSL2)</h3>
-<ul>
-<li>Running Docker containers</li>
-<li>Python/Node development</li>
-<li>Data science workflows</li>
-<li>Anything production-related</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="key-takeaways" class="level2">
-<h2 class="anchored" data-anchor-id="key-takeaways">💡 Key Takeaways</h2>
-<ol type="1">
-<li><strong>VMs</strong> provide full isolation but are resource-heavy</li>
-<li><strong>WSL2</strong> gives you real Linux on Windows with minimal overhead</li>
-<li><strong>macOS</strong> users just need Terminal + Homebrew</li>
-<li><strong>Avoid emulators</strong> for serious development work</li>
-</ol>
-<hr>
-<p><em>Continue to Part 3: Linux Basics &amp; Q&amp;A →</em></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1144,6 +1048,15 @@ New password: ********</code></pre>
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../W1/1_program_path.html" class="pagination-link" aria-label="Program &amp; Path">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Program &amp; Path</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

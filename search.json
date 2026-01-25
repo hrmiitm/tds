@@ -422,6 +422,83 @@
     ]
   },
   {
+    "objectID": "W1/2_venv.html",
+    "href": "W1/2_venv.html",
+    "title": "Virtual Environments & Package Management",
+    "section": "",
+    "text": "uv venv venv                          # Create virtual environment\nsource venv/bin/activate              # Activate (Linux/macOS)\nuv pip install -r requirements.txt    # Install dependencies\n\n\n\nConcept\nPurpose\n\n\n\n\nPackage Manager\nInstall, update, and manage Python libraries\n\n\nVirtual Env\nIsolated environment to avoid conflicts",
+    "crumbs": [
+      "**Week-1 Linux Understanding**",
+      "Virtual Environment"
+    ]
+  },
+  {
+    "objectID": "W1/2_venv.html#summary",
+    "href": "W1/2_venv.html#summary",
+    "title": "Virtual Environments & Package Management",
+    "section": "",
+    "text": "uv venv venv                          # Create virtual environment\nsource venv/bin/activate              # Activate (Linux/macOS)\nuv pip install -r requirements.txt    # Install dependencies\n\n\n\nConcept\nPurpose\n\n\n\n\nPackage Manager\nInstall, update, and manage Python libraries\n\n\nVirtual Env\nIsolated environment to avoid conflicts",
+    "crumbs": [
+      "**Week-1 Linux Understanding**",
+      "Virtual Environment"
+    ]
+  },
+  {
+    "objectID": "W1/2_venv.html#windows-commands",
+    "href": "W1/2_venv.html#windows-commands",
+    "title": "Virtual Environments & Package Management",
+    "section": "🪟 Windows Commands",
+    "text": "🪟 Windows Commands\n\n\n\n\n\n\n\n\nTask\npip (Standard)\nuv (Fast)\n\n\n\n\nCreate venv\npython -m venv venv\nuv venv venv\n\n\nActivate venv\nvenv\\Scripts\\activate\nvenv\\Scripts\\activate\n\n\nInstall package\npip install numpy\nuv pip install numpy\n\n\nInstall from file\npip install -r requirements.txt\nuv pip install -r requirements.txt\n\n\nExport dependencies\npip freeze &gt; requirements.txt\nuv pip freeze &gt; requirements.txt\n\n\nRun code\npython app.py\npython app.py",
+    "crumbs": [
+      "**Week-1 Linux Understanding**",
+      "Virtual Environment"
+    ]
+  },
+  {
+    "objectID": "W1/2_venv.html#linux-macos-commands",
+    "href": "W1/2_venv.html#linux-macos-commands",
+    "title": "Virtual Environments & Package Management",
+    "section": "🐧 Linux / macOS Commands",
+    "text": "🐧 Linux / macOS Commands\n\n\n\n\n\n\n\n\nTask\npip (Standard)\nuv (Fast)\n\n\n\n\nCreate venv\npython3 -m venv venv\nuv venv venv\n\n\nActivate venv\nsource venv/bin/activate\nsource venv/bin/activate\n\n\nInstall package\npip install numpy\nuv pip install numpy\n\n\nInstall from file\npip install -r requirements.txt\nuv pip install -r requirements.txt\n\n\nExport dependencies\npip freeze &gt; requirements.txt\nuv pip freeze &gt; requirements.txt\n\n\nRun code\npython app.py\npython app.py",
+    "crumbs": [
+      "**Week-1 Linux Understanding**",
+      "Virtual Environment"
+    ]
+  },
+  {
+    "objectID": "W1/2_venv.html#what-is-a-package-manager",
+    "href": "W1/2_venv.html#what-is-a-package-manager",
+    "title": "Virtual Environments & Package Management",
+    "section": "What is a Package Manager?",
+    "text": "What is a Package Manager?\nA package manager installs, updates, and removes Python libraries.\n\n\n\nManager\nDescription\n\n\n\n\npip\nDefault Python package manager\n\n\nuv\nFast, modern alternative to pip\n\n\nconda\nEnvironment + package manager\n\n\npoetry\nDependency management + packaging\n\n\n\nHow it works: Downloads packages from PyPI (Python Package Index) and installs them into your environment.",
+    "crumbs": [
+      "**Week-1 Linux Understanding**",
+      "Virtual Environment"
+    ]
+  },
+  {
+    "objectID": "W1/2_venv.html#what-is-a-virtual-environment",
+    "href": "W1/2_venv.html#what-is-a-virtual-environment",
+    "title": "Virtual Environments & Package Management",
+    "section": "What is a Virtual Environment?",
+    "text": "What is a Virtual Environment?\nA virtual environment is an isolated Python setup with its own interpreter and packages—separate from system Python.\n\nWhy Use It?\n\n\n\nScenario\nWithout venv\nWith venv\n\n\n\n\nProject A needs numpy==1.21\n❌ Conflict\n✅ Works\n\n\nProject B needs numpy==2.0\n❌ Conflict\n✅ Works\n\n\nClean system, no polluted global packages\n❌ No\n✅ Yes",
+    "crumbs": [
+      "**Week-1 Linux Understanding**",
+      "Virtual Environment"
+    ]
+  },
+  {
+    "objectID": "W1/2_venv.html#how-they-work-together",
+    "href": "W1/2_venv.html#how-they-work-together",
+    "title": "Virtual Environments & Package Management",
+    "section": "How They Work Together",
+    "text": "How They Work Together\n\n\n\nTool\nRole\n\n\n\n\npip / uv\nWhat gets installed\n\n\nvenv\nWhere it gets installed\n\n\nrequirements.txt\nReproducibility across setups\n\n\n\n\n� pip installs packages. venv isolates them. They work together.",
+    "crumbs": [
+      "**Week-1 Linux Understanding**",
+      "Virtual Environment"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "TDS - Tools for Data Science",
